@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.env.local
+*.log
+_parsed_authors.json
+.venv/

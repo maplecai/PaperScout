@@ -1,0 +1,178 @@
+[
+ {
+  "id": "pubmed:42577751",
+  "source": "pubmed",
+  "raw_id": "42577751",
+  "title": "CFM-GP: unified conditional flow matching to learn gene perturbation across cell types.",
+  "authors": [
+   "Abrar Rahman Abir",
+   "Sajib Acharjee Dip",
+   "Liqing Zhang"
+  ],
+  "date": "2026-08-10",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42577751/",
+  "doi": "10.1093/nargab/lqag087",
+  "pmid": "42577751",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "CFM-GP用条件流匹配建模跨细胞类型的基因扰动响应，直接对应profile中的single-cell perturbation response modeling。",
+   "novelty_for_me": "用连续向量场统一建模共享与细胞类型特异性扰动响应的思路，可启发虚拟细胞中扰动预测模块的设计。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于条件流匹配（Conditional Flow Matching）的生成式框架，以细胞类型为显式条件，学习从对照状态到基因扰动状态的连续向量场。",
+   "main_finding": "该统一架构无需为每种细胞类型单独建模，即可同时捕捉共享与特异性的扰动响应，在预测精度和跨物种泛化上超越现有方法，且推断轨迹具有生物学可解释性。",
+   "inspiration": "其将细胞类型作为显式条件统一建模共享与特异响应的范式，可启发我在增强子活性预测中引入细胞类型或虚拟表观遗传特征作为条件变量，实现跨细胞类型的统一预测。"
+  }
+ },
+ {
+  "id": "pubmed:42662567",
+  "source": "pubmed",
+  "raw_id": "42662567",
+  "title": "Virtual single-cell perturbation and genetic causal inference reveal CSF1R-dependent immunometabolic communication in iron metabolism-associated osteoarthritis.",
+  "authors": [
+   "Yue Zhou",
+   "Guohang Shen",
+   "Lijing Si",
+   "Kaiyong Wang",
+   "Yang Chen",
+   "Ruoyan Wang",
+   "Yupei Dai"
+  ],
+  "date": "2026-08-27",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42662567/",
+  "doi": "10.1002/ccs3.70107",
+  "pmid": "42662567",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用了虚拟单细胞扰动建模方法，与我的重要方法之一间接相关。",
+   "novelty_for_me": "虚拟扰动在免疫代谢通讯中的应用视角可能对单细胞扰动建模有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "整合多组学计算框架，结合机器学习优先排序、孟德尔随机化因果推断与虚拟单细胞基因扰动，识别疾病关键调控基因及其下游通路效应。",
+   "main_finding": "CSF1R是铁代谢相关骨关节炎的核心调控基因，主要通过CD14+CD16+单核细胞-巨噬细胞重塑介导疾病进展；虚拟扰动显示其缺失增强抗原呈递、过表达激活软骨发育通路。",
+   "inspiration": "无明显直接启发。"
+  }
+ },
+ {
+  "id": "pubmed:42600555",
+  "source": "pubmed",
+  "raw_id": "42600555",
+  "title": "Sparse integrative dictionary learning resolves conserved drug-response states in multiple myeloma (MM).",
+  "authors": [
+   "Mingke Wu",
+   "Jin Lu",
+   "Qing Ge"
+  ],
+  "date": "2026-08-08",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42600555/",
+  "doi": "10.1016/j.cancergen.2026.08.002",
+  "pmid": "42600555",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P1",
+   "why_relevant": "PRISM-MM使用稀疏字典学习分解药物扰动转录响应，与profile中single-cell perturbation response建模直接相关。",
+   "novelty_for_me": "将scRNA-seq作为校准层保持细胞状态可解释性的扰动响应分解思路，可能对虚拟细胞扰动建模有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于稀疏整合字典学习的可解释框架，结合单细胞转录组校准层解耦药物扰动下的转录组响应程序。",
+   "main_finding": "在多发性骨髓瘤中识别出跨治疗方案的保守响应程序，揭示了分泌活性耗竭与炎症/应激免疫界面状态富集的共性重塑模式，并提名了RFXAP为核心的免疫调控轴。",
+   "inspiration": "论文中引入校准层剥离细胞状态背景的思想，启发我在预测不同细胞类型增强子活性时，可考虑引入解耦表示学习分离序列固有特征与细胞类型特异性的表观遗传状态，以提升虚拟特征的纯度。"
+  }
+ },
+ {
+  "id": "pubmed:42602395",
+  "source": "pubmed",
+  "raw_id": "42602395",
+  "title": "Integrating heterogeneity into topologically associating domain boundary prediction in large genomic context in human.",
+  "authors": [
+   "Ying Sun",
+   "Lars Juhl Jensen",
+   "Niels Tommerup",
+   "Jan Gorodkin"
+  ],
+  "date": "2026-08-14",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42602395/",
+  "doi": "10.1093/nargab/lqag092",
+  "pmid": "42602395",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "基于序列的TAD边界预测，属于sequence-to-function范畴，且考虑了表观遗传异质性（active/inactive chromatin）。",
+   "novelty_for_me": "将染色质异质性分层后分别建模的思路，对处理不同表观遗传状态下的序列功能预测有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出一种基于序列组成与基因组元件的机器学习分类模型（TADBpred），针对GC-rich和AT-rich两类异质性TAD边界分别构建预测器。",
+   "main_finding": "将TAD边界按染色质活跃状态分类并分别建模，能显著提升预测性能（AUC分别达0.91和0.80），且不同类型边界依赖不同的关键特征。",
+   "inspiration": "在预测不同细胞类型增强子活性时，可借鉴其按序列/表观异质性分类建模的思路，对增强子或虚拟表观遗传特征进行分型后分别训练模型，以提升预测精度。"
+  }
+ },
+ {
+  "id": "arxiv:2609.02344",
+  "source": "arxiv",
+  "raw_id": "2609.02344",
+  "title": "Subcellularly Resolved Single-Cell Embedding Learning with Transcriptomic data, Protein Structure and Localization Information",
+  "authors": [
+   "Zhen Zhou",
+   "Jiachen Li",
+   "Yuan Liu",
+   "Xiaoyong Pan",
+   "Hong-Bin Shen"
+  ],
+  "date": "2026-09-02",
+  "url": "https://arxiv.org/abs/2609.02344",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.02344",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "涉及单细胞表征学习与多模态（序列/结构）整合，与生物序列表征学习间接相关。",
+   "novelty_for_me": "亚细胞分辨率的多模态细胞嵌入思路可能对虚拟细胞模型的多模态整合有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于交叉注意力机制的多模态融合框架，结合转录组、蛋白质序列与结构信息进行亚细胞分辨率的单细胞嵌入学习。",
+   "main_finding": "该框架首次在亚细胞水平整合多模态分子信息生成细胞嵌入，有效保留了空间组织生物学信息并捕获了分子表达模式与蛋白质功能特性。",
+   "inspiration": "在预测增强子活性时，可考虑利用交叉注意力机制将虚拟表观遗传特征与转录因子蛋白质结构/序列特征进行多模态融合，以提升序列到功能的预测精度。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.11.06.686983",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.11.06.686983",
+  "title": "A critical evaluation of Gene Ontology priors in biologically-informed neural networks",
+  "authors": [
+   "Verlaan, T.",
+   "Lieftinck, M. A.",
+   "Mwine, W.",
+   "Reinders, M. J. T."
+  ],
+  "date": "2026-09-01",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.11.06.686983v1",
+  "doi": "10.1101/2025.11.06.686983",
+  "pmid": "",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "评估生物先验知识在神经网络中的作用，其方法论思路对评估基因组学模型中的设计选择（如padding策略）有间接启发。",
+   "novelty_for_me": "提供了一种系统评估模型先验知识有效性的实验设计视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出并评估了 GONNECT，一种将 Gene Ontology (GO) 先验知识嵌入自编码器架构的生物信息神经网络（BINN），并引入软链接机制以缓解先验约束。",
+   "main_finding": "GO 先验结构对模型重构或潜在空间组织性能提升有限，其核心价值在于将编码器节点激活组织成具有生物学意义的可解释单元；引入的软链接虽能恢复性能但稳定性差，主要起补偿先验约束的作用。",
+   "inspiration": "在将虚拟表观遗传特征作为先验约束引入增强子活性预测模型时，应区分评估其对预测性能与特征可解释性的影响，并考虑引入软约束机制以补偿先验可能带来的信息损失。"
+  }
+ }
+]

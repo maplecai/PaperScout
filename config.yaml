@@ -1,0 +1,334 @@
+# ====================================================================
+# PaperScout 个性化配置 —— 你的科研画像
+# 这是整个推荐系统最重要的一份文件。LLM 相关性判断完全基于此。
+# 修改本文件即可调整推荐口味，无需改代码。
+# ====================================================================
+
+# --- 你的身份/领域概览 ---
+profile:
+  core_topics:
+    - computational genomics
+    - machine learning
+    - virtual cell (虚拟细胞)
+
+  # 当前正在攻的具体科研问题 —— P0 判定的核心依据
+  current_research_questions:
+    - >
+      基于虚拟表观遗传特征 (virtual epigenetic features) 预测不同细胞类型的
+      游离型增强子 (episomal enhancer) 活性。
+    - >
+      评估预训练基因组学模型 (pretrained genomics foundation models) 中
+      padding 策略对 sequence-to-function 预测性能的影响。
+
+  # 重点方法/模型 —— 命中时应显著加分（模型架构本身不是重点，方法范式才是）
+  important_methods:
+    - sequence-to-function model
+    - genomic foundation model / pretrained DNA language model
+    - virtual cell model
+    - epigenetic feature prediction (chromatin accessibility, histone mark, TF binding)
+    - enhancer activity / enhancer design
+    - single-cell perturbation response modeling
+    - representation learning for biological sequences
+
+  # 5-20 篇代表论文（DOI）—— 用于校准 LLM 对"相关"的判断
+  representative_papers:
+    - doi: 10.1038/s41592-021-01252-x
+      note: Enformer, sequence-to-function 长序列预测范式
+    - doi: 10.1038/s41586-025-10014-0
+    - doi: 10.1101/2025.09.30.679565
+    - doi: 10.1038/s44222-025-00280-y
+    - doi: 10.1038/s41586-024-08391-z
+    - doi: 10.1038/s41586-024-08070-z
+    - doi: 10.1016/j.xgen.2025.100762
+    - doi: 10.1186/s13059-024-03335-2
+    - doi: 10.1038/s41592-026-03057-2
+    - doi: 10.1038/s41588-024-02053-6
+
+  # 偏好话题 —— 用于关键词粗筛加分（来自你的 Google Scholar keyword alerts）
+  preferred_topics:
+    - virtual cell
+    - DNA language model
+    - single cell perturbation
+    - design cell type specific enhancer
+    - episomal enhancer
+    - enhancer activity prediction
+    - epigenetic foundation model
+    - sequence-to-function
+
+  # 明确不感兴趣 —— 命中时降分或直接排除
+  negative_topics:
+    - 没有计算/建模方法的纯生物学文章 (pure wet-lab without computational method)
+    - 纯临床回顾性研究
+    - 纯药化合成 / 化学全合成
+    - 纯理论数学证明 (无生物应用)
+    - 综述 (review) 除非高度切题
+
+# --- 来自你 Google Scholar alerts 的作者追踪列表 (200人) ---
+# 命中作者名 = 强正相关信号，用于 keyword 粗筛阶段加分
+tracked_authors:
+  - "Mark Gerstein"
+  - "Huimin Zhao"
+  - "Olga Troyanskaya"
+  - "Michael Q. Zhang"
+  - "Jiecong Lin"
+  - "Xinming Tu"
+  - "Shangying Wang"
+  - "William Greenleaf"
+  - "Jason Ernst"
+  - "Georg Seelig"
+  - "Jacob Parres-Gold"
+  - "William T Ireland"
+  - "Ulrich Gerland"
+  - "Clarice KY Hong"
+  - "David Soloveichik"
+  - "Vikram Agarwal"
+  - "Weishun Zhong"
+  - "Bradley Bernstein"
+  - "Jean-Loup Faulon"
+  - "Zijun (Frank) Zhang"
+  - "Joshua Welch"
+  - "Thomas E. Gorochowski"
+  - "Hanwen Xu"
+  - "Zhiyuan Li"
+  - "Terence Hwa"
+  - "Lior Pachter"
+  - "Jesse Engreitz, PhD"
+  - "Sager J Gosai"
+  - "Heidi Klumpe"
+  - "Saurabh Sinha"
+  - "Martin Kircher"
+  - "Anthony Mathelier"
+  - "Jay Shendure"
+  - "Michal Komorowski"
+  - "Jacob Tome"
+  - "Christof Teuscher"
+  - "Maria Brbić"
+  - "Stanley Qi (Lei S. Qi)"
+  - "Rohan Balakrishnan"
+  - "John H Reif"
+  - "Martin Vingron"
+  - "Timothy E Reddy"
+  - "Raul Rabadan"
+  - "Madalena Chaves"
+  - "Thomas R. Sokolowski"
+  - "Luca Pinello"
+  - "Nir Yosef"
+  - "Zehui Li"
+  - "Ramez Daniel"
+  - "Nauman Javed"
+  - "Alexander Sasse"
+  - "Andrés Ortiz Muñoz"
+  - "David van Dijk"
+  - "Christina Smolke"
+  - "Charlotte Bunne"
+  - "Ankit Gupta"
+  - "Justin B. Kinney"
+  - "Jean-Baptiste Lugagne"
+  - "Kevin K. Yang"
+  - "Joseph R. Ecker"
+  - "Karin Strauss"
+  - "Rob Phillips"
+  - "Ron Schwessinger"
+  - "Jianzhu Ma"
+  - "Shaun Mahony"
+  - "Yun S. Song"
+  - "Jean-Benoît Lalanne"
+  - "Christopher Voigt"
+  - "Christina Leslie"
+  - "Sebastian Castillo-Hair"
+  - "Alan Min"
+  - "Colby Fronk"
+  - "Jongmin Kim"
+  - "Niles A. Pierce"
+  - "Chris Thachuk"
+  - "Jonathan Y. Hsu"
+  - "Jun Cheng"
+  - "Alexander van Oudenaarden"
+  - "Johannes Linder"
+  - "Lauren Berk Wheelock"
+  - "Nicolas E. Buchler"
+  - "Timothy Frei"
+  - "Kathakali Sarkar"
+  - "William Stafford Noble"
+  - "Lacramioara Bintu"
+  - "Yaron Antebi"
+  - "Eilon Sharon"
+  - "Jian Ma"
+  - "Julien Gagneur"
+  - "Pushmeet Kohli"
+  - "Guy-Bart Stan"
+  - "Diego A Oyarzún"
+  - "Dan S Tawfik"
+  - "Jacob Schreiber"
+  - "Seppe De Winter"
+  - "Ammar Tareen"
+  - "Žiga Avsec"
+  - "Aman Patel"
+  - "Bryan Bryson"
+  - "Albert J Keung"
+  - "Anusri Pampari"
+  - "Wouter Meuleman"
+  - "Marinka Zitnik"
+  - "Jacob Deasy"
+  - "Fumitaka Inoue"
+  - "Bonnie Berger"
+  - "Andreas Tiffeau-Mayer"
+  - "Andrew Phillips"
+  - "Barak A Cohen"
+  - "Yuan-Jyue Chen"
+  - "Stephen Young"
+  - "Mo Lotfollahi"
+  - "Bernardo P. de Almeida"
+  - "Tommi Jaakkola"
+  - "Mary Dunlop"
+  - "Gregor Neuert"
+  - "Jin Gu"
+  - "Nilah Monnier Ioannidis"
+  - "Bin Shao"
+  - "Aleksandra Walczak"
+  - "Howard M Salis"
+  - "Nadav Ahituv"
+  - "Xuegong Zhang"
+  - "Amir Pandi"
+  - "Molly Gasperini"
+  - "Vijay Singh"
+  - "Ronghui (Ron) Zhu"
+  - "Sushmita Roy"
+  - "Zhixing Cao"
+  - "Sheng Wang"
+  - "Felix Wong"
+  - "Rui Jiang"
+  - "Demis Hassabis"
+  - "Qiao Liu"
+  - "Jian Peng"
+  - "Eran A. Mukamel"
+  - "Rodrigo I Castro"
+  - "Paul Stapor"
+  - "David Schnoerr"
+  - "Chenli Liu"
+  - "Jing Zhang"
+  - "Nathan Skene"
+  - "Stein Aerts"
+  - "Arvind Murugan"
+  - "Daniel A Anderson"
+  - "Robert C Brewster"
+  - "Manoj Gopalkrishnan"
+  - "Ibrahim I. Taskiran"
+  - "Xiaowo Wang"
+  - "Erik van Nimwegen"
+  - "Jeffrey J. Tabor"
+  - "Wing Hung Wong"
+  - "Brian Hie"
+  - "Julia Zeitlinger"
+  - "Weinan E"
+  - "Alexander Stark"
+  - "Erik Martinez-Hackert"
+  - "Alexander Karollus"
+  - "Jordi Garcia-Ojalvo"
+  - "Aniketh Janardhan Reddy"
+  - "Peter Koo"
+  - "Ramon Grima"
+  - "Addie Woicik"
+  - "Ferhat Ay"
+  - "Joshua Pan"
+  - "Surag Nair"
+  - "Sara Mostafavi"
+  - "Patrick D. Hsu"
+  - "Brian Munsky"
+  - "Carl G de Boer"
+  - "Hana El-Samad"
+  - "Benjamin Zoller"
+  - "Luca Cardelli"
+  - "Xiaojun Tian"
+  - "Yilun Sheng"
+  - "James Zou"
+  - "Jure Leskovec"
+  - "Zhiping Weng"
+  - "David R Kelley"
+  - "Sergey Ovchinnikov"
+  - "Maria Chikina"
+  - "Ryan Tewhey"
+  - "Joerg Stelling"
+  - "Matteo Mori"
+  - "Anshul Kundaje"
+  - "Manolis Kellis"
+  - "John Marioni"
+  - "Mustafa Khammash"
+  - "Jian Tang (唐建）"
+  - "David F. Anderson"
+  - "Connie Huang"
+  - "Anat Kreimer"
+  - "Fabian J Theis"
+  - "Lei Wei"
+  - "Gokcen Eraslan"
+  - "Michael B. Elowitz"
+  - "Sheng Wang"
+  - "Paul François"
+  - "Ho-Lin Chen"
+  - "Ziqi Tang"
+
+# ====================================================================
+# 抓取配置
+# ====================================================================
+fetch:
+  lookback_days: 2          # 抓取过去 48 小时
+  sources:
+    pubmed:
+      enabled: true
+      # 留空则自动由 core_topics + preferred_topics 构造查询
+      query: ""
+      max_results: 300
+    arxiv:
+      enabled: true
+      # arXiv 分类 + 关键词，留空则自动构造
+      query: ""
+      categories: ["q-bio"]
+      max_results: 200
+    biorxiv:
+      enabled: true
+      categories: ["genetics","bioinformatics","genomics","cell-biology","developmental-biology"]
+      max_results: 500
+
+# ====================================================================
+# 筛选配置
+# ====================================================================
+ranking:
+  # 关键词粗筛：每篇候选先打一个 0-1 的粗筛分，低于阈值的丢弃以省 LLM token
+  keyword_prefilter_threshold: 0.05
+  # LLM 批量打分时每批论文数
+  batch_size: 12
+  # 送 LLM 的候选上限（成本兜底），按粗筛分取前 N
+  max_llm_candidates: 120
+  # 最终选择：动态阈值
+  selection:
+    # 必须满足其一才入选：priority 命中 或 relevance_score >= 阈值
+    min_score: 5            # 0-10
+    accept_priorities: ["P0", "P1", "P2"]
+    max_papers: 10          # 每日上限
+    min_papers: 0           # 不硬凑，宁缺毋滥
+
+# ====================================================================
+# 总结配置
+# ====================================================================
+summarize:
+  language: zh               # 中文总结
+  # 对最终入选论文逐篇生成详细中文总结
+  per_paper: true
+
+# ====================================================================
+# 推送配置
+# ====================================================================
+notify:
+  # 微信简版推送 Top N
+  wechat_top_n: 5
+  # 总是写日报到 reports/ 并提交回仓库（即使推送失败也有归档）
+  always_write_report: true
+
+# ====================================================================
+# LLM 配置 —— 走 OpenAI 兼容接口（GLM/千帆/OpenAI/DeepSeek 均可）
+# 实际密钥与 endpoint 从环境变量读取，不要写进本文件
+# ====================================================================
+# llm:
+#   base_url_env: OPENAI_BASE_URL
+#   api_key_env: OPENAI_API_KEY
+#   model_env: OPENAI_MODEL
