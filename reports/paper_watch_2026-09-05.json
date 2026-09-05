@@ -1,0 +1,70 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.01.748703",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.01.748703",
+  "title": "AnnFlux: object-conditioned neural stochastic differential equations for single-cell perturbation dynamics",
+  "authors": [
+   "Choi, H.",
+   "Byeon, G.",
+   "Park, H.",
+   "Park, J.",
+   "Lim, S.",
+   "An, J.-Y."
+  ],
+  "date": "2026-09-03",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.01.748703v1",
+  "doi": "10.64898/2026.09.01.748703",
+  "pmid": "",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出基于神经SDE的单细胞扰动动态建模方法，直接契合用户关注的单细胞扰动响应建模方向。",
+   "novelty_for_me": "将扰动建模为潜在空间中的连续漂移轨迹，并预测未见过的扰动组合，思路新颖。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出对象条件的神经随机微分方程（AnnFlux），在潜在细胞状态空间中学习扰动驱动的漂移场以建模单细胞动力学。",
+   "main_finding": "该模型能准确插值未见时间点并预测未见扰动及其组合，提升了分布保真度，且预测的IFN特征在独立空间图谱中得到生物学验证。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.01.748349",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.01.748349",
+  "title": "De novo designed single-domain antibodies protect against lethal cobra venom neurotoxicity in vivo",
+  "authors": [
+   "Overath, M. D.",
+   "Lundquist, E. V. S.",
+   "Björnsson, K. H.",
+   "Kerwin, S.",
+   "Jacobsen, C. P.",
+   "Moiniche, M. v. B.",
+   "Espi, D. R.",
+   "Boddum, K.",
+   "Benard-Valle, M.",
+   "Fernandez-Quintero, M. L.",
+   "Mackessy, S. P.",
+   "Jenkins, T. P."
+  ],
+  "date": "2026-09-03",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.01.748349v1",
+  "doi": "10.64898/2026.09.01.748349",
+  "pmid": "",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用生成式模型进行蛋白质从头设计，虽非基因组学但属于生物序列表征与设计范畴，有一定参考价值。",
+   "novelty_for_me": "蛋白质生成模型的标准化评估与实验验证流程可能对序列设计模型有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于生成式AI模型（Germinal等）从头设计单域抗体（VHHs）并结合AlphaFold3结构评估与体内外实验验证。",
+   "main_finding": "Germinal模型在生成高亲和力及体内中和蛇毒神经毒素的单域抗体方面表现最优，其设计的两个候选抗体在小鼠体内实现了100%存活保护。",
+   "inspiration": "无明显直接启发"
+  }
+ }
+]
