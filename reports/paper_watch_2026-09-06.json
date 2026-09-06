@@ -1,0 +1,92 @@
+[
+ {
+  "id": "biorxiv:10.64898/2025.12.08.693000",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2025.12.08.693000",
+  "title": "Design and experimental characterization of specificity-switching mutational paths of WW domains",
+  "authors": [
+   "Rehan, A.",
+   "Mauri, E.",
+   "Fernandez-De-Cossio-Diaz, J.",
+   "Brun, P.-G.",
+   "Monasson, R.",
+   "Ribezzi-Crivellari, M.",
+   "Cocco, S."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2025.12.08.693000v1",
+  "doi": "10.64898/2025.12.08.693000",
+  "pmid": "",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用RBM进行蛋白质序列的表征学习与突变路径设计，与生物序列表征学习间接相关。",
+   "novelty_for_me": "RBM在蛋白质序列表型景观设计中的应用思路可能对序列模型有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合受限玻尔兹曼机（RBM）无监督学习与路径采样方法，设计蛋白质特异性转换的突变路径。",
+   "main_finding": "基于RBM设计的突变路径中绝大多数中间序列具有功能，而随机顺序突变则丧失功能，凸显了上位性相互作用建模在功能设计中的核心地位。",
+   "inspiration": "利用生成模型探索序列功能转换路径的思路，可启发在增强子活性预测中通过设计虚拟表观遗传特征或序列突变的扰动路径，评估预训练模型对非加性调控效应的捕捉能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.08.23.671699",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.08.23.671699",
+  "title": "Adding layers of information to scRNA-seq data using pre-trained language models",
+  "authors": [
+   "Krissmer, S. M.",
+   "Menger, J.",
+   "Rollin, J.",
+   "Vogel, T. M.",
+   "Binder, H.",
+   "Hackenberg, M."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.08.23.671699v1",
+  "doi": "10.1101/2025.08.23.671699",
+  "pmid": "",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用预训练语言模型（文本）增强scRNA-seq数据，虽非DNA语言模型但涉及单细胞与预训练模型结合的范式。",
+   "novelty_for_me": "将外部知识库与单细胞数据对齐的思路可能对虚拟细胞模型构建有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "微调轻量级encoder-only生物医学语言模型，将scRNA-seq数据与文献文本对齐以学习共享表示。",
+   "main_finding": "该方法在保留细胞身份的同时，为单细胞数据注入了稳健且可解释的功能、疾病及发育上下文信息。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2024.10.02.614758",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2024.10.02.614758",
+  "title": "RNA plasticity emerges as an evolutionary response to fluctuating environments",
+  "authors": [
+   "Garcia-Galindo, P.",
+   "Ahnert, S. E."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.1101/2024.10.02.614758v1",
+  "doi": "10.1101/2024.10.02.614758",
+  "pmid": "",
+  "arxiv_id": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用计算 genotype-phenotype map 建模RNA序列到二级结构的功能映射，与sequence-to-function概念有间接关联。",
+   "novelty_for_me": "RNA序列可塑性进化模拟的思路可能对理解序列-功能映射的鲁棒性有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于RNA二级结构的基因型-表型映射与玻尔兹曼分布，进行周期性环境切换的进化模拟。",
+   "main_finding": "RNA在环境波动下能进化出最优表型可塑性，表现为不同环境下的最优二级结构具有近等概率的玻尔兹曼分布，且自然功能RNA亦具备此特征。",
+   "inspiration": "无明显直接启发"
+  }
+ }
+]
