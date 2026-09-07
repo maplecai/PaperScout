@@ -31,6 +31,25 @@ PUBMED_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 ARXIV_BASE = "http://export.arxiv.org/api/query"
 BIORXIV_BASE = "https://api.biorxiv.org/details/biorxiv"
 
+# 检索词构造时剔除的泛词 —— 命中率太高，会淹没具体领域词
+_BROAD_TERMS = {"machine learning", "computational genomics",
+                "representation learning for biological sequences"}
+
+
+def _build_search_terms(profile: dict) -> list[str]:
+    """从 research_interests + active_projects.keywords 合并、去重、去泛词。"""
+    terms = list(profile.get("research_interests", []))
+    for proj in profile.get("active_projects", []):
+        terms.extend(proj.get("keywords", []))
+    # 去重保序
+    seen = set()
+    out = []
+    for t in terms:
+        if t.lower() not in _BROAD_TERMS and t not in seen:
+            seen.add(t)
+            out.append(t)
+    return out
+
 
 def _date_range(days: int, end_date: str | None = None) -> tuple[str, str]:
     if end_date:
@@ -79,14 +98,7 @@ def fetch_pubmed(cfg: dict, days: int, end_date: str | None = None) -> list[dict
     # 否则 PubMed 会返回海量无关临床 ML 论文。只用基因组学专用词。
     query = src_cfg.get("query", "").strip()
     if not query:
-        prof = cfg.get("_profile", {})
-        terms = list(prof.get("research_interests", []))
-        for proj in prof.get("active_projects", []):
-            terms.extend(proj.get("keywords", []))
-        # 过滤掉过于宽泛的泛词
-        broad = {"machine learning", "computational genomics",
-                 "representation learning for biological sequences"}
-        terms = [t for t in terms if t.lower() not in broad]
+        terms = _build_search_terms(cfg.get("_profile", {}))
         topic_q = " OR ".join(f'"{t}"' for t in terms) if terms else '"enhancer" OR "epigenetic"'
         query = f'({topic_q}) AND ("{start}"[PDAT] : "{end}"[PDAT])'
     else:
@@ -240,13 +252,9 @@ def fetch_arxiv(cfg: dict, days: int, end_date: str | None = None) -> list[dict]
     prof = cfg.get("_profile", {})
     cats = src_cfg.get("categories", ["q-bio"])
     cat_q = " OR ".join(f"cat:{c}*" for c in cats)
-    # 关键词
-    kws = list(prof.get("research_interests", []))
-    for proj in prof.get("active_projects", []):
-        kws.extend(proj.get("keywords", []))
-    kws += ["foundation model", "language model", "enhancer", "epigenetic"]
-    kw_q = " OR ".join(f'abs:"{k}"' for k in kws[:8])
-    query = f"({cat_q}) OR ({kw_q})"
+    terms = _build_search_terms(prof)
+    kw_q = " OR ".join(f'abs:"{k}"' for k in terms) if terms else ""
+    query = f"({cat_q}) OR ({kw_q})" if kw_q else cat_q
 
     # arXiv 不支持精确日期窗口，用 submittedDate 排序后客户端按日期过滤
     params = {
