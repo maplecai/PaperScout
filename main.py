@@ -115,6 +115,9 @@ def main() -> int:
     ap.add_argument("--test-notify", action="store_true",
                     help="跳过抓取/打分，用 reports/ 里最近一份日报测试推送（省 token，可反复跑）")
     ap.add_argument("--days", type=int, default=None, help="覆盖回溯天数")
+    ap.add_argument("--date", help="回填指定日期 (YYYY-MM-DD)：只处理该日发表的论文，日报/state 也记为该日期")
+    ap.add_argument("--end-date", help="窗口结束边界（不含，YYYY-MM-DD）：检索 [end-72h, end)，日报记为该日期。"
+                                        "定时任务用它把窗口锚定到 UTC 0 点，不受 cron 延迟影响")
     args = ap.parse_args()
 
     with open(args.config, encoding="utf-8") as f:
@@ -126,9 +129,12 @@ def main() -> int:
         if not loaded:
             return 1
         papers, md, date_str = loaded
-        ok_wx = notify.send_wechat(
-            papers, date_str, top_n=cfg.get("notify", {}).get("wechat_top_n", 5)
-        )
+        if not papers:
+            # 检索阶段写入的空日报标记：照发空日通知
+            ok = notify.send_empty_notice(date_str, "今日无符合标准的论文")
+            log.info("空日通知推送: %s", "成功" if ok else "失败/未配置")
+            return 0 if ok else 1
+        ok_wx = notify.send_wechat(md, date_str, len(papers))
         ok_mail = notify.send_email(md, date_str, len(papers))
         log.info("测试推送结果: 微信=%s Email=%s", "成功" if ok_wx else "失败/未配置",
                  "成功" if ok_mail else "失败/未配置")
@@ -141,13 +147,34 @@ def main() -> int:
 
     fetch_cfg = dict(cfg.get("fetch", {}))
     fetch_cfg["_profile"] = profile
-    days = args.days if args.days is not None else fetch_cfg.get("lookback_days", 2)
-    date_str = datetime.utcnow().strftime("%Y-%m-%d")
+    date_str = args.date or args.end_date or datetime.utcnow().strftime("%Y-%m-%d")
+    # --date 回填：窗口只覆盖目标日期（各源加索引延迟缓冲）
+    # --end-date：窗口锚定为 [end-72h, end)，即不含 end 当天；lookback-1 天、fetch 端点取前一天
+    if args.date and args.days is None:
+        days = 1
+    elif args.end_date and args.days is None:
+        days = fetch_cfg.get("lookback_days", 2) - 1
+    else:
+        days = args.days if args.days is not None else fetch_cfg.get("lookback_days", 2)
+    fetch_end = args.date
+    if args.end_date:
+        fetch_end = (datetime.strptime(args.end_date, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
 
     # 1. 抓取
-    papers, errors = fetch.fetch_all(fetch_cfg, days)
+    papers, errors = fetch.fetch_all(fetch_cfg, days, end_date=fetch_end, backfill=bool(args.date))
+    from collections import Counter
+    src_counts = Counter(p["source"] for p in papers)
+    src_str = "/".join(f"{k} {v}" for k, v in sorted(src_counts.items()))
+    if args.date:
+        n0 = len(papers)
+        papers = [p for p in papers if p.get("date") == args.date]
+        log.info("回填 %s: %d -> %d 篇 (按发表日期过滤)", args.date, n0, len(papers))
     if not papers:
-        log.warning("没有抓到任何论文，退出")
+        log.warning("没有抓到任何论文")
+        reason = "各源均未抓到论文"
+        if errors:
+            reason += f": {'; '.join(errors)}"
+        notify.send_empty_notice(date_str, reason, no_push=args.no_notify)
         return 0
 
     # 2. 历史去重
@@ -178,7 +205,8 @@ def main() -> int:
         return 0
 
     if not candidates:
-        log.info("粗筛后无候选，今日不推送")
+        log.info("粗筛后无候选，保存空日通知")
+        notify.send_empty_notice(date_str, "关键词粗筛后 0 篇候选", no_push=args.no_notify)
         return 0
 
     # 4. LLM 相关性打分
@@ -191,7 +219,9 @@ def main() -> int:
     # 5. 选 Top
     selected = rank.select_top(ranked, rank_cfg.get("selection", {}))
     if not selected:
-        log.info("今日无符合标准的论文，不推送（宁缺毋滥）")
+        log.info("今日无符合标准的论文，保存空日通知（宁缺毋滥）")
+        notify.send_empty_notice(date_str, f"粗筛候选 {len(candidates)} 篇，LLM 筛选后 0 篇达到标准",
+                                 no_push=args.no_notify)
         state["runs"].append({"date": date_str, "candidates": len(candidates), "selected": 0})
         mark_seen(ranked, state, date_str)
         save_state(state)
@@ -200,17 +230,14 @@ def main() -> int:
     # 6. 中文总结
     summarize.summarize_papers(selected, llm)
 
-    # 7. 写日报（md 给人看，json 给 --test-notify 复用）
-    md = notify.build_report_md(selected, date_str, errors)
+    # 7. 写日报（同一份 md 给微信/Email/reports 归档，json 给 --test-notify 复用）
+    stats = f"抓取 {src_str} → 粗筛 {len(candidates)} 篇 → LLM 选中 {len(selected)} 篇"
+    md = notify.build_report_md(selected, date_str, errors, stats=stats)
     notify.write_report(md, date_str)
     notify.write_report_json(selected, date_str)
 
-    # 8. 推送
-    if not args.no_notify:
-        notify.send_wechat(selected, date_str, top_n=cfg.get("notify", {}).get("wechat_top_n", 5))
-        notify.send_email(md, date_str, len(selected))
-
-    # 9. 更新 state：所有被 LLM 评过的都标记 seen（避免明天重复评分）
+    # 8. 更新 state：所有被 LLM 评过的都标记 seen（避免明天重复评分）。
+    # 必须在推送之前 —— 推送崩了也不能丢 seen 记录，否则隔天会重复推荐
     mark_seen(ranked, state, date_str)
     state["runs"].append({
         "date": date_str,
@@ -220,6 +247,11 @@ def main() -> int:
         "errors": errors,
     })
     save_state(state)
+
+    # 9. 推送：微信与 Email 用同一份 md
+    notify.send_wechat(md, date_str, len(selected), no_push=args.no_notify)
+    if not args.no_notify:
+        notify.send_email(md, date_str, len(selected))
 
     log.info("完成：推荐 %d 篇", len(selected))
     return 0

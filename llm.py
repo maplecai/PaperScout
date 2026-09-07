@@ -35,12 +35,7 @@ class LLMClient:
                 "rank/summarize 将退化为占位输出。"
             )
             return
-        # 国内 endpoint 不走代理：Clash 等代理会掐断长连接导致 SSL EOF。
-        # GitHub Actions 上没有代理变量，此设置无副作用。
         self.session = requests.Session()
-        if _is_domestic(self.base_url):
-            self.session.trust_env = False
-            log.info("检测到国内 endpoint，已禁用代理")
         log.info("LLM 启用: model=%s base_url=%s", self.model, self.base_url)
 
     # ---- 底层调用（带重试）-------------------------------------------
@@ -95,24 +90,6 @@ class LLMClient:
         """让 LLM 返回 JSON。防御性解析：去 markdown fence，提取第一个 JSON 对象/数组。"""
         raw = self._chat(system, user, temperature)
         return parse_json_defensive(raw)
-
-    def chat_text(self, system: str, user: str, temperature: float = 0.3) -> str:
-        return self._chat(system, user, temperature)
-
-
-def _is_domestic(url: str) -> bool:
-    """国内 LLM endpoint 判定：这些域名不该走境外代理。"""
-    domestic = (
-        "baidubce.com",      # 百度千帆
-        "bigmodel.cn",       # 智谱
-        "zhipuai.cn",
-        "aliyuncs.com",      # 阿里通义
-        "deepseek.com",
-        "moonshot.cn",
-        "volces.com",        # 火山方舟
-        "tencentcloudapi.com",
-    )
-    return any(d in url for d in domestic)
 
 
 def parse_json_defensive(raw: str):

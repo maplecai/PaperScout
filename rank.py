@@ -29,18 +29,22 @@ def keyword_prefilter(papers: list[dict], profile: dict, threshold: float = 0.08
     - 命中 negative_topic → 降分
     """
     core = [t.lower() for t in profile.get("core_topics", [])]
-    preferred = [t.lower() for t in profile.get("preferred_topics", [])]
-    methods = [t.lower() for t in profile.get("important_methods", [])]
+    interests = [t.lower() for t in profile.get("research_interests", [])]
+    # active_projects 的 keywords 也作为强信号
+    proj_kw = []
+    for proj in profile.get("active_projects", []):
+        proj_kw.extend(proj.get("keywords", []))
+    proj_kw = [k.lower() for k in proj_kw]
     negatives = [t.lower() for t in profile.get("negative_topics", [])]
     # 泛词：命中也不给高分（太宽泛，几乎每篇 ML 文章都有）
     broad = {"machine learning", "computational genomics"}
 
-    # 把 preferred/methods 拆成单个有意义的词，用于词级匹配（提升召回）
+    # 把 interests + proj_kw 拆成单个有意义的词，用于词级匹配（提升召回）
     stop = {"model", "learning", "method", "methods", "specific", "design",
             "activity", "prediction", "foundation", "sequence", "virtual",
             "cell", "single", "response", "modeling", "based", "data"}
     tokens = set()
-    for t in preferred + methods:
+    for t in interests + proj_kw:
         for w in re.findall(r"[a-z]+", t):
             if len(w) > 4 and w not in stop:
                 tokens.add(w)
@@ -68,12 +72,12 @@ def keyword_prefilter(papers: list[dict], profile: dict, threshold: float = 0.08
         for t in core:
             if t and t in text:
                 score += 0.05 if t in broad else 0.15
-        # preferred topics —— 高分（0.25，这些都是切题的）
-        for t in preferred:
+        # active_projects keywords —— 最高分（0.25，直接命中当前项目）
+        for t in proj_kw:
             if t and t in text:
                 score += 0.25
-        # methods —— 中分
-        for t in methods:
+        # research_interests —— 中分
+        for t in interests:
             if t and t in text:
                 score += 0.2
         # 词级匹配（低分 0.08，提升召回）
@@ -113,10 +117,10 @@ SYSTEM_PROMPT = """你是一位资深的计算基因组学/机器学习研究者
 {profile_json}
 
 ## 优先级定义（严格遵守）
-- P0: 和我的当前研究问题直接相关（增强子活性预测 / 虚拟表观遗传特征 / 预训练基因组学模型 padding 影响 / sequence-to-function）。极少数。
-- P1: 方法、模型、数据集或思路高度相关（基因组 foundation model / DNA language model / virtual cell / enhancer 设计与活性 / 单细胞扰动建模）。
-- P2: 间接相关，但可能对我的研究有启发（计算基因组学新方法、生物序列表征学习等）。
-- exclude: 基本不值得关注，包括：没有计算方法的纯生物文章、纯临床、纯药化合成、纯理论证明、不切题的综述。
+- P0: 和 active_projects 中列出的当前研究问题直接相关。极少数。
+- P1: 方法、模型、数据集或思路与 research_interests 高度相关。
+- P2: 间接相关，但可能对我的研究有启发。
+- exclude: 基本不值得关注，包括：没有计算方法的纯生物文章、纯临床、纯理论证明、不切题的综述。
 
 ## 评分
 relevance_score: 0-10 的整数。10 = 直接命中我的当前研究问题；5 = 间接相关有启发；<5 = 基本无关。
@@ -178,7 +182,7 @@ def llm_rank(papers: list[dict], profile: dict, llm: LLMClient, batch_size: int 
             p["_rank"] = _normalize_rank(item, p)
 
     # 排序：按 relevance_score 降序
-    papers.sort(key=lambda p: p["_rank"].get("relevance_score", 0), reverse=True)
+    papers.sort(key=lambda p: p["_rank"]["relevance_score"], reverse=True)
     return papers
 
 
@@ -222,25 +226,22 @@ def select_top(papers: list[dict], selection_cfg: dict) -> list[dict]:
     min_score = selection_cfg.get("min_score", 5)
     accept = set(selection_cfg.get("accept_priorities", ["P0", "P1", "P2"]))
     max_n = selection_cfg.get("max_papers", 10)
-    min_n = selection_cfg.get("min_papers", 0)
-
     selected = []
+    # 不变量：_rank 由 _normalize_rank/_placeholder_rank 构造，键恒齐全
     for p in papers:
-        r = p.get("_rank", {})
-        pri = r.get("priority", "exclude")
-        score = r.get("relevance_score", 0)
+        r = p["_rank"]
+        pri = r["priority"]
+        score = r["relevance_score"]
         # exclude 直接跳
         if pri == "EXCLUDE":
             continue
         # 满足 priority 或 score 阈值
         if pri in accept or score >= min_score:
-            if r.get("worth_reading", False) or score >= min_score or pri in ("P0", "P1"):
+            if r["worth_reading"] or score >= min_score or pri in ("P0", "P1"):
                 selected.append(p)
         if len(selected) >= max_n:
             break
 
-    # 若不足 min_n，也不硬凑（宁缺毋滥）
-    if len(selected) < min_n:
-        log.info("选中 %d 篇，低于 min_n=%d，不补齐", len(selected), min_n)
+    # 宁缺毋滥：不足 min_papers 也不硬凑（min_n 不参与选择逻辑）
     log.info("最终选中 %d 篇 (上限 %d)", len(selected), max_n)
     return selected

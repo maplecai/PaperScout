@@ -3,14 +3,14 @@ name: Daily Paper Watch
 on:
   schedule:
     # 每天 UTC 02:00 = 北京时间 10:00
-    # 注意：GitHub Actions 的 cron 不保证准点，高峰期常延迟 5-30 分钟
+    # 窗口用 --end-date 锚定到 UTC 0 点（严格 [今日0点-72h, 今日0点)），cron 延迟几分钟不影响边界
     - cron: "0 2 * * *"
   workflow_dispatch:
     inputs:
       days:
-        description: "回溯天数"
+        description: "回溯天数（留空则用 config.yaml 的 fetch.lookback_days）"
         required: false
-        default: "2"
+        default: ""
       dry_run:
         description: "只做粗筛不调 LLM (true/false)"
         required: false
@@ -47,9 +47,16 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: |
-          ARGS="--days ${{ github.event.inputs.days || '2' }}"
+          ARGS=""
+          if [ -n "${{ github.event.inputs.days }}" ]; then
+            ARGS="--days ${{ github.event.inputs.days }}"
+          fi
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             ARGS="$ARGS --dry-run"
+          fi
+          # 定时触发：窗口锚定 [今日0点-72h, 今日0点)；手动触发：以当前时刻为终点的自然窗口
+          if [ -n "${{ github.event.schedule }}" ]; then
+            ARGS="$ARGS --end-date $(date -u +%F)"
           fi
           python main.py $ARGS
 

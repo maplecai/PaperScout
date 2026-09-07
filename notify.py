@@ -1,8 +1,6 @@
 """推送模块：写日报 + 微信(Server酱) + Email。
 
-- 微信发简版 Top N
-- Email 发完整日报
-- 日报始终写入 reports/ 作为归档
+微信和 Email 推送同一份日报全文（含 Abstract），日报写入 reports/ 归档。
 """
 from __future__ import annotations
 
@@ -12,7 +10,6 @@ import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from datetime import datetime
 
 import requests
 
@@ -22,36 +19,43 @@ log = logging.getLogger("paper-scout")
 # ====================================================================
 # 日报生成
 # ====================================================================
-def build_report_md(papers: list[dict], date_str: str, errors: list[str] | None = None) -> str:
+def build_report_md(papers: list[dict], date_str: str, errors: list[str] | None = None,
+                    stats: str = "") -> str:
     lines = [
-        f"# Paper Watch 日报 — {date_str}",
+        f"# Paper Scout 日报 {date_str}",
         "",
         f"共筛选出 **{len(papers)}** 篇推荐论文。",
-        "",
     ]
+    if stats:
+        lines.append(f"📊 {stats}")
     if errors:
-        lines.append(f"> ⚠️ 抓取异常（已跳过不影响整体）: {'; '.join(errors)}")
         lines.append("")
+        lines.append(f"> ⚠️ 抓取异常: {'; '.join(errors)}，今日日报可能不全")
+    lines.append("")
 
     for i, p in enumerate(papers, 1):
         r = p.get("_rank", {})
         s = p.get("_summary", {})
-        ids = _id_str(p)
-        lines.append(f"## {i}. [{r.get('priority','')}] {p.get('title','')}")
+        lines.append(f"## {i}. {p.get('title','')}")
         lines.append("")
+        if p.get("journal"):
+            lines.append(f"- **期刊**: {p['journal']}")
         lines.append(f"- **作者**: {_authors(p)}")
-        lines.append(f"- **来源**: {p.get('source','')}  |  **日期**: {p.get('date','')}")
-        lines.append(f"- **ID**: {ids}")
-        lines.append(f"- **相关性分数**: {r.get('relevance_score','')} / 10  |  **优先级**: {r.get('priority','')}  |  **值得精读**: {'是' if r.get('worth_reading') else '否'}")
-        lines.append(f"- **为什么相关**: {r.get('why_relevant','')}")
-        lines.append(f"- **对我而言的新意**: {r.get('novelty_for_me','')}")
-        lines.append("")
-        lines.append(f"- **核心方法**: {s.get('core_method','')}")
-        lines.append(f"- **主要发现**: {s.get('main_finding','')}")
-        lines.append(f"- **对我研究的启发**: {s.get('inspiration','')}")
+        if p.get("corr_affiliation"):
+            lines.append(f"- **机构**: {p.get('corr_author','') or '（未标注）'} @ {p['corr_affiliation']}")
+        lines.append(f"- **日期**: {p.get('date','')}")
+        lines.append(f"- **ID**: {_id_str(p)}")
+        if r.get("why_relevant"):
+            lines.append(f"- **一句话推荐**: {r['why_relevant']}")
+        if s.get("core_method"):
+            lines.append(f"- **方法**: {s['core_method']}")
+        if s.get("main_finding"):
+            lines.append(f"- **主要发现**: {s['main_finding']}")
+        if s.get("inspiration"):
+            lines.append(f"- **对我的启发**: {s['inspiration']}")
         lines.append("")
         if p.get("abstract"):
-            lines.append(f"<details><summary>Abstract (原文)</summary>\n\n{p['abstract']}\n\n</details>")
+            lines.append(f"<details><summary>Abstract</summary>\n\n{p['abstract']}\n\n</details>")
             lines.append("")
         lines.append("---")
         lines.append("")
@@ -76,7 +80,7 @@ def _authors(p: dict) -> str:
     a = p.get("authors", [])
     if not a:
         return ""
-    if len(a) <= 3:
+    if len(a) <= 8:
         return ", ".join(a)
     return f"{a[0]}, {a[1]}, {a[2]} et al. ({len(a)} authors)"
 
@@ -133,48 +137,17 @@ def load_latest_report(reports_dir: str = "reports") -> tuple[list[dict], str, s
 SC_MAX_DESP = 30000  # Server酱 desp 上限约 32KB，留余量
 
 
-def send_wechat(papers: list[dict], date_str: str, top_n: int = 5) -> bool:
+def _post_wechat(title: str, body: str) -> bool:
     key = os.environ.get("SC_SENDKEY", "").strip()
     if not key:
         log.warning("未配置 SC_SENDKEY，跳过微信推送")
         return False
-    if not papers:
-        log.info("无推荐论文，跳过微信推送")
-        return False
-
-    top = papers[:top_n]
-    title = f"📄 论文日报 {date_str} · {len(top)} 篇"
-    desp = [f"### {date_str} 精选 Top {len(top)}", ""]
-    for i, p in enumerate(top, 1):
-        r = p.get("_rank", {})
-        s = p.get("_summary", {})
-        desp.append(f"**{i}. [{r.get('priority','')}·{r.get('relevance_score','')}/10] {p.get('title','')}**")
-        desp.append("")
-        desp.append(f"- 来源: {p.get('source','')} | {p.get('date','')}")
-        if p.get("url"):
-            desp.append(f"- [原文链接]({p['url']})")
-        if r.get("why_relevant"):
-            desp.append(f"- **相关**: {r['why_relevant']}")
-        if s.get("core_method"):
-            desp.append(f"- **方法**: {s['core_method']}")
-        if s.get("main_finding"):
-            desp.append(f"- **发现**: {s['main_finding']}")
-        if s.get("inspiration"):
-            desp.append(f"- **启发**: {s['inspiration']}")
-        desp.append("")
-        desp.append("---")
-        desp.append("")
-    body = "\n".join(desp)
-    if len(body) > SC_MAX_DESP:
-        body = body[:SC_MAX_DESP] + "\n\n…（内容过长已截断，完整版见 Email / reports/）"
-
     # Server酱³ 的 sendkey 形如 sctp<数字>t<随机串>，走独立域名
     m = re.match(r"^sctp(\d+)t", key)
     url = (
         f"https://{m.group(1)}.push.ft07.com/send/{key}.send"
         if m else f"https://sctapi.ftqq.com/{key}.send"
     )
-
     try:
         r = requests.post(url, data={"title": title, "desp": body}, timeout=30)
         r.raise_for_status()
@@ -187,11 +160,43 @@ def send_wechat(papers: list[dict], date_str: str, top_n: int = 5) -> bool:
         if data.get("code") not in (0, None):
             log.error("微信推送被拒: %s", str(data)[:300])
             return False
-        log.info("微信推送成功 (%d 篇)", len(top))
         return True
     except Exception as e:
         log.error("微信推送失败: %s", e)
         return False
+
+
+def send_empty_notice(date_str: str, reason: str, no_push: bool = False) -> bool:
+    """无推荐也发一条，让用户知道程序跑了、只是今天没有货。
+    no_push（检索阶段）时不推送，写入空日报 JSON，由推送阶段（--test-notify）发送。"""
+    if no_push:
+        write_report_json([], date_str)
+        log.info("空日：已写入空日报标记，待推送阶段发送")
+        return False
+    body = f"### {date_str}\n\n今日没有符合标准的论文，未生成日报。\n\n> {reason}"
+    ok = _post_wechat(f"📄 Paper Scout 日报 {date_str} · 今日无推荐", body)
+    if ok:
+        log.info("空日通知推送成功")
+    return ok
+
+
+def send_wechat(md: str, date_str: str, n_papers: int, no_push: bool = False) -> bool:
+    """微信推送与 Email 完全相同的一份日报全文（含 Abstract）。"""
+    if n_papers <= 0:
+        log.info("无推荐论文，跳过微信推送")
+        return False
+
+    body = md
+    if len(body) > SC_MAX_DESP:
+        body = body[:SC_MAX_DESP] + "\n\n…（内容过长已截断，完整版见 Email / reports/）"
+
+    if no_push:
+        log.info("微信推送内容已生成，跳过推送")
+        return False
+    if _post_wechat(f"📄 Paper Scout 日报 {date_str} · {n_papers} 篇", body):
+        log.info("微信推送成功 (%d 篇)", n_papers)
+        return True
+    return False
 
 
 # ====================================================================
@@ -199,7 +204,7 @@ def send_wechat(papers: list[dict], date_str: str, top_n: int = 5) -> bool:
 # ====================================================================
 def send_email(report_md: str, date_str: str, n_papers: int) -> bool:
     host = os.environ.get("SMTP_HOST", "")
-    port = int(os.environ.get("SMTP_PORT", "465"))
+    port = int(os.environ.get("SMTP_PORT") or 465)  # 空串（secrets 设了但值为空）也回退默认
     user = os.environ.get("SMTP_USER", "")
     password = os.environ.get("SMTP_PASSWORD", "")
     to = os.environ.get("EMAIL_TO", "")
@@ -208,7 +213,7 @@ def send_email(report_md: str, date_str: str, n_papers: int) -> bool:
         return False
 
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"📄 Paper Watch 日报 {date_str} · {n_papers} 篇推荐"
+    msg["Subject"] = f"📄 Paper Scout 日报 {date_str} · {n_papers} 篇推荐"
     msg["From"] = user
     msg["To"] = to
 
