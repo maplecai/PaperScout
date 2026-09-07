@@ -1,0 +1,201 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.08.31.747971",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.31.747971",
+  "title": "Global tree encoding of atlas-scale single-cell genomics",
+  "journal": "bioRxiv",
+  "authors": [
+   "Kiyota, B.",
+   "Lee, C.",
+   "Yao, H.",
+   "Yachie, N."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.31.747971v1",
+  "doi": "10.64898/2026.08.31.747971",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Nozomu Yachie",
+  "corr_affiliation": "The University of British Columbia",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "提出大规模单细胞数据的树状表示框架，支持foundation model benchmarking和生成模型训练，与virtual cell和表示学习兴趣相关。",
+   "novelty_for_me": "提供了一种可扩展的单细胞数据组织与子采样策略，可能对训练单细胞foundation model时的数据采样有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出MILK框架，通过构建全局树状层级结构对大规模单细胞基因组数据进行编码与代表性子采样。",
+   "main_finding": "该方法在保留稀有细胞群信息的前提下实现数据降维，支持深度生成模型训练和基础模型基准测试，并能捕获多分辨率的细胞全局发育轨迹与跨组织扰动。",
+   "inspiration": "在训练或评估预训练基因组学模型时，可借鉴其层级化代表性子采样策略处理大规模异质性数据，避免随机下采样导致稀有细胞类型增强子特征信息的丢失。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2025.12.08.693000",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2025.12.08.693000",
+  "title": "Design and experimental characterization of specificity-switching mutational paths of WW domains",
+  "journal": "bioRxiv",
+  "authors": [
+   "Rehan, A.",
+   "Mauri, E.",
+   "Fernandez-De-Cossio-Diaz, J.",
+   "Brun, P.-G.",
+   "Monasson, R.",
+   "Ribezzi-Crivellari, M.",
+   "Cocco, S."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2025.12.08.693000v1",
+  "doi": "10.64898/2025.12.08.693000",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Simona Cocco",
+  "corr_affiliation": "ENS",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "使用RBM等无监督学习方法进行蛋白质序列的表示学习与功能设计，与生物序列表示学习及序列到功能映射有间接方法学关联。",
+   "novelty_for_me": "蛋白质层面的序列设计和高通puting验证思路可能对增强子设计有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合受限玻尔兹曼机（RBM）无监督学习同源序列特征与路径采样方法，设计并验证蛋白质特异性转换的突变路径。",
+   "main_finding": "RBM设计的突变路径中绝大多数中间序列保持功能且优于随机突变，证明了上位性相互作用建模在功能转换中的关键作用，且该路径与祖先序列重建结果高度一致。",
+   "inspiration": "RBM对序列上位性相互作用的建模思路，可启发在评估预训练基因组学模型时，探究padding等序列扰动如何影响局部上下文的非线性特征提取与功能预测。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.08.31.748380",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.31.748380",
+  "title": "Gene function prediction from bulk coexpression is bounded by cell-type-level signal",
+  "journal": "bioRxiv",
+  "authors": [
+   "Adrian-Hamazaki, A.",
+   "Pavlidis, P."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.31.748380v1",
+  "doi": "10.64898/2026.08.31.748380",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Alexander Adrian-Hamazaki",
+  "corr_affiliation": "BC Cancer Research Center",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "揭示了bulk共表达基因功能预测受限于细胞类型层面信号，与我关注的细胞类型特异性调控预测问题有方法论上的呼应。",
+   "novelty_for_me": "提醒在跨细胞类型泛化预测中，bulk数据分辨率可能天然限制模型性能，对评估enhancer预测模型的细胞类型特异性有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于bulk共表达与细胞类型谱的基因功能预测模型解析与对比分析。",
+   "main_finding": "基于bulk共表达的基因功能预测性能主要受限于细胞类型级别的分辨率，而非精细的生化功能；使用细胞类型谱能提升预测效果与可解释性。",
+   "inspiration": "在基于虚拟表观遗传特征预测增强子活性时，需警惕预训练模型是否仅捕获了粗粒度的细胞类型特异性信号而非精细的序列-功能映射，并评估padding策略对此分辨率的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.06.03.657769",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.06.03.657769",
+  "title": "Comparing phenotypic manifolds with Kompot: Cluster-free differential expression at single-cell resolution",
+  "journal": "bioRxiv",
+  "authors": [
+   "Otto, D. J.",
+   "Arriaga-Gomez, E.",
+   "Thieme, E.",
+   "Yang, R.",
+   "Lee, S. C.",
+   "Setty, M."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.06.03.657769v1",
+  "doi": "10.1101/2025.06.03.657769",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Manu Setty",
+  "corr_affiliation": "Fred Hutchinson Cancer Center",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "提出无聚类差异表达分析框架用于多条件单细胞比较，与single-cell perturbation兴趣间接相关。",
+   "novelty_for_me": "连续表型流形上的差异分析方法可为未来评估扰动对细胞状态影响提供分析工具思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出Kompot统计框架，将细胞密度与基因表达建模为共享细胞状态流形上的连续函数，实现无聚类的单细胞多条件差异分析。",
+   "main_finding": "该方法无需预定义聚类即可在单细胞分辨率下量化差异丰度与表达，在衰老与免疫治疗模型中成功捕获了连续的细胞状态转变与异质性转录重塑。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.02.748773",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.02.748773",
+  "title": "From code to natural language: MErlin - a multiomics toolkit for bacterial epigenomics delivered as Claude agent skill.",
+  "journal": "bioRxiv",
+  "authors": [
+   "Passeri, I.",
+   "Pety, S.",
+   "Giovannini, M.",
+   "Fondi, M.",
+   "Mengoni, A.",
+   "Perrin, E."
+  ],
+  "date": "2026-09-06",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.02.748773v1",
+  "doi": "10.64898/2026.09.02.748773",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Iacopo Passeri",
+  "corr_affiliation": "University of Florence",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "涉及表观基因组学多组学整合和LLM agent接口，虽非真核调控或深度学习基础模型，但在工具化思路上有一定参考价值。",
+   "novelty_for_me": "将生物信息学分析流程封装为LLM agent skill的范式对我可能有一定启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "将多组学分析流程封装为结构化的 LLM Agent Skill，通过自然语言接口调用固定且经过审计的分析模块。",
+   "main_finding": "MErlin 工具包通过将自然语言作为操作接口而非替代科学软件，实现了细菌表观基因组多组学数据的连贯、可审计分析，并在合成与真实数据上验证了其有效性。",
+   "inspiration": "可借鉴其将自然语言作为固定分析操作接口的范式，将预训练基因组学模型的 padding 策略选择、虚拟表观特征提取与增强子活性预测封装为 LLM Agent Skill，提升模型调用与推理流程的可审计性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.08.23.671699",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.08.23.671699",
+  "title": "Adding layers of information to scRNA-seq data using pre-trained language models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Krissmer, S. M.",
+   "Menger, J.",
+   "Rollin, J.",
+   "Vogel, T. M.",
+   "Binder, H.",
+   "Hackenberg, M."
+  ],
+  "date": "2026-09-04",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.08.23.671699v1",
+  "doi": "10.1101/2025.08.23.671699",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Maren Hackenberg",
+  "corr_affiliation": "Institute of Medical Biometry and Statistics (IMBI), Faculty of Medicine and Medical Center,  University of Freiburg, Germany",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用预训练语言模型增强单细胞数据表示，虽非DNA语言模型，但在多模态表示学习思路上有间接启发。",
+   "novelty_for_me": "将文本LM与scRNA-seq定量数据对齐的微调策略可能对跨模态基础模型设计有参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "微调轻量级encoder-only生物医学语言模型，通过构建基于文本的训练数据集将scRNA-seq数据与文献语料对齐，学习共享的跨模态表征。",
+   "main_finding": "该方法在保留细胞身份的同时，为单细胞分析工作流添加了稳健且可解释的功能、疾病和发育上下文信息。",
+   "inspiration": "无明显直接启发"
+  }
+ }
+]
