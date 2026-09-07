@@ -1,4 +1,4 @@
-name: Daily Paper Watch
+name: PaperScout
 
 on:
   schedule:
@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 jobs:
-  paper-watch:
+  paperscout:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -69,6 +69,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: paper watch $(date -u +%Y-%m-%d)"
+            git commit -m "chore: PaperScout $(date -u +%Y-%m-%d)"
             git push
           fi
