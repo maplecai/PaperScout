@@ -1,0 +1,209 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.04.749355",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.04.749355",
+  "title": "BOTANIC-1: a series of long-context plant genomic foundation models in the agentic era",
+  "journal": "bioRxiv",
+  "authors": [
+   "Barozet, A.",
+   "Cabeli, V.",
+   "Ogier du Terrail, J.",
+   "Rukhovich, A.",
+   "Janssoone, T.",
+   "Klajer, G.",
+   "Sheikhitarghi, Z.",
+   "Andrews, G.",
+   "Veran, C.",
+   "Strouk, L."
+  ],
+  "date": "2026-09-07",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.04.749355v1",
+  "doi": "10.64898/2026.09.04.749355",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jean Ogier du Terrail",
+  "corr_affiliation": "Living Models",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "植物基因组语言模型，直接涉及DNA language model、基因组基础模型的自监督训练与可解释性分析，与你的genomic foundation model研究兴趣高度契合。",
+   "novelty_for_me": "展示了在非人类基因组上构建长上下文gLM的完整流程及agent集成范式，可为你评估padding策略和模型泛化提供跨物种视角的参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于自监督学习的植物基因组语言模型（gLM）系列，支持最高128kbp长上下文并可通过LLM代理调用的混合系统。",
+   "main_finding": "该模型在较小预算下于多项植物基因组任务上超越现有模型，且机制可解释性分析揭示了其能学习到编码区边界和剪接位点等具有生物学意义的序列特征。",
+   "inspiration": "其对长上下文（最高128kbp）序列处理能力的探讨及机制可解释性分析方法，可为评估预训练基因组学模型在不同padding策略下对长序列增强子活性预测的影响提供参考。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.02.748967",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.02.748967",
+  "title": "Motif-based model of transcription predicts effects of sequence variants in AR enhancers and reveals distinct functions for AR-associated transcription factors",
+  "journal": "bioRxiv",
+  "authors": [
+   "Taeb, H.",
+   "Safaeesirat, A.",
+   "Tekoglu, E.",
+   "Xiao, K.",
+   "Huang, C.-C. F.",
+   "Lack, N. A.",
+   "Emberly, E."
+  ],
+  "date": "2026-09-07",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.02.748967v1",
+  "doi": "10.64898/2026.09.02.748967",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Eldon Emberly",
+  "corr_affiliation": "Simon Fraser University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "使用基于motif的可解释模型从STARR-seq数据预测AR增强子活性及序列变异效应，直接契合增强子活性预测与sequence-to-function研究。",
+   "novelty_for_me": "提供了一种非深度学习的可解释生物物理模型来拆解增强子中不同TF的功能分类，对理解增强子序列决定机制有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于motif的物理生物学可解释模型，通过拟合STARR-seq数据预测增强子活性及变异效应。",
+   "main_finding": "模型将转录因子功能解耦为激素依赖、组成型和双功能三类，发现增强子诱导性受组成型激活因子饱和效应的负向调控；在单碱基分辨率预测突变效应表现优异并成功筛选GWAS风险变异。",
+   "inspiration": "将增强子活性拆分为基线与诱导性分别建模以解耦调控因子功能的思路，可启发我在不同细胞类型或表观遗传状态下对增强子活性进行解耦分析。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.04.06.716802",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.04.06.716802",
+  "title": "PoolParty: streamlined design of DNA sequence libraries in Python",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liu, Z.",
+   "Cordero, A.",
+   "Kinney, J. B."
+  ],
+  "date": "2026-09-05",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.04.06.716802v1",
+  "doi": "10.64898/2026.04.06.716802",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Justin Block Kinney",
+  "corr_affiliation": "Cold Spring Harbor Laboratory",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "PoolParty 专为 MPRA/DMS 序列库设计开发，直接服务于增强子活性预测和基因组AI模型探针实验。",
+   "novelty_for_me": "提供结构化、可复现的寡核苷酸池设计流程，可用于系统性评估基因组基础模型在序列变异上的预测能力。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于计算图范式的Python寡核苷酸池序列库设计工具包。",
+   "main_finding": "通过提供丰富的内置操作和可视化审计功能，将复杂的序列库设计转化为结构化、可复现的流程，并支持系统性地探测基因组AI模型的响应。",
+   "inspiration": "可利用该工具包系统生成带有特定突变或序列插入的虚拟序列库，用于在计算机内探测预训练基因组学模型对padding或虚拟表观遗传特征变化的敏感性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.08.19.745674",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.19.745674",
+  "title": "RevPert: predicting candidate drivers of transcriptomic state transitions via gallery-native reverse perturbation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liang, S.",
+   "Yang, C.",
+   "Wang, J.",
+   "Li, y."
+  ],
+  "date": "2026-09-06",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.19.745674v1",
+  "doi": "10.64898/2026.08.19.745674",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Shiyang Liang",
+  "corr_affiliation": "The No. 944 Hospital of Joint Logistic Support Force of PLA",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "涉及基于Perturb-seq数据的转录组状态转变和反向扰动预测，与单细胞扰动研究兴趣相关。",
+   "novelty_for_me": "提出了一种结合签名几何校准的反向扰动模型来预测驱动转录组转变的遗传干预。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "RevPert是一种gallery-native反向扰动模型，通过结合带符号皮尔逊连通性先验与学习残差来对候选遗传扰动进行排序。",
+   "main_finding": "该模型在多项Perturb-seq和基因敲除筛选中实现了最优的留出干预恢复效果，并在疾病耐药性对比中显著提升了预定义疾病锚点的排序准确性。",
+   "inspiration": "其将先验统计关系与学习残差相结合的范式，可启发在增强子活性预测中融合先验表观遗传特征与深度学习预测残差以优化模型性能。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.06.749605",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.06.749605",
+  "title": "Capsid-specialized protein language models reveal higher-order viral architecture from sequence",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liu, S.",
+   "Xia, S.",
+   "Wang, H."
+  ],
+  "date": "2026-09-07",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.06.749605v1",
+  "doi": "10.64898/2026.09.06.749605",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hong Wang",
+  "corr_affiliation": "Tongji university",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "蛋白质语言模型用于病毒衣壳序列表示学习，与你的DNA language model和representation learning for biological sequences有方法论上的类比性。",
+   "novelty_for_me": "稀疏自encoder分解语义motif的可解释性方法，可能对你分析基因组基础模型学到的特征有方法论借鉴。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于预训练蛋白质语言模型微调构建衣壳专用模型 ESMCapsid，并利用稀疏自编码器对表征进行语义 motif 分解与三维结构映射。",
+   "main_finding": "模型在宏基因组规模识别出大量同源性暗区衣壳蛋白，并证明语言模型表征能捕获超越序列相似性的高阶几何约束与结构谱系信息。",
+   "inspiration": "稀疏自编码器分解预训练表征以提取可解释语义 motif 的范式，可借鉴用于解析预训练基因组学模型在增强子序列上学习到的功能语法特征。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.03.747733",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.03.747733",
+  "title": "Learning from tandem mass spectra at scale with a self-supervised foundation model for proteomics",
+  "journal": "bioRxiv",
+  "authors": [
+   "Nieuwoudt, M.",
+   "Reverenna, M.",
+   "Patel, D.",
+   "Catzel, R.",
+   "Houngue, I. H. J.",
+   "Daniel, J.",
+   "Eloff, K.",
+   "Santos, A.",
+   "Lopez Carranza, N.",
+   "Jenkins, T. P.",
+   "Van Goey, J.",
+   "Kalogeropoulos, K."
+  ],
+  "date": "2026-09-07",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.03.747733v1",
+  "doi": "10.64898/2026.09.03.747733",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Konstantinos Kalogeropoulos",
+  "corr_affiliation": "Technical University of Denmark",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "虽然是蛋白质组学质谱的基础模型，但其自监督掩蔽重建的训练范式对DNA语言模型有一定参考价值。",
+   "novelty_for_me": "在质谱数据上应用物理感知的掩蔽重建目标训练Transformer基础模型，思路可借鉴。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于物理感知掩码重建目标训练的仅编码器Transformer自监督基础模型。",
+   "main_finding": "该模型无需标签即可编码质谱的实验与生物学属性，并在从头测序等下游任务中实现跨数据集和仪器的鲁棒迁移。",
+   "inspiration": "其物理感知的掩码重建范式可启发在基因组学预训练中引入表观遗传调控先验以设计掩码目标。"
+  }
+ }
+]
