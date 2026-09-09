@@ -1,0 +1,349 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.07.749809",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.07.749809",
+  "title": "EukaUTR: a foundation model for functional modelling and design of eukaryotic 3' UTRs",
+  "journal": "bioRxiv",
+  "authors": [
+   "lang, M.",
+   "Fang, X.",
+   "Chen, M.",
+   "Wang, Z.",
+   "Cheng, Z.",
+   "Zhu, X.",
+   "Tam, K. Y.",
+   "Zhang, J.",
+   "Li, X."
+  ],
+  "date": "2026-09-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.07.749809v1",
+  "doi": "10.64898/2026.09.07.749809",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Xiaolin Li",
+  "corr_affiliation": "Hangzhou Institute of Medicine, Chinese Academy of Sciences, Hangzhou, 310018, Zhejiang, China",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出了一个针对3' UTR的序列到功能再到设计的基础模型，与你的序列到功能预测和序列表示学习兴趣高度相关。",
+   "novelty_for_me": "将基础模型应用于3' UTR的统一预测与设计框架，提供了序列表示学习的新应用场景。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于跨进化谱系的大规模真核 3' UTR 序列预训练，构建统一预测、解释与设计的序列到功能基础模型。",
+   "main_finding": "EukaUTR 在 13 项转录后调控与表达预测任务上迁移性能显著优于基线（最高提升 27.45%），并具备生成功能性新序列及指导稳定性编辑的设计能力。",
+   "inspiration": "其跨谱系大规模预训练提升下游多任务迁移性的策略，可借鉴用于构建跨细胞类型增强子活性预测的预训练模型，以增强虚拟表观遗传特征预测的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.03.749190",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.03.749190",
+  "title": "A Transferable Genomic Language Model Framework for Fungal Gene Essentiality Prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liao, C.",
+   "Thomas, H."
+  ],
+  "date": "2026-09-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.03.749190v1",
+  "doi": "10.64898/2026.09.03.749190",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Chen Liao",
+  "corr_affiliation": "Dartmouth College",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "评估了基因组语言模型在预测真菌基因必需性上的表现，与你的DNA语言模型和序列到功能预测兴趣直接相关。",
+   "novelty_for_me": "揭示了DNA嵌入在预测高阶细胞表型时的信息瓶颈，并通过多模态特征整合来缓解，对评估基础模型能力有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合预训练基因组语言模型（Evo2）DNA嵌入与系统级特征（直系同源、PPI）的多模态迁移学习框架。",
+   "main_finding": "预测性能瓶颈在于预训练DNA嵌入包含的生物信息量而非下游分类器复杂度；整合系统级特征的多模态方法可突破此瓶颈并实现跨物种迁移。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性时，需警惕DNA序列嵌入向高阶表观遗传特征映射时的信息衰减，可考虑整合虚拟表观遗传特征等多模态信息以突破瓶颈。"
+  }
+ },
+ {
+  "id": "pubmed:42708417",
+  "source": "pubmed",
+  "raw_id": "42708417",
+  "title": "Plant cis-regulatory grammar: Decoding the multidimensional code of transcriptional regulation for programmable crop engineering.",
+  "journal": "Journal of integrative plant biology",
+  "authors": [
+   "Libin Zhang",
+   "Maoteng Li"
+  ],
+  "date": "2026-09-08",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42708417/",
+  "doi": "10.1111/jipb.70386",
+  "pmid": "42708417",
+  "arxiv_id": "",
+  "corr_author": "Maoteng Li",
+  "corr_affiliation": "Key Laboratory of Molecular Biophysics of the Ministry of Education, College of Life Science and Technology, Huazhong University of Science and Technology, Wuhan, 430074, China.",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "综述了植物顺式调控元件的AI预测与设计，并提出了植物调控语法基础模型的构想，与你的增强子设计和基础模型兴趣有一定关联。",
+   "novelty_for_me": "提供了植物领域顺式调控语法基础模型的视角和路线图，可能对跨物种基础模型设计有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "综述提出结合单细胞表观基因组学与AI基础模型解码植物顺式调控语法并设计合成CREs的方法范式。",
+   "main_finding": "CRE功能不仅源于DNA序列，更依赖多维表观遗传上下文；构建植物调控语法基础模型可实现超越自然进化的基因表达预测与工程化。",
+   "inspiration": "论文强调CRE功能对多维表观上下文的依赖，启发我在游离型增强子活性预测中，将虚拟表观遗传特征作为核心上下文信息融入预训练基因组学模型，以提升跨细胞类型的预测精度。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.05.01.721665",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.05.01.721665",
+  "title": "Is FFT window length a neutral preprocessing choice in CNN-based dolphin whistle detection? A cross-domain sensitivity analysis.",
+  "journal": "bioRxiv",
+  "authors": [
+   "De Marco, R.",
+   "Iurcev, M.",
+   "Trebbi, A.",
+   "Lagorio, S."
+  ],
+  "date": "2026-09-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.05.01.721665v1",
+  "doi": "10.64898/2026.05.01.721665",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Rocco De Marco",
+  "corr_affiliation": "Institute of Biological Resources and Marine Biotechnology (IRBIM) - National Research Council (CNR)",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "虽领域为声学，但其研究预处理参数对CNN跨域泛化影响的实验设计，与我评估基因组基础模型padding策略的研究在方法论上高度相似。",
+   "novelty_for_me": "提供了一个研究“看似中性的预处理选择如何系统性影响跨域泛化”的实验框架，可直接借鉴到基因组基础模型的padding策略评估中。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于声谱图的CNN分类模型结合跨域敏感性分析，评估FFT窗口长度这一预处理参数对模型泛化能力的影响。",
+   "main_finding": "常规被视为中性的预处理参数（FFT窗口长度）在域内验证中表现一致，但在跨域评估中对模型泛化能力产生显著且系统性的影响，甚至导致无法被域内验证察觉的迁移失败。",
+   "inspiration": "该跨域敏感性分析范式可直接借鉴，用于系统评估预训练基因组学模型中不同padding策略对跨细胞类型增强子活性预测泛化能力的影响，避免仅依赖域内指标得出错误结论。"
+  }
+ },
+ {
+  "id": "arxiv:2609.08165",
+  "source": "arxiv",
+  "raw_id": "2609.08165",
+  "title": "A Transformer-Based Delta Expression Encoder for Psilocybin Transcriptional Response: Architecture, Representations, and Biological Validation",
+  "journal": "arXiv",
+  "authors": [
+   "Sai Jayakumar"
+  ],
+  "date": "2026-09-08",
+  "url": "https://arxiv.org/abs/2609.08165",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.08165",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "使用Transformer编码器对单细胞转录组药物扰动进行建模，与你的单细胞扰动和表示学习兴趣间接相关。",
+   "novelty_for_me": "提出了一种基于Transformer的“delta expression”编码器来分类转录扰动状态，思路可能对虚拟细胞建模有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于Transformer的差异表达编码器，在无先验监督下从单核RNA测序伪bulk数据中分类基因表达变化状态。",
+   "main_finding": "模型在预测赛洛西宾转录响应时表现出细胞类型依赖的准确率，发现下调响应比上调更具跨个体一致性，且注意力机制可无监督恢复药物特异性基因共调控模块。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.04.749409",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.04.749409",
+  "title": "A single-nucleus multiomic and spatial atlas of gene regulation in human spermatogenesis",
+  "journal": "bioRxiv",
+  "authors": [
+   "Bhaskaran, J.",
+   "Ing-Simmons, E.",
+   "Balaguer Balsells, I.",
+   "Di Persio, S.",
+   "Chan, M. M.",
+   "Politz, M.",
+   "Cremers, J.-F.",
+   "Rotte, N.",
+   "Kliesch, S.",
+   "Friedrich, C.",
+   "Tuettelmann, F.",
+   "Ernst, C.",
+   "Laurentino, S.",
+   "Neuhaus, N.",
+   "Vaquerizas, J. M."
+  ],
+  "date": "2026-09-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.04.749409v1",
+  "doi": "10.64898/2026.09.04.749409",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Juan M Vaquerizas",
+  "corr_affiliation": "MRC Laboratory of Medical Sciences, London, UK",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "构建了精子发生过程中的单核多组学和空间基因调控图谱，属于调控基因组学数据资源，但缺乏新的计算建模方法。",
+   "novelty_for_me": "提供了细胞类型特异性的增强子-靶基因关联数据资源，可能对增强子活性预测模型的验证有间接帮助。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "整合单核多组学（snATAC-seq与snRNA-seq）与空间转录组数据，构建并推断阶段特异性的基因调控网络（GRN）。",
+   "main_finding": "构建了人类精子发生的高分辨率时空基因调控图谱，揭示了生殖与体细胞发育阶段的特异性调控网络，并将非编码不孕症风险位点映射至特定细胞类型的候选增强子及靶基因。",
+   "inspiration": "该研究产生的单核ATAC-seq数据及推断的细胞类型特异性增强子-靶基因关联，可作为评估预训练基因组学模型在生殖细胞发育场景下预测游离型增强子活性的高质量基准验证集。"
+  }
+ },
+ {
+  "id": "arxiv:2609.08059",
+  "source": "arxiv",
+  "raw_id": "2609.08059",
+  "title": "MI-PEFT: Mixture-of-Experts Integrated Parameter-Efficient Fine-Tuning Protein Language Models Improves Acidophilic Proteins Classification",
+  "journal": "arXiv",
+  "authors": [
+   "Honghan Shen"
+  ],
+  "date": "2026-09-07",
+  "url": "https://arxiv.org/abs/2609.08059",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.08059",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "虽是语言模型PEFT方法，但针对蛋白质而非DNA基因组基础模型，仅有间接参考价值。",
+   "novelty_for_me": "MoE集成PEFT在语言模型上的应用思路可能对基因组基础模型微调有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于ESM C-600M预训练蛋白语言模型，融合LoRA参数高效微调与DeepSeekMoE混合专家分类头的PEFT框架。",
+   "main_finding": "该框架通过保留预训练表征并引入MoE分类头，在高度类别不平衡的嗜酸蛋白分类任务中显著提升了特异性与计算效率。",
+   "inspiration": "在多细胞类型增强子活性预测中，可借鉴MoE分类头建模不同细胞类型的特异性，并结合PEFT策略缓解小样本或类别不平衡问题。"
+  }
+ },
+ {
+  "id": "arxiv:2609.06598",
+  "source": "arxiv",
+  "raw_id": "2609.06598",
+  "title": "Deep Barycentric Regression for Optimal Transport Map Estimation and its Statistical Optimality",
+  "journal": "arXiv",
+  "authors": [
+   "Kunwoong Kim",
+   "Insung Kong",
+   "Yongdai Kim"
+  ],
+  "date": "2026-09-06",
+  "url": "https://arxiv.org/abs/2609.06598",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.06598",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "提出了一种基于深度学习的最优传输图估计方法，并在单细胞扰动预测任务上进行了验证。",
+   "novelty_for_me": "其最优传输图估计方法可能为单细胞扰动预测提供新的建模思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出BROT（两步深度重心回归法），先计算无正则化最优传输计划，再用深度神经网络通过最小二乘回归拟合传输映射。",
+   "main_finding": "该方法在Lipschitz条件下具备minimax最优收敛率，规避了对抗训练的不稳定性，并在单细胞扰动预测等下游任务中提升了性能。",
+   "inspiration": "论文利用最优传输进行分布对齐与单细胞扰动预测，启发我在处理不同细胞类型间虚拟表观遗传特征的分布差异时，可引入BROT进行特征空间对齐，以提升跨细胞类型增强子活性预测的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.04.749363",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.04.749363",
+  "title": "scFLAME: a unified generative model for interpretable clustering, hierarchical structure discovery and marker-gene identification in single-cell RNA-seq data",
+  "journal": "bioRxiv",
+  "authors": [
+   "Rao, J.",
+   "Jihad, M.",
+   "Biffi, G.",
+   "Kirk, P. D."
+  ],
+  "date": "2026-09-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.04.749363v1",
+  "doi": "10.64898/2026.09.04.749363",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jackie Rao",
+  "corr_affiliation": "MRC Biostatistics Unit",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "提出单细胞转录组数据的统一概率生成模型，与你的single-cell perturbation和virtual cell兴趣有一定间接关联。",
+   "novelty_for_me": "将聚类、层次结构发现和marker基因识别统一到一个生成模型中的思路，可能对单细胞建模有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合负二项因子分析与高斯混合先验的统一概率生成模型，实现单细胞转录组数据的联合嵌入与聚类。",
+   "main_finding": "该模型以单一可解释框架替代了多步分析流程，在聚类精度、跨平台鲁棒性及大规模数据扩展性上均优于现有方法。",
+   "inspiration": "无明显直接启发。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2024.08.01.606258",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2024.08.01.606258",
+  "title": "Toward De Novo Protein Design from Natural Language",
+  "journal": "bioRxiv",
+  "authors": [
+   "Dai, F.",
+   "You, S.",
+   "Zhu, Y.",
+   "Gao, Y.",
+   "Fu, L.",
+   "Zhou, X.",
+   "Su, J.",
+   "Wang, C.",
+   "Fan, Y.",
+   "Ma, X.",
+   "Deng, X.",
+   "Yu, L.",
+   "Qian, H.",
+   "He, Y.",
+   "Ke, Y.",
+   "Han, C.",
+   "Chang, X.",
+   "Zheng, L.",
+   "Wang, S.",
+   "Wang, Y.",
+   "Zeng, A.",
+   "Wang, S.",
+   "Si, T.",
+   "Liu, J.",
+   "Lu, H.",
+   "Yuan, F."
+  ],
+  "date": "2026-09-08",
+  "url": "https://www.biorxiv.org/content/10.1101/2024.08.01.606258v1",
+  "doi": "10.1101/2024.08.01.606258",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Fajie Yuan",
+  "corr_affiliation": "Westlake University",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "基于自然语言的蛋白质从头设计基础模型，与你的representation learning for biological sequences和foundation model兴趣间接相关。",
+   "novelty_for_me": "使用自然语言作为接口生成生物序列的大模型思路，对跨模态基因组基础模型的设计有一定启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于自然语言到蛋白质序列/结构的多模态基础模型（Pinal），通过大规模合成蛋白质-文本对进行预训练。",
+   "main_finding": "该模型能直接从自然语言功能描述生成具有高可折叠性和功能多样性的全新蛋白质，且在多个实验任务中无需迭代优化即表现出预期催化或功能活性。",
+   "inspiration": "利用自然语言作为高级接口指导序列到功能映射的思路，可启发将虚拟表观遗传特征转化为语义表征，以指导增强子活性预测的预训练模型设计。"
+  }
+ }
+]
