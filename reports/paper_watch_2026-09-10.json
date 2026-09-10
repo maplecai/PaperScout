@@ -1,0 +1,340 @@
+[
+ {
+  "id": "pubmed:42711533",
+  "source": "pubmed",
+  "raw_id": "42711533",
+  "title": "Flexible use of conserved motifs constrains genome access in cell type evolution.",
+  "journal": "Nature ecology & evolution",
+  "authors": [
+   "Chew Chai",
+   "Jesse Gibson",
+   "Pengyang Li",
+   "Brennan D McDonald",
+   "Anusri Pampari",
+   "Aman Patel",
+   "Anshul Kundaje",
+   "Bo Wang"
+  ],
+  "date": "2026-09-08",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42711533/",
+  "doi": "10.1038/s41559-026-03164-5",
+  "pmid": "42711533",
+  "arxiv_id": "",
+  "corr_author": "Bo Wang",
+  "corr_affiliation": "Department of Bioengineering, Stanford University, Stanford, CA, USA. wangbo@stanford.edu.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "使用深度学习模型预测跨物种的细胞类型特异性染色质可及性，直接涉及sequence-to-function和细胞类型特异性调控的泛化问题。",
+   "novelty_for_me": "揭示了细胞类型家族水平的调控语法跨物种保守但单个细胞类型水平进化迅速，对理解跨细胞类型泛化能力下降的机制有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合单核多组学与深度学习模型，跨物种解析染色质可及性序列并提取调控motif的组合语法。",
+   "main_finding": "细胞类型家族的motif词汇表进化保守，但细胞类型特异性的motif组合语法进化迅速；跨物种深度学习模型在家族水平具泛化性，但在细胞类型水平失效。",
+   "inspiration": "评估预训练基因组学模型预测不同细胞类型增强子活性时，需警惕模型可能依赖不同的序列特征（或padding伪影）达到趋同预测，从而掩盖真实的细胞类型特异性调控语法。"
+  }
+ },
+ {
+  "id": "pubmed:42567165",
+  "source": "pubmed",
+  "raw_id": "42567165",
+  "title": "PlantCAD2: A DNA foundation model for interpreting genomes across flowering plants.",
+  "journal": "Cell genomics",
+  "authors": [
+   "Jingjing Zhai",
+   "Aaron Gokaslan",
+   "Sheng-Kai Hsu",
+   "Szu-Ping Chen",
+   "Zong-Yan Liu",
+   "Edgar Marroquin",
+   "Eric Czech",
+   "Betsy Cannon",
+   "Ana Berthel",
+   "M Cinta Romay",
+   "Matt Pennell",
+   "Volodymyr Kuleshov",
+   "Edward S Buckler"
+  ],
+  "date": "2026-08-07",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42567165/",
+  "doi": "10.1016/j.xgen.2026.101329",
+  "pmid": "42567165",
+  "arxiv_id": "",
+  "corr_author": "Edward S Buckler",
+  "corr_affiliation": "Institute for Genomic Diversity, Cornell University, Ithaca, NY 14853, USA; Section of Plant Breeding and Genetics, Cornell University, Ithaca, NY 14853, USA; USDA-ARS, Ithaca, NY 14853, USA. Electronic address: ed.buckler@usda.gov.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出植物特异性DNA基础模型，涉及DNA语言模型预训练和染色质可及性预测，与基因组基础模型评估研究高度相关。",
+   "novelty_for_me": "展示了8192bp长上下文窗口对大基因组远端调控预测的显著提升，对理解上下文长度在基因组基础模型中的作用有直接参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "PlantCAD2，一种基于单核苷酸分辨率、具有8192bp扩展上下文窗口的植物特异性DNA基础语言模型，在65个被子植物基因组上预训练。",
+   "main_finding": "该676M参数模型在零样本进化保守性任务上超越7B参数的Evo2，并在微调后的跨物种染色质可及性等任务上优于1B参数的AgroNT；其8192bp的长上下文窗口显著提升了大基因组（如玉米）的染色质可及性预测性能。",
+   "inspiration": "该模型证明长上下文窗口对远端调控建模至关重要，启发我在评估预训练基因组学模型的padding或截断策略时，需重点考察不同上下文长度对游离型增强子远端调控特征及虚拟表观遗传特征捕获能力的影响。"
+  }
+ },
+ {
+  "id": "pubmed:42715312",
+  "source": "pubmed",
+  "raw_id": "42715312",
+  "title": "A systematic comparison of single-cell perturbation response prediction models.",
+  "journal": "Science advances",
+  "authors": [
+   "Lanxiang Li",
+   "Yue You",
+   "Yunlin Fu",
+   "Wenyu Liao",
+   "Xueying Fan",
+   "Shihong Lu",
+   "Ye Cao",
+   "Bo Li",
+   "Wenle Ren",
+   "Jiaming Kong",
+   "Shuangjia Zheng",
+   "Jizheng Chen",
+   "Xiaodong Liu",
+   "Luyi Tian"
+  ],
+  "date": "2026-09-09",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42715312/",
+  "doi": "10.1126/sciadv.aed3414",
+  "pmid": "42715312",
+  "arxiv_id": "",
+  "corr_author": "Luyi Tian",
+  "corr_affiliation": "GMU-GIBH Joint School of Life Sciences, Guangzhou Medical University, Guangzhou, China.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "系统基准测试单细胞扰动响应预测模型，涵盖跨细胞类型泛化任务，直接命中single-cell perturbation研究兴趣。",
+   "novelty_for_me": "揭示了当前扰动预测模型在跨细胞类型泛化上的系统性局限以及不同评估指标探测不同生物学信号的事实，对评估模型泛化性有重要参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "大规模基准测试与系统评估框架，涵盖13种单细胞扰动响应预测模型（含基础模型）在多任务、多指标下的泛化能力评估。",
+   "main_finding": "模型预测性能高度依赖扰动效应大小与评估指标视角，且普遍存在保守偏置（如基础模型压缩方差、低估协同效应），跨细胞类型泛化能力整体不足。",
+   "inspiration": "评估预训练基因组学模型在不同细胞类型增强子活性预测时，需警惕基础模型压缩分布方差的保守偏置，并采用多维度指标（如绝对值与相对变化指标）以避免单一视角的误导。"
+  }
+ },
+ {
+  "id": "pubmed:42716007",
+  "source": "pubmed",
+  "raw_id": "42716007",
+  "title": "UniCure: A multi-modal model for predicting personalized cancer therapy response.",
+  "journal": "Cancer cell",
+  "authors": [
+   "Zexi Chen",
+   "Saisai Tian",
+   "Jiazheng Pei",
+   "Ruichu Gu",
+   "Yongge Li",
+   "Shizhi Ding",
+   "Yaqian Xu",
+   "Xinlong Zheng",
+   "Miaoyu Liu",
+   "Xinxing Du",
+   "Yuanyuan Zhou",
+   "Junchao Zhu",
+   "Jiawei Zou",
+   "Jing Xu",
+   "Wenli Jiang",
+   "Chen Ye",
+   "Baijun Dong",
+   "Qi Zhang",
+   "Shengxiang Ren",
+   "Shu Wang",
+   "Han Wen",
+   "Weidong Zhang",
+   "Luonan Chen"
+  ],
+  "date": "2026-09-09",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42716007/",
+  "doi": "10.1016/j.ccell.2026.07.010",
+  "pmid": "42716007",
+  "arxiv_id": "",
+  "corr_author": "Luonan Chen",
+  "corr_affiliation": "State Key Laboratory of Cell Biology, Center for Excellence in Molecular Cell Science, Shanghai Institute of Biochemistry and Cell Biology, Chinese Academy of Sciences, Shanghai 200031, China; School of Mathematical Sciences and School of AI, Shanghai Jiao Tong University, Shanghai 200240, China. Electronic address: lnchen@sjtu.edu.cn.",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "涉及基础模型预测跨细胞类型的转录组扰动响应，与你的single-cell perturbation及跨细胞类型泛化兴趣间接相关。",
+   "novelty_for_me": "将生物与化学基础模型结合用于药物扰动响应的跨细胞类型泛化，其泛化策略可能对增强子跨细胞类型预测有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "融合生物与化学基础模型的多模态预训练范式，通过大规模转录组扰动数据预训练并在患者衍生数据上微调以预测药物响应。",
+   "main_finding": "该模型能准确预测剂量依赖及组合用药反应，跨bulk与单细胞数据泛化，并在真实临床数据上实现有效的患者级疗效预测与分层。",
+   "inspiration": "其利用大规模扰动数据预训练并在少量患者衍生数据上微调的范式，可启发我利用预训练基因组学模型结合少量特定细胞类型增强子活性数据进行微调，以提升游离型增强子活性预测的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.03.17.712034",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.03.17.712034",
+  "title": "ProteinSage: From implicit learning to explicit structural constraints for efficient protein language modeling",
+  "journal": "bioRxiv",
+  "authors": [
+   "Shen, L.",
+   "Chao, L.",
+   "Liu, T.",
+   "Liu, Q.",
+   "Zhou, G.",
+   "Wang, H.",
+   "Dong, X.",
+   "Li, T.",
+   "Zhang, X.",
+   "Ni, J."
+  ],
+  "date": "2026-09-09",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.03.17.712034v1",
+  "doi": "10.64898/2026.03.17.712034",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Xiaoming Zhang",
+  "corr_affiliation": "BioMap",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "蛋白质语言模型引入结构约束进行预训练，与你的representation learning for biological sequences兴趣相关。",
+   "novelty_for_me": "结构引导掩码和因果目标提升预训练效率的思路，可能对DNA语言模型的预训练策略设计有借鉴意义。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于显式结构约束（结构引导掩码与长程因果目标）的蛋白质语言模型预训练框架。",
+   "main_finding": "显式结构约束预训练能用更少数据与算力获得可迁移的蛋白质表征，并在基准测试及远缘同源蛋白发现任务中验证了其结构泛化能力。",
+   "inspiration": "启发我在预训练基因组学模型时引入显式染色质三维结构或表观遗传特征作为掩码约束，以提升少样本下增强子活性预测的泛化能力并缓解 padding 对长程依赖建模的干扰。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.02.749017",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.02.749017",
+  "title": "EvSpark: Lossless Speculative Decoding for Hybrid DNA Foundation Models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Ding, H.",
+   "Wu, N.",
+   "Qiu, T."
+  ],
+  "date": "2026-09-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.02.749017v1",
+  "doi": "10.64898/2026.09.02.749017",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Nannan Wu",
+  "corr_affiliation": "CreatiPhage Biotechnology Co., Ltd.",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "涉及DNA基础模型（如Evo2）的推理加速与系统优化，与基因组基础模型的工程实现间接相关。",
+   "novelty_for_me": "提供了针对混合架构DNA基础模型的无损推测解码方法，对大模型部署有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "针对混合Hyena/attention架构DNA基础模型，提出基于状态切片回滚协议与蒸馏神经起草器的无损投机解码框架。",
+   "main_finding": "该框架在零额外重计算下实现3.16倍端到端无损加速；实验表明蒸馏起草器的注入层选择在真实预算下无显著差异，但小预算下会系统性误判。",
+   "inspiration": "混合架构DNA模型中IIR递归状态具有无限记忆特性，提示在评估此类预训练模型padding对增强子预测的影响时，需警惕padding token对SSM状态递归的污染。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.04.749524",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.04.749524",
+  "title": "Stable epigenetic states set single-cell activation thresholds in mammalian expression systems",
+  "journal": "bioRxiv",
+  "authors": [
+   "Costa, E. J.",
+   "Rios-Martinez, C.",
+   "Andrews, C. J.",
+   "Ferrell, J. E.",
+   "Bintu, L."
+  ],
+  "date": "2026-09-09",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.04.749524v1",
+  "doi": "10.64898/2026.09.04.749524",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Lacramioara Bintu",
+  "corr_affiliation": "Stanford University",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "研究表观遗传状态如何决定单细胞水平的转录激活阈值，与你跨细胞类型增强子活性预测项目中关于细胞类型特异性的生物学理解有间接关联。",
+   "novelty_for_me": "揭示了染色质编码的TF occupancy变异性导致单细胞激活阈值分布，这对理解增强子报告实验中群体水平vs单细胞水平的活性差异有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合单细胞分选、单分子足迹法与转录调控数学建模的实验计算联合范式。",
+   "main_finding": "群体水平呈梯度的转录响应在单细胞水平实为“全或无”开关，其源于染色质编码的TF占据率与激活强度的长期变异性，而非转录爆发或双稳态。",
+   "inspiration": "在构建虚拟表观遗传特征预测增强子活性时，需考虑TF占据率的染色质异质性及单细胞激活阈值效应，避免仅依赖群体平均特征导致预测偏差。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.10.31.685892",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.10.31.685892",
+  "title": "Empirical Evaluation of Single-Cell Foundation Models for Predicting Cancer Outcomes",
+  "journal": "bioRxiv",
+  "authors": [
+   "Roman, A.",
+   "Johri, S.",
+   "Conci, R.",
+   "Van Allen, E.",
+   "Elmarakeby, H."
+  ],
+  "date": "2026-09-09",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.10.31.685892v1",
+  "doi": "10.1101/2025.10.31.685892",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Eliezer Van Allen",
+  "corr_affiliation": "Dana Farber Cancer Institute",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "系统评估单细胞基础模型在临床任务上的表现，其基础模型评估方法论（zero-shot、fine-tuning）可能对评估基因组基础模型有间接启发。",
+   "novelty_for_me": "揭示了当前单细胞基础模型在预测临床结果时相比简单基线模型优势有限，为评估基础模型的局限性提供参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出一种基于代理（agentic）的自动化评估框架，系统评测12个单细胞基础模型在7项癌症临床任务（零样本、持续训练、微调）中的表现。",
+   "main_finding": "当前单细胞基础模型在肿瘤微环境细胞注释等任务上表现优异，但在预测患者临床结局方面相比简单基线模型优势有限。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性的效用时，应引入简单基线模型进行严格对比，并可借鉴其自动化评估框架系统测试不同padding策略对模型性能的影响。"
+  }
+ },
+ {
+  "id": "arxiv:2609.10193",
+  "source": "arxiv",
+  "raw_id": "2609.10193",
+  "title": "Are You Learning Biological Signal or Shortcuts? Auditing and Mitigating Bias in Protein-Protein Interaction Datasets",
+  "journal": "arXiv",
+  "authors": [
+   "Judith Bernett",
+   "Anton Spannagl",
+   "Joel Ås",
+   "Markus List",
+   "David B. Blumenthal"
+  ],
+  "date": "2026-09-09",
+  "url": "https://arxiv.org/abs/2609.10193",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.10193",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "系统审计生物ML数据集中的shortcut learning和数据划分偏差，方法论对评估基因组基础模型的泛化性和数据泄漏有间接启发。",
+   "novelty_for_me": "提供了生物序列数据集偏差审计和缓解的系统化流程，可借鉴到基因组模型的评估中。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于整数线性规划的相似性感知数据集划分与偏差最小化负样本采样框架。",
+   "main_finding": "PPI数据集存在多种隐蔽偏差导致模型学习捷径，且直觉性的高置信度负样本采样反而会放大功能相关性偏差；通过优化算法进行数据划分和负采样可有效缓解。",
+   "inspiration": "在构建增强子活性预测的正负样本集时，可借鉴基于优化的负样本采样策略以平衡序列特征（如GC含量、长度）分布，防止预训练基因组学模型利用padding或序列捷径而非真实表观遗传特征进行预测。"
+  }
+ }
+]
