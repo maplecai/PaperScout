@@ -1,0 +1,97 @@
+[
+ {
+  "id": "pubmed:42717834",
+  "source": "pubmed",
+  "raw_id": "42717834",
+  "title": "Decoding gene regulation in plant genomes with artificial intelligence.",
+  "journal": "Journal of experimental botany",
+  "authors": [
+   "Niraj Rayamajhi",
+   "Tianyang Xu",
+   "Tianci Liu",
+   "Jing Gao",
+   "Kranthi Varala",
+   "Ying Li"
+  ],
+  "date": "2026-09-10",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42717834/",
+  "doi": "10.1093/jxb/erag323",
+  "pmid": "42717834",
+  "arxiv_id": "",
+  "corr_author": "Ying Li",
+  "corr_affiliation": "Department of Horticulture and Landscape Architecture, Purdue University, West Lafayette, IN 47907, USA.",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "综述了AI和LLM在植物调控基因组学中的应用，包括预测表观基因组特征和调控DNA元件，与你的研究兴趣有交叉。",
+   "novelty_for_me": "提供了植物基因组中AI/LLM应用的视角，可能对跨物种的调控元件预测有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "综述AI与大型语言模型（LLM）在植物基因组学中预测表观特征、调控元件及基因表达的方法范式",
+   "main_finding": "AI和LLM技术显著提升了从复杂植物基因组数据中解析表观特征、调控元件及基因调控网络等调控信息的能力",
+   "inspiration": "植物基因组中利用LLM预测表观特征和调控元件的范式，可为跨物种增强子活性预测及虚拟表观特征提取提供模型架构参考"
+  }
+ },
+ {
+  "id": "pubmed:42717098",
+  "source": "pubmed",
+  "raw_id": "42717098",
+  "title": "An operational perturbation proteomics-based virtual cell model.",
+  "journal": "Nature",
+  "authors": [
+   "Rui Sun",
+   "Liujia Qian",
+   "Yongge Li",
+   "Tong Liu",
+   "Honghan Cheng",
+   "Xuedong Zhang",
+   "Xueya Zhou",
+   "Yuecheng Zhan",
+   "Guangmei Zhang",
+   "Zhengchao Luo",
+   "Kunpeng Ma",
+   "Chunlong Wu",
+   "Dongchen Ji",
+   "Zhangzhi Xue",
+   "Hongxue Meng",
+   "Yuhang Xiang",
+   "Dingwei Lei",
+   "Qianhe Zhou",
+   "Wenbin Hu",
+   "Yuhan Deng",
+   "Lingling Tan",
+   "Qi Xiao",
+   "Zhiwei Liu",
+   "Lei Zeng",
+   "Liqin Qian",
+   "Xuan Zheng",
+   "Qiong Hu",
+   "Nianzi Luo",
+   "Weinan E",
+   "Peijie Zhou",
+   "Han Wen",
+   "Yi Zhu",
+   "Tiannan Guo"
+  ],
+  "date": "2026-09-09",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42717098/",
+  "doi": "10.1038/s41586-026-11001-9",
+  "pmid": "42717098",
+  "arxiv_id": "",
+  "corr_author": "Tiannan Guo",
+  "corr_affiliation": "Affiliated Hangzhou First People's Hospital, State Key Laboratory of Medical Proteomics, School of Medicine, School of Future Biomedicine, Westlake University, Hangzhou, China. guotiannan@westlake.edu.cn.",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "提出基于扰动蛋白质组学的虚拟细胞模型，与你研究兴趣中的virtual cell和single-cell perturbation概念相关。",
+   "novelty_for_me": "从蛋白质组学和时间分辨扰动数据构建虚拟细胞模型的思路，可能为表观基因组虚拟细胞提供参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于大规模时间分辨扰动蛋白质组学数据，采用预训练框架学习可迁移的动态蛋白质轨迹潜在表征，构建虚拟细胞模型。",
+   "main_finding": "该模型通过学习蛋白质对扰动的条件响应，能高效预测药物疗效及患者分层，并在细胞系、类器官和临床活检间展现出强大的跨样本迁移能力。",
+   "inspiration": "其利用大规模扰动数据预训练动态潜在表征的范式，启发我在构建虚拟表观遗传特征时，可引入条件维度的表观扰动数据预训练，以提升跨细胞类型游离型增强子活性预测的泛化能力。"
+  }
+ }
+]
