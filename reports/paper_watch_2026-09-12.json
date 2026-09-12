@@ -1,0 +1,357 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.08.750172",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.08.750172",
+  "title": "Causal variant underestimation is a major overlooked driver of sequence-to-function model underperformance",
+  "journal": "bioRxiv",
+  "authors": [
+   "Drusinsky, S.",
+   "Pollard, K. S."
+  ],
+  "date": "2026-09-11",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.08.750172v1",
+  "doi": "10.64898/2026.09.08.750172",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Shiron Drusinsky",
+  "corr_affiliation": "Gladstone Institutes",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接评估了state-of-the-art的sequence-to-function模型（AlphaGenome）在变异效应和增强子活性预测上的系统性不足。",
+   "novelty_for_me": "揭示了S2F模型因低估因果变异效应和enhancer-gene链接不足导致的性能瓶颈，对我研究增强子活性预测和模型局限性极具参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于最先进的序列到功能（S2F）模型AlphaGenome，系统比较精细定位eQTL与邻近非因果SNV的预测效应大小，以评估模型精细定位因果变异的能力。",
+   "main_finding": "S2F模型普遍低估因果变异效应，主要归因于未能检测到变异对增强子活性的局部效应及增强子-基因连接不足；但最显著的0.1%预测高度富集真实因果变异且方向可靠。",
+   "inspiration": "在评估基于虚拟表观遗传特征的增强子活性预测模型时，需特别关注模型对远距离增强子-基因连接及局部变异效应的捕捉能力，避免因padding或上下文截断导致因果变异效应被低估。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.05.749576",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.05.749576",
+  "title": "DNT: Diploid Genomic Foundation Model",
+  "journal": "bioRxiv",
+  "authors": [
+   "Leib, G.",
+   "Zinger, T.",
+   "Ofer, D.",
+   "Kellerman, R.",
+   "Nayshool, O.",
+   "Dominissini, D.",
+   "Larey, A.",
+   "Levy, J.",
+   "Nahshan, Y.",
+   "Dahan, E.",
+   "Bleiweiss, A.",
+   "Bussola, N.",
+   "Lee, S.",
+   "O'Connell, S.",
+   "Hoang, D.",
+   "Wirth, M.",
+   "Beckmann, N. D.",
+   "Charney, A. W.",
+   "Shavit, Y.",
+   "Daniel, N.",
+   "Rechavi, G."
+  ],
+  "date": "2026-09-11",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.05.749576v1",
+  "doi": "10.64898/2026.09.05.749576",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Guy Leib",
+  "corr_affiliation": "Cancer Research Center and Wohl Institute of Translational Medicine, Sheba Medical Center, Tel Hashomer, Israel",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "属于基因组基础模型（DNA language model）范畴，探讨了二倍体基因型的输入表示和tokenizer设计。",
+   "novelty_for_me": "其针对单倍体序列缺陷提出的相位保留tokenizer和二倍体编码方法，对我评估不同输入策略（如padding）对基础模型的影响有直接的方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于参考对齐的二倍体编码与相位保留分词器，结合对比相位损失（CPL）对Nucleotide Transformer进行持续预训练。",
+   "main_finding": "将二倍体基因型及相位信息编码为单序列输入，显著提升了模型对复合杂合子变异的判别能力，而未区分相位的模型表现接近随机。",
+   "inspiration": "在构建增强子变异序列输入时，可借鉴其单序列二倍体编码策略以保留等位基因特异性信息，避免因单倍体拆分或padding截断丢失顺式作用元件的协同效应。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.08.749477",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.08.749477",
+  "title": "PHAROS: turning single-cell perturbation models into target-directed drug-combination screens",
+  "journal": "bioRxiv",
+  "authors": [
+   "Bezney, J.",
+   "Ruggeri, C.",
+   "Borra, F.",
+   "Qi, L. S.",
+   "Buffa, F. M.",
+   "Steinmetz, L. M."
+  ],
+  "date": "2026-09-10",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.08.749477v1",
+  "doi": "10.64898/2026.09.08.749477",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jon Bezney",
+  "corr_affiliation": "Stanford University",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "基于预训练单细胞扰动模型构建虚拟细胞级别的药物组合筛选框架，直接命中我的 single-cell perturbation 和 virtual cell 研究兴趣。",
+   "novelty_for_me": "将预训练扰动模型链式组合模拟药物联用效果，并提供逆问题搜索框架，对虚拟细胞模型的下游应用有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于预训练单细胞扰动模型的链式预测与搜索算法，实现无重训练的靶点导向药物组合虚拟筛选。",
+   "main_finding": "该框架无需重训即可在体外及患者数据中准确恢复双药组合响应，并能显式识别模型分布外数据，实现逆向单细胞虚拟筛选。",
+   "inspiration": "预训练模型显式识别分布外数据的机制，可启发我在评估不同padding策略对增强子预测影响时，量化模型对未见细胞类型的泛化边界。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.04.03.715516",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.04.03.715516",
+  "title": "Looplook: Integrating multiomics refinement and graph clustering for target assignment and functional inference of chromatin regulatory networks",
+  "journal": "bioRxiv",
+  "authors": [
+   "Zhang, Y.",
+   "Huang, X.",
+   "Chen, H.",
+   "Xie, L.",
+   "Chen, Y.",
+   "Xu, L."
+  ],
+  "date": "2026-09-10",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.04.03.715516v1",
+  "doi": "10.64898/2026.04.03.715516",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Liang Xu",
+  "corr_affiliation": "Institute of Biochemistry, College of Life Sciences, Zhejiang University, Hangzhou 310058, China",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "开发了整合3D染色质拓扑与功能基因组学的计算框架，用于CRE-靶基因链接。",
+   "novelty_for_me": "其通过图聚类和多组学精炼来准确分配增强子-靶基因的方法，对我研究增强子活性和调控网络有间接参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "整合连通分量图聚类与多组学数据精炼的3D染色质拓扑-功能基因组学联合计算框架。",
+   "main_finding": "通过结合3D染色质互作与表达/表观特征精炼功能性染色质环，该方法在准确分配远端调控元件靶基因方面显著优于传统线性注释策略。",
+   "inspiration": "在构建增强子活性预测模型的训练标签时，可借鉴其表达/染色质感知的精炼策略，结合3D互作信息过滤无功能的游离型增强子，以提升ground truth质量。"
+  }
+ },
+ {
+  "id": "pubmed:42727749",
+  "source": "pubmed",
+  "raw_id": "42727749",
+  "title": "Disagreement-Informed Arbitration for Gene Regulatory Network Inference: A Score-Level Meta-Classifier and a Diagnostic Typology of Inter-Method Conflict.",
+  "journal": "Bio Systems",
+  "authors": [
+   "Ihor Kendiukhov"
+  ],
+  "date": "2026-09-11",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42727749/",
+  "doi": "10.1016/j.biosystems.2026.105937",
+  "pmid": "42727749",
+  "arxiv_id": "",
+  "corr_author": "Ihor Kendiukhov",
+  "corr_affiliation": "Institute of Medical Genetics and Applied Genomics, University of Tübingen, Tübingen, Germany. Electronic address: kenduhov.ig@gmail.com.",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "涉及单细胞扰动数据上的基因调控网络推断和机器学习集成方法。",
+   "novelty_for_me": "其针对模型间冲突的边缘级仲裁思路和严格的交叉验证泄漏诊断，在单细胞扰动建模评估上有一定启发性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于梯度提升树的分数级元分类器，利用多种基因调控网络推断方法的边级原始分数进行逐边动态权重分配与集成仲裁。",
+   "main_finding": "逐边仲裁集成优于简单平均，但评估协议比模型更重要：标准边级交叉验证因目标基因泄漏导致性能虚高，隐式参数化基因的图/嵌入方法在目标基因留出时性能断崖式下降。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性及padding影响时，需严格审查交叉验证协议，防止因序列重叠或同源区域未留出导致的数据泄漏，避免高估模型真实泛化能力。"
+  }
+ },
+ {
+  "id": "arxiv:2609.11877",
+  "source": "arxiv",
+  "raw_id": "2609.11877",
+  "title": "Biology-in-the-loop: Amortized Adaptive Hit Discovery in CRISPR Screens",
+  "journal": "arXiv",
+  "authors": [
+   "Carl Edwards",
+   "Edward De Brouwer",
+   "Xiner Li",
+   "Namkyeong Lee",
+   "Ehsan Hajiramezanali",
+   "Anne Biton",
+   "Sara Mostafavi",
+   "Gabriele Scalia"
+  ],
+  "date": "2026-09-10",
+  "url": "https://arxiv.org/abs/2609.11877",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.11877",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "涉及CRISPR筛选（扰动）中的自适应实验设计，结合了Transformer和LLM先验。",
+   "novelty_for_me": "将历史实验数据用于学习摊销获取策略的思路，对单细胞扰动实验的序列建模与优化有间接启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出AssayLoop框架，结合跨历史实验训练的Transformer获取策略与LLM生物学先验，进行自适应序列实验设计。",
+   "main_finding": "跨历史CRISPR筛选数据学习获取策略并结合LLM先验，能显著提升自适应命中发现效率，且该策略随训练数据增加而提升并具备跨表型泛化能力。",
+   "inspiration": "跨历史实验数据学习策略的范式，启发我在增强子活性预测中利用跨细胞类型的历史表观数据预训练Transformer，以提升虚拟表观遗传特征在未见细胞类型上的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.05.02.722381",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.05.02.722381",
+  "title": "Learning the Language of the Microbiome with Transformers",
+  "journal": "bioRxiv",
+  "authors": [
+   "Treloar, N. J.",
+   "Ur-Rehman, S.",
+   "Yang, J."
+  ],
+  "date": "2026-09-10",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.05.02.722381v1",
+  "doi": "10.64898/2026.05.02.722381",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Neythen J Treloar",
+  "corr_affiliation": "Outpost Bio",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "微生物组领域的 GPT 式基础模型，涉及 tokenization 策略、预训练 scaling behavior 和下游任务泛化，与我的基因组基础模型/padding 策略研究有方法论上的间接关联。",
+   "novelty_for_me": "tokenization 策略对模型质量影响的实证分析，以及预训练数据量阈值(~10k)的经验发现，可为基因组基础模型研究提供参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于GPT-2架构的自监督因果语言模型预训练，构建微生物组基础模型。",
+   "main_finding": "大规模自监督预训练能显著提升下游任务性能，且在数据量超1万时Transformer稳定优于传统方法；分词策略和数据规模对模型质量有关键影响。",
+   "inspiration": "论文强调tokenization策略对模型质量有显著影响，这启发我在处理变长增强子序列及padding策略时，需系统评估不同序列离散化或分词方式对预训练基因组学模型表征能力的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.07.749866",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.07.749866",
+  "title": "Source of genome-wide deleterious variation in a global cattle cohort",
+  "journal": "bioRxiv",
+  "authors": [
+   "Gao, J.",
+   "Derks, M.",
+   "Schipstal, J. v.",
+   "Liu, Y.",
+   "Bijl, E.",
+   "Ginja, C.",
+   "Kantanen, J.",
+   "Ghanem, N.",
+   "Kugonza, D.",
+   "Makgahlela, M.",
+   "Groenen, M.",
+   "Bovenhuis, H.",
+   "Crooijmans, R. P. M. A."
+  ],
+  "date": "2026-09-11",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.07.749866v1",
+  "doi": "10.64898/2026.09.07.749866",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Richard P. M. A. Crooijmans",
+  "corr_affiliation": "Wageningen University & Research",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "开发了类似CADD的变异致病性预测工具，结合了表观遗传和调控注释，属于计算基因组学。",
+   "novelty_for_me": "展示了如何整合调控注释进行非编码区变异评分，但方法较传统（逻辑回归）。",
+   "worth_reading": false
+  },
+  "_summary": {
+   "core_method": "基于逻辑回归整合进化约束、表观遗传及调控等多维特征，构建牛基因组核苷酸级变异有害性评分模型（BovCADD）",
+   "main_finding": "该模型能有效区分致病变异并对非编码区变异进行评分，揭示了特定群体和性状相关位点的有害遗传负荷",
+   "inspiration": "该研究在非编码区变异评分中整合了表观遗传和调控注释，提示在预测增强子活性时，可考虑将虚拟表观遗传特征与进化约束等先验生物学特征结合以提升预测性能"
+  }
+ },
+ {
+  "id": "arxiv:2609.10644",
+  "source": "arxiv",
+  "raw_id": "2609.10644",
+  "title": "Sequence-Informed Geometric Evaluation of RNA 3D Structures",
+  "journal": "arXiv",
+  "authors": [
+   "Andrea Zerio",
+   "Yighua Yao",
+   "Alessandro Micheli",
+   "Roland G. Huber",
+   "Mile Sikic",
+   "Samir Bhatt",
+   "Andres R. Masegosa",
+   "Yuangang Pan"
+  ],
+  "date": "2026-09-09",
+  "url": "https://arxiv.org/abs/2609.10644",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.10644",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "使用预训练RNA语言模型的核苷酸嵌入进行结构评估，属于生物序列表示学习的交叉应用。",
+   "novelty_for_me": "将语言模型嵌入与几何推理结合用于结构评估的思路，对评估基因组基础模型表示能力有间接启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出SIRGE评估器，通过融合预训练RNA语言模型的核苷酸嵌入对3D几何结构表示进行条件化评估。",
+   "main_finding": "序列条件化能纠正纯几何模型的评估错误，预训练序列表征可为RNA 3D结构评估提供互补的排序信息，显著提升Top-1/Top-3等排名指标。",
+   "inspiration": "预训练序列表征对结构/功能评估具有互补增益，这启发我在基于序列预测增强子活性时，可探索将预训练语言模型的嵌入与虚拟表观遗传特征进行条件化融合，以纠正单一模态的预测偏差。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.04.749461",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.04.749461",
+  "title": "Reference-guided pseudotime inference across species and biological contexts",
+  "journal": "bioRxiv",
+  "authors": [
+   "Rittenhouse, N.",
+   "Dannenfelser, R.",
+   "Filippova, G. N.",
+   "Yao, V.",
+   "Deng, X.",
+   "Disteche, C. M.",
+   "Zhang, R."
+  ],
+  "date": "2026-09-10",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.04.749461v1",
+  "doi": "10.64898/2026.09.04.749461",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ran Zhang",
+  "corr_affiliation": "University of North Carolina - Chapel Hill",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "跨物种/条件的单细胞伪时间推断框架，其跨上下文迁移学习的思路对跨细胞类型泛化有间接启发。",
+   "novelty_for_me": "参考-查询范式在单细胞时间序列上的迁移应用，可借鉴到跨细胞类型表观预测的泛化问题。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出Cavebear框架，基于参考物种/条件的单细胞转录组时间序列数据，通过迁移学习指导查询物种/条件的伪时间推断。",
+   "main_finding": "该框架能跨物种和条件转移时间信息，在缺乏可靠时间标签的生物背景下实现更准确的发育伪时间推断及疾病进展映射。",
+   "inspiration": "其参考引导的跨域知识迁移范式，可启发在跨细胞类型增强子活性预测中利用高资源细胞系的表观特征作为参考，指导低资源细胞类型的功能映射。"
+  }
+ }
+]
