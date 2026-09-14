@@ -2,9 +2,9 @@ name: PaperScout
 
 on:
   schedule:
-    # 每天 UTC 02:00 = 北京时间 10:00
+    # 每天 UTC 00:00 = 北京时间 08:00
     # 窗口用 --end-date 锚定到 UTC 0 点（严格 [今日0点-72h, 今日0点)），cron 延迟几分钟不影响边界
-    - cron: "0 2 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
       days:

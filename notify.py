@@ -45,6 +45,8 @@ def build_report_md(papers: list[dict], date_str: str, errors: list[str] | None 
             lines.append(f"- **机构**: {p.get('corr_author','') or '（未标注）'} @ {p['corr_affiliation']}")
         lines.append(f"- **日期**: {p.get('date','')}")
         lines.append(f"- **ID**: {_id_str(p)}")
+        if r.get("relevance_score") is not None and r.get("relevance_score", 0) > 0:
+            lines.append(f"- **相关分数**: {r['relevance_score']}/10")
         if r.get("why_relevant"):
             lines.append(f"- **一句话推荐**: {r['why_relevant']}")
         if s.get("core_method"):

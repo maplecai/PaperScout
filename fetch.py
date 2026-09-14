@@ -318,6 +318,7 @@ def fetch_biorxiv(cfg: dict, days: int, end_date: str | None = None) -> list[dic
     src_cfg = cfg.get("sources", {}).get("biorxiv", {})
     if not src_cfg.get("enabled", True):
         return []
+    wanted_cats = [c.lower() for c in src_cfg.get("categories", [])]
     start, end = _date_range(days, end_date)
     max_results = src_cfg.get("max_results", 500)
     out = []
@@ -331,6 +332,8 @@ def fetch_biorxiv(cfg: dict, days: int, end_date: str | None = None) -> list[dic
             if not coll:
                 break
             for item in coll:
+                if wanted_cats and (item.get("category") or "").lower() not in wanted_cats:
+                    continue
                 doi = (item.get("doi") or "").lower()
                 title = item.get("title", "")
                 abstract = item.get("abstract", "")
