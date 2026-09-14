@@ -56,15 +56,22 @@ def keyword_prefilter(papers: list[dict], profile: dict, threshold: float = 0.08
     kept = []
     for p in papers:
         text = (p.get("title", "") + " " + p.get("abstract", "")).lower()
-        authors = " ".join(p.get("authors", [])).lower()
         score = 0.0
 
-        # 作者命中（强信号）
+        # 作者命中（强信号）：token 子集匹配
+        # tracked author 的全部 token 都在同一 author entry 中才算命中
+        paper_author_tokens = [
+            set(re.findall(r"[a-z0-9]+", a.lower()))
+            for a in p.get("authors", [])
+        ]
         for a in profile.get("tracked_authors", []):
-            al = a.lower()
-            # 去掉括号里的中文/别名
-            al = re.sub(r"\(.*?\)", "", al).strip()
-            if al and al in authors:
+            al = re.sub(r"\(.*?\)", "", a).lower().strip()
+            if not al:
+                continue
+            ta_tokens = set(re.findall(r"[a-z0-9]+", al))
+            if not ta_tokens:
+                continue
+            if any(ta_tokens <= pa_set for pa_set in paper_author_tokens):
                 score += 0.4
                 break  # 命中一次即可
 
