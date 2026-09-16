@@ -1,0 +1,330 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.07.749913",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.07.749913",
+  "title": "TransBind2: Improving Transcription Factor-DNA Binding Prediction with Multimodal Data and Bidirectional Cross Attention",
+  "journal": "bioRxiv",
+  "authors": [
+   "Basnet, S.",
+   "Cheng, J."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.07.749913v1",
+  "doi": "10.64898/2026.09.07.749913",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jianlin Cheng",
+  "corr_affiliation": "University of Missouri - Columbia",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "多模态TF-DNA结合预测，融合DNA序列、染色质可及性和TF结构，支持跨细胞类型泛化，与regulatory genomics和sequence-to-function高度相关。",
+   "novelty_for_me": "双向cross-attention融合蛋白结构与染色质上下文的思路，对我跨细胞类型增强子活性预测中如何整合多模态特征有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合双模态蛋白质语言模型与DNA序列及染色质可及性特征，采用双向交叉注意力机制预测TF-DNA结合的多模态分类模型。",
+   "main_finding": "引入TF结构与染色质上下文的多模态融合显著提升了跨细胞类型和跨物种的TF-DNA结合预测泛化能力，且模型能在窗口级标签下精确定位结合位点。",
+   "inspiration": "将预测任务重构为<DNA bin, TF, cell type>三元组分类以实现跨细胞类型泛化的思路，可借鉴用于不同细胞类型游离型增强子活性的预测；同时其引入染色质可及性作为上下文输入的做法，对构建虚拟表观遗传特征有直接参考价值。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.08.750024",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.08.750024",
+  "title": "LucaCell: a sequence-centric foundation model for cross-species single-cell analysis",
+  "journal": "bioRxiv",
+  "authors": [
+   "Sun, Y.",
+   "He, Y.",
+   "Ren, M.",
+   "Wang, Y.",
+   "Xu, P.",
+   "Hou, Y.",
+   "Kang, Y.",
+   "Hou, T.",
+   "Ye, J.",
+   "Yang, H.",
+   "Wang, Z."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.08.750024v1",
+  "doi": "10.64898/2026.09.08.750024",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yong He",
+  "corr_affiliation": "Token Foundry, Alibaba Token Hub, Alibaba Group, Hangzhou, China",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "序列中心化的单细胞基础模型，用mRNA序列嵌入替代固定基因ID，与epigenetic foundation model、virtual cell和representation learning for biological sequences高度相关。",
+   "novelty_for_me": "以序列嵌入替代基因词表实现跨物种泛化的范式，对我思考基因组基础模型的表征设计和泛化策略有直接启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用预训练mRNA序列嵌入替代固定基因ID，结合离散化基因表达与Transformer编码器构建序列驱动的单细胞基础模型。",
+   "main_finding": "基于序列的基因表示使模型无需手动映射即可实现跨物种、跨数据类型（含染色质可及性与微生物）的泛化，并在基因表达重建与病毒载量预测等任务上表现更优。",
+   "inspiration": "其以序列嵌入替代固定注释的范式，启发我在游离型增强子活性预测中探索基于序列的动态特征表征以提升跨细胞类型泛化能力，并提示需系统评估变长序列处理中的padding策略对预训练模型表征质量的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.06.745329",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.06.745329",
+  "title": "pydreg: a fast Python package for identifying active cis-regulatory elements from nascent transcription",
+  "journal": "bioRxiv",
+  "authors": [
+   "He, A. Y.",
+   "Danko, C. G."
+  ],
+  "date": "2026-09-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.06.745329v1",
+  "doi": "10.64898/2026.09.06.745329",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Charles G Danko",
+  "corr_affiliation": "Cornell University",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "从新生RNA测序数据识别活跃顺式调控元件（增强子/启动子），与enhancer activity prediction直接相关，但本质是已有方法的Python移植而非新模型。",
+   "novelty_for_me": "新生RNA识别活跃CRE的范式可作为我增强子活性预测工作的数据来源或对比基线。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "将基于支持向量机（SVM）的新生RNA测序顺式调控元件识别工具（dREG）迁移至现代Python计算栈的工程实现。",
+   "main_finding": "pydreg在复用原版预训练模型与峰值调用逻辑的前提下，通过现代数值计算库实现了4.5倍加速和5.4倍内存优化，且预测结果与原版高度一致。",
+   "inspiration": "在部署或迁移预训练基因组学模型时，保留核心模型权重而仅重构底层计算后端，可在保证预测一致性的同时大幅降低内存开销，这对优化大模型推理时的内存占用（如padding处理）具有工程参考价值。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.03.12.642937",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.03.12.642937",
+  "title": "Codon language model scores provide information beyond protein language models for missense variant interpretation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Chen, R.",
+   "Palpant, N.",
+   "Foley, G.",
+   "Boden, M."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.03.12.642937v1",
+  "doi": "10.1101/2025.03.12.642937",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Mikael Boden",
+  "corr_affiliation": "The University of Queensland",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "密码子语言模型用于变异效应预测，涉及DNA language model和representation learning for biological sequences，但聚焦编码区missense变异而非调控元件。",
+   "novelty_for_me": "密码子级vs蛋白级语言模型信息互补性的分析，对我思考基因组基础模型的表征粒度有间接启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于密码子语言模型与蛋白质语言模型特征集成的错义变异效应预测范式。",
+   "main_finding": "密码子语言模型能捕获蛋白质语言模型未涵盖的适度但可重复的变异效应信息，二者特征互补且互补程度具有基因和功能上下文依赖性。",
+   "inspiration": "该研究通过聚合同义密码子排除序列简并性干扰的消融设计，启发我在评估预训练基因组学模型 padding 影响时，需设计控制实验以剥离位置偏置与序列语义特征的混淆。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.08.750126",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.08.750126",
+  "title": "PHACTn enables training-free, context-independent inference of nucleotide variant tolerance across the genome",
+  "journal": "bioRxiv",
+  "authors": [
+   "Yildirim, C.",
+   "Kuru, N.",
+   "Adebali, O."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.08.750126v1",
+  "doi": "10.64898/2026.09.08.750126",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ogun Adebali",
+  "corr_affiliation": "Sabanci University",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "非编码区变异耐受性预测，涉及regulatory genomics的非编码变异，且明确以基因组语言模型为对比对象，但方法本身是系统发育而非ML。",
+   "novelty_for_me": "作为基因组语言模型的training-free基线对比，其结果提示进化约束信号能捕获大模型遗漏的信息，对我评估DNA language模型有参考意义。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于系统发育树遍历与概率建模的无参数训练变异耐受性推断方法（PHACTn）。",
+   "main_finding": "仅用4个可解释参数且无需训练或GPU，PHACTn在非编码变异预测上超越了现有工具及大规模序列模型，证明概率系统发育建模能捕获大模型遗漏的进化约束信号。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性的表征能力时，可将基于系统发育树的进化保守性特征作为轻量级基线，以探究大模型在进化约束信号上的表征盲区。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.09.749495",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.09.749495",
+  "title": "Benchmarking CUT&RUN analysis using motif enrichment",
+  "journal": "bioRxiv",
+  "authors": [
+   "Tan, L.",
+   "Viner, C.",
+   "Li, X. H.",
+   "Wrana, M.",
+   "Ishak, C. A.",
+   "Shen, S. Y.",
+   "De Carvalho, D. D.",
+   "Hainer, S. J.",
+   "Hoffman, M. M."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.09.749495v1",
+  "doi": "10.64898/2026.09.09.749495",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Michael M. Hoffman",
+  "corr_affiliation": "University Health Network",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "涉及CUT&RUN表观基因组数据的预处理和峰检测基准测试，与表观基因组特征处理相关。",
+   "novelty_for_me": "提供了转录因子结合位点检测的预处理策略评估，可能对处理表观基因组数据有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于motif富集度的基准测试方法，评估CUT&RUN数据预处理策略（片段长度过滤与spike-in校准）及主流peak caller的性能。",
+   "main_finding": "过滤≤120bp的片段普遍提升了目标motif富集度；酵母DNA spike-in校准显著提升MACS2的motif识别效果但对SEACR无益，而大肠杆菌spike-in常因污染导致结果失效。",
+   "inspiration": "在提取CUT&RUN等表观遗传信号作为预训练模型输入或虚拟特征时，可参考其≤120bp片段过滤策略以提升结合位点信号分辨率。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.08.750031",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.08.750031",
+  "title": "Heterogeneous epigenetic regulatory patterns link mammalian aging, development, and mortality",
+  "journal": "bioRxiv",
+  "authors": [
+   "Tikhonov, S.",
+   "Dmitriev, S. E."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.08.750031v1",
+  "doi": "10.64898/2026.09.08.750031",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Stanislav Tikhonov",
+  "corr_affiliation": "Faculty of Bioengineering and Bioinformatics, Lomonosov Moscow State University, 119234, Moscow, Russia",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "涉及DNA甲基化和表观遗传时钟预测模型，与表观遗传基础模型兴趣间接相关。",
+   "novelty_for_me": "表观遗传熵与衰老/死亡率的非单调关系建模，以及跨物种表观遗传时钟开发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于跨物种血液DNA甲基化元分析构建预测死亡率的表观遗传时钟模型。",
+   "main_finding": "基因间区CpG位点的甲基化水平随年龄呈U型变化且与死亡率曲线平行，揭示了衰老、发育与疾病间异质性的表观调控规律。",
+   "inspiration": "基因间区（游离型增强子富集区）甲基化的非单调动态变化提示，在预测增强子活性的虚拟表观特征中可引入年龄或发育阶段作为上下文先验。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.10.750691",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.10.750691",
+  "title": "Mechanistic Interpretability of Protein Language Models Reveals Encoded Structural and Functional Properties of Intrinsically Disordered Proteins",
+  "journal": "bioRxiv",
+  "authors": [
+   "Naworski, L. E.",
+   "Good, L. L.",
+   "Scrutton, R.",
+   "Knowles, T. P. J."
+  ],
+  "date": "2026-09-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.10.750691v1",
+  "doi": "10.64898/2026.09.10.750691",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Tuomas P.J. Knowles",
+  "corr_affiliation": "University of Cambridge",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "对蛋白质语言模型(ESM-2)做机制可解释性分析，方法论上与DNA语言模型的表示学习可类比，但研究对象是蛋白质而非DNA调控序列。",
+   "novelty_for_me": "对无序蛋白区域attention行为的分析思路可能启发我对基因组基础模型中不同序列区域表示行为的理解。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于机制可解释性分析蛋白质语言模型（ESM-2）在内在无序蛋白上的注意力分布与表征提取。",
+   "main_finding": "ESM-2对无序区域注意力虽低，但仍编码了疾病相关残渣及动态结构特征等有意义的生物学信号。",
+   "inspiration": "可借鉴其机制可解释性方法，分析预训练基因组学模型对游离型增强子及padding序列的注意力分布，验证其是否捕获真实表观遗传特征而非序列偏置。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.08.749998",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.08.749998",
+  "title": "ImmuneLens: linking transcriptional states and TCR clonotypes through disentangled multimodal learning",
+  "journal": "bioRxiv",
+  "authors": [
+   "Duan, Z.",
+   "Wang, Y.",
+   "Li, C.",
+   "Li, G.",
+   "Cao, Y.",
+   "Bai, X.",
+   "Yang, F.",
+   "Song, S."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.08.749998v1",
+  "doi": "10.64898/2026.09.08.749998",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Shuhui Song",
+  "corr_affiliation": "Beijing Institute of Genomics, Chinese Academy of Sciences/ China National Center for Bioinformation",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "多模态表示学习框架整合转录组和TCR序列，方法论上与多模态生物序列表示学习有共通之处，但应用领域是免疫学而非调控基因组学。",
+   "novelty_for_me": "解耦多模态信息的设计思路可能对构建整合表观特征与序列的模型有方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于解耦多模态学习的单细胞转录组与TCR序列联合表示学习框架。",
+   "main_finding": "GEX与TCR信息的互补性提升了抗原特异性预测稳定性，并揭示了克隆扩增与CD8 T细胞功能状态的关联。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.08.750045",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.08.750045",
+  "title": "Heterogeneous graph neural networks with biological prior knowledge for interpretable drug repurposing in triple-negative breast cancer",
+  "journal": "bioRxiv",
+  "authors": [
+   "Fernandez-Lozano, C.",
+   "Ferreiro, D.",
+   "V.-del-Rio, P."
+  ],
+  "date": "2026-09-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.08.750045v1",
+  "doi": "10.64898/2026.09.08.750045",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Carlos Fernandez-Lozano",
+  "corr_affiliation": "Department of Computer Science and Information Technologies, Faculty of Computer Science, Universidade da Coruna, A Coruna, Spain",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用图神经网络整合转录因子调控网络进行药物重定位，涉及调控网络建模。",
+   "novelty_for_me": "将TF调控网络作为先验知识融入GNN进行表型预测的思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "融合转录因子调控网络、蛋白质互作与药物-靶点边构建异构知识图谱，采用异构图神经网络进行药物敏感性预测，并利用Integrated Gradients进行机制归因。",
+   "main_finding": "该模型在全局预测上与ML基线持平，但通过IG归因稳定识别出介导药物响应的关键TF，并在多队列临床数据中验证了预测敏感性与生存期的关联，筛选出7个潜在重定位药物。",
+   "inspiration": "Integrated Gradients对GNN进行稳定机制归因的范式，可借鉴用于解析预训练基因组学序列模型中特定序列特征对增强子活性预测的贡献度。"
+  }
+ }
+]
