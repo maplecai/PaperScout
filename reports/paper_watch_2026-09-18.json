@@ -1,0 +1,195 @@
+[
+ {
+  "id": "arxiv:2609.16925",
+  "source": "arxiv",
+  "raw_id": "2609.16925",
+  "title": "HyCoSeq: Contextual Hyperbolic Representation Learning for Genomic Sequences",
+  "journal": "arXiv",
+  "authors": [
+   "Chenhao Zeng",
+   "Zhibin Pu",
+   "Shufei Ge"
+  ],
+  "date": "2026-09-15",
+  "url": "https://arxiv.org/abs/2609.16925",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.16925",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "属于生物序列的表示学习和DNA语言模型范畴，与你的研究兴趣高度契合。",
+   "novelty_for_me": "引入双曲几何和双向LSTM进行上下文化表示，且无需大规模预训练即可媲美大型DNA语言模型。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出 HyCoSeq 框架，结合多曲率洛伦兹编码、加权洛伦兹残差聚合与双向 LSTM，实现基因组序列的双曲几何上下文表示学习。",
+   "main_finding": "无需大规模预训练，该模型通过双曲几何与上下文建模即可在多种基因组任务上超越现有双曲基线，并达到与大型预训练 DNA 语言模型相媲美的性能。",
+   "inspiration": "双曲几何的归纳偏置与轻量级上下文建模可作为预训练大模型的高效替代方案，在增强子活性预测中捕捉层级与长程依赖，从而规避预训练模型 padding 带来的计算开销与潜在偏差。"
+  }
+ },
+ {
+  "id": "arxiv:2609.19970",
+  "source": "arxiv",
+  "raw_id": "2609.19970",
+  "title": "CellRFT: Reinforcement Fine-Tuning for Single-Cell Perturbation Modeling",
+  "journal": "arXiv",
+  "authors": [
+   "Jie Yan",
+   "Li Liu",
+   "Hanze Guo",
+   "Jiaxin Hu",
+   "Houxin He",
+   "Xiaoning Qi",
+   "Haoran Wang",
+   "Cong Li",
+   "Zhong-Yuan Zhang",
+   "Yong Wang"
+  ],
+  "date": "2026-09-17",
+  "url": "https://arxiv.org/abs/2609.19970",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.19970",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接涉及单细胞扰动建模，并使用强化学习微调优化生物学指标，与AI4LifeScience高度相关。",
+   "novelty_for_me": "将强化微调（RFT）引入单细胞扰动预测，使用非可微的生物学评价作为直接训练奖励。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于策略梯度的强化微调框架（CellRFT），将不可微的生物学评估指标作为直接奖励信号来优化单细胞扰动预测模型。",
+   "main_finding": "将生物学评估直接作为强化学习奖励可显著提升扰动预测性能；不同生物学指标间存在竞争或互补关系，分层聚合互补奖励能提升模型在未直接优化指标上的表现。",
+   "inspiration": "对于增强子活性预测任务，若下游评估指标（如特定细胞类型的游离型增强子活性相关性）不可微，可借鉴此强化微调思路，将生物学评估直接作为奖励信号优化预训练基因组学模型，而非仅依赖代理损失。"
+  }
+ },
+ {
+  "id": "arxiv:2609.17801",
+  "source": "arxiv",
+  "raw_id": "2609.17801",
+  "title": "GIA: Germline-Informed Aging with AlphaGenome Finds Genetically Regulated CpGs",
+  "journal": "arXiv",
+  "authors": [
+   "Sean Lim"
+  ],
+  "date": "2026-09-15",
+  "url": "https://arxiv.org/abs/2609.17801",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2609.17801",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接使用AlphaGenome预测变异对染色质可及性和甲基化的调控效应，与序列到功能预测及表观调控变异效应高度相关。",
+   "novelty_for_me": "将AlphaGenome应用于meQTL变异的染色质效应打分，并连接到表观遗传时钟的germline调控，是基础模型应用的新场景。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合meQTL映射与AlphaGenome预训练序列模型，对表观遗传时钟CpG位点的遗传变异进行变异效应预测与染色质可及性评分。",
+   "main_finding": "表观遗传时钟CpG位点显著富集受遗传调控的meQTL，且AlphaGenome预测的染色质效应能成功识别出影响甲基化与基因表达的关键顺式变异。",
+   "inspiration": "AlphaGenome在预测变异对染色质可及性效应上的有效性，启发我在评估预训练基因组学模型padding策略对增强子活性预测的影响时，可引入变异效应预测作为模型序列上下文依赖性的基准测试维度。"
+  }
+ },
+ {
+  "id": "pubmed:42749352",
+  "source": "pubmed",
+  "raw_id": "42749352",
+  "title": "Toward AI Virtual Cells for Hepatology: Representation, Generation, Dynamics, and Intervention in Single-Cell Models.",
+  "journal": "Clinical and molecular hepatology",
+  "authors": [
+   "Youngseok Choi",
+   "In Gyeong Koh",
+   "Murim Choi",
+   "Joon-Yong An"
+  ],
+  "date": "2026-09-17",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42749352/",
+  "doi": "10.3350/cmh.2026.0820",
+  "pmid": "42749352",
+  "arxiv_id": "",
+  "corr_author": "Joon-Yong An",
+  "corr_affiliation": "Department of Integrated Biomedical and Life Science, Korea University, Seoul, Republic of Korea. joonan30@korea.ac.kr.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P2",
+   "why_relevant": "综述了AI虚拟细胞（AIVC）在单细胞建模、扰动预测和基础模型迁移方面的思路，高度切题。",
+   "novelty_for_me": "将虚拟细胞概念具体应用于肝脏病理场景，并提出了针对扰动预测的评估分层框架。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "综述了构建肝脏AI虚拟细胞的三种互补建模范式：生成式表示模型、动态状态转换模型与预训练基础模型，并以扰动响应预测作为交叉评估框架。",
+   "main_finding": "现有单细胞模型虽能实现图谱整合与回顾性响应预测，但尚未构成前瞻性验证的细胞模拟器；需引入多维度留出法（供体、病因、阶段等）及校准不确定性进行严格评估。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性的泛化能力时，可借鉴其多维度留出法（如跨细胞类型、跨扰动条件）与校准不确定性指标，以更严谨地验证虚拟表观遗传特征的预测可靠性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.10.750553",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.10.750553",
+  "title": "A foundation model learns the sequence and functional grammar of fully human heavy-chain-only antibodies",
+  "journal": "bioRxiv",
+  "authors": [
+   "Nona Biosciences AI4S Team,",
+   "Miao, H."
+  ],
+  "date": "2026-09-15",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.10.750553v1",
+  "doi": "10.64898/2026.09.10.750553",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hongjiang Miao",
+  "corr_affiliation": "Nona Biosciences (Shanghai)",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "属于生物序列基础模型和表示学习，但针对的是抗体蛋白序列而非基因组DNA或调控元件。",
+   "novelty_for_me": "揭示了特定序列库预训练对专用基础模型表示学习的影响，对DNA语言模型的训练策略有间接启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于大规模全人源重链抗体库的领域特异性蛋白质语言模型预训练（HCAbLM）。",
+   "main_finding": "专用抗体库预训练使模型学到了通用模型缺失的区域选择性序列兼容性先验，且其冻结表征能有效迁移至抗体理化性质预测。",
+   "inspiration": "在预测不同细胞类型增强子活性时，可探索针对特定细胞类型或表观状态的增强子序列进行源特异性预训练，以捕捉通用基因组模型遗漏的局部功能语法。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.10.750801",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.10.750801",
+  "title": "scACORN: Context-engineered agent orchestration of specialized small language models for single-cell transcriptomic interpretation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Rasti-Meymandi, A.",
+   "Nahali, S.",
+   "Paramithiotis, E.",
+   "Cheung, A. M.",
+   "Dolatabadi, E."
+  ],
+  "date": "2026-09-16",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.10.750801v1",
+  "doi": "10.64898/2026.09.10.750801",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Elham Dolatabadi",
+  "corr_affiliation": "York University; Vector Institute, Toronto, Ontario, Canada",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "使用小型语言模型和代理编排进行单细胞转录组解释，与你的虚拟细胞和表示学习兴趣间接相关。",
+   "novelty_for_me": "专家模型编排替代单体语言模型的思路，可能对基因组基础模型的模块化设计有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出一种基于上下文工程代理编排的专家小语言模型组合架构，通过领域对齐对比适应与几何保持特化两阶段构建专家，并由无梯度更新的语言模型代理进行动态选择与组合。",
+   "main_finding": "专家模型专门化与代理编排机制有效应对了单细胞分析的任务异构性，显著提升了跨组织迁移准确率并大幅降低了无证据基因引用率。",
+   "inspiration": "在微调预训练基因组学模型预测不同细胞类型增强子活性时，可借鉴其“领域对齐+几何保持特化”的两阶段范式，以缓解下游任务微调导致的序列到功能特征空间退化问题。"
+  }
+ }
+]
