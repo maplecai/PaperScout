@@ -1,0 +1,377 @@
+[
+ {
+  "id": "pubmed:42673963",
+  "source": "pubmed",
+  "raw_id": "42673963",
+  "title": "Predicting cellular responses to perturbation across diverse contexts with State.",
+  "journal": "Cell",
+  "authors": [
+   "Abhinav K Adduri",
+   "Dhruv Gautam",
+   "Beatrice Bevilacqua",
+   "Mohsen Naghipourfar",
+   "Alishba Imran",
+   "Rohan Shah",
+   "Noam Teyssier",
+   "Rishi Verma",
+   "Christopher Carpenter",
+   "Basak Eraslan",
+   "Francis Chalissery",
+   "Rajesh Ilango",
+   "Vishvak Subramanyam",
+   "Chiara Ricci-Tam",
+   "Sanjay Nagaraj",
+   "Aidan Winters",
+   "Mingze Dong",
+   "Stefanie Fellinger",
+   "Adam Krejci",
+   "Tilmann Burckstummer",
+   "Sravya Tirukkovular",
+   "Jeremy Sullivan",
+   "Brian S Plosky",
+   "Nicholas D Youngblut",
+   "Jure Leskovec",
+   "Luke A Gilbert",
+   "Silvana Konermann",
+   "Patrick D Hsu",
+   "Alexander Dobin",
+   "Dave P Burke",
+   "Hani Goodarzi",
+   "Yusuf H Roohani"
+  ],
+  "date": "2026-08-31",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42673963/",
+  "doi": "10.1016/j.cell.2026.07.052",
+  "pmid": "42673963",
+  "arxiv_id": "",
+  "corr_author": "Yusuf H Roohani",
+  "corr_affiliation": "Arc Institute, Palo Alto, CA, USA. Electronic address: yusuf.roohani@arcinstitute.org.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出State模型预测跨细胞环境的单细胞扰动效应，与跨细胞类型泛化及单细胞扰动预测高度相关。",
+   "novelty_for_me": "利用1.67亿细胞的观测数据训练细胞嵌入，实现未见扰动环境下的零样本泛化预测。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于1.67亿单细胞转录组数据预训练细胞嵌入，构建预测跨细胞上下文扰动效应的机器学习模型（State）。",
+   "main_finding": "State在预测遗传、信号和化学扰动效应上准确率显著优于基线，并能泛化至未见扰动的细胞上下文；同时提出了综合评估框架Cell-Eval。",
+   "inspiration": "利用大规模观察性数据预训练上下文嵌入以实现跨上下文泛化的范式，可启发在增强子活性预测中结合细胞类型特异性的虚拟表观遗传特征嵌入，以提升模型在不同细胞类型间的泛化能力。"
+  }
+ },
+ {
+  "id": "pubmed:42648290",
+  "source": "pubmed",
+  "raw_id": "42648290",
+  "title": "Virtual Cell Challenge 2026: Benchmarking zero-shot generalization across cellular contexts.",
+  "journal": "Cell",
+  "authors": [
+   "Hani Goodarzi"
+  ],
+  "date": "2026-08-26",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42648290/",
+  "doi": "10.1016/j.cell.2026.08.004",
+  "pmid": "42648290",
+  "arxiv_id": "",
+  "corr_author": "Hani Goodarzi",
+  "corr_affiliation": "Arc Institute, Palo Alto, CA, USA; University of California, San Francisco, San Francisco, CA, USA. Electronic address: hani.goodarzi@arcinstitute.org.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "虚拟细胞挑战赛聚焦跨细胞环境的零样本扰动预测，直接契合跨细胞类型泛化与单细胞扰动的研究兴趣。",
+   "novelty_for_me": "提供了评估模型在未见细胞系上预测基因敲低响应的标准化基准和全新数据集。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "构建基于零样本泛化范式的基因敲降响应预测模型，评估跨细胞环境的泛化能力。",
+   "main_finding": "提出2026年虚拟细胞挑战赛，通过在未见细胞系上预测基因敲降响应，检验现有模型能否缩小临床前预测与人类生物学间的差距。",
+   "inspiration": "可借鉴其跨细胞环境零样本泛化的基准测试设计，评估不同padding策略对预训练基因组学模型在未见细胞类型增强子活性预测上的泛化影响。"
+  }
+ },
+ {
+  "id": "pubmed:42753692",
+  "source": "pubmed",
+  "raw_id": "42753692",
+  "title": "A world model of the virtual cell.",
+  "journal": "Cell",
+  "authors": [
+   "Eric P Xing",
+   "Le Song"
+  ],
+  "date": "2026-09-17",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42753692/",
+  "doi": "10.1016/j.cell.2026.08.042",
+  "pmid": "42753692",
+  "arxiv_id": "",
+  "corr_author": "Le Song",
+  "corr_affiliation": "GenBio AI, Palo Alto, CA, USA; Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi, UAE. Electronic address: le.song@genbio.ai.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "提出虚拟细胞世界模型(VCWM)框架，与虚拟细胞、单细胞扰动及基础模型构建思路高度相关。",
+   "novelty_for_me": "将世界模型范式引入虚拟细胞，支持动作条件下的细胞状态演化与反事实推理。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出虚拟细胞世界模型（VCWM），一种基于状态演化和动作条件干预的动态多尺度系统建模范式。",
+   "main_finding": "相比仅针对特定任务优化的预测性基础模型，VCWM通过建模底层细胞系统并维持持续状态，能更连贯地模拟基因或化学干预下的多模态细胞演化结果。",
+   "inspiration": "其强调的“状态持续性”理念启发我在增强子活性预测中，可尝试将虚拟表观遗传特征作为细胞类型的隐式状态变量，以提升模型在跨细胞类型泛化时的表征稳定性。"
+  }
+ },
+ {
+  "id": "pubmed:42753697",
+  "source": "pubmed",
+  "raw_id": "42753697",
+  "title": "Tahoe-100M: Mapping drug-induced molecular phenotypes at single-cell resolution.",
+  "journal": "Cell",
+  "authors": [
+   "Jesse Zhang",
+   "Airol A Ubas",
+   "Valentine Svensson",
+   "Nicole Thomas",
+   "Vishvak Subramanyam",
+   "Christopher Carpenter",
+   "Aidan Winters",
+   "Richard de Borja",
+   "Noam Teyssier",
+   "Neha Thakar",
+   "Umair Khan",
+   "Pooja V Akella",
+   "Harper J Green",
+   "John D Thompson",
+   "Vuong Tran",
+   "Joseph Pangallo",
+   "Efthymia Papalexi",
+   "Ajay Sapre",
+   "Hoai Nguyen",
+   "Oliver Sanderson",
+   "Maria Nigos",
+   "Olivia Kaplan",
+   "Sarah Schroeder",
+   "Bryan Hariadi",
+   "Simone Marrujo",
+   "Crina Curca",
+   "Alec Salvino",
+   "Guillermo Gallareta Olivares",
+   "Ryan Koehler",
+   "Alexander Rosenberg",
+   "Charles Roco",
+   "Chiara Ricci-Tam",
+   "Matthew G Jones",
+   "Alexander Dobin",
+   "Brian S Plosky",
+   "Danielle E Lyons",
+   "Daniele Merico",
+   "Nima Alidoust",
+   "Hani Goodarzi",
+   "Johnny Yu"
+  ],
+  "date": "2026-09-17",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42753697/",
+  "doi": "10.1016/j.cell.2026.08.035",
+  "pmid": "42753697",
+  "arxiv_id": "",
+  "corr_author": "Johnny Yu",
+  "corr_affiliation": "Tahoe Therapeutics, South San Francisco, CA, USA. Electronic address: johnny@tahoebio.ai.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "大规模单细胞扰动图谱（100M细胞×1100药物条件），直接对应我的single-cell perturbation和virtual cell研究兴趣，且明确支持AI预测模型训练。",
+   "novelty_for_me": "提供了前所未有的扰动规模数据集，可作为虚拟细胞模型训练或评估的基准资源。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于多重化单细胞测序技术构建千万级药物扰动转录组图谱，并提取通路特征以训练细胞行为预测模型。",
+   "main_finding": "构建了包含1亿单细胞的大规模药物扰动图谱，系统量化了药物诱导的细胞表型与转录组异质性，揭示了药物作用机制及耐药相关应激反应。",
+   "inspiration": "其利用大规模扰动数据训练AI预测模型的范式，可启发在增强子活性预测中引入CRISPRi等大规模增强子扰动数据集来预训练和评估sequence-to-function模型。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.14.751590",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.14.751590",
+  "title": "An atlas of transcription factor cooperation reveals how motif readers shape regulatory output",
+  "journal": "bioRxiv",
+  "authors": [
+   "Xiong, H.",
+   "Liu, J.",
+   "Wang, W."
+  ],
+  "date": "2026-09-18",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.14.751590v1",
+  "doi": "10.64898/2026.09.14.751590",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Wei Wang",
+  "corr_affiliation": "University of California, San Diego",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "跨10种细胞类型分析1552个TF结合数据集，研究motif-TF依赖机制与调控输出的关系，直接涉及细胞类型特异性调控和motif到功能的映射。",
+   "novelty_for_me": "揭示了motif标签与实际reader蛋白之间的错配现象，对理解细胞类型特异性增强子调控逻辑有重要启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "利用多智能体系统（ARES）结合多组学数据，推断特定细胞类型中转录因子与基序依赖关系的竞争性机制。",
+   "main_finding": "基序的调控结果并非由其序列本身决定，而是由实际读取该基序的蛋白（reader）决定；基序更像一个地址，其功能输出由反式作用蛋白塑造。",
+   "inspiration": "在基于序列预测增强子活性时，不能仅依赖基序序列特征，需考虑特定细胞类型下反式作用因子（reader蛋白）的丰度或虚拟表观遗传特征对基序功能输出的决定性影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.07.01.735965",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.07.01.735965",
+  "title": "DELPHAI predicts heterogeneous perturbation responses with learned single-cell fitness",
+  "journal": "bioRxiv",
+  "authors": [
+   "Zhang, X.",
+   "Wu, H.",
+   "Liu, H."
+  ],
+  "date": "2026-09-17",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.07.01.735965v1",
+  "doi": "10.64898/2026.07.01.735965",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Xian Zhang",
+  "corr_affiliation": "aiPTO TechBio",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "DELPHAI预测单细胞扰动响应，直接命中我研究兴趣中的single-cell perturbation方向，且涉及fitness-gated最优传输与基因空间检索。",
+   "novelty_for_me": "将细胞fitness与最优传输联合建模以预测异质扰动响应的思路对我有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "联合训练适应度网络与最优传输网络，并在推理阶段结合适应度门控与基因空间直接检索的扰动响应预测范式。",
+   "main_finding": "该模型在预测差异表达基因的基准测试中表现最优，且能准确揭示扰动对特定细胞谱系的耗竭效应，克服了传统模型细胞质量守恒的假设缺陷。",
+   "inspiration": "模型在推理时采用“直接基因空间检索”以避免隐空间解码丢失信息的思路，可启发我在sequence-to-function映射中评估直接检索表观特征空间而非过度依赖隐空间解码的有效性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.16.752217",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.16.752217",
+  "title": "Machine learning reveals sequence and genomic context features underlying Alu-specific effects on genome folding",
+  "journal": "bioRxiv",
+  "authors": [
+   "Zhang, S.",
+   "Pollard, K. S."
+  ],
+  "date": "2026-09-18",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.16.752217v1",
+  "doi": "10.64898/2026.09.16.752217",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Katherine S Pollard",
+  "corr_affiliation": "Gladstone Institutes",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P1",
+   "why_relevant": "使用深度学习对Alu元件进行in silico删除筛选预测其对染色质折叠的影响，属于sequence-to-function范式，涉及序列特征与基因组上下文对染色质结构的预测。",
+   "novelty_for_me": "将序列删除筛选思路应用于转座元件对基因组折叠的影响，可借鉴其in silico mutagenesis分析框架。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于深度学习的计算机模拟删除与诱变筛选，预测并解析转座元件对局部染色质三维结构的影响。",
+   "main_finding": "Alu元件对基因组折叠的调控取决于其内在序列与基因组上下文的协同，特定Alu能重塑CTCF介导的染色质边界与环。",
+   "inspiration": "其计算机模拟删除与突变筛选范式可启发我通过虚拟截断增强子序列或调整padding上下文，定量评估预训练模型对游离型增强子活性预测的上下文依赖性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.15.751768",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.15.751768",
+  "title": "Pretrained gene representations transfer mean expression more broadly than spatial patterns in virtual spatial transcriptomics",
+  "journal": "bioRxiv",
+  "authors": [
+   "Chen, T.",
+   "Hicks, S. C."
+  ],
+  "date": "2026-09-18",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.15.751768v1",
+  "doi": "10.64898/2026.09.15.751768",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Stephanie C Hicks",
+  "corr_affiliation": "Johns Hopkins Bloomberg School of Public Health",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P1",
+   "why_relevant": "系统评估预训练基因表示（scGPT、Decima）在空间转录组预测中的迁移能力，直接涉及foundation model表示学习的泛化性分析，与我的基因组基础模型评估兴趣相关。",
+   "novelty_for_me": "将迁移能力分解为均值表达迁移和空间模式迁移的评估框架，可借鉴用于评估基因组基础模型的泛化性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "通过解耦基因平均表达与空间变异模式，评估预训练基因表示在虚拟空间转录组学中的跨基因泛化能力。",
+   "main_finding": "预训练基因表示主要成功转移了基因的平均表达水平，而对空间表达模式恢复的提升有限且具有选择性。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性的迁移效果时，需解耦序列基线活性与细胞类型特异性活性，避免将均值预测的成功误认为上下文特异性预测的成功。"
+  }
+ },
+ {
+  "id": "pubmed:42758091",
+  "source": "pubmed",
+  "raw_id": "42758091",
+  "title": "Beyond the drug-centric view: Advancing AI virtual cell platforms for environmental perturbation modelling.",
+  "journal": "ALTEX",
+  "authors": [
+   "Daniel Ukaegbu",
+   "Victor Curean",
+   "Andreas Bender",
+   "Alexandra Maertens"
+  ],
+  "date": "2026-09-17",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42758091/",
+  "doi": "10.14573/altex.2606062",
+  "pmid": "42758091",
+  "arxiv_id": "",
+  "corr_author": "Alexandra Maertens",
+  "corr_affiliation": "Center for Alternatives to Animal Testing (CAAT), Johns Hopkins Bloomberg School of Public Health, Baltimore, MD, USA.",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "讨论了AI虚拟细胞平台在扰动建模中的扩展，与虚拟细胞和扰动预测的研究兴趣间接相关。",
+   "novelty_for_me": "提出了将环境扰动（剂量、时机、混合物）纳入虚拟细胞基础模型框架的视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "综述探讨基于深度学习与基础模型架构的AI虚拟细胞平台在环境扰动建模中的范式演进与多模态整合。",
+   "main_finding": "当前虚拟细胞模型过度侧重药物与遗传扰动，缺乏对环境扰动（剂量、时序、混合物）的标准化表征与多模态整合；需构建标准化数据集与不确定性感知评估框架以拓展其在公共卫生领域的应用。",
+   "inspiration": "在构建基于预训练基因组学模型的sequence-to-function映射时，可将环境扰动特征作为虚拟表观遗传特征的条件输入，并探究不同padding策略对模型捕捉此类长程扰动上下文依赖性的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.12.750699",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.12.750699",
+  "title": "Setting the SCENE for Interpretable Cell-Gene Embeddings in Single-Cell RNA-seq",
+  "journal": "bioRxiv",
+  "authors": [
+   "Moberg, O. L.",
+   "Petersen, M. B.",
+   "Herlau, T.",
+   "Kristensen, L. E.",
+   "Jessen, L. E.",
+   "Morup, M."
+  ],
+  "date": "2026-09-18",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.12.750699v1",
+  "doi": "10.64898/2026.09.12.750699",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Oscar Lauritz Møberg",
+  "corr_affiliation": "DTU (Technical University of Denmark)",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "提出单细胞转录组数据的可解释细胞-基因嵌入方法，与表示学习和单细胞分析间接相关。",
+   "novelty_for_me": "在原生低维欧氏空间中直接保留主要生物学结构，实现可解释的基因空间扰动分析。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出SCENE模型，一种结合零膨胀计数似然与欧几里得潜在距离的概率图表示学习方法，将scRNA-seq计数矩阵建模为细胞-基因二部图。",
+   "main_finding": "该模型在原生2D/3D低维空间中即可达到SOTA性能并保留主要生物结构，且能通过基因空间扰动分析捕捉超越细胞类型分离的生物学调控程序。",
+   "inspiration": "将稀疏高维计数矩阵视为二部图并结合零膨胀似然解耦信号检测与强度的思路，可启发在构建单细胞虚拟表观遗传特征时，对稀疏的增强子活性信号进行解耦建模与低维几何嵌入。"
+  }
+ }
+]
