@@ -1,0 +1,33 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.16.752245",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.16.752245",
+  "title": "A diffusion model of viral evolution predicts mutation fitness and evolutionary trajectories",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wu, J.",
+   "Ding, X.",
+   "Wu, A."
+  ],
+  "date": "2026-09-18",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.16.752245v1",
+  "doi": "10.64898/2026.09.16.752245",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Aiping Wu",
+  "corr_affiliation": "Suzhou Institute of Systems Medicine, Chinese Academy of Medical Sciences & Peking Union Medical College",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "基于扩散模型的病毒蛋白序列进化预测，属于sequence-to-function和生物序列表征学习的范畴，但非基因组DNA层面。",
+   "novelty_for_me": "将扩散模型的前向噪声/反向去噪类比为突变与选择的思路，对生物序列建模有一定启发性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于蛋白质序列训练的扩散模型，利用前向加噪模拟随机突变、反向去噪模拟自然选择，通过计算突变序列相对于野生型的重建难度来评估适应度。",
+   "main_finding": "仅依赖序列数据训练的扩散模型即可高精度预测病毒突变适应度与进化轨迹，在免疫逃逸预测上误差大幅降低，并成功前瞻性预警了H1N1后续流行株及H5禽流感的受体结合演化趋势。",
+   "inspiration": "可借鉴该模型将序列功能预测转化为'重建难度评估'的范式，探索在增强子活性预测中，通过计算游离型增强子序列在预训练基因组学模型中的去噪/重建误差来表征其表观遗传活性强度。"
+  }
+ }
+]
