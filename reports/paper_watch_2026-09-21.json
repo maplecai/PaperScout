@@ -1,0 +1,34 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.13.751326",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.13.751326",
+  "title": "Multi-model biological and sequence information fusion for gene regulatory network inference from single-cell transcriptomics",
+  "journal": "bioRxiv",
+  "authors": [
+   "zhong, l.",
+   "Yan, B.",
+   "Wang, J.",
+   "xie, m."
+  ],
+  "date": "2026-09-19",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.13.751326v1",
+  "doi": "10.64898/2026.09.13.751326",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "minzhu xie",
+  "corr_affiliation": "hunan normal university",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用了预训练DNA语言模型和图注意力整合基因序列与单细胞转录组数据，与我的序列表示学习兴趣有部分重叠。",
+   "novelty_for_me": "将DNA语言模型嵌入与GO层次结构和单细胞表达谱融合用于GRN推断的框架设计可能有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出scMGFGRN框架，结合去噪自编码器、图注意力网络与预训练DNA语言模型，融合单细胞转录组、GO层次及基因序列特征，通过门控多头注意力预测基因调控网络。",
+   "main_finding": "该模型在多物种数据集上显著优于现有GRN推断方法，能准确识别新型转录因子-靶基因互作并重构细胞特异性调控网络，且可解释性分析验证了多源信息融合的有效性。",
+   "inspiration": "其利用预训练DNA语言模型提取序列特征并结合门控注意力融合多模态信息的范式，启发我在增强子活性预测中采用门控机制融合预训练序列特征与虚拟表观遗传特征。"
+  }
+ }
+]
