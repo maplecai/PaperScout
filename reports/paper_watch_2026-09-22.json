@@ -1,0 +1,135 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.17.752258",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.17.752258",
+  "title": "miRstring: An RNA language model enables mature miRNA decoding and artificial small RNA design across species",
+  "journal": "bioRxiv",
+  "authors": [
+   "Peng, R.",
+   "Li, X.",
+   "fang, t.",
+   "Yu, X."
+  ],
+  "date": "2026-09-20",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.17.752258v1",
+  "doi": "10.64898/2026.09.17.752258",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Xiang Yu",
+  "corr_affiliation": "Shanghai Jiao Tong Unviversity",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "使用RNA语言模型进行序列到功能预测（miRNA边界解码）和人工小RNA设计，与DNA语言模型和增强子设计思路高度契合。",
+   "novelty_for_me": "语言模型在非DNA序列（RNA）上的边界预测与生成设计应用，可迁移至DNA调控元件设计。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于注意力机制的RNA语言模型，用于从前体序列预测成熟miRNA的边界位点。",
+   "main_finding": "该模型在跨物种miRNA解码任务上超越现有方法，其注意力机制成功捕捉到核酸内切酶切割位点的生物学特征，并能有效指导人工miRNA设计。",
+   "inspiration": "模型利用注意力机制定位关键生物学切割位点的方法，可启发我在增强子活性预测中通过注意力权重来解释虚拟表观遗传特征对序列功能的具体贡献。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.14.750771",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.14.750771",
+  "title": "High-order enhancer hubs buffer allelic regulatory variation through kinetic compensation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Tan, J.",
+   "Sentmanat, M.",
+   "Wu, Y.",
+   "Peng, C.",
+   "Fronick, C.",
+   "Markovic, C.",
+   "Cui, X.",
+   "Fulton, R.",
+   "Head, R.",
+   "Wang, T.",
+   "Sun, Y."
+  ],
+  "date": "2026-09-21",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.14.750771v1",
+  "doi": "10.64898/2026.09.14.750771",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yidan Sun",
+  "corr_affiliation": "Washington University in St. Louis",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "研究增强子枢纽如何缓冲调控变异，涉及单细胞动力学建模，对理解增强子活性和变异效应有启发。",
+   "novelty_for_me": "增强子高阶结构缓冲等位基因变异的动力学建模视角，可能为增强子活性预测提供生物学先验。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合长读长 Nanopore-HiChIP 技术与单细胞动力学建模，解析单倍型水平的高阶增强子枢纽结构及转录动力学。",
+   "main_finding": "高阶增强子枢纽通过转录爆发频率与爆发大小的反向动力学补偿，缓冲等位基因间的顺式调控变异，维持剂量敏感基因的转录平衡。",
+   "inspiration": "在构建增强子活性预测模型时，可将转录爆发动力学（频率与大小）作为虚拟表观遗传特征或中间预测目标，以捕捉序列变异下的表达鲁棒性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.14.751496",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.14.751496",
+  "title": "Measurement reliability bounds functional benchmarks and relocates where variant effect prediction fails",
+  "journal": "bioRxiv",
+  "authors": [
+   "Zhang, N."
+  ],
+  "date": "2026-09-20",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.14.751496v1",
+  "doi": "10.64898/2026.09.14.751496",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ningyi Zhang",
+  "corr_affiliation": "Department of Biological Sciences, National University of Singapore",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "变异效应预测的基准测试方法论，对评估基因组基础模型在变异预测任务上的性能上限和真实失败区域有方法论启发。",
+   "novelty_for_me": "引入测量可靠性上限来重新审视变异效应预测器的基准排名，提示我在评估基础模型时需考虑实验测量的可重复性偏差。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于饱和基因组编辑数据的重复样本与标准误，估计各基因组区域的测量可靠性上限，并以此校正变异效应预测器的基准测试。",
+   "main_finding": "测量可靠性上限在不同基因组区域间差异显著，校正后重新定义了预测失败的位置（真正的失败位于内含子11-50 bp处），且预测器在分类任务中的区分能力优于相关性指标所暗示的水平。",
+   "inspiration": "在评估预训练基因组学模型对增强子活性预测的基准表现时，应考虑下游实验测定（如MPRA/STARR-seq）在不同细胞类型或基因组上下文中的测量可靠性上限，避免将实验噪声误判为模型预测失败。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.14.751514",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.14.751514",
+  "title": "SMORE: joint dimension reduction and cell population discovery on single-cell methylome data",
+  "journal": "bioRxiv",
+  "authors": [
+   "Deng, J.",
+   "Wang, Z.",
+   "Tang, W.",
+   "Hu, G.",
+   "Feng, H."
+  ],
+  "date": "2026-09-20",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.14.751514v1",
+  "doi": "10.64898/2026.09.14.751514",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hao Feng",
+  "corr_affiliation": "The University of Texas Health Science Center at Houston",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "涉及单细胞DNA甲基化数据的表示学习与降维，与表观基因组特征分析有间接联系。",
+   "novelty_for_me": "贝叶斯框架处理超稀疏甲基化数据的方法可能对表观遗传数据建模有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于贝叶斯框架的低秩潜在高斯分解与有限混合物先验，实现单细胞甲基化数据的联合降维与无预设聚类数的细胞群体发现。",
+   "main_finding": "该方法通过将甲基化比例转化为有序状态并传播测量不确定性，在多种模拟和真实数据集中准确恢复了细胞群体结构，显著优于现有降维聚类方法。",
+   "inspiration": "其将连续表观比例转化为有序状态并传播测量不确定性的思路，可启发在构建虚拟表观遗传特征时如何处理稀疏甲基化信号并量化下游增强子活性预测的置信度。"
+  }
+ }
+]
