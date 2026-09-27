@@ -1,0 +1,214 @@
+# Paper Scout 日报 2026-09-27
+
+共筛选出 **10** 篇推荐论文。
+📊 抓取 biorxiv 153 → 粗筛 91 篇 → LLM 选中 10 篇
+
+## 1. CardioChrom Reconstructs the Human Cardiac Virtual Epigenome from Single-Nucleus Transcriptomes
+
+- **期刊**: bioRxiv
+- **作者**: Huang, H., Hui, X., Li, Y., Ismail, A. A., Xu, Z., Yadav, S. K., Tan, Y.
+- **机构**: Yi Tan @ University of Arizona College of Medicine-Phoenix
+- **日期**: 2026-09-24
+- **ID**: DOI: 10.64898/2026.09.18.752723  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.18.752723v1
+- **相关分数**: 8/10
+- **一句话推荐**: 从单核RNA数据重建虚拟表观基因组（包括H3K27ac增强子标记），与你的'virtual epigenomic features'和'virtual cell'研究兴趣直接对应，且使用leave-one-cell-type-out评估跨细胞类型泛化。
+- **方法**: CardioChrom，基于同核多组学数据训练的监督学习框架，从单核RNA-seq数据预测染色质可及性及组蛋白修饰（H3K27ac/H3K27me3）。
+- **主要发现**: 该模型在跨细胞类型和外部队列中稳健重建虚拟表观基因组，性能超越基线Transformer，并在HFpEF队列中成功识别出内皮细胞中受抑制的增强子等关键调控元件。
+- **对我的启发**: 其利用转录组预测虚拟H3K27ac增强子活性并在跨细胞类型泛化中超越Transformer的范式，可为评估预训练基因组学模型在增强子活性预测中的表现提供基线对比。
+
+<details><summary>Abstract</summary>
+
+Background: Matched epigenomic profiling remains scarce in human heart failure, limiting regulatory interpretation of single-nucleus ribonucleic acid (RNA) sequencing data. We developed CardioChrom, a cardiac-specialized framework that reconstructs chromatin accessibility, histone H3 lysine 27 acetylation (H3K27ac), and histone H3 lysine 27 trimethylation (H3K27me3) from single-nucleus RNA profiles. Methods: CardioChrom was developed using same-nucleus human heart datasets jointly measuring RNA with chromatin accessibility by assay for transposase-accessible chromatin (ATAC), H3K27ac, or H3K27me3, with donor-separated development and leave-one-cell-type-out testing. Frozen models were evaluated in 10-donor and 23-sample external human heart cohorts. Histone reconstruction was benchmarked against measured profiles and a Transformer. The models were then applied without refitting to an RNA-only cohort of 43 donors with heart failure with preserved ejection fraction (HFpEF). Results: Across unseen cardiac cell types, CardioChrom increased area under the precision-recall curve by 0.0109 relative to within-cell-type RNA shuffling in 11 of 12 cell types and increased area under the receiver operating characteristic curve by 0.0179 in all 12. CardioChrom exceeded controls in both external cohorts and matched or exceeded the Transformer across 6 prespecified histone metrics. In HFpEF, 3,581 donor-level pathway-layer associations met global false discovery rate, sex-adjustment, and leave-one-donor-out robustness criteria. Endothelial cells showed prominent reconstructed histone-associated changes involving coagulation, inflammation, hypoxia, and profibrotic signaling. Von Willebrand factor expression and its reconstructed regulatory states were consistently reduced, and all 6 linked candidate cis-regulatory elements were classified as repressed. Motif-supported TF-cCRE-gene hypotheses were generated in endothelial cells and fibroblasts. Conclusions: CardioChrom extends RNA-only human heart failure cohorts toward cell-type-resolved virtual epigenomic and regulatory analysis while distinguishing predictions from direct measurements.
+
+</details>
+
+---
+
+## 2. EPIC: An open community challenge for sequence-based prediction of transcription initiation in five non-model metazoans
+
+- **期刊**: bioRxiv
+- **作者**: Vorontsov, I. E., Gryzunov, N., McDonald, B. R. et al. (14 authors)
+- **机构**: Sascha H. Duttke @ School of Molecular Biosciences, College of Veterinary Medicine, Washington State University, Pullman, WA, USA
+- **日期**: 2026-09-24
+- **ID**: DOI: 10.64898/2026.09.16.752171  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.16.752171v1
+- **相关分数**: 7/10
+- **一句话推荐**: 基于序列的转录起始预测挑战赛，直接涉及sequence-to-function范式，且关注模型跨物种泛化能力，与你的基因组功能预测和泛化研究高度相关。
+- **方法**: 提出名为 EPIC 的开放社区挑战，通过盲测基准评估序列到功能模型在非模式后生动物中的转录起始预测能力。
+- **主要发现**: 当前序列到功能模型在模式物种之外的泛化能力及对真核转录起始原理的真正理解尚不明确，需通过跨门类非模式物种的盲测进行公平评估。
+- **对我的启发**: 在评估预训练基因组学模型预测增强子活性时，可借鉴其跨物种盲测设计，验证模型是否学到通用的表观遗传调控规律而非特定物种特征。
+
+<details><summary>Abstract</summary>
+
+Predicting gene expression from DNA sequence is a central problem with critical biological and clinical implications. Recent sequence-to-function models are reported to achieve improved performance, yet it remains unclear how much of what they learn reflects genuine principles of eukaryotic transcription initiation and to what extent they are able to generalize beyond humans and other primary model species. A fair and blind benchmark has likewise been missing. Here we introduce EPIC, the Eukaryotic Promoter and transcription Initiation prediction Challenge. Teams receive strand-specific, single-nucleotide-resolution initiation profiles for 80-95% of the genome and are asked to predict the remainder from DNA sequence alone. To level the field, the challenge relies on understudied animals spanning three phyla: octopus, oyster, milkweed bug, Indian meal moth, and shark. EPIC is open to everyone and closes on December 31, 2026. All teams clearing the dinucleotide precision baseline are invited to join the consortium authorship of the post-challenge publication, and winners are invited for personal authorship.
+
+</details>
+
+---
+
+## 3. PerturbBridge: Conditional Latent Schr\"{o}dinger Bridge for Single-Cell Perturbation Prediction
+
+- **期刊**: bioRxiv
+- **作者**: Liu, Z., Jiang, C., Yang, C., Liu, X.
+- **机构**: Xiangrong Liu @ Xiamen University
+- **日期**: 2026-09-25
+- **ID**: DOI: 10.64898/2026.09.24.754259  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.24.754259v1
+- **相关分数**: 7/10
+- **一句话推荐**: 使用条件潜在Schrödinger Bridge建模单细胞扰动响应预测，直接命中research_interests中的single-cell perturbation和virtual cell方向。
+- **方法**: 提出基于条件隐空间薛定谔桥与beta-TCVAE的随机传输模型，在紧凑隐空间中建模单细胞扰动前后的群体分布转换。
+- **主要发现**: 通过将高维稀疏基因表达数据映射至隐空间并施加插值一致性与MMD正则化，该方法在CRISPR和化学扰动基准的差异表达恢复任务上达到SOTA。
+- **对我的启发**: 借鉴其利用beta-TCVAE压缩高维稀疏特征并在隐空间进行条件建模的思路，可用于处理跨细胞类型虚拟表观遗传特征的异质性及分布对齐。
+
+<details><summary>Abstract</summary>
+
+Single-cell perturbation response prediction seeks to recover transcriptional responses under unseen perturbation conditions. Because RNA sequencing measurements are destructive, control and perturbed cells are typically observed as unpaired populations without cell-level correspondence, shifting the prediction objective from individual cellular outcomes to perturbation-specific population distributions. The Schr"odinger Bridge (SB) provides a principled framework for modeling these population-level transitions as stochastic transport, but learning bridge dynamics from high-dimensional, sparse gene-expression profiles remains challenging. We propose PerturbBridge, a conditional latent Schr\"odinger Bridge framework that reformulates stochastic population transport over high-dimensional, sparse gene-expression profiles as bridge learning in a compact cell latent space. This formulation enables an efficient approximation of SB-based stochastic population transport in single-cell perturbation prediction. PerturbBridge first learns a compact latent representation following the \beta-TCVAE paradigm \citep{chen2018isolating}, alleviating the challenges caused by high dimensionality and sparsity during bridge learning. An interpolation-consistency regularizer further encourages agreement between decoded latent interpolations and the corresponding expression-space interpolations. PerturbBridge then learns a perturbation-conditioned latent bridge using a tractable stochastic SB approximation between latent control and target populations, with endpoint MMD regularization promoting alignment between generated and observed target distributions. Experiments on the Norman CRISPR and Sci-Plex3 chemical perturbation benchmarks demonstrate competitive performance across all evaluation metrics. Notably, PerturbBridge achieves state-of-the-art performance in differential-expression recovery on both benchmarks, highlighting the effectiveness of latent stochastic transport modeling for population-level single-cell perturbation prediction.
+
+</details>
+
+---
+
+## 4. DIRECTION-AWARE INTEGRATED BIOINFORMATICS ANALYSIS REVEALS CONCORDANT AND DISCORDANT MOLECULAR SIGNATURES LINKING TYPE 2 DIABETES MELLITUS AND POLYCYSTIC OVARY SYNDROME
+
+- **期刊**: bioRxiv
+- **作者**: Abdulsalam, s. O., Akanbi, D. A., Aloba, T. E., Ogunlola, M. W., Owopetu, D. I.
+- **机构**: sodiq Okikiola Abdulsalam @ University of Ibadan
+- **日期**: 2026-09-25
+- **ID**: DOI: 10.64898/2026.09.20.753005  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.20.753005v1
+- **相关分数**: 7/10
+- **一句话推荐**: 使用基因组语言模型直接从序列预测非编码元件的共进化相互作用，命中DNA language model和representation learning for biological sequences两个核心兴趣。
+- **方法**: 结合方向感知策略的转录组差异表达基因整合生物信息学分析（含PPI网络构建与功能富集）。
+- **主要发现**: PCOS与T2DM共享的DEGs极少且调控方向相反，但两者在免疫激活、凋亡及胰岛素信号等核心致病通路上存在显著重叠。
+- **对我的启发**: 无明显直接启发
+
+<details><summary>Abstract</summary>
+
+Abstract Polycystic ovarian syndrome and Type 2 diabetes mellitus are complex multivariate diseases that share well-established clinical pathophysiology, yet the molecular basis of their overlap is unknown. Prior bioinformatics studies have identified common differentially expressed genes between these two conditions. However, they have not accounted for the directionality of the gene expression changes observed, potentially obscuring any biological distinctions they may have. This study applied a direction-aware approach to classify molecular signatures between PCOS and T2DM as concordant or discordant. Transcriptomic analysis of GEO datasets GSE138518 (ovarian granulosa tissue, PCOS) and GSE25724 (pancreatic islet tissue, T2DM) identified 225 and 1,302 DEGs, respectively. Venn diagram analysis showed that only three genes (SLC6A8, RGS4, and SORL1) were shared between PCOS and T2DM from the total of 1,527 genes, and all 3 genes were regulated in opposing directions. Disease gene retrieval from the Comparative Toxicogenomics Database, Online Mendelian Inheritance in Man database, and GeneCards showed 214 shared disease-associated genes, with 311 genes unique to PCOS and 496 genes unique to T2DM. Protein-protein interaction construction using STRING (version 12.0) identified 70 interacting nodes. CytoHubba analysis across 6 scoring methods identified 18 high-confidence hub genes, including INS, BCL2, MTOR, LEP, MFN2, and PIK3CD. Functional enrichment analysis identified biological processes including immune activation, apoptosis, and insulin signaling, which were confirmed as the main pathways in KEGG pathway analysis. These findings show that while PCOS and T2DM share limited DEGs, they share common pathogenic pathways.
+
+</details>
+
+---
+
+## 5. Discrepancies between ChIP-seq and CUT&Tag histone mark profiles are explained by GC content and chromatin accessibility
+
+- **期刊**: bioRxiv
+- **作者**: Modolo, E., Patel, L., Ram, O., Simon, I., Mendenhall, E., Heinz, S., Benner, C., Goren, A.
+- **机构**: Alon Goren @ University of California, San Diego
+- **日期**: 2026-09-26
+- **ID**: DOI: 10.64898/2026.09.22.753564  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.22.753564v1
+- **相关分数**: 7/10
+- **一句话推荐**: 系统分析表观基因组测量方法（ChIP-seq vs CUT&Tag）的偏差及其与GC含量、染色质可及性的关系，对构建虚拟表观基因组特征和增强子活性预测有直接参考价值。
+- **方法**: 跨方法基准评估与偏差归因分析（系统比较ChIP-seq与CUT&Tag信号差异并归因于序列与染色质特征）
+- **主要发现**: CUT&Tag在低GC区域存在信号丢失而在高GC及高可及性染色质区域信号偏高，这种由GC含量和染色质可及性引起的局部偏差解释了其与ChIP-seq在组蛋白修饰谱上的系统性差异。
+- **对我的启发**: 在使用预训练基因组学模型生成虚拟表观遗传特征以预测增强子活性时，需警惕训练数据（如CUT&Tag/ChIP-seq）固有的GC含量与染色质可及性偏差，避免将技术性偏差误认为生物学特征。
+
+<details><summary>Abstract</summary>
+
+Chromatin profiling methods, such as ChIP-seq (chromatin immunoprecipitation followed by sequencing), are used to characterize the genomic localization of DNA-associated proteins. While ChIP and ChIP-seq have been used for decades, an orthogonal approach, CUT&Tag (Cleavage Under Targets and Tagmentation), is gaining popularity as an efficient and cost-effective alternative. Although previous comparative studies note discrepancies in signal-to-noise ratios and detection bias at certain genomic regions, many differences between ChIP-seq and CUT&Tag results remain largely unreconciled. Here, we systematically investigate the disagreeing signals captured by these two methods across well annotated genomic regions. We assess multiple histone mark profiles generated by different groups in two cell lines (K562 and MCF-7). Overall, our analysis indicates that compared to ChIP-seq, CUT&Tag may have limited sensitivity in low-GC environments and, as previously observed, increased signal in hyper-accessible chromatin. Notably, within GC-poor regions of active gene bodies and Polycomb-repressed domains, CUT&Tag exhibits a loss of H3K36me3 and H3K27me3 signal, respectively, where occupancy of these histone marks is otherwise expected. Further, active promoters with discrepant H3K4me3 and H3K27ac signal between the two assays differ systematically in GC content and chromatin accessibility. Promoters differentially enriched for CUT&Tag signal relative to ChIP-seq generally show higher, broader GC-content profiles and higher DNase-seq and ATAC-seq signal, while promoters enriched for ChIP-seq signal harbor the opposite characteristics. A local bias for high GC content and/or chromatin accessibility in CUT&Tag may also explain its differing signal patterns at nucleosome-depleted regions (NDRs) compared to ChIP-seq and MNase-seq promoter profiles. Altogether, our results highlight that studies focused on profiling the intensity and structure of histone modification occupancy can be sensitive to potential biases of CUT&Tag to GC content and chromatin accessibility. These characteristics should be accounted for when selecting a chromatin profiling approach, analyzing and interpreting data as well as drawing biological conclusions.
+
+</details>
+
+---
+
+## 6. Pop-Corn: Predicting Perturbation Phenotype Effects Across Single-Cell and Spatial Contexts
+
+- **期刊**: bioRxiv
+- **作者**: Chen, J., Cui, Y., Shao, Y., Sun, N., Martinez, M. R.
+- **机构**: Na Sun @ Whitehead Institute for Biomedical Research
+- **日期**: 2026-09-26
+- **ID**: DOI: 10.64898/2026.09.25.754560  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.25.754560v1
+- **相关分数**: 7/10
+- **一句话推荐**: 直接预测单细胞和空间扰动下的细胞类型组成变化，与单细胞扰动研究兴趣高度相关。
+- **方法**: 提出 Pop-Corn 模型，跳过基因表达重建，直接预测遗传扰动引起的细胞类型组成变化，并利用注意力机制解析空间细胞互作。
+- **主要发现**: 直接优化预测细胞群体组成比基于基因表达预测下游推断组成更准确，且能更好保留细胞状态多样性，可扩展至空间组织进行虚拟筛选。
+- **对我的启发**: 直接优化最终预测目标（增强子活性）可能比先预测中间虚拟表观遗传特征再推断活性更有效，值得在模型设计时对比验证。
+
+<details><summary>Abstract</summary>
+
+Genetic perturbations can reshape cell populations by altering the relative abundance of specific cell types and states within the profiled population, including increases, decreases and states that become detectable after perturbation. Pooled single-cell screens, such as Perturb-seq, measure such responses at scale. However, only a small fraction of possible perturbations can be tested experimentally. A central challenge is therefore to predict compositional shifts induced by unseen perturbations. Many perturbation-prediction methods do not directly optimize for this outcome; instead, they predict gene-expression responses and infer cell-type and cell-state composition downstream. Surprisingly, we find that even models that accurately predict perturbation-induced changes in average gene expression perform poorly at forecasting these compositional shifts. To address this gap, we present Pop-Corn, a method that directly predicts how a perturbation reshapes cell-type composition without reconstructing gene expression. In the primary T-cell benchmark, Pop-Corn predicted the overall cell-state composition of held-out perturbations more accurately than the evaluated expression-prediction pipelines, while better preserving the diversity of observed cell states. We further extend Pop-Corn to intact tissue, where it predicts perturbation-induced cell-type proportion changes in local cellular neighborhoods and uses attention patterns to generate hypotheses about context-dependent cellular interactions. Retrospective virtual screens support the use of Pop-Corn to prioritize perturbations for experimental follow-up according to their predicted effects on cell-state composition.
+
+</details>
+
+---
+
+## 7. SHERLOCK: Structured representation learning and causal inference of downstream perturbation effects
+
+- **期刊**: bioRxiv
+- **作者**: Zhang, M., Myers, J. D., Shi, L., Giglio, R. M., Chatterjee, S., McFaline-Figueroa, J. L., Azizi, E.
+- **机构**: Elham Azizi @ Columbia University
+- **日期**: 2026-09-26
+- **ID**: DOI: 10.64898/2026.09.25.754573  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.25.754573v1
+- **相关分数**: 6/10
+- **一句话推荐**: 单细胞扰动分析的可解释深度生成框架，直接对应你的'single-cell perturbation'研究兴趣，学习结构化扰动表征并支持因果推断。
+- **方法**: 基于结构因果模型（SCM）的深度生成框架，将单细胞扰动效应建模为对潜在基线细胞状态的结构化干预，以学习稀疏且可解释的扰动表示。
+- **主要发现**: 该框架能跨多尺度单细胞扰动数据统一学习扰动表示，准确预测组合扰动效应并恢复与已知生物学通路一致的扰动关系。
+- **对我的启发**: 将扰动解耦为对潜在基线状态的稀疏结构化干预的思路，可启发我在增强子活性预测中，将虚拟表观遗传特征建模为对预训练序列基线状态的稀疏干预，从而解耦序列基础特征与细胞类型特异性的表观调控。
+
+<details><summary>Abstract</summary>
+
+Understanding the effects of genetic, molecular, and experimental perturbations is essential for decoding cellular mechanisms and guiding biomedical interventions. Existing computational approaches are typically designed for individual tasks, such as predicting perturbation responses, characterizing downstream transcriptional effects, or modeling perturbation combinations, and therefore do not provide a unified framework for learning interpretable perturbation representations while enabling causal analysis of downstream effects and characterization of condition-dependent responses. We present SHERLOCK, an interpretable deep generative framework for single-cell perturbation analysis that represents perturbation effects as structured interventions on a latent baseline cellular state. SHERLOCK learns correlated and sparse perturbation representations that organize genetic and pharmacological perturbations according to shared transcriptional responses. % By formulating perturbations as interventions within a structural causal model, it enables counterfactual estimation of their downstream transcriptional effects under explicit identifiability assumptions. The same framework quantifies how perturbation responses vary across conditions and compositionally models combinatorial perturbations, enabling prediction of held-out combinations and classification of genetic interactions. Across genome-scale CRISPR, chemical, and spatial perturbation datasets, SHERLOCK recovers perturbation relationships concordant with known biological pathways and pharmacological properties, identifies condition-dependent responses, and predicts combinatorial perturbation effects. Together, SHERLOCK provides a unified framework for interpretable and causal analysis of perturbation effects across diverse single-cell perturbation experiments.
+
+</details>
+
+---
+
+## 8. The phage stress test: a proving ground for genome language models in biological prediction
+
+- **期刊**: bioRxiv
+- **作者**: Layton, E. M., Bernauer, M. L., Weinstock, L. D., Small, E. M., Geiselman, G. M., Bachand, G., Cahill, J.
+- **机构**: Jesse Cahill @ Sandia National Laboratories, Environmental Systems Biology, Albuquerque, NM, USA
+- **日期**: 2026-09-24
+- **ID**: DOI: 10.64898/2026.09.23.753910  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.23.753910v1
+- **相关分数**: 6/10
+- **一句话推荐**: 系统评估基因组语言模型Evo2的序列似然分数和嵌入在生物功能预测中的表现，与评估基因组基础模型能力的active project相关。
+- **方法**: 使用预训练基因组语言模型（Evo2）的序列对数似然分数与嵌入特征，在噬菌体实验突变数据上进行基因型-表型预测的基准测试。
+- **主要发现**: 尽管Evo2能捕捉基本的序列约束（如终止密码子惩罚），但在预测特定基因功能突变时表现不佳，且其预测信号很大程度上可由简单序列协变量解释，表明当前GLMs在复杂机制预测上仍有局限。
+- **对我的启发**: 在评估预训练基因组学模型对增强子活性的预测能力时，需警惕模型表现可能被简单序列特征（如GC含量、位置等）所主导，应设计消融实验剥离这些简单协变量的影响，以验证模型是否真正学到了复杂的表观遗传调控机制。
+
+<details><summary>Abstract</summary>
+
+Reliable biological prediction by AI is most likely to emerge first in the simplest systems with rich datasets and the fastest opportunities for testing and refinement. Phages with small genomes are an ideal testbed. Decades of experimental work have created an unusually information-rich literature benchmark that sits largely outside the sequence repositories typically used to train genome language models (GLMs). Recent work has shown that GLMs such as Evo2 can generate viable whole bacteriophage genomes, demonstrating that genome-scale biological design is possible. The next question is more mechanistic: can such models correctly predict the effects of simple, local sequence changes? Here, we evaluated Evo2 against experimental mutation data from two model phages: the single-stranded RNA phage MS2 and the single-stranded DNA phage {Phi}X174. We first addressed whether Evo2 sequence log-likelihood scores could distinguish viable from nonviable mutations, and then whether models trained on Evo2 embeddings were predictive of function. Across both phages, Evo2 captured expected sequence-level constraints: stop codons were generally penalized, synonymous substitutions had higher likelihood than nonsynonymous substitutions. Evo2 distinguished among synonymous codons in ways only weakly explained by host codon usage. However, for MS2, these capabilities did not translate into robust biological predictions. Specifically, Evo2 {Delta}SLL failed to distinguish functional from nonfunctional mutations in the lysis gene, an overlapping viral region that appears to be a particularly hard test case. In {Phi}X174, performance was stronger but still modest, and much of the apparent signal could be explained by simple covariates such as nonsense mutations, genomic position, and nucleotide distance from the reference. Together, these results introduce phages as a tractable proving ground for stress-testing GLMs against experimentally grounded genotype-to-phenotype tasks. More broadly, they provide a durable framework for identifying what data and model ingredients are required for biologically reliable prediction.
+
+</details>
+
+---
+
+## 9. ASOFormer: a Transformer-based model for predicting antisense oligonucleotide efficacy to support therapeutic candidate prioritization
+
+- **期刊**: bioRxiv
+- **作者**: Dove, N. C., Min, Y., Is, O., Ertekin-Taner, N., Wickland, D. P., Wang, X.
+- **机构**: Daniel P Wickland @ Mayo Clinic
+- **日期**: 2026-09-24
+- **ID**: DOI: 10.64898/2026.09.18.752788  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.18.752788v1
+- **相关分数**: 6/10
+- **一句话推荐**: 基于Transformer的序列到功能预测模型，预测反义寡核苷酸效力，在模型架构和任务范式上与基因组序列到功能预测高度相关。
+- **方法**: 基于Transformer架构融合序列、预测二级结构与化学修饰特征的多模态序列到功能预测模型。
+- **主要发现**: 化学修饰特征是驱动模型性能提升的最关键因素，二级结构起辅助增益作用；模型在独立验证集上的整体准确率和高活性候选物富集能力均超越现有SOTA。
+- **对我的启发**: 论文中通过消融分析量化不同输入特征贡献度的范式，可借鉴用于评估虚拟表观遗传特征在增强子活性预测中的边际增益，并辅助分析预训练模型不同padding策略对序列特征提取的干扰。
+
+<details><summary>Abstract</summary>
+
+Antisense oligonucleotides (ASOs) represent a promising therapeutic modality for RNA-based disease mechanisms, but identifying high-efficacy candidates from large sequence spaces remains a major bottleneck in drug development. Here, we present ASOFormer, a novel Transformer-based neural network that predicts the inhibition efficiency of RNase H-mediated ASOs from sequence, predicted secondary structure, and chemical modification features. ASOFormer was trained on a knockdown efficacy dataset spanning over 170,000 ASO-target pairs compiled largely from published patents. Ablation analysis confirmed that the addition of chemical modification features to the primary sequence drove the largest performance gains, with predicted secondary structure providing complementary benefit when combined with modification information. Further analysis highlighted the importance of the wings of gapmer ASOs and other features. As independent validation, ASOFormer was applied to ASOs targeting seven genes that were not in the training dataset gene list. For four out of the seven genes, the ground truth ASO inhibition efficiency was obtained from a public dataset, whereas the others were measured in-house via qPCR. Compared to two published state-of-the-art methods, ASOFormer achieved the best overall accuracy and prioritized the strongest inhibitors. Crucially, only ASOFormer consistently exceeded random expectation for top-candidate recovery across all seven test genes.
+
+</details>
+
+---
+
+## 10. MoTRUST: adaptive semantic protection for mosaic single-cell integration and molecular recovery
+
+- **期刊**: bioRxiv
+- **作者**: Liu, Q., Xu, Y.
+- **机构**: Yan Xu @ University of Science and Technology Beijing
+- **日期**: 2026-09-24
+- **ID**: DOI: 10.64898/2026.09.18.752592  |  URL: https://www.biorxiv.org/content/10.64898/2026.09.18.752592v1
+- **相关分数**: 5/10
+- **一句话推荐**: 单细胞多模态整合与分子恢复涉及ATAC-to-RNA表观基因组数据建模，与virtual cell和单细胞扰动兴趣间接相关。
+- **方法**: 提出MoTRUST模型，结合神经表征、自适应语义保护与条件残差扩散，用于马赛克单细胞多组学整合与分子恢复。
+- **主要发现**: 该模型在30个整合任务中总体排名第一，并在多个分子恢复指标上超越基线；其条件残差扩散在保持点预测精度的同时显著降低了ATAC-to-RNA的边际预测误差。
+- **对我的启发**: 在基于序列生成虚拟表观遗传特征或预测增强子活性时，可借鉴其条件残差扩散机制，在保持点预测精度的同时优化预测特征的边际分布特性。
+
+<details><summary>Abstract</summary>
+
+Single-cell multi-omics reveals complementary aspects of cellular identity, but heterogeneous assays produce incomplete modality combinations. Integrating these mosaic measurements while preserving biological structure and recovering missing molecular information remains challenging. We present MoTRUST, combining neural representations, adaptive semantic protection, molecular prediction and conditional residual diffusion. MoTRUST ranked first in overall integration across 30 tasks spanning six scenarios and surpassed the strongest evaluated controls on six of eleven development recovery endpoints. Conditional residual diffusion reduced aggregate marginal prediction scores by 4.4-5.1% across three ATAC-to-RNA data sources while preserving point predictions. Together, these capabilities enable accurate mosaic integration and molecular recovery for multimodal characterization of cellular heterogeneity.
+
+</details>
+
+---
