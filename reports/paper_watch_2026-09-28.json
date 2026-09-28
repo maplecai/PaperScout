@@ -1,0 +1,77 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.25.754561",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.25.754561",
+  "title": "A single-nucleus multi-omic atlas of gene regulation across 21 adult human tissues",
+  "journal": "bioRxiv",
+  "authors": [
+   "Fan, K.",
+   "Sule, A.",
+   "Guillaumet-Adkins, A.",
+   "Zhang, R.",
+   "Yu, T.",
+   "Cao, Z.",
+   "Zhang, X.",
+   "Durand, N.",
+   "Tellier, M.",
+   "Domenech, L.",
+   "Aguet, F.",
+   "Buenrostro, J. D.",
+   "Ardlie, K. G."
+  ],
+  "date": "2026-09-27",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.25.754561v1",
+  "doi": "10.64898/2026.09.25.754561",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Kristin G Ardlie",
+  "corr_affiliation": "Epigenomics Program, Broad Institute of MIT and Harvard, Cambridge, MA 02142",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "该论文构建了跨组织单细胞多组学图谱，并训练了sequence-to-function模型预测染色质可及性变异效应，与你的跨细胞类型增强子活性预测及调控基因组学研究高度契合。",
+   "novelty_for_me": "提供了跨21种人类组织的大规模cCREs及cCRE-基因关联数据集，可作为评估或预训练跨细胞类型表观预测模型的宝贵资源。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "构建跨组织单核多组学图谱并训练序列到功能(sequence-to-function)模型预测变异的染色质可及性效应。",
+   "main_finding": "构建了涵盖21种人体组织的单核多组学图谱，发现了大量新的顺式调控元件及其细胞特异性调控架构，并利用序列模型成功预测了数十万个变异对染色质可及性的影响。",
+   "inspiration": "该研究针对特定细胞亚型（如内皮细胞）训练序列到功能模型，提示在预测游离型增强子活性时，可利用大规模单核多组学数据构建不同细胞类型的特异性训练集，以提升模型对细胞上下文的解析能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.21.753369",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.21.753369",
+  "title": "A meta-interaction basis for cell-cell communication in tissues",
+  "journal": "bioRxiv",
+  "authors": [
+   "Tang, J.",
+   "Liang, S.",
+   "Alam, S.",
+   "Cheng, W.",
+   "Zhang, Y.",
+   "Ma, J."
+  ],
+  "date": "2026-09-27",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.21.753369v1",
+  "doi": "10.64898/2026.09.21.753369",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jian Ma",
+  "corr_affiliation": "Carnegie Mellon University",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "该研究提出表示学习框架从空间转录组学中提取细胞间通讯程序，与你的虚拟细胞及单细胞扰动兴趣有间接关联。",
+   "novelty_for_me": "其从空间转录组数据中学习可解释的细胞通讯基序的方法论，可能对构建虚拟细胞状态预测模型有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "SpiderNet：基于空间转录组学的可解释表示学习框架，通过联合学习发送方调控因子、配体-受体对和接收方靶基因，将细胞间通讯分解为紧凑的元交互基础组件。",
+   "main_finding": "SpiderNet从580万+空间转录组细胞中识别出可复用的元交互程序，能追踪多细胞信号级联、预测扰动响应，并在独立队列中验证了与生存和免疫治疗响应相关的泛癌症成纤维细胞-肿瘤程序。",
+   "inspiration": "无明显直接启发"
+  }
+ }
+]
