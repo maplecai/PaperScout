@@ -1,0 +1,309 @@
+[
+ {
+  "id": "pubmed:42804716",
+  "source": "pubmed",
+  "raw_id": "42804716",
+  "title": "scLDM: a conditional diffusion framework for single-cell perturbation prediction.",
+  "journal": "Bioinformatics (Oxford, England)",
+  "authors": [
+   "Boyang Wu",
+   "Yuhang Liu",
+   "Yue Cheng",
+   "Xiangrong Liu",
+   "Quan Zou",
+   "Leyi Wei",
+   "Lei Xu"
+  ],
+  "date": "2026-09-28",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42804716/",
+  "doi": "10.1093/bioinformatics/btag727",
+  "pmid": "42804716",
+  "arxiv_id": "",
+  "corr_author": "Lei Xu",
+  "corr_affiliation": "School of Electronic and Communication Engineering, Shenzhen Polytechnic University, Shenzhen 518055, China.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "提出基于扩散模型的条件生成框架预测单细胞扰动响应，直接契合研究兴趣中的single-cell perturbation方向。",
+   "novelty_for_me": "将潜在扩散模型应用于单细胞扰动预测并显式整合细胞状态与扰动类型条件，是生成式AI在虚拟细胞建模中的新应用。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于变分自编码器降维与条件潜在扩散模型（LDM）的单细胞扰动响应生成范式。",
+   "main_finding": "该模型在跨物种、多场景的扰动预测中优于SOTA，且其学习到的扰动嵌入与已知生物学机制高度对齐，具备强可解释性。",
+   "inspiration": "可借鉴其利用条件扩散模型将细胞类型作为显式引导条件的范式，预测不同细胞类型特异性的游离型增强子活性状态。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.23.753886",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.23.753886",
+  "title": "CheckAMG: Accurate Identification of Auxiliary Viral Genes with Genome-Language Models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Kosmopoulos, J. C.",
+   "Martin, C.",
+   "Wainaina, J. M.",
+   "Bolduc, B.",
+   "Urvoy, M.",
+   "Sullivan, M. B.",
+   "Anantharaman, K."
+  ],
+  "date": "2026-09-27",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.23.753886v1",
+  "doi": "10.64898/2026.09.23.753886",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Karthik Anantharaman",
+  "corr_affiliation": "University of Wisconsin-Madison",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用微调的基因组语言模型识别病毒辅助基因，与DNA语言模型研究兴趣间接相关。",
+   "novelty_for_me": "基因组语言模型在病毒基因功能注释中的实际应用案例。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合基于注释的规则评分与微调基因组语言模型进行不依赖同源序列的辅助病毒基因识别。",
+   "main_finding": "该方法在跨生态系统基准测试中优于现有工具，不仅提升了AMG识别可靠性，还扩展至生理和调控基因，并在百万级病毒基因组中发现了大量无参考序列相似性的新基因。",
+   "inspiration": "其利用微调基因组语言模型捕获无同源性序列功能特征的范式，启发我在增强子活性预测中探索预训练模型对缺乏表观遗传特征序列的泛化能力，并评估不同padding策略对短片段增强子特征提取的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.25.754388",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.25.754388",
+  "title": "Analyzing Genomic Foundation Models for Viral Sequence Identification",
+  "journal": "bioRxiv",
+  "authors": [
+   "Buzkova, V.",
+   "Dvorsky, B.",
+   "Komarkova, M.",
+   "Kollinova, K.",
+   "Krupicka, R.",
+   "Klempir, O."
+  ],
+  "date": "2026-09-28",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.25.754388v1",
+  "doi": "10.64898/2026.09.25.754388",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ondrej Klempir",
+  "corr_affiliation": "Czech Technical University in Prague, Faculty of Biomedical Engineering",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "评估了基因组基础模型（如NT和DNABERT）的序列嵌入在分类任务上的表现，与评估预训练基因组基础模型的项目在方法论上存在间接关联。",
+   "novelty_for_me": "提供了GFM在闭集分类任务上与BLAST对比的基准测试视角，可能对理解GFM的泛化能力有参考价值。",
+   "worth_reading": false
+  },
+  "_summary": {
+   "core_method": "利用预训练基因组基础模型（Nucleotide Transformer与DNABERT）提取序列嵌入，结合多种池化策略与最近邻搜索进行无比对病毒序列分类。",
+   "main_finding": "冻结参数的NTv3-650M在病毒序列分类上准确率接近BLAST，且在长序列上表现更优；但所有基础模型对碱基掩码的鲁棒性均显著弱于传统比对方法。",
+   "inspiration": "该文对mean/max/CLS等不同池化策略在序列表征上的效果评估，启发我在处理增强子序列时，可系统探究不同池化方式及padding策略对预训练模型提取虚拟表观遗传特征及下游活性预测的影响。"
+  }
+ },
+ {
+  "id": "pubmed:42805172",
+  "source": "pubmed",
+  "raw_id": "42805172",
+  "title": "Single-cell multiomics across nine mammals reveals cell-type-specific regulatory conservation in the brain.",
+  "journal": "Cell genomics",
+  "authors": [
+   "Ashlyn G Anderson",
+   "Brianne B Rogers",
+   "Erin A Barinaga",
+   "Jacob M Loupe",
+   "Elisa WaMaina",
+   "S Quinn Johnston",
+   "Henry L Limbo",
+   "Elizabeth A Gardner",
+   "Anna J Moyer",
+   "Amanda L Gross",
+   "Douglas R Martin",
+   "Summer B Thyme",
+   "Lindsay F Rizzardi",
+   "Richard M Myers",
+   "Gregory M Cooper",
+   "J Nicholas Cochran"
+  ],
+  "date": "2026-09-28",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42805172/",
+  "doi": "10.1016/j.xgen.2026.101367",
+  "pmid": "42805172",
+  "arxiv_id": "",
+  "corr_author": "J Nicholas Cochran",
+  "corr_affiliation": "HudsonAlpha Institute for Biotechnology, Huntsville, AL 35806, USA. Electronic address: ncochran@hudsonalpha.org.",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "涉及跨物种细胞类型特异性顺式调控元件（CREs）和增强子功能分析，与增强子活性预测及调控基因组学背景间接相关。",
+   "novelty_for_me": "提供了跨物种脑组织中增强子保守性的多维实验框架，对理解细胞类型特异性增强子的进化维度有启发。",
+   "worth_reading": false
+  },
+  "_summary": {
+   "core_method": "跨物种单细胞多组学联合多维保守性框架（整合序列、染色质可及性与增强子-基因关联），辅以MPRA和CRISPRi功能验证。",
+   "main_finding": "揭示了大脑增强子在不同物种间的细胞类型特异性保守维度，并发现神经退行性疾病遗传风险局限于保守增强子，而神经精神疾病风险在保守及人类特异性增强子中均富集。",
+   "inspiration": "该研究生成的跨物种细胞类型特异性CRE序列及MPRA活性数据集，可作为评估预训练基因组学模型在跨物种增强子活性预测中序列对齐(padding)策略及泛化能力的基准。"
+  }
+ },
+ {
+  "id": "pubmed:42804118",
+  "source": "pubmed",
+  "raw_id": "42804118",
+  "title": "Cognitive-Motor Dual Task Training Synergistically Improves Aging-related Cognitive Dysfunction By Reducing TMAO and Suppressing TXNIP/NLRP3 Pathway.",
+  "journal": "Molecular neurobiology",
+  "authors": [
+   "Rong Zhang",
+   "Tengteng Dai",
+   "Ziman Zhu",
+   "Weijun Gong"
+  ],
+  "date": "2026-09-28",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42804118/",
+  "doi": "10.1007/s12035-026-06228-6",
+  "pmid": "42804118",
+  "arxiv_id": "",
+  "corr_author": "Weijun Gong",
+  "corr_affiliation": "Department of Neurological Rehabilitation, Beijing Rehabilitation Hospital, Capital Medical University, Beijing, 100144, China. gwj197104@ccmu.edu.cn.",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "提出基于傅里叶和小波变换的核酸序列特征提取框架，属于生物序列表示学习的一种新尝试。",
+   "novelty_for_me": "将序列编码为波形信号并使用频域变换提取特征，为DNA序列表示学习提供了非传统的信号处理视角。",
+   "worth_reading": false
+  },
+  "_summary": {
+   "core_method": "采用D-半乳糖诱导衰老大鼠模型，结合认知-运动双任务训练干预与体内/体外分子生物学实验（UHPLC-MS/MS、Western blot、Co-IP），解析TMAO/TXNIP/NLRP3通路机制。",
+   "main_finding": "认知-运动双任务训练（CMDT）较单一认知训练更显著改善衰老相关认知障碍，其优势在于同时降低外周及海马TMAO蓄积并抑制TXNIP/NLRP3炎症级联；单一认知训练可下调TXNIP/NLRP3但不影响TMAO水平。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.05.11.724439",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.05.11.724439",
+  "title": "MuseDrift: Navigating Protein Evolutionary Manifolds with Conditional Discrete Diffusion",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wang, C.",
+   "Wang, Y."
+  ],
+  "date": "2026-09-28",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.05.11.724439v1",
+  "doi": "10.64898/2026.05.11.724439",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yiquan Wang",
+  "corr_affiliation": "Department of Infectious Disease and Immunology, University of Florida, Gainesville, FL 32608, USA",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "蛋白质序列的条件离散扩散生成模型，与生物序列表示学习间接相关。",
+   "novelty_for_me": "基于条件离散扩散的蛋白质变体生成思路，可能对序列生成有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出一种基于条件离散扩散的蛋白质序列生成范式，利用预训练野生型表示作为上下文并结合序列同一性感知调制进行去噪。",
+   "main_finding": "该模型在无特定属性引导下，能精准控制变体与野生型的序列同一性，且生成的变体在结构预测置信度和外部突变效应评分上均优于基线方法。",
+   "inspiration": "利用预训练表示作为上下文条件化去噪过程的思路，启发我在增强子活性预测中可探索将预训练基因组学模型的上下文特征（如针对padding区域的特定编码）作为条件输入，以增强序列到功能的表征能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.08.25.747138",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.25.747138",
+  "title": "Efficient genome-wide mapping of reproducible, context-dependent eQTLs at single-cell resolution",
+  "journal": "bioRxiv",
+  "authors": [
+   "Alquicira-Hernandez, J.",
+   "Dorans, E.",
+   "Tomofuji, Y.",
+   "Nathan, A.",
+   "Raychaudhuri, S."
+  ],
+  "date": "2026-09-28",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.25.747138v1",
+  "doi": "10.64898/2026.08.25.747138",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Soumya Raychaudhuri",
+  "corr_affiliation": "Brigham and Women's Hospital",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "单细胞分辨率的动态eQTL映射，涉及细胞状态特异的基因调控效应，与细胞类型特异性调控研究间接相关。",
+   "novelty_for_me": "在单细胞水平建模变异调控效应的计算方法，对理解细胞类型特异性调控有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出Dynema，采用带聚类稳健方差估计量的泊松回归模型，在真实单细胞分辨率下进行全基因组上下文依赖性eQTL映射。",
+   "main_finding": "该方法高效且统计校准良好，揭示了伪bulk策略遗漏的细胞状态依赖性eQTL（如TSPAN32等自身免疫位点），阐明了疾病变异的动态调控效应。",
+   "inspiration": "Dynema识别出的细胞状态特异性eQTL数据集，可作为评估我序列到功能模型在特定细胞类型下变异效应预测能力的高质量基准。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.22.753496",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.22.753496",
+  "title": "AtlasOT - The Fused Unbalanced Gromov-Wasserstein for Multimodal Integration of Disease Atlases",
+  "journal": "bioRxiv",
+  "authors": [
+   "Peng, K.",
+   "Ruiz, M.",
+   "Caron, B.",
+   "Kuppe, C.",
+   "Nagai, J.",
+   "Gesteira Costa Filho, I."
+  ],
+  "date": "2026-09-28",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.22.753496v1",
+  "doi": "10.64898/2026.09.22.753496",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ivan Gesteira Costa Filho",
+  "corr_affiliation": "RWTH Aachen University Hospital",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "单细胞与空间多组学整合的最优传输方法，涉及空间调控动力学，对单细胞研究有一定启发。",
+   "novelty_for_me": "基于FUGW的多模态整合及调控动力学重建方法。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于融合不平衡Gromov-Wasserstein最优传输（FUGW）的多模态整合框架，通过约束样本内传输并放宽质量守恒来对齐跨模态单细胞数据。",
+   "main_finding": "该方法在scRNA-scATAC及空间转录组映射任务中优于现有SOTA，其传输计划可有效辅助稀有细胞检测、基因插补及调控网络重建等下游任务。",
+   "inspiration": "其放宽质量守恒以处理不平衡数据的思路，可启发我在sequence-to-function映射中利用不平衡最优传输处理padding引入的虚假序列质量分布，或对齐虚拟表观遗传特征与真实组学数据。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.25.754520",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.25.754520",
+  "title": "Where Tabular Foundation Models Falter on Genetic Data: Datasets That Expose and Provide a Path to Address the Gap",
+  "journal": "bioRxiv",
+  "authors": [
+   "Das, A.",
+   "Cui, Y."
+  ],
+  "date": "2026-09-28",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.25.754520v1",
+  "doi": "10.64898/2026.09.25.754520",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yan Cui",
+  "corr_affiliation": "University of Tennessee Health Science Center",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "评估表格基础模型在基因型-表型数据上的泛化问题，涉及基础模型在遗传数据上的局限性分析。",
+   "novelty_for_me": "基础模型在跨群体遗传数据上非平稳性导致性能下降的现象，对思考基因组基础模型的泛化性有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用受控层次高斯过程应力测试与合成任务指令微调，评估并修复表格基础模型在基因型-表型预测中的祖先依赖效应漂移问题。",
+   "main_finding": "表格基础模型在祖先分散度高的真实基因数据上性能显著下降；通过构建显式编码效应漂移的合成任务进行指令微调，可在不改变基础架构的前提下有效缓解该性能退化。",
+   "inspiration": "利用合成任务进行指令微调以弥补预训练分布与真实数据分布差异的范式，可启发我针对预训练基因组学模型在不同padding策略下引入的分布偏移问题，设计特定的微调任务进行修正。"
+  }
+ }
+]
