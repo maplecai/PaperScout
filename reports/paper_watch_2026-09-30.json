@@ -1,0 +1,165 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.24.754017",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.24.754017",
+  "title": "EpiZoo: a DNA sequence-aware foundation model for cross-species single-cell epigenomics",
+  "journal": "bioRxiv",
+  "authors": [
+   "Li, K.",
+   "Chen, X.",
+   "Jiang, Q.",
+   "Wang, Z.",
+   "Lv, H.",
+   "Jiang, R."
+  ],
+  "date": "2026-09-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.24.754017v1",
+  "doi": "10.64898/2026.09.24.754017",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Rui Jiang",
+  "corr_affiliation": "Tsinghua University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出了一种DNA序列感知的跨物种单细胞表观基因组基础模型，直接契合你对表观遗传基础模型和序列到功能的研究兴趣。",
+   "novelty_for_me": "将DNA序列信息与单细胞ATAC数据结合构建跨物种基础模型，为多物种调控程序学习提供了新思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于混合专家Transformer的DNA序列感知跨物种单细胞表观基因组基础模型，将表观图谱编码为整合序列与可及性信息的“细胞句子”进行预训练。",
+   "main_finding": "该模型在跨物种单细胞分析任务中达到SOTA，并能直接从DNA序列预测跨基因组和物种的细胞类型特异性染色质可及性。",
+   "inspiration": "其将DNA序列与表观上下文整合为“细胞句子”的编码范式，可借鉴用于构建虚拟表观遗传特征以预测游离型增强子活性，并为评估不同padding策略对序列到功能预测的影响提供了基线模型参考。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.23.753774",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.23.753774",
+  "title": "Regulon-informed cellular representations reveal task-dependent generalization in drug combination prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Ignatova, E.",
+   "Likhter, M."
+  ],
+  "date": "2026-09-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.23.753774v1",
+  "doi": "10.64898/2026.09.23.753774",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Maksim Likhter",
+  "corr_affiliation": "OpenLongevity",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "评估不同生物表示（如regulon）在跨细胞系药物组合预测中的任务依赖性泛化，与跨细胞类型泛化问题间接相关。",
+   "novelty_for_me": "揭示了表示选择对泛化性能的任务依赖性，可能启发我在跨细胞类型增强子预测中思考表示策略。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合转录因子regulon、通路评分和基因表达特征构建对称三分类预测器，在多种域偏移设置下评估药物组合预测的泛化能力。",
+   "main_finding": "生物特征表示的预测价值高度依赖于域偏移类型和评估目标，且叠加额外的生物学表示并不必然提升泛化性能。",
+   "inspiration": "在评估预训练基因组学模型padding策略对跨细胞类型增强子活性预测的影响时，需考虑泛化效果的任务依赖性，系统评估不同域偏移场景而非单一指标定论。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.28.755146",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.28.755146",
+  "title": "A biological-response compound representation allows chemical perturbation prediction across cell lines",
+  "journal": "bioRxiv",
+  "authors": [
+   "Le Breton, L.",
+   "Kaufmann, L.",
+   "Carraz-Billat, E.",
+   "Fournier, Q.",
+   "Lemieux, S."
+  ],
+  "date": "2026-09-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.28.755146v1",
+  "doi": "10.64898/2026.09.28.755146",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Sebastien Lemieux",
+  "corr_affiliation": "Universite de Montreal",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "使用生物响应表示预测跨细胞系的化学扰动，与单细胞扰动和跨细胞类型泛化有一定关联。",
+   "novelty_for_me": "用生物响应而非化学结构表示化合物，在跨细胞系扰动预测上取得显著提升，可能启发扰动表示学习策略。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出BioPert框架，以参考细胞系的基因表达响应作为化合物表示，结合小型神经网络预测跨细胞系的转录扰动。",
+   "main_finding": "基于生物响应的化合物表示在跨细胞系扰动预测上显著优于化学结构表示，且能有效捕捉上下文依赖效应。",
+   "inspiration": "启发我在跨细胞类型增强子活性预测中，可探索引入“参考细胞类型的表观遗传状态”作为虚拟特征，以桥接不同细胞类型间的上下文差异。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.24.753821",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.24.753821",
+  "title": "Detecting Random Mutations in 16S rRNA Sequences",
+  "journal": "bioRxiv",
+  "authors": [
+   "Haworth, R. M.",
+   "Commichaux, S.",
+   "Pop, M."
+  ],
+  "date": "2026-09-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.24.753821v1",
+  "doi": "10.64898/2026.09.24.753821",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Rain M Haworth",
+  "corr_affiliation": "University of Maryland",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "关注DNA基础模型生成的序列对公共数据库的污染及检测方法，与基因组基础模型的安全性评估间接相关。",
+   "novelty_for_me": "从数据库污染角度审视DNA基础模型生成序列的可检测性，提供了一个独特但边缘的视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于保守基序和gapped k-mer特征构建的机器学习分类器范式。",
+   "main_finding": "利用保守核苷酸构建的gapped k-mer分类器能以超90%的准确率检测出5%随机突变的人工16S rRNA序列，且该特征在生命三域中均高度保守。",
+   "inspiration": "在评估预训练基因组学模型padding对增强子活性预测的影响时，可借鉴其利用gapped k-mer分析局部语法结构的方法，探究padding是否破坏了增强子原有的保守基序特征。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.24.753940",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.24.753940",
+  "title": "DECIPHER integrates disentangled representation learning and prototype-based cell-type deconvolution across molecular modalities",
+  "journal": "bioRxiv",
+  "authors": [
+   "Lai, W.",
+   "Li, C.",
+   "Deng, Q.",
+   "Zhu, Y.",
+   "Liu, C.",
+   "Li, Z.",
+   "Luo, O. J."
+  ],
+  "date": "2026-09-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.24.753940v1",
+  "doi": "10.64898/2026.09.24.753940",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Oscar Junhong Luo",
+  "corr_affiliation": "Department of Systems Biomedical Sciences, School of Medicine, Jinan University, Guangzhou 510632, China",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用解耦表征学习进行跨模态细胞类型反卷积，与单细胞表征学习有一定关联，可能对虚拟细胞概念有启发。",
+   "novelty_for_me": "将域恒定与域特定表征解耦用于反卷积的思路，对处理细胞类型特异性问题有一定参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出端到端解耦表征学习框架DECIPHER，结合可微非负最小二乘优化进行跨模态细胞类型去卷积。",
+   "main_finding": "通过分离域恒定表征和域特定表征，模型在多模态去卷积中表现鲁棒，且提取的域恒定表征能有效转化为低维生物学信息，支持跨队列年龄预测和预后分层。",
+   "inspiration": "解耦表征学习思路可启发在预测不同细胞类型增强子活性时，将DNA序列基础特征与细胞类型特异性的虚拟表观遗传特征解耦，以提升模型跨细胞类型的泛化能力。"
+  }
+ }
+]
