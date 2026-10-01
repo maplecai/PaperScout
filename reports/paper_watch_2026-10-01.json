@@ -1,0 +1,285 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.30.755330",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.30.755330",
+  "title": "Evo 2 as a classification machine: evidence from in-context learning and mechanistic interpretability",
+  "journal": "bioRxiv",
+  "authors": [
+   "Bertolini Agnoletto, L.",
+   "Curion, F.",
+   "Petrillo, M.",
+   "Leoni, G.",
+   "Ronco, M.",
+   "Ruiz Serra, V.",
+   "Consoli, S.",
+   "Ceresa, M."
+  ],
+  "date": "2026-09-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.30.755330v1",
+  "doi": "10.64898/2026.09.30.755330",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Lorenzo Bertolini Agnoletto",
+  "corr_affiliation": "European Commission, Joint Research Centre (JRC)",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接研究基因组语言模型Evo 2的上下文学习能力与机制可解释性，与我的DNA语言模型/基因组基础模型研究兴趣高度契合。",
+   "novelty_for_me": "揭示了gLM的in-context learning在长序列上崩溃、模型放大无益、perplexity与准确性不相关等现象，对我的基础模型评估项目有直接方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于Evo 2基因组语言模型的上下文学习（ICL）范式，结合logit-lens和Jacobian Scope进行机制可解释性分析。",
+   "main_finding": "Evo 2在短序列二分类任务中具备上下文学习能力，但在千碱基长序列上性能崩溃且模型扩大无益；机制分析表明模型可能依赖提示结构而非内容信号。",
+   "inspiration": "预训练基因组学模型在长序列（如增强子）任务上存在性能崩溃风险，且可能依赖输入结构而非生物学信号，提示在增强子活性预测中需深入评估padding和序列长度对模型机制的真实影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.24.753534",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.24.753534",
+  "title": "Disease relevance and replicability of deep learning gene expression prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Zhang, A.",
+   "Tasaki, S.",
+   "Connell, D.",
+   "Ng, B.",
+   "Gaiteri, C."
+  ],
+  "date": "2026-09-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.24.753534v1",
+  "doi": "10.64898/2026.09.24.753534",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Chris Gaiteri",
+  "corr_affiliation": "SUNY Upstate",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "系统评估了从DNA序列预测基因表达的DL模型在疾病和跨组织场景下的性能退化，与你的细胞类型特异性调控预测研究直接相关。",
+   "novelty_for_me": "揭示了DL模型高表现主要来自基因On/Off二态性而非疾病相关表达变化，为评估sequence-to-function模型的实际泛化能力提供了新视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "对深度学习基因表达预测模型进行疾病相关性评估与代码可复现性基准测试。",
+   "main_finding": "现有深度学习模型的高预测性能主要源于捕获基因表达的“开/关”双峰分布，而非疾病相关的精细表达水平变化，且存在代码与报告性能不一致的问题。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性时，需警惕模型是否仅捕获了基础的“开/关”状态，应设计更精细的评估指标以验证其在不同细胞类型间细微活性差异上的真实预测能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.01.22.700673",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.01.22.700673",
+  "title": "Generative modeling reveals the connection between nuclear morphology and gene expression",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wen, S.",
+   "Vinas, R.",
+   "Bues, J.",
+   "Lambert, C.",
+   "Grenningloh, N.",
+   "Ferrari, T.",
+   "Bugani, E.",
+   "Pezoldt, J.",
+   "Love, J.",
+   "Wan, Y.",
+   "Karthaus, W.",
+   "Deplancke, B.",
+   "Brbic, M."
+  ],
+  "date": "2026-09-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.01.22.700673v1",
+  "doi": "10.64898/2026.01.22.700673",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Maria Brbic",
+  "corr_affiliation": "EPFL",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "用生成模型连接核形态与基因表达，涉及跨模态表征学习与单细胞数据，与virtual cell概念间接相关。",
+   "novelty_for_me": "配对单细胞图像-转录组数据的双向生成建模框架，对多模态细胞表征学习有方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于超大规模细胞核图像预训练的双向跨模态生成模型（COSMIC），用于联合建模单细胞转录组与细胞核形态。",
+   "main_finding": "该模型能定量解析基因表达与细胞核形态间的双向信息流，并在癌症耐药性和胚胎发育中成功识别出受微环境影响的形态-表达协同变化基因。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.24.749599",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.24.749599",
+  "title": "Snurportin-1 maintains muscle niche integrity and myogenic progenitor homeostasis",
+  "journal": "bioRxiv",
+  "authors": [
+   "Saracoglu, H. P.",
+   "Nashabat, M.",
+   "Kutlu, D. N.",
+   "Saribas, B.",
+   "Yilmaz, E.",
+   "Tur, S.",
+   "Kayserili, H.",
+   "Yaksi, E.",
+   "Nabavizadeh, N.",
+   "Escande-Beillard, N."
+  ],
+  "date": "2026-09-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.24.749599v1",
+  "doi": "10.64898/2026.09.24.749599",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Nathalie Escande-Beillard",
+  "corr_affiliation": "Koc University School of Medicine",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "结合单细胞转录组与机器学习进行变异功能机制分类，与变异效应预测和单细胞扰动有间接关联。",
+   "novelty_for_me": "用单细胞表达谱替代传统功能实验来训练变异机制分类模型，为变异效应预测提供了基于细胞状态的新视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "构建斑马鱼基因敲除模型结合转录组学分析探究肌肉稳态调控机制。",
+   "main_finding": "SPN1缺失会导致广泛的剪接异常和转录失调，进而破坏细胞外基质与肌源性祖细胞稳态，引发肌营养不良表型。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.17.752359",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.17.752359",
+  "title": "A moving target: non-stationary selection governs unsupervised prediction of viral fitness",
+  "journal": "bioRxiv",
+  "authors": [
+   "Aris-Brosou, S.",
+   "Vilain, M."
+  ],
+  "date": "2026-09-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.17.752359v1",
+  "doi": "10.64898/2026.09.17.752359",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Stephane Aris-Brosou",
+  "corr_affiliation": "University of Ottawa",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "评估蛋白质语言模型在变异效应预测上的表现，与基因组基础模型评估及序列到功能有间接关联。",
+   "novelty_for_me": "揭示了在训练数据不足的病毒家族上，大参数语言模型表现不如简单的比对模型，对基础模型泛化性评估有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "构建组合式无监督流程，结合蛋白质语言模型与多序列比对模型评估病毒突变适应度。",
+   "main_finding": "预训练蛋白质语言模型在病毒适应度预测上受限于训练数据分布偏差和进化非平稳性（时间漂移），简单比对模型在病毒抗原蛋白上表现更优；比对的时间段是预测准确率的关键决定因素。",
+   "inspiration": "评估预训练基因组学模型预测增强子活性时，需警惕预训练语料库分布偏差对特定细胞类型或序列家族预测的影响，并应与简单基线模型进行对比验证。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.07.20.739063",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.07.20.739063",
+  "title": "MGM2 as a Multimodal Foundation Model for Microbial Community States and Responses",
+  "journal": "bioRxiv",
+  "authors": [
+   "Zhang, H.",
+   "Zhang, Y.",
+   "Qi, Y.",
+   "Liu, T.",
+   "Zhao, L.",
+   "Yang, R.",
+   "Ning, K."
+  ],
+  "date": "2026-09-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.07.20.739063v1",
+  "doi": "10.64898/2026.07.20.739063",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Kang Ning",
+  "corr_affiliation": "Huazhong University of Science and Technology",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "整合DNA语言模型表示的多模态基础模型，与基因组基础模型和表示学习有一定交集。",
+   "novelty_for_me": "将DNA语言模型与丰度、文本描述结合进行多模态预训练以预测群落扰动响应，思路可借鉴。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "融合DNA语言模型表征、丰度数据与文本描述的多模态基础模型预训练及下游微调范式。",
+   "main_finding": "大规模预训练的冻结表征在跨项目微生物群落状态及药物干预效应预测中表现出色，且通过稀疏分解成功解析了分类学、生态学等可解释特征。",
+   "inspiration": "借鉴其利用稀疏分解解析多模态表征的思路，可用于剥离并解释预训练基因组学模型中padding序列及虚拟表观遗传特征对增强子活性预测的具体贡献。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.24.754263",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.24.754263",
+  "title": "CycloCross: Adversarial single-cell RNA-seq data translation across species",
+  "journal": "bioRxiv",
+  "authors": [
+   "Hacquard, O.",
+   "Tokuta, Y.",
+   "Imoto, Y.",
+   "Nakamura, T.",
+   "Deguchi, S.",
+   "Nagano, M.",
+   "Saitou, M.",
+   "Hiraoka, Y."
+  ],
+  "date": "2026-09-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.24.754263v1",
+  "doi": "10.64898/2026.09.24.754263",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Olympio Hacquard",
+  "corr_affiliation": "Kyoto University",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "基于生成对抗网络的跨物种单细胞数据翻译，与单细胞计算和虚拟细胞概念有间接关联。",
+   "novelty_for_me": "无需先验基因对应关系即可跨物种翻译单细胞表达谱，对处理跨细胞类型数据有一定启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于CycleGAN架构的跨物种单细胞转录组数据对抗性翻译模型。",
+   "main_finding": "无需先验基因对应关系即可实现跨物种scRNA-seq数据的高效真实翻译，保留时间动态并支持缺失时间点的表达插值与外推。",
+   "inspiration": "利用真实数据而非纯噪声的对抗翻译范式，可启发跨细胞类型虚拟表观遗传特征及增强子活性的迁移预测与缺失状态补齐。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.24.754260",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.24.754260",
+  "title": "CHACAM: a cell-cell interaction-guided hierarchical attention model for high-precision cell identity annotation of scRNA-seq data in early C. elegans embryogenesis",
+  "journal": "bioRxiv",
+  "authors": [
+   "Chen, X.",
+   "Ju, X.",
+   "Murali, M.",
+   "Li, H.",
+   "Chen, M.",
+   "Zhang, M. Q."
+  ],
+  "date": "2026-09-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.24.754260v1",
+  "doi": "10.64898/2026.09.24.754260",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Michael Q Zhang",
+  "corr_affiliation": "The University of Texas at Dallas",
+  "_rank": {
+   "relevance_score": 4,
+   "priority": "P2",
+   "why_relevant": "使用分层注意力模型进行单细胞转录组数据的细胞身份注释，属于AI4LifeScience，对单细胞表征学习有间接启发。",
+   "novelty_for_me": "将细胞-细胞相互作用图谱与分层注意力机制结合以提升单细胞注释精度，对单细胞表征学习有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合配体-受体互作网络与细胞接触图的监督式分层注意力模型",
+   "main_finding": "通过学习细胞间接触特征及参考细胞三角化策略，有效解决了早期胚胎单细胞转录组中近缘亚谱系细胞因转录组相似导致的注释模糊问题。",
+   "inspiration": "无明显直接启发"
+  }
+ }
+]
