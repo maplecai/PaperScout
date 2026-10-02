@@ -1,0 +1,294 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.30.755794",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.30.755794",
+  "title": "Scalable saturation mutagenesis reveals gene regulatory architecture and rare variant effects",
+  "journal": "bioRxiv",
+  "authors": [
+   "Yuan, H.",
+   "Huang, X.",
+   "Auerbach, B.",
+   "Linder, J.",
+   "Srivastava, D.",
+   "Kelley, D. R."
+  ],
+  "date": "2026-10-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.30.755794v1",
+  "doi": "10.64898/2026.09.30.755794",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "David R Kelley",
+  "corr_affiliation": "Calico Life Sciences LLC",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "直接针对sequence-to-function模型的饱和突变扫描提出高效框架Multi-ISM，涉及增强子-基因优先排序和细胞类型特异性调控元件识别，与我的核心研究高度契合。",
+   "novelty_for_me": "将ISM重构为稀疏恢复问题以实现45倍加速的思路，对我评估和解释基因组基础模型变异效应非常有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "将饱和突变扫描（ISM）重构为稀疏恢复问题，实现长上下文序列模型的高效且架构无关的核苷酸分辨率归因分析。",
+   "main_finding": "该方法在减少45倍计算量的同时保持预测精度，成功构建大规模组织特异性增强子-基因调控图谱，并显著提升罕见变异的个性化表达预测效果。",
+   "inspiration": "在评估预训练基因组学模型（含padding序列）对增强子活性的归因时，可引入稀疏恢复范式替代逐个突变评估，大幅降低长上下文模型的计算成本。"
+  }
+ },
+ {
+  "id": "pubmed:42019216",
+  "source": "pubmed",
+  "raw_id": "42019216",
+  "title": "Deep generative framework for modeling single-cell drug perturbation response.",
+  "journal": "Neural networks : the official journal of the International Neural Network Society",
+  "authors": [
+   "Yongqing Zhang",
+   "Chenpeng Wu",
+   "Tianhao Li",
+   "Zhigan Zhou",
+   "Zhengxiao Huang",
+   "Aochen Zhang",
+   "Zixuan Wang"
+  ],
+  "date": "2026-04-15",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42019216/",
+  "doi": "10.1016/j.neunet.2026.109005",
+  "pmid": "42019216",
+  "arxiv_id": "",
+  "corr_author": "Zixuan Wang",
+  "corr_affiliation": "College of Electronics and Information Engineering, Sichuan University, Chengdu, 610065, China. Electronic address: zixuan98@stu.scu.edu.cn.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接讨论virtual cell模型的扰动响应预测能力边界，提出context geometry compression问题和可恢复分辨率评估标准，与我的virtual cell研究兴趣高度相关。",
+   "novelty_for_me": "揭示了模型在预测正确均值的同时丢失上下文特异性响应的CGC现象，对我评估增强子跨细胞类型泛化性能有深刻方法论启示。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出scDPR框架，结合属性适应模块与基于最优传输（OT）的因果图学习模块，预测单细胞药物扰动转录组响应并解耦因果效应。",
+   "main_finding": "scDPR在预测未见药物转录组响应上优于现有SOTA，能识别导致治疗异质性的关键细胞亚群，且相比主流基础模型具有更高的训练效率。",
+   "inspiration": "利用最优传输（OT）解耦混杂因素以提取直接因果效应的思路，可启发我在跨细胞类型增强子活性预测中，利用OT解耦细胞特异性表观遗传背景噪声，提取纯粹的序列-功能映射关系。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.28.755183",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.28.755183",
+  "title": "Mendel, a foundation model of human genetic variation, prioritizes regulatory variants and improves gene expression prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Salman, A.",
+   "Feng, H.",
+   "Wei, P.",
+   "Sun, R.",
+   "Wu, L.",
+   "Pan, W.",
+   "Wu, C."
+  ],
+  "date": "2026-09-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.28.755183v1",
+  "doi": "10.64898/2026.09.28.755183",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Chong Wu",
+  "corr_affiliation": "The University of Texas MD Anderson Cancer Center",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "Mendel是DNA基础模型，以变异为中心的训练目标学习调控变异特征并改进基因表达预测，直接命中基因组基础模型和序列到功能研究方向。",
+   "novelty_for_me": "变异中心训练目标（而非保守序列背景）的思路对我理解DNA语言模型如何学习调控信息很有启发，且与Evo 2的对比提供了基础模型评估视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出以变异为中心的预训练目标函数，在全基因组序列上从头训练 DNA 基础模型以聚焦等位基因变异。",
+   "main_finding": "该模型在 SNV 预测精度上远超现有模型，其预测残差能有效富集因果调控变异，并作为先验显著提升跨组织基因表达预测性能。",
+   "inspiration": "在评估预训练模型 padding 影响时，可重点关注不同 padding 策略对变异位点局部参考对齐上下文的破坏程度，及其对下游增强子活性预测的连锁干扰。"
+  }
+ },
+ {
+  "id": "pubmed:42679819",
+  "source": "pubmed",
+  "raw_id": "42679819",
+  "title": "Cross-species single-cell atlas of the striatum defines cell-type and subregion disease vulnerabilities.",
+  "journal": "Cell",
+  "authors": [
+   "Raleigh M Linville",
+   "Benjamin T James",
+   "Kyriaki Galani",
+   "Li-Lun Ho",
+   "Jung Hoon Shin",
+   "Esaria Oliver",
+   "Stuart B Fass",
+   "James C Cameron",
+   "Brent E Fitzwalter",
+   "Roland Bock",
+   "Erin M Murray",
+   "Mathilde Louçã",
+   "Oluwamayowa Oke",
+   "Charlotte Wang",
+   "Erica Engelberg-Cook",
+   "Michael DeTure",
+   "Vanessa Farrell",
+   "Sergio Sebastian Pineda",
+   "Suphinya Sathitloetsakun",
+   "Xinyue Liang",
+   "Bertha Madras",
+   "Dennis W Dickson",
+   "Deborah C Mash",
+   "Gustavo Turecki",
+   "Vanessa C Wheeler",
+   "Veronica A Alvarez",
+   "Dana Gabuzda",
+   "Manolis Kellis",
+   "Myriam Heiman"
+  ],
+  "date": "2026-09-01",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42679819/",
+  "doi": "10.1016/j.cell.2026.08.006",
+  "pmid": "42679819",
+  "arxiv_id": "",
+  "corr_author": "Myriam Heiman",
+  "corr_affiliation": "The Picower Institute for Learning and Memory, Massachusetts Institute of Technology, Cambridge, MA 02139, USA; Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology, Cambridge, MA, USA. Electronic address: mheiman@mit.edu.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "深度生成模型预测单细胞药物扰动响应，直接对应我research interests中的single-cell perturbation和virtual cell方向。",
+   "novelty_for_me": "将最优传输与因果图学习结合来分解药物扰动效应的框架设计，对我思考扰动预测模型有方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "跨物种单细胞核RNA测序结合GWAS与药理学数据的多模态整合分析。",
+   "main_finding": "构建了跨物种纹状体单细胞图谱，揭示了神经元亚群与亚区在神经退行性疾病中的特异性脆弱性及显著的跨物种表达差异。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.25.753922",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.25.753922",
+  "title": "Genetic risk and inflammatory signaling converge on cell type-specific regulatory programs in type 1 diabetes",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wang, L.",
+   "Wei, Z."
+  ],
+  "date": "2026-10-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.25.753922v1",
+  "doi": "10.64898/2026.09.25.753922",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Zong Wei",
+  "corr_affiliation": "Mayo Clinic Arizona",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用ChromBPNet从scATAC-seq预测染色质可及性并评估变异对细胞类型特异性增强子的效应，与我的增强子活性预测项目间接相关。",
+   "novelty_for_me": "在特定疾病（T1D）背景下将基础模型应用于细胞类型特异性调控变异分析的应用案例，可提供下游验证思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "整合单细胞多组学与GWAS数据，利用ChromBPNet深度学习模型进行碱基分辨率染色质可及性预测及变异效应评估。",
+   "main_finding": "发现T1D相关非编码SNP通过改变特定转录因子结合位点的染色质可及性，影响细胞类型特异性增强子活性，进而导致β细胞功能障碍。",
+   "inspiration": "ChromBPNet在预测变异对染色质可及性影响中的应用，启发我在游离型增强子活性预测中可利用虚拟表观遗传特征（如碱基突变）来量化序列变异对细胞类型特异性调控的边际效应。"
+  }
+ },
+ {
+  "id": "pubmed:42816628",
+  "source": "pubmed",
+  "raw_id": "42816628",
+  "title": "Population-scale immune multiome atlas reveals regulatory disease mechanisms.",
+  "journal": "Nature",
+  "authors": [
+   "Masahiro Kanai",
+   "Toni M Delorey",
+   "Jarno Honkanen",
+   "Rodosthenis S Rodosthenous",
+   "Julianna Juvila",
+   "Shane Murphy",
+   "Isabella Teixeira-Soldano",
+   "Hee Seung Hwang",
+   "Juha Karjalainen",
+   "Jussi Halonen",
+   "Georgia Panagiotaropoulou",
+   "Yuanxiang Zhang",
+   "Cristin McCabe",
+   "Eric Chen",
+   "Kosaku Nanki",
+   "Toshimi Yoshida",
+   "Kai Liu",
+   "Marla Glean",
+   "Nitya Mehrotra",
+   "Emily P Finan",
+   "Daniel Chafamo",
+   "Yixiao Zhu",
+   "Mikko Arvas",
+   "Sanni Ruotsalainen",
+   "Zhili Zheng",
+   "Yoshihiko Tomofuji",
+   "Daiki Tokuyasu",
+   "Shinichi Namba",
+   "Kyuto Sonehara",
+   "Yukinori Okada",
+   "Mary Pat Reeve",
+   "Mitja Kurki",
+   "Caroline B M Porter",
+   "Orr Ashenberg",
+   "Wei Zhou",
+   "Kimmo Pitkänen",
+   "Jukka Partanen",
+   "Aarno Palotie",
+   "Daniel B Graham",
+   "Mark J Daly",
+   "Ramnik J Xavier"
+  ],
+  "date": "2026-09-30",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42816628/",
+  "doi": "10.1038/s41586-026-11078-2",
+  "pmid": "42816628",
+  "arxiv_id": "",
+  "corr_author": "Ramnik J Xavier",
+  "corr_affiliation": "Center for Computational and Integrative Biology, Massachusetts General Hospital, Boston, MA, USA. xavier@molbio.mgh.harvard.edu.",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P1",
+   "why_relevant": "大规模单细胞多组学揭示增强子-基因调控关系和变异对染色质到表达的级联效应，与调控基因组学和增强子功能理解高度相关。",
+   "novelty_for_me": "群体规模的peak-gene链接和多层调控缓冲机制可为跨细胞类型增强子活性预测提供生物学先验和数据资源。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "群体规模单细胞多组学QTL映射结合大规模并行报告分析（MPRA），构建从染色质可及性到基因表达的因果调控级联。",
+   "main_finding": "发现进化保守基因存在多层调控缓冲机制：变异对染色质可及性的影响正常，但通过更弱、更分散的增强子-基因连接在向表达传递时被衰减，解释了疾病变异偏好靶向保守基因的现象。",
+   "inspiration": "论证了顺式调控元件的内在活性（MPRA测得）与下游染色质-表达传递机制的解耦，提示在基于序列预测游离型增强子活性时，需注意其与内源性细胞类型特异性表观遗传调控网络间的非线性映射关系。"
+  }
+ },
+ {
+  "id": "pubmed:42498177",
+  "source": "pubmed",
+  "raw_id": "42498177",
+  "title": "The next-generation virtual cell: From spatiotemporal transcriptomic modeling to closed-loop target discovery in complex diseases.",
+  "journal": "Life sciences",
+  "authors": [
+   "Mengya Zhao",
+   "Xiaofeng Ma",
+   "Wei Shi",
+   "Yulong Sun"
+  ],
+  "date": "2026-07-24",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42498177/",
+  "doi": "10.1016/j.lfs.2026.124600",
+  "pmid": "42498177",
+  "arxiv_id": "",
+  "corr_author": "Yulong Sun",
+  "corr_affiliation": "School of Life Science and Technology, Key Laboratory for Space Biosciences & Biotechnology, Institute of Special Environmental Biophysics, Research Center of Special Environmental Biomechanics and Medical Engineering, Engineering Research Center of Chinese Ministry of Education for Biological Diagnosis, Treatment and Protection Technology and Equipment, Northwestern Polytechnical University, Xi'an, Shaanxi Province, 710072, China. Electronic address: yulongsun@nwpu.edu.cn.",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "综述讨论下一代虚拟细胞概念，与我的'virtual cell'研究兴趣有概念性关联，但侧重药物发现应用而非序列建模方法。",
+   "novelty_for_me": "提供了虚拟细胞在复杂疾病和闭环验证中的宏观视角，可作为背景参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "综述性论述基于大规模单细胞与空间多组学数据构建“下一代虚拟细胞”的范式，并强调计算预测与高通量湿实验验证的闭环整合。",
+   "main_finding": "虚拟细胞的发展不能仅依赖计算规模扩张，需深度解码复杂疾病的生物学上下文，并通过整合类器官等高通量湿实验验证来弥合转录组与蛋白质组间的转化鸿沟。",
+   "inspiration": "启发我在预测游离型增强子活性时，可引入MPRA等高通量实验数据构建“预测-验证”闭环，并关注虚拟表观遗传特征向下游转录/蛋白功能映射的验证鸿沟。"
+  }
+ }
+]
