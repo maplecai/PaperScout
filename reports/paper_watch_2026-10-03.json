@@ -1,0 +1,155 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.26.754650",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.26.754650",
+  "title": "Applying AlphaGenome Variant Impact for SNV Prioritization",
+  "journal": "bioRxiv",
+  "authors": [
+   "Qu, H.-Q.",
+   "Hakonarson, H."
+  ],
+  "date": "2026-10-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.26.754650v1",
+  "doi": "10.64898/2026.09.26.754650",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hakon Hakonarson",
+  "corr_affiliation": "Children's Hospital of Philadelphia",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P2",
+   "why_relevant": "直接应用并评估了AlphaGenome的变异效应预测分数，与你的代表性论文及调控变异预测兴趣相关。",
+   "novelty_for_me": "提供了AlphaGenome在临床变异分类和fine-mapping中的实证阈值及非编码区域性能表现。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于ROC分析与Youden指数校准AlphaGenome变异影响预测分数（AVI）的临床分类阈值。",
+   "main_finding": "确定了区分致病/良性SNV的全局AVI阈值（0.9938），并证实该预训练模型的功能预测信息与统计精细定位（SuSiE）信号相互正交。",
+   "inspiration": "预训练模型在非编码区预测的阈值偏低，提示在评估游离型增强子活性等非编码功能时需建立特定置信度阈值，且模型提取的序列功能特征可与传统统计遗传学信号互补使用。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.07.20.739485",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.07.20.739485",
+  "title": "snpXplorer: haplotype-block representation of GWAS signals for integrated variant and cross-trait interpretation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Tesi, N.",
+   "Green, G. S.",
+   "Salazar, A.",
+   "van der Lee, S. J.",
+   "Hulsman, M.",
+   "Holstege, H.",
+   "Reinders, M."
+  ],
+  "date": "2026-10-02",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.07.20.739485v1",
+  "doi": "10.64898/2026.07.20.739485",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Niccolo' Tesi",
+  "corr_affiliation": "Amsterdam University Medical Center",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "该工具整合了AlphaGenome等功能预测分数用于GWAS变异解释，与调控变异效应预测有一定关联。",
+   "novelty_for_me": "提供了一种将变异功能预测（如AlphaGenome）整合到单倍型块层面进行跨性状解释的应用视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于重组率与成对LD聚类预计算单倍型块，并结合预训练生物医学语言嵌入聚类表型描述，构建多尺度GWAS信号整合与跨性状解释的交互式平台。",
+   "main_finding": "以单倍型块为单位聚合GWAS信号与功能注释，能有效揭示跨性状的协同与拮抗多效性，并大幅降低大规模GWAS库的表型冗余度。",
+   "inspiration": "无明显直接启发。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.08.28.747622",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.28.747622",
+  "title": "Dataset structure outweighs method choice in single-cell cell-type annotation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wardhana, O."
+  ],
+  "date": "2026-10-02",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.28.747622v1",
+  "doi": "10.64898/2026.08.28.747622",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Oliver Wardhana",
+  "corr_affiliation": "University of Notre Dame",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "系统评估了包括transformer基础模型在内的多种单细胞注释工具，与虚拟细胞和基础模型评估间接相关。",
+   "novelty_for_me": "揭示了数据集结构比模型选择更影响性能，对评估基因组基础模型的泛化性有方法论上的参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用Taguchi正交阵列实验设计结合k近邻纯度评估，对跨七大方法家族的63种单细胞注释工具进行受控变量基准测试。",
+   "main_finding": "数据集结构（细胞类型在嵌入空间的分离度）对注释准确率的解释方差远超工具选择（84% vs 4%）；当信号噪声大时，模型复杂度无法弥补数据本身的局限性。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性时，应优先考察不同细胞类型虚拟表观遗传特征在模型嵌入空间的内在分离度，而非单纯依赖调整padding策略或增加模型复杂度来提升预测效果。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.27.754054",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.27.754054",
+  "title": "GGE: General-purpose deep meta-learning for classification of human transcriptomes with limited data",
+  "journal": "bioRxiv",
+  "authors": [
+   "Yankovitz, G.",
+   "Gat-Viks, I."
+  ],
+  "date": "2026-10-02",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.27.754054v1",
+  "doi": "10.64898/2026.09.27.754054",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Irit Gat-Viks",
+  "corr_affiliation": "Tel-Aviv University",
+  "_rank": {
+   "relevance_score": 5,
+   "priority": "P2",
+   "why_relevant": "使用深度元学习跨数据集学习转录组分类的通用初始化，对跨细胞类型泛化或虚拟细胞建模思路有一定启发。",
+   "novelty_for_me": "跨任务元学习初始化在转录组学中的成功应用，可能为跨细胞类型表观遗传基础模型的预训练策略提供参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于跨数千个转录组分类任务的深度元学习框架，学习具有强泛化能力的模型初始化。",
+   "main_finding": "跨任务元学习预训练的模型初始化在小样本转录组分类任务上显著优于传统分类器，且能通过注意力机制揭示跨任务的共享关键基因。",
+   "inspiration": "利用跨任务元学习获取强泛化模型初始化的范式，可启发在预测不同细胞类型增强子活性时，通过元学习跨多细胞类型的序列到功能映射，缓解特定细胞类型标注数据稀缺问题。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.26.754596",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.26.754596",
+  "title": "LOL: a Python package for leakage-aware phenotype prediction and confounding diagnostics in GEO transcriptomics datasets",
+  "journal": "bioRxiv",
+  "authors": [
+   "Muigano, M. N."
+  ],
+  "date": "2026-10-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.26.754596v1",
+  "doi": "10.64898/2026.09.26.754596",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Martin Nganga Muigano",
+  "corr_affiliation": "Bio One Scientific Ltd",
+  "_rank": {
+   "relevance_score": 3,
+   "priority": "P2",
+   "why_relevant": "关注转录组表型预测中的数据泄露和混杂诊断，对评估基因组模型泛化性有间接方法论启发。",
+   "novelty_for_me": "泄露感知评估和混杂诊断的思路可能对跨细胞类型泛化评估有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出LOL（Latent Omics Learning）Python包，采用防泄漏预处理、类不平衡感知评估和组感知验证的表型预测工作流范式。",
+   "main_finding": "该工作流通过泄漏膨胀指数和PVCA-lite等诊断指标，能有效识别并量化转录组学表型预测中的信息泄漏、类不平衡及混杂因素，从而区分稳健预测与需进一步审查的结果。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性时，可借鉴其防泄漏验证和混杂因素诊断思路（如检查潜在表示与批次或细胞类型协变量的关联），以排除因数据划分不当或混杂特征导致的虚高预测性能。"
+  }
+ }
+]
