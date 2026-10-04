@@ -4137,6 +4137,11 @@
    "candidates": 95,
    "selected": 5,
    "errors": []
+  },
+  {
+   "date": "2026-10-04",
+   "candidates": 3,
+   "selected": 0
   }
  ]
 }
