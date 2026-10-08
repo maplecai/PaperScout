@@ -1,17 +1,14 @@
-"""推送模块：写日报 + 微信(Server酱) + Email。
+"""推送模块：写日报 + Email。
 
-微信和 Email 推送同一份日报全文（含 Abstract），日报写入 reports/ 归档。
+Email 发送日报全文（含 Abstract），日报写入 reports/ 归档。
 """
 from __future__ import annotations
 
 import logging
 import os
-import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-import requests
 
 log = logging.getLogger("paper-scout")
 
@@ -133,72 +130,14 @@ def load_latest_report(reports_dir: str = "reports") -> tuple[list[dict], str, s
     return papers, md, date_str
 
 
-# ====================================================================
-# 微信 (Server酱)
-# ====================================================================
-SC_MAX_DESP = 30000  # Server酱 desp 上限约 32KB，留余量
-
-
-def _post_wechat(title: str, body: str) -> bool:
-    key = os.environ.get("SC_SENDKEY", "").strip()
-    if not key:
-        log.warning("未配置 SC_SENDKEY，跳过微信推送")
-        return False
-    # Server酱³ 的 sendkey 形如 sctp<数字>t<随机串>，走独立域名
-    m = re.match(r"^sctp(\d+)t", key)
-    url = (
-        f"https://{m.group(1)}.push.ft07.com/send/{key}.send"
-        if m else f"https://sctapi.ftqq.com/{key}.send"
-    )
-    try:
-        r = requests.post(url, data={"title": title, "desp": body}, timeout=30)
-        r.raise_for_status()
-        try:
-            data = r.json()
-        except Exception:
-            log.error("微信推送返回非 JSON: %s", r.text[:200])
-            return False
-        # Server酱 成功: code == 0；失败会带 message
-        if data.get("code") not in (0, None):
-            log.error("微信推送被拒: %s", str(data)[:300])
-            return False
-        return True
-    except Exception as e:
-        log.error("微信推送失败: %s", e)
-        return False
-
-
 def send_empty_notice(date_str: str, reason: str, no_push: bool = False) -> bool:
-    """无推荐也发一条，让用户知道程序跑了、只是今天没有货。
-    no_push（检索阶段）时不推送，写入空日报 JSON，由推送阶段（--test-notify）发送。"""
+    """归档空日报；正常运行时也通过邮件说明没有推荐的原因。"""
+    md = build_report_md([], date_str) + f"\n今日没有符合标准的论文。\n\n> {reason}\n"
+    write_report(md, date_str)
+    write_report_json([], date_str)
     if no_push:
-        write_report_json([], date_str)
-        log.info("空日：已写入空日报标记，待推送阶段发送")
         return False
-    body = f"### {date_str}\n\n今日没有符合标准的论文，未生成日报。\n\n> {reason}"
-    ok = _post_wechat(f"📄 Paper Scout 日报 {date_str} · 今日无推荐", body)
-    if ok:
-        log.info("空日通知推送成功")
-    return ok
-
-
-def send_wechat(md: str, date_str: str, n_papers: int, no_push: bool = False) -> bool:
-    """微信推送与 Email 完全相同的一份日报全文（含 Abstract）。"""
-    if n_papers <= 0:
-        log.info("无推荐论文，跳过微信推送")
-        return False
-
-    body = md
-    if len(body) > SC_MAX_DESP:
-        body = body[:SC_MAX_DESP] + "\n\n…（内容过长已截断，完整版见 Email / reports/）"
-
-    if no_push:
-        log.info("微信推送内容已生成，跳过推送")
-        return False
-    if _post_wechat(f"📄 Paper Scout 日报 {date_str} · {n_papers} 篇", body):
-        log.info("微信推送成功 (%d 篇)", n_papers)
-        return True
-    return False
+    return send_email(md, date_str, 0)
 
 
 # ====================================================================

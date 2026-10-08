@@ -34,13 +34,15 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+      - name: Run offline tests
+        run: python -m unittest discover -s tests
+
       - name: Run PaperScout
         env:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
-          SC_SENDKEY: ${{ secrets.SC_SENDKEY }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}

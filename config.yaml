@@ -272,11 +272,11 @@ fetch:
       - genomics
       max_results: 1000
 ranking:
-  keyword_prefilter_threshold: 0.1
+  keyword_prefilter_threshold: 0.2
   batch_size: 10
   max_llm_candidates: 100
   selection:
-    min_score: 5
+    min_score: 6
     accept_priorities:
     - P0
     - P1

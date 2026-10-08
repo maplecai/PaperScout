@@ -12,7 +12,7 @@ main.py              主编排器：抓取 → 去重 → 粗筛 → LLM → Top
 fetch.py             三源独立抓取 + 跨源 DOI 合并去重。单个源失败不影响其它两个
 rank.py              关键词加权粗筛 + LLM 批量打分 + 动态阈值 Top 选择
 summarize.py         对入选论文逐篇生成中文总结（{core_method, main_finding, inspiration}）
-notify.py            Markdown 日报渲染 + 微信 (Server酱³) + Email (SMTP) 推送
+notify.py            Markdown 日报渲染 + Email (SMTP) 推送
 llm.py               OpenAI 兼容 LLM 客户端。纯 requests，无 SDK。429/5xx 指数退避重试，4xx 直接抛
 state.json           去重 dict（120 天滚动清理）+ 运行历史
 ```
@@ -23,7 +23,7 @@ state.json           去重 dict（120 天滚动清理）+ 运行历史
 
 1. **抓取时跨源合并** — 按 DOI 跨源合并，优先级 pubmed > arxiv > biorxiv。合并时把 PubMed 侧未记录的 arxiv_id/pmid 补到保留的那篇上
 2. **state.json 多键标记** — 每篇论文存全部已知标识符：`pubmed:ID`、`doi:DOI`、`pmid:ID`、`arxiv_id:ID`。同一个论文换一套 ID 系统出现也会被 `filter_seen` 挡掉
-3. **seen 标记在推送之前落盘** — `mark_seen + save_state` 在 push 前面执行。推送阶段崩了（比如 Server酱 挂了、SMTP 超时），明天也不会把同一篇论文重新推荐出来。例外：LLM 调用失败的论文（`_rank._failed=True`）不会被标记 seen，下次运行时重新送 LLM 评估，防止因网络抖动永久漏掉论文
+3. **seen 标记在推送之前落盘** — `mark_seen + save_state` 在 push 前面执行。推送阶段崩了（比如 SMTP 超时），明天也不会把同一篇论文重新推荐出来。例外：LLM 调用失败的论文（`_rank._failed=True`）不会被标记 seen，下次运行时重新送 LLM 评估，防止因网络抖动永久漏掉论文
 
 ### LLM 失败容错
 
@@ -31,12 +31,13 @@ state.json           去重 dict（120 天滚动清理）+ 运行历史
 - 总结失败 → 单篇回退空 dict，不影响其它入选论文的总结
 - 以上两种情况都不写 seen，下次运行重试
 
-### 微信与 Email 内容完全一致
+### 仅发送 Email
 
-- `build_report_md(papers, date_str, errors, stats)` 只调用一次，返回的 md 字符串原样用于归档、微信推送、Email 发送
-- `send_wechat(md, date_str, n_papers)` 直接收同一份 md，不再自己渲染
-- 标题统一为 `# Paper Scout 日报 2026-09-01`
-- 微信内容超过 Server酱 约 30KB 上限时截断，尾部注明「完整版见 Email / reports/」
+- `build_report_md` 返回的同一份 Markdown 用于归档和 Email 发送。
+- 微信推送代码已移除，Actions 不再注入 `SC_SENDKEY`。
+- 无符合条件的论文时也归档 Markdown/JSON，并发送说明邮件；`--no-notify` 只归档。
+- 邮件发送失败返回非零退出状态。SMTP 接受邮件不等于收件箱已送达。
+- 全部 LLM 评分失败时返回非零退出状态，不发送“无推荐”通知，也不更新 seen。
 
 ### 检索窗口锚定（`--end-date`）
 
@@ -48,7 +49,7 @@ state.json           去重 dict（120 天滚动清理）+ 运行历史
 | bioRxiv | API 按 posted date | `/{D-3}/{D-1}/`，三整天 |
 | arXiv | 时间戳，但显式加 上界 | `dt >= D-3 00:00 AND dt < D 00:00` |
 
-定时触发命令：`python main.py --end-date $(date -u +%F)` （cron UTC 2:00）
+定时触发命令：`python main.py --end-date $(date -u +%F)` （cron UTC 00:00，北京时间 08:00）
 
 手动触发（workflow_dispatch）时不加 `--end-date`，以实际运行时刻为终点的自然窗口。
 
@@ -89,7 +90,7 @@ arXiv 无作者单位元数据，bioRxiv 走 `author_corresponding` 字段。
 - `_rank` dict 的键由 `_normalize_rank` 或 `_placeholder_rank` 构造，键恒齐全（`relevance_score`, `priority`, `why_relevant`, `novelty_for_me`, `worth_reading`），`priority` 恒大写。所有消费方可以安全地用 `p["_rank"]["priority"]` 而非 `.get(…, default)`
 - 关键词粗筛时 `if t and t in text` —— 不能去掉 `if t`，因为 `"" in text` 恒为 True，config 里混入空串会让所有论文全局加分
 - LLM 批次按 index 对齐：LLM 可能少返或乱序，`rank_by_idx.get(i)` 兜底为 `_placeholder_rank`
-- `select_top`：双层条件不是冗余。外层 `pri in accept or score >= min_score` 进候选，内层 `worth_reading or score >= min_score or P0/P1` 最后把关 —— 确保 P2 + 不值得读 + 低分的论文不会入选
+- 粗筛阈值为 0.2（0–1 分）。`select_top` 要求 `score >= min_score` 且优先级在 `accept_priorities` 中；默认分数线为 6/10（相当于 0.6），任何优先级都不能绕过分数线，EXCLUDE 始终排除。
 
 ### llm.py
 
@@ -99,10 +100,9 @@ arXiv 无作者单位元数据，bioRxiv 走 `author_corresponding` 字段。
 
 ### notify.py
 
-- `build_report_md` 是这个模块唯一渲染日报的地方。微信和 Email 不要各自组装内容
-- `send_empty_notice` 两种模式：`no_push=True`（检索阶段）写空 JSON 标记，留待后续 `--test-notify` 发送；`no_push=False`（一次性全流程）直接推微信
+- `build_report_md` 是唯一的日报渲染函数，同一份内容用于归档和 Email。
+- `send_empty_notice` 始终归档空日报 Markdown/JSON；`no_push=True` 时不发送，否则发 Email。
 - SMTP 端口解析：`int(os.environ.get("SMTP_PORT") or 465)`。必须用 `or` 而不是 get 的默认值，因为 GitHub Secrets 设为空字符串时 `get("SMTP_PORT", "465")` 返回 `""` 而非 `"465"`
-- Server酱 API 返回 `code: 0` 表示成功，但仅表示 API 已接受 —— 消息能否送达微信还取决于用户是否关注了「方糖」服务号
 
 ### main.py
 
@@ -117,8 +117,10 @@ arXiv 无作者单位元数据，bioRxiv 走 `author_corresponding` 字段。
 | 路径 | 是否会落 seen 标记 | 是否会推送 |
 |---|---|---|
 | 正常有论文 | ✓（推送前） | ✓ |
-| 0 候选/0 选中 | ✓（空日通知前保存 state） | 空日微信通知 |
-| 全源失败 | ✓（写空 JSON 标记前保存 state） | 空日微信通知 |
+| 0 候选 | 不写 | 空日 Email |
+| 0 选中 | ✓（邮件前保存 state） | 空日 Email |
+| 全部 LLM 评分失败 | 不写，返回失败 | 不推 |
+| 无抓取结果 | 不写 | 带原因的空日 Email |
 | `--no-notify` | ✓ | 不推 |
 | `--dry-run` | 不写 | 不推 |
 | `--test-notify` | 不写 | ✓ |
@@ -142,7 +144,6 @@ OPENAI_MODEL      # 模型名（如 glm-5.3-flash）
 ### 可选
 
 ```bash
-SC_SENDKEY        # Server酱³ sendkey，不配则跳过微信推送
 SMTP_HOST/PORT/USER/PASSWORD  # SMTP 配置，不配则跳过 Email 推送
 EMAIL_TO          # 收件邮箱
 NCBI_API_KEY      # PubMed 提速（10 req/s → 标准 3 req/s）
@@ -180,7 +181,7 @@ Host github.com
 
 ### GitHub Actions cron 延迟
 
-`cron: 0 2 * * *` = UTC 2:00，但免费 tier 实际启动通常延后 5-30 分钟，极端情况下数小时（实测过 4.5 小时延迟，约北京时间 14:30 才执行）。因为 `--end-date` 锚定了检索窗口，这只影响用户收到消息的时间，不影响论文覆盖。
+`cron: 0 0 * * *` = UTC 00:00（北京时间 08:00），但免费 tier 实际启动通常延后 5-30 分钟，极端情况下数小时（实测过 4.5 小时延迟，约北京时间 14:30 才执行）。因为 `--end-date` 锚定了检索窗口，这只影响用户收到消息的时间，不影响论文覆盖。
 
 ## Gotchas（踩过的坑）
 
@@ -189,7 +190,7 @@ Host github.com
 3. **PubMed XML 参考文献串号** — `ReferenceList` 里的参考文献节点也有 PMID/DOI。XPath 全部限定到文章结点根下
 4. **空字符串 Secrets** — `os.environ.get("KEY", "fallback")` 的 fallback 只在 KEY **不存在** 时生效。Secrets 设了空值 → 返回 `""` → `int("")` 直接崩。用 `os.environ.get("KEY") or fallback`
 5. **State 必须先落盘再推送** — 推送阶段的任何崩溃都不能丢 seen 记录，否则隔天重复推荐
-6. **Server酱 API 成功 ≠ 送达** — 返回 `code: 0` 仅表示 API 已接受。消息进微信需要用户关注「方糖」服务号。关键词：Server酱³、sct.ftqq.com、sendkey 格式 `sctp<id>t<token>`
+6. **SMTP 接受 ≠ 收件箱送达** — `send_email` 成功只说明 SMTP 服务接受了邮件，最终投递仍受邮件服务商影响。
 7. **Workflow 不要 hardcode `--days`** — 只有手动触发且用户明确填了 days 才传 `--days`，否则 fallback 到 config.yaml 的 `fetch.lookback_days`
 8. **本地 state.json 与远程差异** — Actions bot 每次跑完都会 commit state.json。本地 git pull 前本地的 state 是过期版本。在本地跑涉及 state 的操作之前务必 `git pull`
 

@@ -2,7 +2,7 @@
 """PaperScout 主入口。
 
 流程：抓取 -> 去重(含历史去重) -> 关键词粗筛 -> LLM 相关性打分
-     -> 选 Top -> 中文总结 -> 写日报 -> 微信/Email 推送 -> 更新 state.json
+     -> 选 Top -> 中文总结 -> 写日报 -> 更新 state.json -> Email 推送
 
 用法：
   python main.py                 # 正常运行
@@ -129,16 +129,10 @@ def main() -> int:
         if not loaded:
             return 1
         papers, md, date_str = loaded
-        if not papers:
-            # 检索阶段写入的空日报标记：照发空日通知
-            ok = notify.send_empty_notice(date_str, "今日无符合标准的论文")
-            log.info("空日通知推送: %s", "成功" if ok else "失败/未配置")
-            return 0 if ok else 1
-        ok_wx = notify.send_wechat(md, date_str, len(papers))
-        ok_mail = notify.send_email(md, date_str, len(papers))
-        log.info("测试推送结果: 微信=%s Email=%s", "成功" if ok_wx else "失败/未配置",
-                 "成功" if ok_mail else "失败/未配置")
-        return 0 if (ok_wx or ok_mail) else 1
+        if args.no_notify or args.dry_run:
+            return 0
+        ok = notify.send_email(md, date_str, len(papers))
+        return 0 if ok else 1
 
     profile = cfg.get("profile", {})
     # tracked_authors 放到 profile 里给粗筛用（但不进 LLM prompt，太长）
@@ -176,21 +170,24 @@ def main() -> int:
         reason = "各源均未抓到论文"
         if errors:
             reason += f": {'; '.join(errors)}"
-        notify.send_empty_notice(date_str, reason, no_push=args.no_notify)
-        return 0
+        ok = notify.send_empty_notice(date_str, reason, no_push=args.no_notify)
+        return 0 if args.no_notify or ok else 1
 
     # 2. 历史去重
     state = load_state()
     papers = filter_seen(papers, state)
     if not papers:
         log.info("全部已推荐过，无新论文")
-        return 0
+        if args.dry_run:
+            return 0
+        ok = notify.send_empty_notice(date_str, "检索到的论文均已处理，无新推荐", no_push=args.no_notify)
+        return 0 if args.no_notify or ok else 1
 
     # 3. 关键词粗筛
     rank_cfg = cfg.get("ranking", {})
     candidates = rank.keyword_prefilter(
         papers, profile_for_prefilter,
-        threshold=rank_cfg.get("keyword_prefilter_threshold", 0.08),
+        threshold=rank_cfg.get("keyword_prefilter_threshold", 0.2),
     )
     # 按粗筛分排序，控制送 LLM 的数量上限（成本兜底）
     candidates.sort(key=lambda p: p["_kw_score"], reverse=True)
@@ -208,8 +205,8 @@ def main() -> int:
 
     if not candidates:
         log.info("粗筛后无候选，保存空日通知")
-        notify.send_empty_notice(date_str, "关键词粗筛后 0 篇候选", no_push=args.no_notify)
-        return 0
+        ok = notify.send_empty_notice(date_str, "关键词粗筛后 0 篇候选", no_push=args.no_notify)
+        return 0 if args.no_notify or ok else 1
 
     # 4. LLM 相关性打分
     llm = LLMClient(cfg)
@@ -217,22 +214,25 @@ def main() -> int:
         log.error("LLM 未配置，无法做相关性筛选。请设置 OPENAI_BASE_URL / OPENAI_API_KEY / OPENAI_MODEL")
         return 1
     ranked = rank.llm_rank(candidates, profile, llm, batch_size=rank_cfg.get("batch_size", 12))
+    if all(p["_rank"].get("_failed") for p in ranked):
+        log.error("全部候选的 LLM 评分失败，本次运行失败；不发送无推荐通知，不标记 seen")
+        return 1
 
     # 5. 选 Top
     selected = rank.select_top(ranked, rank_cfg.get("selection", {}))
     if not selected:
         log.info("今日无符合标准的论文，保存空日通知（宁缺毋滥）")
-        notify.send_empty_notice(date_str, f"粗筛候选 {len(candidates)} 篇，LLM 筛选后 0 篇达到标准",
-                                 no_push=args.no_notify)
         state["runs"].append({"date": date_str, "candidates": len(candidates), "selected": 0})
         mark_seen(ranked, state, date_str)
         save_state(state)
-        return 0
+        ok = notify.send_empty_notice(date_str, f"粗筛候选 {len(candidates)} 篇，LLM 筛选后 0 篇达到标准",
+                                      no_push=args.no_notify)
+        return 0 if args.no_notify or ok else 1
 
     # 6. 中文总结
     summarize.summarize_papers(selected, llm)
 
-    # 7. 写日报（同一份 md 给微信/Email/reports 归档，json 给 --test-notify 复用）
+    # 7. 写日报（同一份 md 给 Email/reports 归档，json 给 --test-notify 复用）
     stats = f"抓取 {src_str} → 粗筛 {len(candidates)} 篇 → LLM 选中 {len(selected)} 篇"
     md = notify.build_report_md(selected, date_str, errors, stats=stats)
     notify.write_report(md, date_str)
@@ -250,10 +250,10 @@ def main() -> int:
     })
     save_state(state)
 
-    # 9. 推送：微信与 Email 用同一份 md
-    notify.send_wechat(md, date_str, len(selected), no_push=args.no_notify)
+    # 9. 仅发送 Email
     if not args.no_notify:
-        notify.send_email(md, date_str, len(selected))
+        if not notify.send_email(md, date_str, len(selected)):
+            return 1
 
     log.info("完成：推荐 %d 篇", len(selected))
     return 0

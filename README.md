@@ -9,9 +9,9 @@ PubMed / arXiv / bioRxiv（过去 3 天）
   → DOI/PMID/arXiv ID 去重（含历史去重）
   → 关键词 + 作者名粗筛（省 LLM token）
   → LLM 批量相关性打分
-  → 动态阈值选 Top
+  → 分数 ≥ 6/10 且优先级符合配置，最多选 10 篇
   → 中文总结
-  → 微信 + Email 同一份日报（标题 "Paper Scout 日报 2026-09-01"，含英文摘要）
+  → Email 日报（标题 "Paper Scout 日报 2026-09-01"，含英文摘要）
   → 更新 state.json
 ```
 
@@ -60,7 +60,7 @@ Windows 和 WSL 的 Conda 环境各自独立，不能直接复制环境目录共
 ```dotenv
 OPENAI_BASE_URL=https://qianfan.baidubce.com/v2/tokenplan/personal
 OPENAI_API_KEY=your_key
-OPENAI_MODEL=glm-5.3-flash
+OPENAI_MODEL=glm-5.2
 ```
 
 首次配置可复制 `.env.example` 为 `.env`；已有 `.env` 时保留原文件。程序自动读取它，文件已被 Git 忽略；GitHub Actions 仍从 Secrets 读取相同变量。
@@ -101,12 +101,6 @@ NCBI_API_KEY=your_key
 
 ### 5. 推送配置
 
-**微信（Server酱³）**：扫码绑定 https://sct.ftqq.com/，拿到 SENDKEY：
-在 `.env` 中添加：
-```dotenv
-SC_SENDKEY=SCT...
-```
-
 **Email（SMTP）**：
 在 `.env` 中添加：
 ```dotenv
@@ -117,7 +111,7 @@ SMTP_PASSWORD=应用专用密码
 EMAIL_TO=you@example.com
 ```
 
-至少配一个推送通道。都不配时日报仅写入 `reports/`。
+仅发送邮件，已停止微信推送。无符合条件的论文时也会归档并发送说明邮件。使用 `--no-notify` 时仅归档，不发送。SMTP 发送失败会让运行返回非零状态。
 
 ### 6. GitHub Actions
 
@@ -129,7 +123,7 @@ Workflow 使用 Ubuntu + Python 3.13，通过同一份 `requirements.txt` 安装
 
 ## 日报格式
 
-微信和 Email 推送同一份内容，标题为 `Paper Scout 日报 {日期}`。开头是流水统计（抓取数 → 粗筛 → LLM 选中），每条论文包含：期刊 / 作者 / 机构（通讯作者 ailiation）/ 日期 / ID / 一句话推荐 / 方法 / 主要发现 / 对我的启发 / 英文 Abstract 折叠块。
+Email 推送日报，标题为 `Paper Scout 日报 {日期}`。开头是流水统计（抓取数 → 粗筛 → LLM 选中），每条论文包含：期刊 / 作者 / 机构（通讯作者 ailiation）/ 日期 / ID / 一句话推荐 / 方法 / 主要发现 / 对我的启发 / 英文 Abstract 折叠块。
 
 ## 成本
 
@@ -140,6 +134,8 @@ GLM/DeepSeek 级别模型，每日 < ¥0.5。控制策略：
 - abstract 截断 1500 字
 
 ## 调优
+
+当前粗筛阈值为 0.2（0–1 分），LLM 细筛阈值为 6/10（相当于 0.6）。优先级 P0/P1/P2 都必须达到分数线，EXCLUDE 始终排除。全部 LLM 评分失败会让运行失败，不会伪装成“无推荐”。
 
 - 无关论文太多 → 提高 `ranking.selection.min_score` 或在 `negative_topics` 加词
 - 漏掉相关论文 → 降低 `keyword_prefilter_threshold` 或在 `research_interests` 加词
@@ -152,7 +148,7 @@ GLM/DeepSeek 级别模型，每日 < ¥0.5。控制策略：
 ├── fetch.py             # 三源抓取 + 去重
 ├── rank.py              # 关键词粗筛 + LLM 批量评分 + Top 选择
 ├── summarize.py         # 对 Top 论文逐篇生成中文总结
-├── notify.py            # 日报生成 + 微信/Email 推送
+├── notify.py            # 日报生成 + Email 推送
 ├── llm.py               # LLM 客户端封装
 ├── main.py              # 主入口
 ├── state.json           # 去重记录 + 运行历史

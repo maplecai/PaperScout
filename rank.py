@@ -229,8 +229,8 @@ def _placeholder_rank(paper: dict) -> dict:
 # 阶段 3：选择 Top
 # ====================================================================
 def select_top(papers: list[dict], selection_cfg: dict) -> list[dict]:
-    """动态阈值 + 上限选择。"""
-    min_score = selection_cfg.get("min_score", 5)
+    """相关性分数必须达到阈值，再按允许的优先级和数量上限选择。"""
+    min_score = selection_cfg.get("min_score", 6)
     accept = set(selection_cfg.get("accept_priorities", ["P0", "P1", "P2"]))
     max_n = selection_cfg.get("max_papers", 10)
     selected = []
@@ -242,10 +242,8 @@ def select_top(papers: list[dict], selection_cfg: dict) -> list[dict]:
         # exclude 直接跳
         if pri == "EXCLUDE":
             continue
-        # 满足 priority 或 score 阈值
-        if pri in accept or score >= min_score:
-            if r["worth_reading"] or score >= min_score or pri in ("P0", "P1"):
-                selected.append(p)
+        if pri in accept and score >= min_score:
+            selected.append(p)
         if len(selected) >= max_n:
             break
 
