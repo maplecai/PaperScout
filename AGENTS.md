@@ -112,7 +112,7 @@ arXiv 无作者单位元数据，bioRxiv 走 `author_corresponding` 字段。
 2. `--end-date 2026-09-07` 锚定：窗口 `[D-3 0:00, D 0:00)`，日报记 D，state 记 D。定时触发专用
 3. 默认：自然窗口（配置的 lookback_days 天，以当前时刻为终点）
 
-`--test-notify` 独立：读最新一份 report JSON/MD 测试推送通道，不抓取不调 LLM。
+`--test-notify` 独立：默认读最新一份 report JSON/MD，可用 `--date` 指定归档日期，只发 Email，不抓取不调 LLM。Actions 的 `report_dates` 输入支持逗号分隔的日期列表；dry_run 时不发送。
 
 | 路径 | 是否会落 seen 标记 | 是否会推送 |
 |---|---|---|

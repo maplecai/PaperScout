@@ -46,11 +46,12 @@ class DryRunTests(unittest.TestCase):
             for sent in (True, False):
                 with (
                     self.subTest(papers=papers, sent=sent),
-                    patch("sys.argv", ["main.py", "--test-notify"]),
-                    patch("main.notify.load_latest_report", return_value=(papers, "report", "2026-10-04")),
+                    patch("sys.argv", ["main.py", "--test-notify", "--date", "2026-10-04"]),
+                    patch("main.notify.load_report", return_value=(papers, "report", "2026-10-04")) as load,
                     patch("main.notify.send_email", return_value=sent) as email,
                 ):
                     self.assertEqual(main.main(), 0 if sent else 1)
+                    load.assert_called_once_with("2026-10-04")
                     email.assert_called_once_with("report", "2026-10-04", len(papers))
 
 

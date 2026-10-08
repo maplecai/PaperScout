@@ -15,6 +15,10 @@ on:
         description: "只做粗筛不调 LLM (true/false)"
         required: false
         default: "false"
+      report_dates:
+        description: "仅发送已归档日报，日期用逗号分隔，如 2026-10-04,2026-10-05；留空则正常检索"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -38,6 +42,7 @@ jobs:
         run: python -m unittest discover -s tests
 
       - name: Run PaperScout
+        if: ${{ github.event.inputs.report_dates == '' }}
         env:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -61,6 +66,29 @@ jobs:
             ARGS="$ARGS --end-date $(date -u +%F)"
           fi
           python main.py $ARGS
+
+      - name: Send archived reports
+        if: ${{ github.event.inputs.report_dates != '' && github.event.inputs.dry_run != 'true' }}
+        env:
+          REPORT_DATES: ${{ github.event.inputs.report_dates }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: |
+          python - <<'PY'
+          from datetime import date
+          import os
+          import subprocess
+          import sys
+
+          dates = [value.strip() for value in os.environ["REPORT_DATES"].split(",")]
+          for value in dates:
+              date.fromisoformat(value)
+          for value in dates:
+              subprocess.run([sys.executable, "main.py", "--test-notify", "--date", value], check=True)
+          PY
 
       - name: Commit report and state
         if: always()

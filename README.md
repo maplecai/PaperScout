@@ -85,6 +85,9 @@ python -X utf8 main.py --no-notify
 # 推送已有日报（不重新抓取/调 LLM，可用于测试推送通道）
 python -X utf8 main.py --test-notify
 
+# 仅发送某一天已归档的日报（不重新检索）
+python -X utf8 main.py --test-notify --date 2026-10-04
+
 # 回填指定日期
 python -X utf8 main.py --date 2026-09-03
 ```
@@ -118,6 +121,8 @@ EMAIL_TO=you@example.com
 把仓库推到 GitHub，在 Settings → Secrets 添加上述所有环境变量。
 
 Workflow 使用 Ubuntu + Python 3.13，通过同一份 `requirements.txt` 安装依赖，无需 Conda。每天 UTC 00:00（北京时间 08:00）自动运行。定时触发时窗口用 `--end-date` 锚定到 UTC 0 点，严格覆盖 `[今日0点-72h, 今日0点)` 的论文。也支持手动触发（Actions → PaperScout → Run workflow）。日报和 state.json 自动 commit 回仓库。
+
+本地无法连接 SMTP 时，可在手动触发的 `report_dates` 中填入已归档的日期（逗号分隔），由 Actions 仅发送这些日报，不重复抓取或打分。`dry_run=true` 时不会发送。
 
 **注意**：GitHub Actions cron 可能延迟 5-30 分钟（免费 tier 高峰期更长）。这不影响论文覆盖（窗口锚定了），只影响收到消息的时间。
 

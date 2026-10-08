@@ -1,10 +1,20 @@
 import unittest
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 import notify
 
 
 class EmptyEmailTests(unittest.TestCase):
+    def test_load_report_selects_requested_date_instead_of_latest(self):
+        with TemporaryDirectory() as directory:
+            for date in ("2026-10-04", "2026-10-08"):
+                notify.write_report(date, date, directory)
+                notify.write_report_json([], date, directory)
+            self.assertEqual(notify.load_report("2026-10-04", directory), ([], "2026-10-04", "2026-10-04"))
+            self.assertEqual(notify.load_report(reports_dir=directory), ([], "2026-10-08", "2026-10-08"))
+            self.assertIsNone(notify.load_report("2026-10-07", directory))
+
     def test_empty_report_is_archived_and_emailed(self):
         with (
             patch("notify.write_report") as markdown,

@@ -1,0 +1,36 @@
+[
+ {
+  "id": "arxiv:2610.09054",
+  "source": "arxiv",
+  "raw_id": "2610.09054",
+  "title": "Beyond the Transcriptome: Chromatin-Informed Prediction of Cell-State-Dependent Perturbation Responses",
+  "journal": "arXiv",
+  "authors": [
+   "Jiafa Ruan",
+   "Chenyang He",
+   "Ruijie Quan",
+   "Fanglei Xue",
+   "Zongxin Yang",
+   "Yi Yang"
+  ],
+  "date": "2026-10-06",
+  "url": "https://arxiv.org/abs/2610.09054",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2610.09054",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "利用染色质可及性信息预测细胞状态依赖的扰动响应，与我的single-cell perturbation研究兴趣直接相关，且涉及跨状态泛化问题。",
+   "novelty_for_me": "将染色质上下文作为条件信息引入扰动响应预测，并用条件传输流学习残余响应，这种多模态先验融合思路可借鉴到增强子跨细胞类型预测中。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出ChromaPert框架，融合DNA位点先验与配对RNA-ATAC特征，通过染色质引导的响应路由器（CGRR）和条件传输流预测状态依赖的扰动响应。",
+   "main_finding": "融合染色质可及性信息显著提升了未见靶点和跨状态的扰动响应预测精度，且正确的多组学配对对恢复染色质相关响应至关重要。",
+   "inspiration": "利用染色质可及性作为细胞上下文先验指导状态特异性预测的思路，可启发在增强子活性预测中引入虚拟表观遗传特征作为细胞类型特异性的条件约束。"
+  }
+ }
+]

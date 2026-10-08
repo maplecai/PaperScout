@@ -113,7 +113,7 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="不调 LLM、不推送、不写 state")
     ap.add_argument("--no-notify", action="store_true", help="不推送")
     ap.add_argument("--test-notify", action="store_true",
-                    help="跳过抓取/打分，用 reports/ 里最近一份日报测试推送（省 token，可反复跑）")
+                    help="发送已归档日报，不抓取或打分；默认最新一期，可用 --date 指定日期")
     ap.add_argument("--days", type=int, default=None, help="覆盖回溯天数")
     ap.add_argument("--date", help="回填指定日期 (YYYY-MM-DD)：只处理该日发表的论文，日报/state 也记为该日期")
     ap.add_argument("--end-date", help="窗口结束边界（不含，YYYY-MM-DD）：检索 [end-72h, end)，日报记为该日期。"
@@ -125,7 +125,7 @@ def main() -> int:
 
     # --test-notify: 复用已有日报测试推送，不抓取不调 LLM
     if args.test_notify:
-        loaded = notify.load_latest_report()
+        loaded = notify.load_report(args.date)
         if not loaded:
             return 1
         papers, md, date_str = loaded

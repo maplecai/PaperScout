@@ -1,0 +1,133 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.09.28.746288",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.28.746288",
+  "title": "Kidzoi Enables Cell-Type-Specific Regulatory Activity and Variant Effect Prediction in Kidney",
+  "journal": "bioRxiv",
+  "authors": [
+   "Rather, A. A.",
+   "Lee, D."
+  ],
+  "date": "2026-10-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.28.746288v1",
+  "doi": "10.64898/2026.09.28.746288",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Dongwon Lee",
+  "corr_affiliation": "Boston Children's Hospital & Harvard Medical School",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P0",
+   "why_relevant": "使用预训练S2F模型Borzoi通过迁移学习预测细胞类型特异性染色质可及性，直接关联跨细胞类型调控活性预测及序列到功能建模。",
+   "novelty_for_me": "展示了从通用预训练模型向特定组织细胞类型迁移的范式，并系统消融了侧翼序列长度对变异效应预测的影响，对理解模型输入上下文窗口有直接参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于预训练S2F模型Borzoi的迁移学习，结合单核染色质可及性数据构建细胞类型特异性序列到功能预测模型。",
+   "main_finding": "迁移学习得到的Kidzoi模型在预测肾脏细胞特异性调控活性和变异效应上优于现有模型；消融实验表明仅需32-64kbp侧翼序列即可实现准确的变异效应预测。",
+   "inspiration": "论文中的侧翼序列消融实验直接对应我关注的预训练基因组学模型padding问题，可借鉴其量化局部上下文对预测性能贡献的评估方法，优化增强子活性预测模型的输入序列长度设置。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.28.748631",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.28.748631",
+  "title": "G4SCOPE identifies sequence features and epigenetic contexts of chromatin G-quadruplexes",
+  "journal": "bioRxiv",
+  "authors": [
+   "Sarvar, A.",
+   "Esain-Garcia, I.",
+   "Melidis, L.",
+   "Yap, D.",
+   "O'Flanagan, C.",
+   "Cerda, V.",
+   "Lai, D.",
+   "Tannahill, D.",
+   "Park, Y.",
+   "Balasubramanian, S.",
+   "Aparicio, S."
+  ],
+  "date": "2026-10-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.28.748631v1",
+  "doi": "10.64898/2026.09.28.748631",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Samuel Aparicio",
+  "corr_affiliation": "BC Cancer Research Institute, 675 W10th Avenue, Vancouver, V5Z 1L3, Canada",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "从DNA序列直接预测染色质G4占据和CUT&Tag表观遗传谱，属于sequence-to-function和调控基因组学范畴。",
+   "novelty_for_me": "结合CNN motif学习与Transformer自注意力解码长程序列上下文，并利用模型潜在表示无监督聚类发现G4功能亚类，对表征学习有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合CNN基序学习与Transformer自注意力的多任务深度学习框架，直接从DNA序列预测染色质G4占据并重建CUT&Tag图谱。",
+   "main_finding": "模型能从序列解码内源性G4占据规律并跨细胞系泛化；发现BRCA1/2缺失分别导致G4密度全局膨胀和染色体级结构耗竭，且不同序列定义的G4拓扑具有独特的局部表观遗传特征。",
+   "inspiration": "利用模型提取的潜在序列表征进行无监督聚类以解析不同调控元件亚类及其表观遗传上下文的范式，可借鉴用于我研究中虚拟表观遗传特征的生成与不同细胞类型增强子活性上下文的解析。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.30.755582",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.30.755582",
+  "title": "The mammalian genome is punctuated by regularly spaced nucleosome islands",
+  "journal": "bioRxiv",
+  "authors": [
+   "Mozziconacci, J.",
+   "Christophe, M.",
+   "Altamirano-Pacheco, L.",
+   "Navarro-Gil, P."
+  ],
+  "date": "2026-10-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.30.755582v1",
+  "doi": "10.64898/2026.09.30.755582",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Julien Mozziconacci",
+  "corr_affiliation": "MNHN",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用深度学习从DNA序列预测核小体占据并进行in silico mutagenesis，属于sequence-to-function范畴，对理解序列编码的染色质组织有启发。",
+   "novelty_for_me": "揭示了哺乳动物中重复元件（SINE/LINE内CTCF motif等）作为核小体相位组织者的作用，扩展了序列编码染色质架构的概念。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于原始DNA序列训练深度学习模型预测体内核小体占据，并结合计算机模拟突变解析定位基序。",
+   "main_finding": "哺乳动物核小体空间排布受DNA序列编码，短重复元件（如SINE/LINE内的特定基序及微卫星）是建立规则间隔核小体岛的关键组织者。",
+   "inspiration": "在构建增强子活性预测模型时，可关注重复序列对局部染色质可及性及增强子边界的潜在影响，并在评估预训练模型padding策略时考虑重复元件的上下文依赖性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.28.755196",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.28.755196",
+  "title": "Distinct sequence grammars of nucleosomal and linker DNA shape mutational and methylation landscapes in cancer",
+  "journal": "bioRxiv",
+  "authors": [
+   "Masoudi-Sobhanzadeh, Y.",
+   "Kumar, S."
+  ],
+  "date": "2026-10-04",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.28.755196v1",
+  "doi": "10.64898/2026.09.28.755196",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Sushant Kumar",
+  "corr_affiliation": "University of Toronto",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用可解释深度学习从序列区分核小体与连接DNA并关联突变和甲基化模式，属于sequence-to-function和计算表观遗传学。",
+   "novelty_for_me": "发现核小体和连接DNA具有不同的序列语法，且这些motif的突变和甲基化模式具有癌症类型特异性，对序列-表观遗传关系有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出可解释深度学习框架DeepND，基于序列特征区分核小体与连接DNA并解析其与癌症突变及甲基化的关联。",
+   "main_finding": "揭示了核小体与连接DNA截然不同的序列语法，且特定motif的癌症突变和甲基化模式显著依赖于核小体旋转定位及DNA小沟方向。",
+   "inspiration": "DeepND利用可解释深度学习提取序列语法并关联表观遗传特征的方法，可启发在增强子活性预测中构建序列motif与虚拟表观遗传特征间的可解释映射机制。"
+  }
+ }
+]

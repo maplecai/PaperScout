@@ -108,14 +108,15 @@ def write_report_json(papers: list[dict], date_str: str, reports_dir: str = "rep
     return path
 
 
-def load_latest_report(reports_dir: str = "reports") -> tuple[list[dict], str, str] | None:
-    """读最近一份日报（json + md），供 --test-notify 用。返回 (papers, md, date_str)。"""
+def load_report(date_str: str | None = None, reports_dir: str = "reports") -> tuple[list[dict], str, str] | None:
+    """读指定日期或最新日报（json + md），供 --test-notify 用。"""
     import glob
     import json
 
-    jsons = sorted(glob.glob(os.path.join(reports_dir, "paper_watch_*.json")))
+    pattern = f"paper_watch_{date_str}.json" if date_str else "paper_watch_*.json"
+    jsons = sorted(glob.glob(os.path.join(reports_dir, pattern)))
     if not jsons:
-        log.error("reports/ 下没有找到任何 paper_watch_*.json，先跑一次 main.py")
+        log.error("%s 下没有找到 %s，先生成日报", reports_dir, pattern)
         return None
     jpath = jsons[-1]
     date_str = os.path.basename(jpath)[len("paper_watch_"):-len(".json")]

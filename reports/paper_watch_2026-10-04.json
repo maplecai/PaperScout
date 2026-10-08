@@ -1,0 +1,106 @@
+[
+ {
+  "id": "arxiv:2610.04475",
+  "source": "arxiv",
+  "raw_id": "2610.04475",
+  "title": "VCLMU: Mechanism-Centric Virtual Cell World Modeling for Perturbation Response",
+  "journal": "arXiv",
+  "authors": [
+   "Yuwei Miao",
+   "Azim Dehghani Amirabad",
+   "Scott Oloff",
+   "Junzhou Huang",
+   "Tianyu Cui",
+   "Rui Liao"
+  ],
+  "date": "2026-10-03",
+  "url": "https://arxiv.org/abs/2610.04475",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2610.04475",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接命中virtual cell和single-cell perturbation研究方向，提出机制中心的虚拟细胞世界模型预测扰动响应。",
+   "novelty_for_me": "将扰动建模为对潜在机制单元（LMU）的动作、两阶段预训练策略，为虚拟细胞模型架构提供了新范式。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出一种以机制为中心的虚拟细胞世界模型（VCLMU），将细胞状态表征为潜在机制单元（LMU），并将遗传扰动建模为对潜在状态的随机转移动作，通过两阶段预训练解码转录响应。",
+   "main_finding": "该模型在六个未见扰动的基准测试中显著提升了特定扰动响应的恢复能力，且学习到的LMU能捕获结构化的生物响应程序，证明了机制级潜在状态转移建模的有效性。",
+   "inspiration": "可将不同细胞类型特异性的增强子活性变化视为对虚拟表观遗传特征的'扰动动作'，并构建可复用的潜在机制单元来解耦序列特征与表观遗传状态，以提升跨细胞类型游离型增强子活性预测的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.28.755120",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.28.755120",
+  "title": "LOAM: A family of genomic language models trained on long-read soil metagenomes",
+  "journal": "bioRxiv",
+  "authors": [
+   "Ferry, Q. R.",
+   "Frank, M.",
+   "Jehn, J.",
+   "Schaks, M.",
+   "Steinkraus, B. R.",
+   "Rajakumar, T."
+  ],
+  "date": "2026-10-02",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.28.755120v1",
+  "doi": "10.64898/2026.09.28.755120",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Timothy Rajakumar",
+  "corr_affiliation": "Soilytix GmbH",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接命中genomic foundation model和DNA language model研究方向，训练基因组语言模型并系统评估各层表征的生物学信息可线性提取性。",
+   "novelty_for_me": "长读宏基因组训练数据、中间层vs最终层表征的系统性评估、上下文干预实验设计，对评估基因组基础模型行为有直接参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于长读长宏基因组数据预训练的 decoder-only 基因组语言模型族。",
+   "main_finding": "长读长数据训练的小模型性能优于同等规模甚至更大模型，且任务相关信息在中间层更易线性提取，零样本预测效果受预训练语料同源序列影响显著。",
+   "inspiration": "在利用预训练模型预测增强子活性时，可探索中间层表征的线性可分性，并排查预训练语料中增强子同源序列对零样本评估的潜在偏差。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.01.755962",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.01.755962",
+  "title": "Phenotypes of ultra-rare variant carriers benchmark variant effect scores",
+  "journal": "bioRxiv",
+  "authors": [
+   "Londhe, S.",
+   "Holtkamp, E.",
+   "Tsitsiridis, G.",
+   "Starovoit, A.",
+   "Tomaz da Silva, P.",
+   "Hingerl, J.",
+   "Finucane, H.",
+   "Gagneur, J."
+  ],
+  "date": "2026-10-02",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.01.755962v1",
+  "doi": "10.64898/2026.10.01.755962",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Julien Gagneur",
+  "corr_affiliation": "School of Computation, Information and Technology, Technical University of Munich, Garching, Germany",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "评估了非编码和转录调控变异效应评分，与调控基因组学及变异预测高度相关。",
+   "novelty_for_me": "利用极罕见变异携带者表型作为基准测试，揭示了当前转录调控评分模型的局限性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于UK Biobank极罕见变异携带者群体表型（血浆蛋白丰度与定量性状）构建的变异效应评分基准评估框架（UKBBGym）。",
+   "main_finding": "发现编码与剪接变异评分在预测表型上显著优于转录调控评分，且实验测定在错义效应预测上未必优于计算评分，揭示了插入缺失和功能丧失变异预测仍有较大改进空间。",
+   "inspiration": "该研究指出转录调控评分在群体表型层面表现较弱，提示在构建基于虚拟表观遗传特征的增强子活性预测模型时，需更关注如何将序列到功能的预测与真实群体表型对齐，以提升调控变异评分的生理相关性。"
+  }
+ }
+]
