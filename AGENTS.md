@@ -125,6 +125,12 @@ arXiv 无作者单位元数据，bioRxiv 走 `author_corresponding` 字段。
 
 ## 环境配置
 
+### Windows / Linux 本地运行
+
+- 使用各自系统的 `paper_scout` Conda 环境，Python 3.13，与 GitHub Actions 一致；不要使用 base 环境运行项目。
+- 在项目根目录执行 `conda run --no-capture-output -n paper_scout python -X utf8 main.py --help`。`-X utf8` 兼容 Linux，也避免 Windows 重定向输出时的编码问题。
+- 依赖统一使用 `requirements.txt`，本地配置统一使用 `.env`；Windows 和 WSL 的 Conda 环境不共用。首次配置和两种 shell 的启动命令见 README。
+
 ### 必需环境变量
 
 ```bash
@@ -189,7 +195,13 @@ Host github.com
 
 ## 测试
 
-无测试框架。自检模式：一次性 Python heredoc 验证核心不变量。
+离线回归测试使用标准库 unittest：
+
+```text
+conda run --no-capture-output -n paper_scout python -X utf8 -m unittest discover -s tests
+```
+
+其它核心不变量可在 Linux Bash 中用一次性 Python heredoc 验证：
 
 ```bash
 python3 - <<'EOF'

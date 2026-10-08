@@ -171,6 +171,8 @@ def main() -> int:
         log.info("回填 %s: %d -> %d 篇 (按发表日期过滤)", args.date, n0, len(papers))
     if not papers:
         log.warning("没有抓到任何论文")
+        if args.dry_run:
+            return 0
         reason = "各源均未抓到论文"
         if errors:
             reason += f": {'; '.join(errors)}"
