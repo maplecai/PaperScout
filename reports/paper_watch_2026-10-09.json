@@ -1,0 +1,67 @@
+[
+ {
+  "id": "pubmed:42848419",
+  "source": "pubmed",
+  "raw_id": "42848419",
+  "title": "Latent causal diffusions for single-cell perturbation modeling.",
+  "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+  "authors": [
+   "Lars Lorch",
+   "Jiaqi Zhang",
+   "Charlotte Bunne",
+   "Andreas Krause",
+   "Bernhard Schölkopf",
+   "Caroline Uhler"
+  ],
+  "date": "2026-10-08",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42848419/",
+  "doi": "10.1073/pnas.2602630123",
+  "pmid": "42848419",
+  "arxiv_id": "",
+  "corr_author": "Caroline Uhler",
+  "corr_affiliation": "Laboratory for Information and Decision Systems, Massachusetts Institute of Technology (MIT), Cambridge, MA 02139.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出潜在因果扩散模型用于单细胞扰动建模，与虚拟细胞和单细胞扰动预测高度相关。",
+   "novelty_for_me": "将因果推断与生成式扩散模型结合，以预测未见扰动效应并推断基因间的直接因果关系。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出潜在因果扩散模型（LCD），将单细胞基因表达建模为带测量噪声的平稳扩散过程，并结合因果线性化方法（CLIPR）推断基因间的直接因果效应。",
+   "main_finding": "LCD在预测未见扰动组合的转录组分布偏移上优于现有方法，且CLIPR能在线性漂移假设下有效恢复基因因果结构并聚类出功能模块。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.09.30.755776",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.09.30.755776",
+  "title": "Additive-input encoding fails operator-level target-held-out prediction on current Perturb-seq screens",
+  "journal": "bioRxiv",
+  "authors": [
+   "Fullmer, K.",
+   "Kutzen, D.",
+   "Terooatea, T. W."
+  ],
+  "date": "2026-10-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.30.755776v1",
+  "doi": "10.64898/2026.09.30.755776",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Tommy W Terooatea",
+  "corr_affiliation": "Brigham Young University",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "严格评估Perturb-seq扰动模型在未见目标上的泛化性失败，与单细胞扰动及模型泛化性评估高度相关。",
+   "novelty_for_me": "揭示了当前加性编码在扰动泛化预测上的根本性局限，提供了严格的留出目标评估框架。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于目标分组嵌套交叉验证与匹配信噪比线性对照，评估Perturb-seq数据中加性输入线性稳态算子的目标泛化能力。",
+   "main_finding": "现有Perturb-seq筛选中，加性输入编码在目标留出预测上未能超越预测基线，拟合的算子不可作为目标泛化的调控算子。",
+   "inspiration": "在评估预训练基因组学模型跨细胞类型增强子活性预测时，应引入严格的未见目标交叉验证与匹配几何特征的正向基线对照，以避免高估模型的泛化能力。"
+  }
+ }
+]
