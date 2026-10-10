@@ -1,0 +1,295 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.02.756377",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.02.756377",
+  "title": "Cerberus: bidirectional state space blocks improve accuracy and efficiency of regulatory sequence models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Kelley, D. R.",
+   "Yuan, H.",
+   "Huang, X.",
+   "Linder, J."
+  ],
+  "date": "2026-10-09",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.02.756377v1",
+  "doi": "10.64898/2026.10.02.756377",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "David R Kelley",
+  "corr_affiliation": "Calico Life Sciences LLC",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "提出基于双向状态空间模型的序列到功能预测架构Cerberus，直接改进了Borzoi等基因组功能预测模型。",
+   "novelty_for_me": "用Mamba-2变体替换Transformer并移除U-net解码器，在保持长序列预测性能的同时大幅提升效率，对基础模型架构选型有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用基于Mamba-2的双向状态空间模型（Hydra）替换Transformer自注意力机制，构建卷积-SSM架构的序列到功能预测模型。",
+   "main_finding": "线性复杂度的双向SSM在大幅提升长序列处理效率的同时，以更高分辨率实现了比Transformer模型更准确的调控活性及变异效应预测，且模型交互范围随网络深度显著扩展。",
+   "inspiration": "可探索用双向状态空间模型替代Transformer处理长序列，以缓解预训练基因组学模型中padding引入的噪声与计算冗余，从而更精准地捕捉游离型增强子的长程调控相互作用。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.05.23.727431",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.05.23.727431",
+  "title": "gRely: Relyability for genome trained sequence-to-expression models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Rafi, A. M.",
+   "Eraslan, G.",
+   "Fletez-Brant, K."
+  ],
+  "date": "2026-10-08",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.05.23.727431v1",
+  "doi": "10.64898/2026.05.23.727431",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Kipper Fletez-Brant",
+  "corr_affiliation": "Genentech",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "提出gRely元模型框架评估序列到功能模型（如Borzoi, AlphaGenome）变异效应预测的可靠性，直接相关于基因组基础模型评估。",
+   "novelty_for_me": "不依赖预测幅度阈值，而是通过多特征元建模在低信噪比区间恢复可靠的变异预测，为基础模型校准提供了新思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出gRely，一种基于目标变异、基因及模型输出等多维特征的元学习框架，用于量化序列到功能模型变异效应预测的可靠性。",
+   "main_finding": "该框架在低效应量区域仍能高精度识别可靠的变异预测，其判别依据从预测效应量转变为基因表达水平和跨重复信号浓度，且可跨模型架构泛化。",
+   "inspiration": "在评估预训练模型padding对增强子活性预测的影响时，可借鉴gRely的元学习思路，构建基于模型输出和序列特征的置信度评估框架，以区分不同padding策略下预测结果的可靠性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.02.756289",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.02.756289",
+  "title": "Probing Genomic Foundation Models with Splice-Variant Perturbations",
+  "journal": "bioRxiv",
+  "authors": [
+   "Alavi, M. V."
+  ],
+  "date": "2026-10-09",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.02.756289v1",
+  "doi": "10.64898/2026.10.02.756289",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Marcel V Alavi",
+  "corr_affiliation": "712 North Inc.",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "通过剪接变异扰动系统探究并对比多种基因组基础模型（Evo2, NTv3, AlphaGenome等）的表示边界与计算分配策略。",
+   "novelty_for_me": "从机制角度剖析了通用基础模型与专用模型的性能差异，以及模型规模与上下文窗口在变异解析中的计算不对称性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用单核苷酸剪接变异扰动范式，对比探针评估自监督通用基础模型与特定任务专家模型的表征能力。",
+   "main_finding": "通用模型可匹敌专家模型，但不同架构存在计算不对称性（大参数窄上下文 vs 小参数宽上下文），且位点特异性阈值比突变类别校准更能提升分类准确率。",
+   "inspiration": "不同基础模型对上下文窗口和计算分配的依赖差异，提示在评估预训练模型预测增强子活性时，需系统考察padding长度对模型表征边界及推理计算的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.08.756856",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.08.756856",
+  "title": "Systematic mapping of enhancers, silencers, and topological elements with prime editing deletion screens",
+  "journal": "bioRxiv",
+  "authors": [
+   "Cai, X. S.",
+   "Montgomery, M. T.",
+   "Nagano, M.",
+   "Nisal, A.",
+   "Gu, Z.",
+   "Chen, Z.",
+   "Obbad, K.",
+   "Rastogi, R.",
+   "Tan, Y.",
+   "Zeng, T.",
+   "Sheth, M. U.",
+   "Xia, C.",
+   "Chiang, S.",
+   "Kundaje, A.",
+   "Hansen, A. S.",
+   "Bintu, L.",
+   "Engreitz, J. M."
+  ],
+  "date": "2026-10-09",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.08.756856v1",
+  "doi": "10.64898/2026.10.08.756856",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jesse M. Engreitz",
+  "corr_affiliation": "Department of Genetics, Stanford University School of Medicine, Stanford, CA, USA",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "通过大规模删除筛选实验刻画增强子等调控元件，并使用该数据对序列到功能模型进行基准测试，发现其难以连接远端靶基因。",
+   "novelty_for_me": "提供了高质量的端粒原位增强子功能测量数据集，并揭示了当前S2F模型在远端基因靶向预测上的系统性缺陷。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合池化双引物编辑与流式分选的Swap-seq技术，通过大规模内源序列删除筛选系统量化调控元件的因果效应。",
+   "main_finding": "发现了一类通过HDAC抑制邻近增强子来调控远端基因的沉默子；基准测试表明现有sequence-to-function模型能预测调控元件局部活性，但无法建立与远端靶基因的关联。",
+   "inspiration": "Swap-seq生成的增强子删除数据集可作为评估预训练基因组学模型预测游离型增强子局部活性的基准，并提示模型在远端调控建模上的局限。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.07.757366",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.07.757366",
+  "title": "Fine-tuning genomic models on rare splicing events identifies a novel biomarker of TDP-43 pathology",
+  "journal": "bioRxiv",
+  "authors": [
+   "Martin-Linares, C. P.",
+   "Peethambaran Mallika, A.",
+   "Sandal, P. S.",
+   "Martin, T. W.",
+   "Morris, M.",
+   "Wong, P. C.",
+   "Ling, J. P."
+  ],
+  "date": "2026-10-09",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.07.757366v1",
+  "doi": "10.64898/2026.10.07.757366",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Cristina P. Martin-Linares",
+  "corr_affiliation": "Biomedical Engineering, Johns Hopkins University, Baltimore, MD, USA; Center for Computational Biology, Johns Hopkins University, Baltimore, MD, USA",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "研究基因组基础模型AlphaGenome在微调后对罕见剪接事件的泛化能力，涉及DNA语言模型的序列到功能预测与微调策略。",
+   "novelty_for_me": "揭示了即使是最先进的GFM在冻结骨干时也无法预测罕见事件，必须全参数微调，这对基础模型的下游适配有重要指导意义。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "比较预训练基因组基础模型（AlphaGenome）与专门化模型（OpenSpliceAI）在罕见剪接事件上的微调策略（冻结骨干 vs 全参数微调）及泛化能力。",
+   "main_finding": "冻结权重的最先进GFM无法泛化到罕见剪接事件，但全参数微调或使用专门化模型能够成功预测并发现新的细胞类型特异性生物标志物。",
+   "inspiration": "在利用预训练基因组学模型预测特定细胞类型增强子活性时，需系统评估全参数微调与冻结骨干网络等微调策略对捕获罕见或细胞特异性表观遗传特征的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.11.18.689171",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.11.18.689171",
+  "title": "Evo2HiC: a multimodal foundation model for integrative analysis of genome sequence and architecture",
+  "journal": "bioRxiv",
+  "authors": [
+   "Fang, T.",
+   "Li, Y.",
+   "Wang, X.",
+   "Xiao, Z.",
+   "Hang, S.",
+   "Murtaza, G.",
+   "Yang, J.",
+   "Xu, H.",
+   "Jha, A.",
+   "Noble, W. S.",
+   "Wang, S."
+  ],
+  "date": "2026-10-08",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.11.18.689171v1",
+  "doi": "10.1101/2025.11.18.689171",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Sheng Wang",
+  "corr_affiliation": "University of Washington",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "将大规模DNA基础模型蒸馏并融合Hi-C数据，以预测细胞类型特异性的3D基因组结构，属于表观遗传基础模型范畴。",
+   "novelty_for_me": "提出了一种将DNA语言模型与表观遗传特征（Hi-C）结合的多模态蒸馏方法，对跨细胞类型虚拟特征建模有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "将超大规模DNA基础模型（Evo 2 7B）蒸馏为紧凑编码器，并结合Hi-C数据指导蒸馏过程，构建联合建模DNA序列与3D基因组结构的多模态基础模型。",
+   "main_finding": "该紧凑模型在预测Hi-C接触矩阵和表观基因组信号上优于现有模型，且能通过联合嵌入Hi-C与序列信息识别细胞类型特异性序列motif，并具备跨物种泛化能力。",
+   "inspiration": "借鉴其将超大规模预训练基因组模型蒸馏为紧凑编码器的策略，可解决大模型在预测虚拟表观遗传特征和增强子活性时因序列长度不一或padding导致的极高算力成本与效率瓶颈。"
+  }
+ },
+ {
+  "id": "pubmed:42854686",
+  "source": "pubmed",
+  "raw_id": "42854686",
+  "title": "Mapping transcriptional responses to cellular perturbations with RNA fingerprinting.",
+  "journal": "Cell",
+  "authors": [
+   "Isabella N Grabski",
+   "Junsuk Lee",
+   "John D Blair",
+   "Carol Dalgarno",
+   "Isabella Mascio",
+   "Alexandra Bradu",
+   "David A Knowles",
+   "Rahul Satija"
+  ],
+  "date": "2026-10-09",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42854686/",
+  "doi": "10.1016/j.cell.2026.09.017",
+  "pmid": "42854686",
+  "arxiv_id": "",
+  "corr_author": "Rahul Satija",
+  "corr_affiliation": "New York Genome Center, New York, NY, USA; Center for Genomics and Systems Biology, New York University, New York, NY, USA. Electronic address: rsatija@nygenome.org.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P2",
+   "why_relevant": "提出一种统计框架将新的单细胞数据映射到参考扰动字典上，与单细胞扰动研究兴趣相关。",
+   "novelty_for_me": "提供了一种无需重新训练即可将查询细胞映射到已知扰动的概率框架，对虚拟细胞或扰动响应预测有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出一种基于统计学习的RNA指纹图谱框架，通过从单细胞数据中学习扰动表征，将查询细胞的转录状态概率性映射至参考扰动字典。",
+   "main_finding": "该方法能在单细胞分辨率下准确识别扰动响应，具备全基因组筛选可扩展性及组合扰动解析能力，并在多种生物学场景中验证了其广泛适用性。",
+   "inspiration": "无明显直接启发"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.08.757551",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.08.757551",
+  "title": "STEER-seq: a recombinase based platform for pooled multimodal single-cell perturbation screening",
+  "journal": "bioRxiv",
+  "authors": [
+   "Migliori, V.",
+   "Suo, C.",
+   "Dufva, O.",
+   "Gyulev, I.",
+   "Polanski, K.",
+   "Symeonidou, V.",
+   "Rodschinka, G.",
+   "Sarropoulos, I.",
+   "Iwama, S.",
+   "Steemers, A. S.",
+   "Gontarczyk, A. M.",
+   "Powell, H.",
+   "Cujba, A.-M.",
+   "Park, J.-E. S.",
+   "Garnett, M.",
+   "Vassiliou, G. S.",
+   "Teichmann, S. A.",
+   "Bassett, A. R."
+  ],
+  "date": "2026-10-09",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.08.757551v1",
+  "doi": "10.64898/2026.10.08.757551",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Andrew R Bassett",
+  "corr_affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, UK",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "提出一种单细胞扰动筛选平台，结合RNA和染色质可及性多模态 profiling，与单细胞扰动研究兴趣相关。",
+   "novelty_for_me": "提供了一种无病毒、固定基因组位点的增益功能筛选新实验范式，可能为未来计算模型提供更干净的扰动训练数据。",
+   "worth_reading": false
+  },
+  "_summary": {
+   "core_method": "基于Bxb1重组酶介导的定点单拷贝整合与无启动子供体文库，结合单细胞多模态测序（RNA与染色质可及性）的池化功能获得性筛选平台。",
+   "main_finding": "该平台消除了随机病毒整合的位置效应，实现了转录因子过表达的高定量评估；在hiPSC中系统揭示了特定TF驱动造血、成骨等细胞状态转变及伴随的染色质重塑与基因调控网络变化。",
+   "inspiration": "STEER-seq生成的TF扰动单细胞ATAC数据可作为评估虚拟表观遗传特征预测增强子活性变化的高质量基准数据集，用于验证TF过表达驱动的局部染色质重塑预测。"
+  }
+ }
+]
