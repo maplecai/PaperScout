@@ -1,0 +1,45 @@
+[
+ {
+  "id": "biorxiv:10.1101/2025.07.09.662874",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.07.09.662874",
+  "title": "Expanding the DNA Motif Lexicon of the Transcriptional Regulatory Code",
+  "journal": "bioRxiv",
+  "authors": [
+   "Fan, J.",
+   "Chaudhri, V. K.",
+   "Bisht, D.",
+   "Pease, N. A.",
+   "Hall, D. R.",
+   "Gerges, P.",
+   "Yi, V. F.",
+   "Kales, S.",
+   "Ho, C.-H.",
+   "Das, J.",
+   "Ray, J. P.",
+   "Tewhey, R.",
+   "Meyer, C. A.",
+   "Sahni, N.",
+   "Singh, H."
+  ],
+  "date": "2026-10-10",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.07.09.662874v1",
+  "doi": "10.1101/2025.07.09.662874",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Harinder Singh",
+  "corr_affiliation": "University of Pittsburgh",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "使用深度学习模型GRACE在MPRA数据上预测cis调控元件活性及变异效应，直接命中增强子活性预测与调控编码研究。",
+   "novelty_for_me": "模型在单核苷酸分辨率学习复合元件词典并预测变异效应，对增强子设计与变异效应预测有直接参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合计算挖掘与MPRA实验，构建单核苷酸分辨率的深度学习模型（GRACE）学习复合元件词典并预测转录调控活性。",
+   "main_finding": "模型能预测未在实验设计中的变异及立体特异性配置活性，并通过对比染色质可及性等正交特征模型，解析了单个motif对转录与染色质状态的不同贡献。",
+   "inspiration": "其通过对比正交特征模型解耦序列motif对转录与染色质可及性贡献的范式，可启发我在增强子预测中分离预训练序列特征与虚拟表观遗传特征的独立效应。"
+  }
+ }
+]
