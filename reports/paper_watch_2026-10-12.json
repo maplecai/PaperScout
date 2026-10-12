@@ -1,0 +1,148 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.09.757610",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.09.757610",
+  "title": "Spatiotemporal AI modeling of gene regulation and variant effects in the developing human brain",
+  "journal": "bioRxiv",
+  "authors": [
+   "Hao, Y.",
+   "Park, C. Y.",
+   "Theesfeld, C. T.",
+   "Troyanskaya, O. G."
+  ],
+  "date": "2026-10-11",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.09.757610v1",
+  "doi": "10.64898/2026.10.09.757610",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Olga G Troyanskaya",
+  "corr_affiliation": "Flatiron Institute, Simons Foundation; Princeton University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "基于序列的AI模型预测跨细胞类型基因表达和变异效应，与你的sequence-to-function和跨细胞类型调控预测高度相关。",
+   "novelty_for_me": "在数据有限的瞬态细胞类型中使用迁移学习进行时空建模，对跨细胞类型泛化有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出Seal，一种基于基因组序列的可解释AI迁移学习框架，用于跨脑区、细胞类型和发育阶段的时空基因表达与变异效应建模。",
+   "main_finding": "该模型有效克服了瞬时细胞类型数据稀缺问题，成功预测了基因表达与变异效应，并揭示了神经精神疾病风险相关的特定细胞类型、发育窗口及调节性变异负荷。",
+   "inspiration": "Seal利用迁移学习克服瞬时细胞类型数据稀缺的策略，启发我在预测不同细胞类型游离型增强子活性时，可利用预训练基因组学模型提取虚拟表观遗传特征，以弥补特定细胞类型的训练数据不足。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.08.757673",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.08.757673",
+  "title": "A unified framework for quantitative splicing and transcript prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Jaganathan, K.",
+   "Chen, J.",
+   "Liu, X.",
+   "Zhang, Y.",
+   "Kim, Y.",
+   "Banerjee, A.",
+   "Fiziev, P. P.",
+   "Wilcox, N.",
+   "Taskiran, I. I.",
+   "Cai, Y.",
+   "Wigdor, E. M.",
+   "Chew, G.-L.",
+   "Png, G.",
+   "McRae, J. F.",
+   "Reddy, A. J.",
+   "Chao, K.-H.",
+   "Mehio, R.",
+   "Sanders, S. J.",
+   "Farh, K. K.-H."
+  ],
+  "date": "2026-10-11",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.08.757673v1",
+  "doi": "10.64898/2026.10.08.757673",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Kishore Jaganathan",
+  "corr_affiliation": "Illumina, Inc.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "SpliceAI2是直接从基因组序列预测剪接和转录本的深度学习模型，属于sequence-to-function范式，与你的研究兴趣高度契合。",
+   "novelty_for_me": "端到端重建完整转录本并量化变异对剪接的定量影响，在变异效应预测维度上提供了新的思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "SpliceAI2，一种跨物种多任务端到端深度学习模型，直接从基因组序列联合预测剪接位点、剪接连接及转录本丰度。",
+   "main_finding": "该模型显著提升了剪接变异的识别与定量精度，并在罕见病队列中发现约15%的遗传负荷源于外显子测序易遗漏的深层内含子剪接变异。",
+   "inspiration": "其跨物种多任务端到端训练范式（联合预测局部位点与全局转录本丰度）可启发我将局部增强子序列特征与全局细胞类型特异性活性预测整合至单一模型中。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.09.757843",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.09.757843",
+  "title": "CRISCross: Integration of Epigenetic Information for Deep-Learning-Based Prediction of CRISPR-Cas9 Off-Targets Across Cell Types",
+  "journal": "bioRxiv",
+  "authors": [
+   "Jobson Pargeter, W.",
+   "Rabsch, D.",
+   "Kaufmann, M. M.",
+   "Uhl, M.",
+   "Mitrofanov, A.",
+   "Brox, T.",
+   "Cathomen, T.",
+   "Tran, V. D.",
+   "Backofen, R."
+  ],
+  "date": "2026-10-11",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.09.757843v1",
+  "doi": "10.64898/2026.10.09.757843",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Rolf Backofen",
+  "corr_affiliation": "Bioinformatics Group, Department of Computer Science, University of Freiburg",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "跨细胞类型表观遗传特征整合与序列交互建模，直接关联我'跨细胞类型增强子活性预测'项目的方法论需求。",
+   "novelty_for_me": "cross-attention在核苷酸水平建模序列-表观遗传交互，以及AlphaGenome衍生信号在非增强子任务中的迁移应用。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于交叉注意力机制的CRISCross模型，在核苷酸水平捕获序列与表观遗传特征的交互，并结合合成预训练策略学习跨细胞类型的可迁移表征。",
+   "main_finding": "表观遗传特征对跨细胞类型预测的增益依赖于其与序列特征的早期交互建模而非晚期融合；使用预测的染色质可及性作为虚拟特征可有效提升模型在无实验数据场景下的泛化性。",
+   "inspiration": "在增强子活性预测中，虚拟表观遗传特征应通过交叉注意力等机制在序列分辨率上与DNA序列深度交互建模，而非作为独立信号晚期融合，以提升跨细胞类型的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.06.757139",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.06.757139",
+  "title": "GLARE: Genomic Language model for Automated Repetitive Element classification",
+  "journal": "bioRxiv",
+  "authors": [
+   "Haas, N.",
+   "Bruna, T."
+  ],
+  "date": "2026-10-11",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.06.757139v1",
+  "doi": "10.64898/2026.10.06.757139",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Tomas Bruna",
+  "corr_affiliation": "DOE Joint Genome Institute, Lawrence Berkeley National Laboratory",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "微调基因组语言模型（Nucleotide Transformer）并评估跨分类群泛化能力，与我的DNA语言模型/基因组基础模型兴趣间接相关。",
+   "novelty_for_me": "系统比较多个基因组语言模型在分类任务上的表征能力，以及序列退化下的鲁棒性评估方法。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于Nucleotide Transformer v3预训练基因组语言模型微调的转座元件分类器。",
+   "main_finding": "在多源整合参考数据上微调后，模型在跨分类群、跨数据库及序列退化等分布偏移场景下均展现出卓越的泛化能力和鲁棒性。",
+   "inspiration": "借鉴其对不同预训练基因组语言模型的对比评估及模拟序列退化测试鲁棒性的范式，可用于评估增强子活性预测模型在不同padding长度或序列截断下的性能稳定性。"
+  }
+ }
+]
