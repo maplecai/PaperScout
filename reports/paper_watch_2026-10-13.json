@@ -1,0 +1,82 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.10.757278",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.10.757278",
+  "title": "Alignment-Aware Genomic Coordinate Encoding for Long-Range DNA Modeling",
+  "journal": "bioRxiv",
+  "authors": [
+   "Yang, X.",
+   "QIN, C.",
+   "Wang, F.",
+   "He, B.",
+   "Zhao, Y.",
+   "Wu, J.",
+   "Zhang, Y.",
+   "Yao, J."
+  ],
+  "date": "2026-10-12",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.10.757278v1",
+  "doi": "10.64898/2026.10.10.757278",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jianhua Yao",
+  "corr_affiliation": "AI for Life Sciences Lab, Tencent",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出对齐感知的基因组坐标编码与位置编码策略改进GFM长程调控建模，与你的基因组基础模型和位置/填充策略研究直接相关。",
+   "novelty_for_me": "将参考基因组坐标、CIGAR信息融入位置编码，以及反向互补掩码学习策略，为GFM序列编码方式提供了新思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出对齐感知的基因组基础模型USM-AA，通过非连续旋转位置编码与包含染色体/链/CIGAR的对齐嵌入模块，结合反向互补掩码预训练建模长程DNA序列。",
+   "main_finding": "显式引入参考基因组坐标系的对齐感知表征能显著提升模型对长程调控元件的建模能力，在跨物种及群体变异数据上预训练后，于多项下游任务中优于现有模型。",
+   "inspiration": "在构建增强子活性预测模型时，可探索显式编码基因组坐标与比对信息以增强对远端调控的感知，并重新审视padding操作是否会破坏序列的坐标对齐与长程依赖关系。"
+  }
+ },
+ {
+  "id": "pubmed:42860388",
+  "source": "pubmed",
+  "raw_id": "42860388",
+  "title": "Epigenetic Silencing of CYYR1 Promotes Lung Adenocarcinoma Progression Through TRIM21-Dependent Regulation of HMMR Stability.",
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "authors": [
+   "Fengsheng Dai",
+   "Jingyi Tang",
+   "Huan Rong",
+   "Yu Wang",
+   "Xiangyi Zhou",
+   "Can Xu",
+   "Jianhua Wang",
+   "Lili Li",
+   "Yue Wu",
+   "Fei Deng",
+   "Dan Yang",
+   "Xiao Yang",
+   "Renyan Li",
+   "Yongzhong Wu",
+   "Dongxi Xiang",
+   "Tingxiu Xiang"
+  ],
+  "date": "2026-10-11",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42860388/",
+  "doi": "10.1002/advs.77890",
+  "pmid": "42860388",
+  "arxiv_id": "",
+  "corr_author": "Tingxiu Xiang",
+  "corr_affiliation": "Chongqing Key Laboratory for the Mechanism and Intervention of Cancer Metastasis, Chongqing University Cancer Hospital, Chongqing University, Chongqing, China.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "系统评估单细胞基础模型不同层嵌入在细胞类型和扰动预测中的表现，与你的基础模型评估和单细胞扰动研究兴趣高度相关。",
+   "novelty_for_me": "逐层探针、LODO选择和CKA分析揭示非最终层可能更优，为GFM评估方法论提供直接参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "整合多组学与机器学习分析筛选靶基因，结合分子生物学与类器官模型进行机制验证。",
+   "main_finding": "CYYR1在肺腺癌中因启动子高甲基化而表观遗传沉默，其通过TRIM21介导的泛素化途径降解HMMR并抑制CDC20致癌信号，从而发挥抑癌作用并增强顺铂敏感性。",
+   "inspiration": "无明显直接启发。"
+  }
+ }
+]
