@@ -1,0 +1,232 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.12.758580",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.12.758580",
+  "title": "A high-resolution protein-RNA binding atlas for structure-aware interaction prediction and post-transcriptional regulatory modeling",
+  "journal": "bioRxiv",
+  "authors": [
+   "Karimzadeh, M.",
+   "Fish, L.",
+   "Karner, H.",
+   "Linder, J.",
+   "Emadi, A.",
+   "Hernandez-Corchado, A.",
+   "Smaili, F. Z.",
+   "Stewart, E. M.",
+   "Kelley, D. R.",
+   "Wang, B.",
+   "Najafabadi, H. S.",
+   "Leonetti, M.",
+   "Goodarzi, H."
+  ],
+  "date": "2026-10-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.12.758580v1",
+  "doi": "10.64898/2026.10.12.758580",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hani Goodarzi",
+  "corr_affiliation": "Arc Institute, University of California, San Francisco",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "开发了基于Borzoi的sequence-to-function模型预测RNA调控和变异效应，与你的序列到功能预测及表示学习兴趣高度相关。",
+   "novelty_for_me": "引入上下文无关文法启发的固定卷积来显式编码RNA二级结构特征进行结合预测。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合高通量ecCLIP数据与结构感知神经网络（Pythia，利用上下文无关文法启发的固定卷积编码RNA二级结构）进行RBP结合预测与转录后调控建模。",
+   "main_finding": "ecCLIP图谱增强了序列到功能模型对RNA稳定性及变异效应的预测能力；Pythia能准确预测RBP结合，并成功将结合机制分解为序列与结构依赖组件且经高通量实验验证。",
+   "inspiration": "Pythia利用上下文无关文法启发的固定卷积显式编码RNA二级结构的思路，可启发我在预训练基因组学模型中设计特定卷积核或位置编码策略，以显式捕捉DNA三维结构或染色质状态等虚拟表观遗传特征，并优化padding区域的特征表达。"
+  }
+ },
+ {
+  "id": "pubmed:42865067",
+  "source": "pubmed",
+  "raw_id": "42865067",
+  "title": "Dynamic Graph Prior-Guided Latent Adaptation for Generalizable Single-Cell Perturbation Response Prediction.",
+  "journal": "Bioinformatics (Oxford, England)",
+  "authors": [
+   "Yunlong Bie",
+   "Peishan Fan",
+   "Qijin Yin",
+   "Li Xiao"
+  ],
+  "date": "2026-10-12",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42865067/",
+  "doi": "10.1093/bioinformatics/btag747",
+  "pmid": "42865067",
+  "arxiv_id": "",
+  "corr_author": "Li Xiao",
+  "corr_affiliation": "Beijing University of Posts and Telecommunications, School of Artificial Intelligence, Beijing, 100876, China.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "解决单细胞扰动响应预测中跨未见细胞类型的泛化问题，直接契合你的单细胞扰动和跨细胞类型泛化研究兴趣。",
+   "novelty_for_me": "提出动态图先验和门控潜在校正机制，将扰动特异性的拓扑信号选择性注入隐藏表示。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出DGP-LA框架，结合细胞状态条件转换模型与扰动特异性稀疏图细化，通过门控机制将动态图先验信号自适应注入潜在表示。",
+   "main_finding": "通过动态整合生物学先验知识，模型在未见细胞类型的零样本药物扰动响应预测中表现出卓越的泛化能力，显著提升了预测精度及生物学可解释性。",
+   "inspiration": "其将先验知识动态条件化并作为门控信号注入隐藏层的范式，可启发我将虚拟表观遗传特征作为动态先验，通过门控机制自适应融入预训练基因组学模型的序列表示中，以增强跨细胞类型增强子活性预测的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.12.758490",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.12.758490",
+  "title": "BioMod: Biological Module Tokenization for Single-Cell Foundation Modeling",
+  "journal": "bioRxiv",
+  "authors": [
+   "Meng, L.",
+   "Zhu, J.",
+   "Han, B.",
+   "Zang, Y.",
+   "Li, W.",
+   "Zong, K.",
+   "Zhong, J.",
+   "Yang, Y.",
+   "Liu, J.",
+   "Jia, J.",
+   "Sun, R.",
+   "Yu, G.",
+   "Han, J.",
+   "Chen, Y.",
+   "Zhang, L.",
+   "Xu, J."
+  ],
+  "date": "2026-10-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.12.758490v1",
+  "doi": "10.64898/2026.10.12.758490",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jinchao Xu",
+  "corr_affiliation": "Shenzhen Loop Area Instutite",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "提出基于生物模块tokenization的单细胞基础模型，与你的基础模型和生物序列表示学习兴趣相关。",
+   "novelty_for_me": "将基因级输入替换为基于通路和基因程序的重叠模块词汇表，实现更高效的细胞状态表示。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于生物模块（通路和基因程序）的语义级Token化方法，结合高比例掩码与非对称解码器构建单细胞基础模型。",
+   "main_finding": "使用660个生物模块替代单基因作为输入单元，大幅压缩了模型架构，在多项单细胞下游任务中达到SOTA，且保留了通路级别的生物学组织结构。",
+   "inspiration": "可借鉴其将低维特征聚合为高阶语义模块的Token化思路，探索将增强子序列或虚拟表观遗传特征聚类为共调控模块，以提升预训练模型在序列到功能预测中的表征效率。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.06.756877",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.06.756877",
+  "title": "VirtualSkin integrates skin-cell identity with intervention-response prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Velland, M.",
+   "Norwick, E.",
+   "Ardene, S.",
+   "Marwick, T.",
+   "Corven, L.",
+   "Solmere, A.",
+   "Calder, N.",
+   "Quillon, R.",
+   "Renn, I.",
+   "Elian, M."
+  ],
+  "date": "2026-10-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.06.756877v1",
+  "doi": "10.64898/2026.10.06.756877",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Marcus Elian",
+  "corr_affiliation": "Center for Computational Dermatology, Northbridge Institute of Biomedical AI, Boston, Massachusetts, USA; Department of Biomedical Informatics, Halcyon Universi",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "提出细胞语言模型用于干预响应预测，与你的virtual cell和单细胞扰动研究兴趣相关。",
+   "novelty_for_me": "将皮肤细胞转录组与生物描述对齐，并在分布偏移下提供不确定性估计以支持选择性预测。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "VirtualSkin，一种对齐单细胞转录组与生物学文本描述的细胞语言模型，支持干预条件下的响应预测。",
+   "main_finding": "该模型在跨独立队列的细胞注释、文本检索及干预响应预测上均优于现有方法，且通过消融实验和不确定性估计验证了预测贡献来源及分布偏移下的可靠性。",
+   "inspiration": "论文中利用消融实验定位预测贡献和不确定性估计应对分布偏移的范式，可启发我在评估预训练基因组学模型padding影响时，通过消融实验精确定位padding策略对增强子活性预测的贡献，并引入不确定性量化来评估padding导致的序列分布偏移。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.05.12.724581",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.05.12.724581",
+  "title": "LOCALE: Local-Alignment Embeddings for Noise-Robust DNA Search at Scale",
+  "journal": "bioRxiv",
+  "authors": [
+   "Synk, R.",
+   "Pandey, P.",
+   "Sahinalp, C.",
+   "Duraiswami, R."
+  ],
+  "date": "2026-10-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.05.12.724581v1",
+  "doi": "10.64898/2026.05.12.724581",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ramani Duraiswami",
+  "corr_affiliation": "University of Maryland",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "涉及DNA序列的表示学习和密集检索，与你的DNA语言模型和序列表示学习兴趣间接相关。",
+   "novelty_for_me": "使用InfoNCE目标和生物学增强（替换、插入、缺失）训练编码器，实现变异鲁棒的DNA序列搜索。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "将DNA序列搜索转化为密集检索任务，采用InfoNCE损失结合生物学启发的数据增强（替换、插入、缺失）训练序列编码器，以学习对变异鲁棒的局部比对嵌入。",
+   "main_finding": "该训练策略不依赖特定架构，能跨多种编码器和分词方案生成变异鲁棒表示，在10%基因组变异下召回率显著提升，并在大规模SRA基准上以更低延迟实现远超传统k-mer方法的检索精度。",
+   "inspiration": "利用生物学启发的序列变异（插入/缺失）作为数据增强训练编码器的范式，启发我在评估预训练基因组学模型padding影响时，可探索将不同padding策略与序列变异增强结合，以提升增强子活性预测模型对输入长度变化的鲁棒性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.05.756906",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.05.756906",
+  "title": "A split-control criterion for few-shot adaptation in single-cell perturbation prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liang, W.-L.",
+   "Yang, Y.-B.",
+   "Zhang, Q.-Y.",
+   "Feng, J.-C.",
+   "Wang, Q.-F.",
+   "Zou, D.",
+   "Tang, J.-L.",
+   "Liu, Y.",
+   "Wang, S.-Y.",
+   "Duan, J.",
+   "Bai, Y.",
+   "Li, Y.-F.",
+   "Sun, W.-Y.",
+   "Cao, Y.-F.",
+   "He, R.-R."
+  ],
+  "date": "2026-10-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.05.756906v1",
+  "doi": "10.64898/2026.10.05.756906",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Rong-Rong He",
+  "corr_affiliation": "Macau University of Science and Technology, Macau, China; Jinan University, Guangzhou, China; Institute for Intelligent Bioinnovation, Knowledge Transfer Center",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "关注单细胞扰动预测中的评估方法学问题，与你的单细胞扰动研究兴趣间接相关。",
+   "novelty_for_me": "揭示了少样本适应中控制误差导致的评分膨胀问题，并提出分裂控制标准SafeDelta。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出 SafeDelta 分离控制准则，利用校准数据决定单细胞扰动预测中是否进行少样本自适应。",
+   "main_finding": "传统评估因共享控制估计导致评分虚高并改变方法排名；采用独立控制评分结合 SafeDelta 能有效抑制误差传递，并在多数据集上保证非负增益。",
+   "inspiration": "在评估预训练基因组学模型 padding 或少样本微调对增强子活性预测的增益时，需采用独立基线对照以避免控制误差传递导致的性能虚高。"
+  }
+ }
+]
