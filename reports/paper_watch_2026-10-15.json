@@ -1,0 +1,102 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.08.14.744988",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.14.744988",
+  "title": "Response representation shapes AlphaGenome enhancer-gene prediction in human astrocytes",
+  "journal": "bioRxiv",
+  "authors": [
+   "Huang, Z.",
+   "Huang, R.",
+   "Han, J."
+  ],
+  "date": "2026-10-13",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744988v1",
+  "doi": "10.64898/2026.08.14.744988",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Zhongwei Huang",
+  "corr_affiliation": "University of Washington",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接评估AlphaGenome在增强子-基因预测中的表现，与你的sequence-to-function和增强子活性预测研究高度相关。",
+   "novelty_for_me": "提供了AlphaGenome删除响应表征与已有染色质预测器增量价值的实证比较，对你的增强子预测模型评估有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "评估序列到功能模型（如AlphaGenome）的缺失响应与稀疏变异响应表示方法，并结合等权重秩融合预测增强子-基因活性。",
+   "main_finding": "整体增强子缺失响应可提升基于染色质的基线模型性能；稀疏变异响应以幅度形式融合优于带符号均值，但在增强子内目标选择及跨细胞迁移上效果未定。",
+   "inspiration": "在利用预训练基因组学模型提取虚拟表观遗传特征时，需关注模型输出响应的表示方式（如幅度与符号的取舍），这直接影响下游增强子活性预测融合的效果。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.11.756618",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.11.756618",
+  "title": "Decoding super-enhancer regulatory grammar and pathogenic gain-of-function variants directly from DNA sequence",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liang, Y.",
+   "Xu, X.",
+   "Mao, Y.",
+   "Zheng, Z.",
+   "Liu, N."
+  ],
+  "date": "2026-10-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.11.756618v1",
+  "doi": "10.64898/2026.10.11.756618",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Nan Liu",
+  "corr_affiliation": "Liangzhu Laboratory, Zhejiang University School of Medicine",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "基于Borzoi基因组Transformer从DNA序列直接预测跨细胞类型的超级增强子，核心属于sequence-to-function和细胞类型特异性增强子调控。",
+   "novelty_for_me": "将超级增强子发现建模为层级化基因组目标检测任务，并利用in silico ablation解码功能层级，方法思路对你的增强子设计研究有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于预训练基因组Transformer（Borzoi）构建深度学习框架，将超级增强子发现转化为跨多细胞类型的分层序列目标检测任务。",
+   "main_finding": "模型直接从长程DNA序列解码超级增强子调控语法，揭示共享增强子的谱系依赖性motif用法，并能在无变异标签训练下精准预测致病性功能获得性非编码变异。",
+   "inspiration": "将增强子活性预测重构为跨细胞类型的分层目标检测任务，可能比直接回归虚拟表观遗传特征更能捕捉调控层级；同时利用in silico ablation解析增强子内部组件功能层级的方法可直接迁移至评估游离型增强子活性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.06.25.733695",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.06.25.733695",
+  "title": "PlantGeneAnn: a high-accuracy ab initio plant gene annotation tool fine-tuned from a genome foundation model",
+  "journal": "bioRxiv",
+  "authors": [
+   "Qizhe, Z.",
+   "Zhengyang, Z.",
+   "Kepeng, L.",
+   "Wang, J.",
+   "Kaixuan, D.",
+   "Wei, X.",
+   "Qing-Yong, Y.",
+   "Xuehai, H."
+  ],
+  "date": "2026-10-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.06.25.733695v1",
+  "doi": "10.64898/2026.06.25.733695",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hu Xuehai",
+  "corr_affiliation": "Huazhong Agricultural University",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "基于基因组基础模型微调的植物基因注释工具，直接涉及DNA语言模型和表征学习。",
+   "novelty_for_me": "展示了基础模型在特定下游任务上的微调策略与效果评估。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合 Mamba-MoE DNA 编码器、U-Net 嵌入解码器与半马尔可夫解码的基因组基础模型微调范式。",
+   "main_finding": "该模型在植物从头基因注释任务上达到 SOTA，且通过 LoRA 微调能以少量数据显著提升分布外物种性能，同时大幅降低内存消耗。",
+   "inspiration": "其利用 LoRA 微调以少量数据实现跨物种泛化的策略，可启发我针对不同细胞类型增强子活性预测的低资源微调；Mamba 架构的低内存特性也为处理长序列及 padding 问题提供参考。"
+  }
+ }
+]
