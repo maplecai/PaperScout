@@ -1,0 +1,142 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.07.757259",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.07.757259",
+  "title": "DNA-LLM2Vec: Architecture-Aware Task-Conditioned Adaptation of Decoder DNA Foundation Models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liang, Y.",
+   "Zhai, K.",
+   "Gan, Y.",
+   "Li, S.",
+   "Shao, J.",
+   "Watson, G. H.",
+   "Poesio, M."
+  ],
+  "date": "2026-10-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.07.757259v1",
+  "doi": "10.64898/2026.10.07.757259",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yuan Liang",
+  "corr_affiliation": "Queen Mary University of London",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P0",
+   "why_relevant": "提出DNA-LLM2Vec框架改进DNA基础模型的表征学习，直接涉及基因组基础模型和序列到功能预测。",
+   "novelty_for_me": "将decoder DNA基础模型转换为双向encoder，并通过对比学习提升增强子-启动子相互作用等任务的性能。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出DNA-LLM2Vec分阶段转换框架，结合掩码下一词预测与位置/链方向不变性对比学习，将单向Decoder DNA基础模型改造为双向编码器。",
+   "main_finding": "模型转换收益高度依赖底层架构与任务结构；基于裁剪的位置对比学习对长上下文任务（如增强子-启动子互作）提升最大，双向上下文则特异性改善远距离变异效应预测。",
+   "inspiration": "针对增强子活性预测中的长序列padding问题，可借鉴其基于裁剪的位置对比学习策略，以增强模型对序列长度和位置偏移的鲁棒性，并提升对远距离调控上下文的建模能力。"
+  }
+ },
+ {
+  "id": "pubmed:42874569",
+  "source": "pubmed",
+  "raw_id": "42874569",
+  "title": "Deep learning uncovers hidden power of low-affinity motifs.",
+  "journal": "Cell genomics",
+  "authors": [
+   "Grace Bower",
+   "Evgeny Z Kvon"
+  ],
+  "date": "2026-10-14",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42874569/",
+  "doi": "10.1016/j.xgen.2026.101392",
+  "pmid": "42874569",
+  "arxiv_id": "",
+  "corr_author": "Evgeny Z Kvon",
+  "corr_affiliation": "Department of Developmental and Cell Biology, University of California, Irvine, Irvine, CA, USA; Department of Systems Biology, University of California, Irvine, Irvine, CA, USA. Electronic address: ekvon@uci.edu.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "使用 sequence-to-function 深度学习模型研究转录因子结合位点和染色质开放，与调控基因组学高度相关。",
+   "novelty_for_me": "揭示低亲和力motif在染色质开放中的软语法核小体协同机制。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于sequence-to-function深度学习模型系统性映射低亲和力转录因子结合位点。",
+   "main_finding": "发现低亲和力结合位点通过软语法核小体协同作用驱动染色质开放。",
+   "inspiration": "在预测游离型增强子活性时，可利用虚拟表观遗传特征探究低亲和力motif的协同作用，并评估预训练模型padding策略对弱信号motif特征提取的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.07.757371",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.07.757371",
+  "title": "SVC: A Vision Transformer-based Spatially and Virtually Embedded Cell Model for Deciphering Subcellular Spatial Transcriptomic Heterogeneity",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wan, H.",
+   "Yang, P.",
+   "Hou, S.",
+   "Wang, J.",
+   "Zhou, X."
+  ],
+  "date": "2026-10-14",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.07.757371v1",
+  "doi": "10.64898/2026.10.07.757371",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Xiang Zhou",
+  "corr_affiliation": "Yale University",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "提出虚拟细胞模型(SVC)并支持in silico扰动，与我的“virtual cell”和“single-cell perturbation”研究兴趣高度契合。",
+   "novelty_for_me": "将Vision Transformer应用于亚细胞空间转录组以学习虚拟细胞表示并支持扰动预测，提供了跨模态表示学习的新视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于Vision Transformer的亚细胞转录本空间上下文学习模型，将基因定位转化为图像patch并利用同细胞内其他基因作为上下文进行表征。",
+   "main_finding": "SVC能准确预测细胞特异性亚细胞转录本定位并跨平台泛化，揭示了常规细胞级分析无法获取的亚细胞空间组织异质性，且其表征可迁移至细胞和组织级下游任务。",
+   "inspiration": "将目标特征转化为图像patch并利用同局部环境内其他特征作为上下文的表征范式，可启发我们在预测细胞类型特异性增强子活性时，构建基于局部序列上下文或虚拟表观遗传特征空间分布的Transformer输入策略。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.14.759035",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.14.759035",
+  "title": "Programmable design of functional RNAs through multimodal generative learning",
+  "journal": "bioRxiv",
+  "authors": [
+   "Ma, J.",
+   "Zhu, J.",
+   "Huang, W.",
+   "Mu, K.",
+   "Huang, K.",
+   "Dong, Z.",
+   "Guo, F.",
+   "Xie, X.",
+   "Shao, Y.",
+   "Huber, R.",
+   "Wan, Y.",
+   "Zhang, L.",
+   "Wu, Q.",
+   "Zhang, Q. C."
+  ],
+  "date": "2026-10-15",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.14.759035v1",
+  "doi": "10.64898/2026.10.14.759035",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Qiangfeng Cliff Zhang",
+  "corr_affiliation": "State Key Laboratory of Membrane Biology, Beijing Advanced Innovation Center for Structural Biology & Frontier Research Center for Biological Structure, School ",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "多模态生成模型学习RNA序列到功能的映射并进行可编程设计，与sequence-to-function和enhancer design高度平行。",
+   "novelty_for_me": "将预测模型反演为生成设计语法，并在5' UTR等调控元件上取得超越临床基准的效果，对增强子设计有直接的方法论借鉴意义。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "多模态条件化生成模型 RNAverse，联合学习 RNA 序列、实验结构探测谱与功能注释，通过 in-painting 与迭代优化实现从预测到生成式设计的统一范式。",
+   "main_finding": "该模型在 16 项预测任务上达到 SOTA，并以 ≤20 个候选的极低实验成本生成跨四类 RNA 的功能性序列，包括提升基因治疗与疫苗 UTR 表达的临床级优化结果，显著优于理性设计与大规模筛选。",
+   "inspiration": "其将结构/功能注释作为条件模态注入序列模型的思路，可迁移至将虚拟表观遗传特征作为细胞类型条件输入增强子活性预测模型；in-painting 评估范式亦可借鉴用于量化预训练模型 padding 区域对序列功能预测的扰动影响。"
+  }
+ }
+]
