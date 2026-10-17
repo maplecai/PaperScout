@@ -1,0 +1,239 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.14.759213",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.14.759213",
+  "title": "GEMS (GWAS Effect Mechanisms via Sequence-to-Function): Unveiling cell type-specific mechanisms for GWAS variants",
+  "journal": "bioRxiv",
+  "authors": [
+   "Xie, X.",
+   "Qian, S.",
+   "Chang, D.",
+   "Bhangale, T.",
+   "McCarthy, M. I.",
+   "Eraslan, G.",
+   "Fletez-Brant, K."
+  ],
+  "date": "2026-10-16",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.14.759213v1",
+  "doi": "10.64898/2026.10.14.759213",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Kipper Fletez-Brant",
+  "corr_affiliation": "Genentech Inc",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "利用sequence-to-function模型预测细胞类型特异性的变异效应，直接关联你的跨细胞类型调控元件活性预测研究。",
+   "novelty_for_me": "提供了一种将序列到功能模型输出与GWAS变异细胞类型归因结合的SHAP解释框架。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于序列到功能模型（Borzoi）的多模态变异效应预测，结合监督分类器与SHAP归因解析GWAS变异的细胞类型特异性机制。",
+   "main_finding": "GEMS能准确关联GWAS风险变异与疾病相关细胞类型，且预测的变异-细胞类型关联在独立实验数据中显著富集，并能将疾病风险变异聚类为机制不同的细胞类型特异性调控模块。",
+   "inspiration": "可借鉴其利用预训练sequence-to-function模型生成虚拟表观遗传特征（ATAC/RNA），并结合SHAP归因解析变异在特定细胞类型增强子上的调控机制，同时评估模型在训练集峰外区域的泛化能力。"
+  }
+ },
+ {
+  "id": "pubmed:42881222",
+  "source": "pubmed",
+  "raw_id": "42881222",
+  "title": "Spatiotemporal AI-based modeling of gene regulation and variant effects in the developing human brain using Seal.",
+  "journal": "Nature neuroscience",
+  "authors": [
+   "Yun Hao",
+   "Christopher Y Park",
+   "Chandra L Theesfeld",
+   "Olga G Troyanskaya"
+  ],
+  "date": "2026-10-15",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42881222/",
+  "doi": "10.1038/s41593-026-02470-2",
+  "pmid": "42881222",
+  "arxiv_id": "",
+  "corr_author": "Olga G Troyanskaya",
+  "corr_affiliation": "Center for Computational Biology, Flatiron Institute, New York, NY, USA. ogt@princeton.edu.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出基于AI的序列到功能迁移学习框架，预测跨细胞类型和发育阶段的基因表达及变异效应。",
+   "novelty_for_me": "展示了在数据有限的瞬时细胞类型中通过迁移学习实现时空特异调控预测的有效策略。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于迁移学习的AI框架（Seal），结合基因组序列实现跨时空、细胞类型的基因表达与变异效应建模。",
+   "main_finding": "Seal能在数据受限的瞬时发育阶段和细胞类型中预测变异的调控效应，并成功揭示自闭症队列中瞬时胎儿兴奋性神经元的从头调控变异负担。",
+   "inspiration": "Seal利用迁移学习克服特定细胞类型数据稀缺问题并实现时空特异性预测，启发我在预测不同细胞类型游离型增强子活性时，可引入迁移学习策略结合虚拟表观遗传特征，以提升模型在数据匮乏细胞类型上的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2024.10.31.621195",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2024.10.31.621195",
+  "title": "Sequence sensitivity of open chromatin reveals constrained regulatory elements underlying human traits",
+  "journal": "bioRxiv",
+  "authors": [
+   "Tomizuka, K.",
+   "Koido, M.",
+   "Suzuki, A.",
+   "Yoshino, S.",
+   "Tanaka, N.",
+   "Ishikawa, Y.",
+   "Liu, X.",
+   "Koyama, S.",
+   "Ishigaki, K.",
+   "Murakawa, Y.",
+   "Immune transcript/enhancer consortium (ITEC),",
+   "Yamamoto, K.",
+   "Terao, C."
+  ],
+  "date": "2026-10-16",
+  "url": "https://www.biorxiv.org/content/10.1101/2024.10.31.621195v1",
+  "doi": "10.1101/2024.10.31.621195",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Chikashi Terao",
+  "corr_affiliation": "RIKEN",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "使用机器学习量化序列扰动对染色质可及性的影响，跨细胞类型识别功能重要的调控元件。",
+   "novelty_for_me": "提出基于序列敏感性而非遗传变异或进化约束来优先排序调控元件的新视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出CAMBUS框架，利用虚拟序列扰动量化机器学习模型预测的染色质可及性敏感性，以此对功能重要的开放染色质区域进行优先排序。",
+   "main_finding": "仅基于序列敏感性识别的调控区域在未使用任何遗传或进化先验的情况下，仍高度富集于进化约束区、超级增强子及复杂疾病因果变异，并呈现细胞类型特异性。",
+   "inspiration": "可借鉴虚拟序列扰动范式，通过评估序列突变对预训练模型预测虚拟表观遗传特征的影响，来检验不同padding策略下模型对增强子核心序列边界效应的捕捉能力与鲁棒性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.15.759350",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.15.759350",
+  "title": "A relational architecture of the human genome",
+  "journal": "bioRxiv",
+  "authors": [
+   "Kurth, I.",
+   "Krause, J.",
+   "Danner, M.",
+   "Kraft, F.",
+   "Islam, T.",
+   "Begemann, M.",
+   "Ziad, Z.",
+   "Elbracht, M.",
+   "Bode, M."
+  ],
+  "date": "2026-10-16",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759350v1",
+  "doi": "10.64898/2026.10.15.759350",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ingo Kurth",
+  "corr_affiliation": "RWTH Aachen, University Hospital",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "利用基因组基础模型进行全基因组序列扰动以构建位置间依赖网络，与你的DNA语言模型和序列表示学习研究高度相关。",
+   "novelty_for_me": "提出了一种利用DNA语言模型进行大规模扰动以发现基因组高阶关系模块的新框架。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于预训练大语言模型（Nucleotide Transformer v3）的全基因组级单核苷酸系统性扰动与注意力依赖图谱构建。",
+   "main_finding": "揭示了跨编码/非编码区的高阶基因组位置依赖网络（relons），该网络受进化约束并与致病性遗传变异高度关联。",
+   "inspiration": "该研究对序列进行逐位置扰动以提取依赖关系的方法，启发我在评估预训练模型padding对虚拟表观遗传特征及增强子活性预测影响时，可引入逐位置扰动分析来量化padding引入的伪依赖关系。"
+  }
+ },
+ {
+  "id": "pubmed:42880218",
+  "source": "pubmed",
+  "raw_id": "42880218",
+  "title": "Emerging frontiers for AI in single-cell genomics.",
+  "journal": "Molecular cell",
+  "authors": [
+   "Sneha Mitra",
+   "Jiaxin Li",
+   "Christina S Leslie"
+  ],
+  "date": "2026-10-15",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42880218/",
+  "doi": "10.1016/j.molcel.2026.09.014",
+  "pmid": "42880218",
+  "arxiv_id": "",
+  "corr_author": "Christina S Leslie",
+  "corr_affiliation": "Computational and Systems Biology Program, Memorial Sloan Kettering Cancer Center, New York, NY 10065, USA. Electronic address: lesliec@mskcc.org.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P2",
+   "why_relevant": "综述AI在单细胞基因组学中的应用，涵盖虚拟细胞、单细胞扰动和表观基础模型，与你的研究兴趣高度相关。",
+   "novelty_for_me": "提供了单细胞AI基础模型和虚拟细胞方向的最新进展与局限性总结，具有启发意义。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "综述单细胞基因组学中的AI基础模型与嵌入方法，涵盖scRNA-seq/scATAC-seq预训练及基于Perturb-seq的“虚拟细胞”建模范式。",
+   "main_finding": "早期单细胞基础模型缺乏实验生物学家关注，但大规模图谱数据与多组学/Perturb-seq技术的涌现，为利用AI整合海量先验数据并构建“虚拟细胞”模型提供了实质性契机。",
+   "inspiration": "在构建基于虚拟表观遗传特征的增强子活性预测模型时，可借鉴单细胞多组学调控基因组学的预训练范式，利用大规模图谱数据优化预训练基因组学模型的上下文表征与泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.15.759360",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.15.759360",
+  "title": "Analysis of single nucleotide substitution in CYP21A2 gene using Alphagenome",
+  "journal": "bioRxiv",
+  "authors": [
+   "Matveeva, A.",
+   "Xu, Y.",
+   "Pandey, A. V."
+  ],
+  "date": "2026-10-16",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759360v1",
+  "doi": "10.64898/2026.10.15.759360",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Amit V Pandey",
+  "corr_affiliation": "University of Bern",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "直接使用AlphaGenome（我的代表性论文之一）对CYP21A2基因进行全位点饱和突变评分，涉及基因组基础模型的实际应用与变异效应预测。",
+   "novelty_for_me": "展示了AlphaGenome在复杂基因座（含假基因同源区）上对转录、剪接和蛋白多层级变异效应的实际表现，对评估基础模型能力边界有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "利用预训练基因组学模型 AlphaGenome 对特定基因进行全转录本跨度的单核苷酸饱和突变扫描，预测多组织转录与剪接效应。",
+   "main_finding": "AlphaGenome 可实现特定基因座全单碱基替换的评分，其调控预测评分能区分不同临床分类的变异，但部分已知剪接缺陷在预测总RNA水平上未表现出显著下降。",
+   "inspiration": "该研究利用预训练模型进行饱和突变扫描的范式，可启发我通过系统性序列截断或移位扫描，定量评估预训练基因组学模型在游离型增强子活性预测中对序列上下文及padding长度的敏感性。"
+  }
+ },
+ {
+  "id": "pubmed:42880214",
+  "source": "pubmed",
+  "raw_id": "42880214",
+  "title": "Learning how single cells respond to perturbations.",
+  "journal": "Molecular cell",
+  "authors": [
+   "Ekin Deniz Aksu",
+   "Bonnie Berger"
+  ],
+  "date": "2026-10-15",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42880214/",
+  "doi": "10.1016/j.molcel.2026.09.033",
+  "pmid": "42880214",
+  "arxiv_id": "",
+  "corr_author": "Bonnie Berger",
+  "corr_affiliation": "Computer Science and Artificial Intelligence Laboratory, MIT, Cambridge, MA 02139, USA; Department of Mathematics, MIT, Cambridge, MA 02139, USA. Electronic address: bab@mit.edu.",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "评论单细胞扰动响应预测模型，与你的single-cell perturbation研究兴趣相关。",
+   "novelty_for_me": "介绍了State模型在跨细胞环境泛化预测扰动响应方面的能力。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "State模型，基于机器学习范式预测单细胞转录组对遗传或化学扰动的响应并实现跨细胞上下文泛化。",
+   "main_finding": "该模型能够跨越不同细胞环境泛化，准确预测单细胞在受到基因或化学干扰后的转录组变化。",
+   "inspiration": "State模型跨细胞上下文泛化的机制，可启发在增强子活性预测中如何有效编码不同细胞类型的虚拟表观遗传特征以提升跨上下文泛化能力。"
+  }
+ }
+]
