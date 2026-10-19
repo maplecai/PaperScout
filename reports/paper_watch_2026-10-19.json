@@ -1,0 +1,47 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.13.758170",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.13.758170",
+  "title": "DeepD enables efficient genome modeling and controllable long-context sequence generation across domains of life",
+  "journal": "bioRxiv",
+  "authors": [
+   "Lai, J.",
+   "Xin, B.",
+   "Wang, Z.",
+   "Yu, A.",
+   "Chen, Z.",
+   "Guo, Y.",
+   "Zhang, M.",
+   "Hu, B.",
+   "Ye, C.",
+   "Chen, J.",
+   "Liu, Q.",
+   "Zhao, H.",
+   "Song, W.",
+   "Dong, N.",
+   "Yang, F.",
+   "Yang, Q.",
+   "Zhao, H."
+  ],
+  "date": "2026-10-18",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.13.758170v1",
+  "doi": "10.64898/2026.10.13.758170",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jinsheng Lai",
+  "corr_affiliation": "China Agricultural University",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "DeepD是基因组基础模型，直接涉及sequence-to-function预测、顺式调控元件建模和启动子生成，与你的基因组基础模型和增强子设计研究高度契合。",
+   "novelty_for_me": "系统发育引导的稀疏MoE架构在百万token上下文上统一了序列到功能预测与可控基因组级生成，且能生成实验验证的启动子。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于系统发育信息引导的稀疏混合专家（MoE）架构，支持百万级token长上下文的单核苷酸分辨率基因组基础模型。",
+   "main_finding": "跨物种全基因组预训练的DeepD在调控区域变异预测上表现优异，专家路由能有效捕获远端顺式调控元件，并支持可控的基因组级序列生成。",
+   "inspiration": "其百万级长上下文能力为评估预训练模型padding影响提供了新视角（长上下文或减少游离型增强子的padding需求），且专家路由机制有助于解析远端顺式调控特征。"
+  }
+ }
+]
