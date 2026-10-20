@@ -1,0 +1,179 @@
+[
+ {
+  "id": "biorxiv:10.1101/2025.06.05.658079",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.06.05.658079",
+  "title": "Comprehensive molecular impact mapping of common and rare variants at GWAS loci",
+  "journal": "bioRxiv",
+  "authors": [
+   "Balderson, B.",
+   "Tule, S.",
+   "Okino, M.-L.",
+   "Rieger, W. J.",
+   "Corban, S.",
+   "Jaureguy, J.",
+   "Palpant, N.",
+   "Gaulton, K. J.",
+   "Yengo, L.",
+   "Boden, M.",
+   "McVicker, G."
+  ],
+  "date": "2026-10-19",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.06.05.658079v1",
+  "doi": "10.1101/2025.06.05.658079",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Graham McVicker",
+  "corr_affiliation": "Salk Institute for Biological Studies, La Jolla CA, USA",
+  "_rank": {
+   "relevance_score": 10,
+   "priority": "P0",
+   "why_relevant": "提出DNACipher序列到功能模型预测跨细胞类型变异效应，直接对标AlphaGenome，命中序列到功能和跨细胞类型泛化。",
+   "novelty_for_me": "预测的上下文数量远超AlphaGenome，并引入DVIM方法基于预测分子效应优先排序GWAS位点变异。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "DNACipher是一种基于深度学习的sequence-to-function模型，输入524kb基因组序列以预测变异在跨38,582种细胞类型/assay组合中的分子效应，并结合DVIM方法对变异进行优先排序。",
+   "main_finding": "该模型在90%以上的GWAS位点中识别出影响变异，其常见变异预测与统计精细映射高度一致，罕见变异富集于已知关联，并在1型糖尿病中获多实验验证。",
+   "inspiration": "模型采用524kb超长序列输入以捕获跨细胞类型的变异效应，提示在评估预训练基因组学模型padding影响时，可探究超长上下文窗口对增强子活性预测及虚拟表观遗传特征提取的依赖性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.06.04.730272",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.06.04.730272",
+  "title": "Re-evaluating the benefit of pretraining scale in cell foundation models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Shakeel, M. H.",
+   "Shen, M.",
+   "Mangiola, S."
+  ],
+  "date": "2026-10-18",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.06.04.730272v1",
+  "doi": "10.64898/2026.06.04.730272",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Muhammad Haroon Shakeel",
+  "corr_affiliation": "Adelaide University",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "重新评估单细胞基础模型的预训练规模与评估方法，与用户对基础模型评估（如padding策略影响）的关注高度相关。",
+   "novelty_for_me": "提出微调性能饱和不代表表示饱和，需要完全冻结的基准测试来评估基础模型。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合标准微调、完全冻结评估与零样本分析，重新评估单细胞基础模型预训练数据规模的scaling law。",
+   "main_finding": "标准微调下的性能饱和掩盖了模型表征能力的真实上限；在完全冻结和零样本设定下，预训练规模对表征质量的提升依然显著。",
+   "inspiration": "在评估预训练基因组学模型（如预测增强子活性）时，应引入完全冻结或零样本评估范式，以避免微调掩盖padding等预训练设计对表征质量的真实影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.18.759890",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.18.759890",
+  "title": "RegDesign-Bench: Benchmarking computational methods for cell-type-specific regulatory DNA design",
+  "journal": "bioRxiv",
+  "authors": [
+   "Xu, J.",
+   "Guo, Z.",
+   "Zhong, C.",
+   "Yin, Q.",
+   "He, Y.",
+   "Chen, Z.",
+   "Xin, H.",
+   "Jin, P.",
+   "Deng, P."
+  ],
+  "date": "2026-10-19",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.18.759890v1",
+  "doi": "10.64898/2026.10.18.759890",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Pan Deng",
+  "corr_affiliation": "Zhongguancun Academy",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "系统基准测试细胞类型特异性顺式调控元件设计方法，直接命中增强子设计与细胞类型特异性调控元件预测的研究兴趣。",
+   "novelty_for_me": "提供了对现有调控DNA设计方法的标准化评估框架，揭示预测活性与细胞类型选择性/基序信号之间不一致的关键发现，对我评估增强子设计方法有直接参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "构建标准化计算基准框架（RegDesign-Bench），系统评估细胞类型特异性顺式调控元件的从头设计方法。",
+   "main_finding": "发现高预测活性与细胞类型选择性、基序信号及参考序列分布相似度之间缺乏一致性，揭示了现有设计方法在不同评估维度上存在应用依赖的局限性。",
+   "inspiration": "在评估游离型增强子活性预测模型时，不能仅依赖单一预测活性指标，需结合细胞特异性、基序富集等多维度验证模型在 sequence-to-function 映射上的真实性能。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.13.758713",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.13.758713",
+  "title": "DCAF: Unifying Data Validity, Evaluation Validity and Predictive Modeling for Single-cell Perturbation Simulation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Xia, T.",
+   "Lei, C.",
+   "Chen, N.",
+   "Hou, H.",
+   "Zhang, H.",
+   "Qin, H.",
+   "Wang, D.",
+   "Li, Q.",
+   "Zhang, Y.",
+   "Fang, S.",
+   "Li, Y."
+  ],
+  "date": "2026-10-19",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.13.758713v1",
+  "doi": "10.64898/2026.10.13.758713",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yuxiang Li",
+  "corr_affiliation": "BGI Research, Wuhan",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出单细胞扰动模拟框架DCAF，涉及跨细胞类型泛化和调控动力学建模，直接命中单细胞扰动兴趣。",
+   "novelty_for_me": "结合JEPA与显式调控动力学建模进行单细胞扰动预测，并关注评估有效性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出统一框架DCAF，结合最优传输重建单细胞扰动状态、改进的log fold change评估指标以及基于JEPA与显式调控动力学的预测模型。",
+   "main_finding": "DCAF在跨基因、跨细胞类型和跨区域泛化上超越SOTA及简单基线，并成功重现小鼠大脑中细胞类型特异性的调控异质性。",
+   "inspiration": "DCAF利用JEPA学习潜在表示并显式建模调控动力学以提升跨细胞类型泛化能力，启发我在预测不同细胞类型增强子活性时可引入JEPA架构提取虚拟表观遗传特征的鲁棒表征。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.12.758706",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.12.758706",
+  "title": "Auditing Confidence-Calibrated Benchmarking of Single-Cell Perturbation Models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Gallone, M.",
+   "Ravidath, S.",
+   "Madireddy, S."
+  ],
+  "date": "2026-10-19",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.12.758706v1",
+  "doi": "10.64898/2026.10.12.758706",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Shyam Ravidath",
+  "corr_affiliation": "Algoverse AI",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "审计单细胞扰动模型的基准测试方法，揭示评估陷阱，与用户对模型评估和单细胞扰动的兴趣高度相关。",
+   "novelty_for_me": "揭示现有单细胞扰动模型基准测试中的身份预测和评估指标陷阱。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于零基线审计和诊断程序的单细胞扰动模型基准测试失效模式分析",
+   "main_finding": "现有基准测试存在系统性评估漏洞（如身份预测器导致的“回声天花板”和未见扰动被静默替换），且不确定性量化方法的优劣排名高度依赖于评估指标选择（覆盖率与排序能力相悖）。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性时，需引入零基线（如恒定均值或序列打乱模型）验证模型是否真正学习了序列到功能的映射，而非依赖输入序列的冗余特征产生“回声”效应。"
+  }
+ }
+]
