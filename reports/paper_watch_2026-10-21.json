@@ -1,0 +1,104 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.19.760026",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.19.760026",
+  "title": "Predicting cell-state-specific gene regulation from DNA across species",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liu, H.",
+   "Mao, S.",
+   "Gallent, T.",
+   "Chen, Y.",
+   "Yan, Z.",
+   "Vogel, I.",
+   "Traunmuller, L.",
+   "Zhang, R.",
+   "Buenrostro, J. D.",
+   "Zhou, J.",
+   "Greenberg, M. E."
+  ],
+  "date": "2026-10-20",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.19.760026v1",
+  "doi": "10.64898/2026.10.19.760026",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jingtian Zhou",
+  "corr_affiliation": "Arc Institute, Palo Alto, CA, USA",
+  "_rank": {
+   "relevance_score": 10,
+   "priority": "P0",
+   "why_relevant": "提出Bolero模型，通过细胞状态嵌入条件化sequence-to-function模型，预测跨物种、跨细胞状态的染色质可及性，直接命中我的增强子活性预测与虚拟细胞研究。",
+   "novelty_for_me": "将单细胞状态嵌入与序列模型结合，实现了对未见细胞状态和物种的表观调控预测外推。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出Bolero，一种参数以大规模单细胞状态嵌入和连续生物学变量为条件的sequence-to-function深度学习模型。",
+   "main_finding": "该模型通过细胞状态条件化，能跨物种、跨未训练状态预测染色质可及性与转录丰度，并成功追踪非编码变异的细胞类型特异性效应及motif协同语法。",
+   "inspiration": "将连续生物学变量作为条件轴注入序列模型以实现虚拟状态预测的范式，可启发我利用虚拟表观遗传特征作为条件变量来预测不同细胞类型的游离型增强子活性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.13.758880",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.13.758880",
+  "title": "Genomic foundation models do not yet boost common variant discovery beyond standard functional annotations",
+  "journal": "bioRxiv",
+  "authors": [
+   "Bass, A. J.",
+   "Park, J.",
+   "Mukherjee, S.",
+   "Whittaker, J.",
+   "Wallace, C."
+  ],
+  "date": "2026-10-19",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.13.758880v1",
+  "doi": "10.64898/2026.10.13.758880",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Andrew J Bass",
+  "corr_affiliation": "University of Cambridge",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接评估了AlphaGenome等sequence-to-function基因组基础模型在变异发现中的实际效用与局限性。",
+   "novelty_for_me": "揭示了当前GFMs在常见变异发现上尚未超越标准功能注释，对评估基础模型泛化能力极具参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用替代功能错误发现率（sfFDR）框架，对比预训练基因组学基础模型（AlphaGenome、Borzoi、GPN-Star）与传统功能注释在GWAS变异发现中的效能。",
+   "main_finding": "现有领先的基因组学基础模型在常见变异发现上尚未超越标准功能注释，且二者结合无显著增益，表明模型主要冗余捕获了已有注释信息。",
+   "inspiration": "在评估预训练模型预测增强子活性时，需验证其提取的虚拟表观遗传特征是否提供了超越传统注释的增量信息，而非仅是已有特征的冗余表达。"
+  }
+ },
+ {
+  "id": "pubmed:42898793",
+  "source": "pubmed",
+  "raw_id": "42898793",
+  "title": "DNA augmentations for semi-supervised learning in genomic sequence classification.",
+  "journal": "NAR genomics and bioinformatics",
+  "authors": [
+   "Hyunwoo Yoo",
+   "Gail L Rosen"
+  ],
+  "date": "2026-10-19",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42898793/",
+  "doi": "10.1093/nargab/lqag123",
+  "pmid": "42898793",
+  "arxiv_id": "",
+  "corr_author": "Gail L Rosen",
+  "corr_affiliation": "Department of Electrical and Computer Engineering, Drexel University, 3141 Chestnut St, Philadelphia, PA 19104, United States.",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "探讨了DNA语言模型在半监督学习中的数据增强策略，属于生物序列表示学习的范畴。",
+   "novelty_for_me": "系统评估了不同生物学启发的增强操作对基因组序列分类性能的影响，对理解模型输入处理有一定启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于GROVER预训练语言模型的FixMatch/FlexMatch半监督学习范式，采用生物学感知的弱-强DNA序列增强算子。",
+   "main_finding": "在半监督基因组分类中，温和且保留序列核心信息的增强策略（如短掩码配比低频indel）效果最优，而过度掩码或激进突变会破坏模型稳定性与性能。",
+   "inspiration": "在增强子活性预测的数据增强或序列处理（如padding/截断）中，应采用温和且保留调控基序的扰动策略（如短片段掩码），避免过度掩码或激进突变破坏顺式调控元件的核心特征。"
+  }
+ }
+]
