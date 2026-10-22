@@ -1,0 +1,104 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.19.760276",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.19.760276",
+  "title": "A genomic foundation model for interpreting human genetic diversity",
+  "journal": "bioRxiv",
+  "authors": [
+   "Xu, Q.",
+   "Wu, Z.",
+   "Dong, M.",
+   "Bao, T.",
+   "ng, W.",
+   "Huang, X.",
+   "Yang, H.",
+   "Zhou, Y.",
+   "Yi, X.",
+   "Zhang, S.",
+   "Huang, D.",
+   "Sham, P. C.",
+   "Zhou, W.",
+   "Li, M. J."
+  ],
+  "date": "2026-10-21",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.19.760276v1",
+  "doi": "10.64898/2026.10.19.760276",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Mulin Jun Li",
+  "corr_affiliation": "Guangzhou Women and Children's Medical Center, Guangzhou Medical University, Guangzhou, China; Department of Bioinformatics, The Province and Ministry Co-sponso",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "hEVO是一个在大量人类基因组变异上预训练的基因组基础模型，直接涉及DNA语言模型和调控变异效应预测。",
+   "novelty_for_me": "利用自然单倍型序列而非仅参考基因组进行预训练，并在无微调的情况下在实验测量的调控效应上取得强泛化。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "hEVO，一种基于人类群体单倍型序列多样性进行无监督预训练的基因组基础模型。",
+   "main_finding": "该模型以远小于十亿参数的规模，在无需任务特定微调的情况下，于功能注释、变异解释及实验测量的调控效应预测等19项基准中18项夺冠，证明了群体单倍型多样性可作为可迁移的生物学信息源。",
+   "inspiration": "hEVO以较少参数实现优异调控效应预测，提示在增强子活性预测中可探索基于群体单倍型多样性预训练提取可迁移调控信息，而非单纯依赖扩大模型参数规模。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.03.17.712488",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.03.17.712488",
+  "title": "Position-dependent variant effects reveal importance of context in genomic regulation",
+  "journal": "bioRxiv",
+  "authors": [
+   "Aninta, S. I.",
+   "Tewhey, R.",
+   "de Boer, C. G."
+  ],
+  "date": "2026-10-21",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.03.17.712488v1",
+  "doi": "10.64898/2026.03.17.712488",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Carl G de Boer",
+  "corr_affiliation": "The University of British Columbia",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "使用序列模型研究MPRA中变异位置对调控活性的影响，直接涉及增强子活性预测和序列到功能映射。",
+   "novelty_for_me": "系统揭示了变异在MPRA构建体中的位置偏倚及其对调控效应大小估计的影响，对增强子预测模型的输入设计有重要警示。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于序列到表达的深度学习模型，系统评估变异在MPRA探针中位置偏移对调控活性的影响。",
+   "main_finding": "变异位置显著影响其表达变化幅度（主要由TF位置依赖性活性导致），可能导致MPRA低估变异效应，凸显了顺式调控语法的复杂性。",
+   "inspiration": "启发我在评估预训练基因组学模型 padding 策略时，需重点考察序列截断或填充位置对增强子内部转录因子结合位点相对位置及活性预测结果的偏置影响。"
+  }
+ },
+ {
+  "id": "arxiv:2610.28853",
+  "source": "arxiv",
+  "raw_id": "2610.28853",
+  "title": "An autoencoder outperforms two transformers on prediction of gene expression from chromatin accessibility",
+  "journal": "arXiv",
+  "authors": [
+   "Jesse G. Meyer"
+  ],
+  "date": "2026-10-20",
+  "url": "https://arxiv.org/abs/2610.28853",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2610.28853",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "系统比较了自编码器与Transformer在从染色质可及性预测基因表达上的性能，并探讨了跨细胞类型的泛化性问题。",
+   "novelty_for_me": "揭示了在单细胞多组学预测中，简单的双VAE模型在跨细胞类型泛化上可能优于复杂的Transformer架构。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于双变分自编码器（scButterfly-B）与多种Transformer架构在染色质可及性到基因表达预测任务上的严格基准测试与消融分析。",
+   "main_finding": "双变分自编码器在基因级和细胞内相关性上全面优于Transformer且训练更快；在Transformer内部，Perceiver编码器优于全自注意力，而染色体感知注意力先验反而显著降低性能。",
+   "inspiration": "在评估预训练基因组学模型架构设计时，应警惕引入基于生物学先验的注意力机制（如染色体感知）可能带来的负面效果，并需与简单统计基线进行严格对比。"
+  }
+ }
+]
