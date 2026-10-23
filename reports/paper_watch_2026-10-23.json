@@ -1,0 +1,163 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.21.760802",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.21.760802",
+  "title": "Systematic mapping of the prokaryotic noncoding sequence space with a genomic language model",
+  "journal": "bioRxiv",
+  "authors": [
+   "Sun, G.",
+   "Hudelmaier, T.",
+   "Gilligan, J. C.",
+   "Gonzalez, G. A.",
+   "Yin, P.",
+   "Wan, F.",
+   "Ma, Z.",
+   "Durrant, M. G.",
+   "Ricci-Tam, C.",
+   "Pawluk, A.",
+   "Puschnik, A. S.",
+   "Konermann, S.",
+   "Hsu, P. D."
+  ],
+  "date": "2026-10-22",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.21.760802v1",
+  "doi": "10.64898/2026.10.21.760802",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Patrick D. Hsu",
+  "corr_affiliation": "Arc Institute; Palo Alto, CA, USA",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "使用基因组语言模型对原核非编码序列进行表示学习和大规模聚类，直接命中你的DNA语言模型和生物序列表示学习研究方向。",
+   "novelty_for_me": "展示了基因组语言模型在非编码序列空间系统性映射中的应用，token熵周期性分析揭示内部架构的思路对你的基础模型评估有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于微调的基因组语言模型提取原核非编码序列嵌入，进行大规模无监督聚类与功能挖掘。",
+   "main_finding": "模型成功将数亿原核基因间区序列聚类，通过token熵周期性揭示序列内部架构，并发现了大量新型结构化RNA及变体。",
+   "inspiration": "利用语言模型token熵的周期性分析序列内部架构的思路，可启发对增强子序列内部motif排布特征及padding效应的可解释性分析。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.02.18.706454",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.02.18.706454",
+  "title": "Foundation Models Improve Perturbation Response Prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Cole, E.",
+   "Huizing, G.-J.",
+   "Addagudi, S.",
+   "Ho, N.",
+   "Hasanaj, E.",
+   "Kuijs, M.",
+   "Johnstone, T.",
+   "Carilli, M.",
+   "Davi, A.",
+   "Ellington, C.",
+   "Feinauer, C.",
+   "Li, P.",
+   "Menegaux, R.",
+   "Mohammadi, S.",
+   "Shao, Y.",
+   "Zhang, J.",
+   "Lundberg, E.",
+   "Song, L.",
+   "Bar-Joseph, Z.",
+   "Xing, E. P."
+  ],
+  "date": "2026-10-22",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.02.18.706454v1",
+  "doi": "10.64898/2026.02.18.706454",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Elijah Cole",
+  "corr_affiliation": "GenBio AI",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "系统评估预训练嵌入（含生物基础模型）在单细胞扰动响应预测中的效用，直接命中single-cell perturbation和foundation model研究方向。",
+   "novelty_for_me": "600+ embedding-task对的基准测试结论（先验知识嵌入优于基础模型嵌入）对我的基础模型评估工作有重要参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "系统性基准测试多种预训练嵌入（含基础模型与先验知识特征）在扰动响应预测中的效用，并开发多嵌入融合方法。",
+   "main_finding": "预训练基础模型表现不一，部分优于简单基线，但基于先验知识的嵌入特征表现最佳；整合多种预训练嵌入能进一步提升细胞行为预测的准确性。",
+   "inspiration": "在评估预训练基因组学模型预测增强子活性时，应将基于先验知识的特征（如已知motif或表观图谱）作为强基线对比，并探索多嵌入融合策略以提升预测性能。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.04.10.717709",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.04.10.717709",
+  "title": "Predicting Pre-treatment Resistance or Post-treatment Effect? A Systematic Benchmarking of Single-Cell Drug Response Models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Shen, L.",
+   "Sun, X.",
+   "Zheng, S.",
+   "Hashmi, A.",
+   "Eriksson, J.",
+   "Mustonen, H.",
+   "Seppänen, H.",
+   "Shen, B.",
+   "Li, M.",
+   "Vähä-Koskela, M.",
+   "Tang, J."
+  ],
+  "date": "2026-10-22",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.04.10.717709v1",
+  "doi": "10.64898/2026.04.10.717709",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jing Tang",
+  "corr_affiliation": "University of Helsinki",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "系统基准测试单细胞药物响应预测模型，与single-cell perturbation预测和计算模型评估高度相关。",
+   "novelty_for_me": "跨数据集泛化性评估方法和类别不平衡场景下的模型行为分析对我的模型评估方法论有直接参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于大规模多癌症单细胞转录组数据及谱系追踪验证标签，对多种单细胞药物响应预测模型进行系统性基准测试与消融分析。",
+   "main_finding": "模型在细胞系中表现优于组织样本且无普适最优模型；预处理抗性信号微弱，模型性能受标签定义与架构设计的双重影响。",
+   "inspiration": "其关于标签定义与架构设计交互影响的消融分析思路，可启发我在评估预训练基因组学模型padding策略时，系统考察增强子活性标签阈值与模型架构的交互效应。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.08.14.744937",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.14.744937",
+  "title": "Signature Recontextualization: Mapping perturbational signatures across biological contexts",
+  "journal": "bioRxiv",
+  "authors": [
+   "Chen, A. D.",
+   "Rappaport, N.",
+   "Schork, N.",
+   "Girke, T.",
+   "Monti, S."
+  ],
+  "date": "2026-10-22",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744937v1",
+  "doi": "10.64898/2026.08.14.744937",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Stefano Monti",
+  "corr_affiliation": "Boston University",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P1",
+   "why_relevant": "定义并系统基准化了跨生物上下文的扰动签名预测任务，与你的单细胞扰动和虚拟细胞研究兴趣直接相关。",
+   "novelty_for_me": "提出了'signature recontextualization'这一新任务框架，并系统评估了scGPT等基础模型在跨上下文泛化上的表现，对你的扰动预测研究有方法论参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出跨上下文扰动特征预测的基准测试框架，系统评估投影法、网络传播法与深度学习基础模型在三种目标数据可用性场景下的表现。",
+   "main_finding": "投影和网络传播方法在跨上下文特征预测中表现出强灵活性和鲁棒性，在多种情况下优于深度学习基础模型。",
+   "inspiration": "其按目标上下文数据量分阶段评估模型性能的基准设计，启发我在评估预训练基因组学模型预测增强子活性时，可系统性构建不同细胞类型特征覆盖率场景，以更严谨地量化模型鲁棒性及padding策略的影响。"
+  }
+ }
+]
