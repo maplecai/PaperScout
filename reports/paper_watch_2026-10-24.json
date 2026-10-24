@@ -1,0 +1,35 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.18.759981",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.18.759981",
+  "title": "GBactPro: cross-species bacterial promoter prediction using element-resolved promoter definitions",
+  "journal": "bioRxiv",
+  "authors": [
+   "Han, H.-Y.",
+   "Kao, Y.-C. V.",
+   "Kuo, S.-T.",
+   "Chou, H.-H. D.",
+   "Chang, J.-M."
+  ],
+  "date": "2026-10-23",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.18.759981v1",
+  "doi": "10.64898/2026.10.18.759981",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jia-Ming Chang",
+  "corr_affiliation": "Department of Computer Science, National Chengchi University; Institute of Neuroscience, National Chengchi University",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "基于序列的启动子预测（sequence-to-function），且关注跨物种泛化与序列窗口定义对模型性能的影响，与我的增强子预测跨细胞类型泛化及padding策略评估有直接方法论共鸣。",
+   "novelty_for_me": "element-resolved promoter definition（按-35/spacer/-10元件拆分训练窗口）提升跨物种泛化的思路，可启发增强子建模中序列定义策略的设计。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于启动子功能元件（-35、间隔区、-10）解析定义的CNN-BiLSTM跨物种预测模型。",
+   "main_finding": "采用元件解析的变长序列定义训练模型，相比固定长度窗口显著提升了跨物种预测性能，并能识别被转录抑制的潜在启动子。",
+   "inspiration": "该研究凸显了序列结构定义对模型性能的影响，启发我在评估预训练基因组学模型padding策略时，可探索基于增强子核心基序或功能元件边界进行变长对齐，而非简单的固定长度截断或padding。"
+  }
+ }
+]
