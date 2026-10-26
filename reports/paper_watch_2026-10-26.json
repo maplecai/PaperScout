@@ -1,0 +1,34 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.20.760514",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.20.760514",
+  "title": "Centered cross-context perturbation transfer on the public 2025 Virtual Cell Challenge benchmark",
+  "journal": "bioRxiv",
+  "authors": [
+   "Luan, H.",
+   "Chen, L.",
+   "Yu, G.",
+   "Yang, Y."
+  ],
+  "date": "2026-10-25",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.20.760514v1",
+  "doi": "10.64898/2026.10.20.760514",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yang Yang",
+  "corr_affiliation": "AGI Institute, School of Computer Science, Shanghai Jiao Tong University, Shanghai 200240, China",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接参与2025 Virtual Cell Challenge，解决跨细胞上下文的单细胞扰动响应预测问题，与research_interests中的virtual cell和single-cell perturbation高度吻合。",
+   "novelty_for_me": "通过源中心化+差异表达核+等渗回归的紧凑数值方法实现跨上下文扰动转移，提供了一种轻量级但有效的perturbation transfer思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合公共扰动摘要与差异表达核，利用源中心化与保序回归进行跨上下文扰动转移的紧凑数值方法。",
+   "main_finding": "该方法在2025 Virtual Cell Challenge基准上达到与历史冠军相当的复合得分，且源中心化策略显著提升了跨上下文的差异表达优先级预测性能。",
+   "inspiration": "无明显直接启发"
+  }
+ }
+]
