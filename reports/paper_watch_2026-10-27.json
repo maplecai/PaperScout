@@ -1,0 +1,173 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.22.760090",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.22.760090",
+  "title": "Evaluating the added value of sequence models in noncoding RNA assays: a baseline-aware framework",
+  "journal": "bioRxiv",
+  "authors": [
+   "Guo, R.",
+   "Shan, W.",
+   "Liu, R.",
+   "Yang, L.",
+   "Mu, D.",
+   "WANG, H."
+  ],
+  "date": "2026-10-25",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.22.760090v1",
+  "doi": "10.64898/2026.10.22.760090",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "HONG WANG",
+  "corr_affiliation": "the First Hospital of Jilin University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "系统评估AlphaGenome、RNA-FM等序列基础模型在非编码RNA任务中的增量贡献，直接关联基因组基础模型评估和sequence-to-function研究兴趣。",
+   "novelty_for_me": "提出baseline-aware框架量化序列模型相对于显式基线的增量价值，揭示许多模型增量在序列组成校正后趋近于零，对我评估基础模型实际贡献的方法论有重要借鉴。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基线感知评估框架，通过固定序列组成、正则化强度与身份聚合策略等控制变量，量化预训练序列模型相对显式基线的残差增量贡献。",
+   "main_finding": "经基线校正后，预训练序列模型（RNA-FM、AlphaGenome等）在非编码RNA任务上的增量普遍极小甚至为负；负或近零增量不能等同于信息缺失或模型等价，需在解释残差前严格检验基线构成与正则化。",
+   "inspiration": "评估预训练基因组学模型padding对增强子活性预测的影响时，应先固定序列组成与虚拟表观遗传特征基线，再量化不同padding策略的残差增量，避免将padding引入的微小性能波动误判为模型信息差异。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.20.760593",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.20.760593",
+  "title": "AlphaGenome informed machine learning for pathogenicity prediction of germline mutations",
+  "journal": "bioRxiv",
+  "authors": [
+   "Kumar, P.",
+   "Singh, S.",
+   "Garai, S.",
+   "Ramesh, M.",
+   "Goli, R. C.",
+   "KC, N.",
+   "Sahu, T. K.",
+   "Naskar, S.",
+   "Bhadana, V. P.",
+   "Nandineni, M. R.",
+   "KK, K."
+  ],
+  "date": "2026-10-25",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.20.760593v1",
+  "doi": "10.64898/2026.10.20.760593",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Kanaka KK",
+  "corr_affiliation": "ICAR- Indian Institute of AGricultural Biotechnology, Ranchi, India",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "直接使用AlphaGenome（我的代表性论文之一）的细胞类型特异性功能基因组分数作为下游特征进行变异致病性预测，与sequence-to-function和基因组基础模型应用高度相关。",
+   "novelty_for_me": "展示了如何将AlphaGenome的cell-type-specific scores作为下游ML模型的输入特征，提供了基础模型特征迁移应用的具体案例。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "融合群体等位基因频率、VEP变异注释与AlphaGenome细胞类型特异性功能基因组特征的梯度提升树致病性分类器。",
+   "main_finding": "AlphaGenome衍生的111个功能特征为致病性预测提供了显著的增量性能（Delta AUC = 0.1539），且模型对非编码区及非错义变异实现了100%的覆盖评分。",
+   "inspiration": "AlphaGenome提供的细胞类型特异性功能基因组特征在变异效应预测中具有强互补性，这提示我在增强子活性预测中可探索引入此类预训练模型的细胞特异性特征作为下游机器学习模型的输入。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.21.760716",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.21.760716",
+  "title": "Prediction transfer does not imply reliability transfer in single-cell foundation models",
+  "journal": "bioRxiv",
+  "authors": [
+   "Park, H. J.",
+   "Sriram, A.",
+   "Luo, T.",
+   "Zhang, L."
+  ],
+  "date": "2026-10-26",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.21.760716v1",
+  "doi": "10.64898/2026.10.21.760716",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hyun Jung Park",
+  "corr_affiliation": "University of Pittsburgh-Pittsburgh Campus",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "系统研究单细胞基础模型在跨上下文扰动预测中的可靠性迁移问题，直接关联single-cell perturbation和基础模型评估两个研究兴趣。",
+   "novelty_for_me": "提出prediction transfer与reliability transfer是不同泛化形式这一洞察，以及用SHAP归因指纹刻画可靠性迁移的方法论，对我评估基因组基础模型泛化性有直接启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于交叉拟合SHAP解释的可靠性归因指纹（reliability-attribution fingerprints），用于量化单细胞基础模型跨上下文迁移时的可靠性评估特征。",
+   "main_finding": "预测迁移与可靠性迁移是两种不同的泛化形式，具有相似可靠性归因指纹的源上下文能实现更优的可靠性迁移，但该结构在严格跨家族迁移时部分依赖于共享的上下文信息。",
+   "inspiration": "在评估预训练基因组学模型跨细胞类型预测增强子活性时，不能仅依赖预测性能指标，可借鉴可靠性归因指纹（如基于SHAP的上下文级特征）来评估模型在不同细胞类型或padding策略下的置信度迁移能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.21.760403",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.21.760403",
+  "title": "Interpreting Short Tandem Repeat Variations with Plant Genomic Foundation Models in Olive",
+  "journal": "bioRxiv",
+  "authors": [
+   "Xia, F.",
+   "Pakdel, M. H.",
+   "Mazinani, M. H.",
+   "Asadi, A.",
+   "Zeng, Y.",
+   "Zhang, J.",
+   "Shariati, V.",
+   "Anisimova, M."
+  ],
+  "date": "2026-10-26",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.21.760403v1",
+  "doi": "10.64898/2026.10.21.760403",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Maria Anisimova",
+  "corr_affiliation": "Zurich University of Applied Sciences; Swiss Institute of Bioinformatics",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用植物基因组语言模型评估STR变异对embedding的扰动，其中fixed-length input construction的鲁棒性分析与我的padding策略评估项目间接相关。",
+   "novelty_for_me": "提供了DNA语言模型对重复序列长度变化响应的系统评估视角，可启发padding/输入构造对embedding稳定性的思考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "利用多个植物基因组语言模型提取序列嵌入，量化短串联重复序列长度变异引起的嵌入扰动，并结合表型关联进行变异优先级排序。",
+   "main_finding": "基因组语言模型能捕捉自然STR长度变异的规律性响应，且该响应在固定长度输入构建下具有鲁棒性，优于非重复序列indel。",
+   "inspiration": "论文验证了预训练模型对固定长度输入（padding）构建的鲁棒性，可为评估padding策略对增强子活性预测影响提供对照基准。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.21.760383",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.21.760383",
+  "title": "flodl-bio: First Rust data, transformers and model layer for entire deep learning on biological sequences",
+  "journal": "bioRxiv",
+  "authors": [
+   "Sablok, G.",
+   "de Stefanis, F."
+  ],
+  "date": "2026-10-26",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.21.760383v1",
+  "doi": "10.64898/2026.10.21.760383",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Gaurav Sablok",
+  "corr_affiliation": "Alexanier Berlin Germany",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P1",
+   "why_relevant": "Rust实现的生物序列深度学习框架，明确涉及padded sequences处理和alphabet-aware encoding，并在GUE基准上与Nucleotide Transformer、DNABERT-2等基因组基础模型对比，与我的padding策略评估和基因组DL项目相关。",
+   "novelty_for_me": "提供了从工程实现角度审视序列编码与padding对模型性能影响的视角，小参数CNN超越大模型的结果值得关注。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于Rust和libtorch的生物序列深度学习库flodl-bio，集成序列编码、图构建工具及CNN、RNN与Transformer等多种模型架构。",
+   "main_finding": "在GUE基准的转录因子结合预测任务中，使用该库从零训练的轻量级motif CNN（约1万参数）超越了所有CNN基线，并在部分数据集上优于超大规模预训练模型（如Nucleotide Transformer和DNABERT-2）。",
+   "inspiration": "该库支持padded sequences编码且具备位级实验复现性，可借鉴其确定性的序列填充策略与底层框架，以在评估预训练基因组学模型padding影响时精确控制变量并保证结果可复现。"
+  }
+ }
+]
