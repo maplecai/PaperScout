@@ -1,0 +1,136 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.25.761625",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.25.761625",
+  "title": "How Much Can AI Virtual Cells Gain from Unified Perturbational Modeling?",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wei, Z.",
+   "Ye, Y.",
+   "Cui, S.",
+   "Ma, W.",
+   "You, Y."
+  ],
+  "date": "2026-10-27",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.25.761625v1",
+  "doi": "10.64898/2026.10.25.761625",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yuning You",
+  "corr_affiliation": "School of Science and Engineering, The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen)",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接聚焦AI虚拟细胞的统一扰动建模，整合异质Perturb-seq数据集训练十亿参数预测器，高度匹配virtual cell和single-cell perturbation研究方向。",
+   "novelty_for_me": "统一扰动建模范式和跨上下文泛化的设计思路，可为虚拟细胞和增强子扰动预测提供方法论参考。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出统一扰动建模（UPM）范式，基于变分自编码器（VAE）引入基因通道对齐、共享扰动编码与联合嵌入模块，整合异构Perturb-seq数据训练超大规模虚拟细胞预测器。",
+   "main_finding": "通过统一异构扰动数据训练的超10亿参数UPM模型，在跨环境的遗传扰动与组合扰动预测任务上均显著优于特定场景模型，并在下游HSC应用中实现40%的准确率提升。",
+   "inspiration": "UPM中处理异构基因集的“基因通道对齐”模块，可为预训练基因组学模型在处理不同长度序列padding或跨细胞类型特征对齐时提供统一特征空间的方法借鉴。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.26.761901",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.26.761901",
+  "title": "Mimic: A Unified Neural Network Architecture for Modelling Genomic Sequences and Module-level Comparison",
+  "journal": "bioRxiv",
+  "authors": [
+   "Abdulnabi, H.",
+   "Westwood, J. T."
+  ],
+  "date": "2026-10-27",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.26.761901v1",
+  "doi": "10.64898/2026.10.26.761901",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Husam Abdulnabi",
+  "corr_affiliation": "University of Toronto",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "统一NN架构框架用于比较基因组序列建模组件，直接在增强子活性（DeepSTARR）和蛋白-DNA相互作用上评测，与sequence-to-function和增强子预测高度相关。",
+   "novelty_for_me": "系统比较不同序列嵌入策略（CNN/RNN）对增强子建模的影响，可为我评估基因组基础模型的架构选择提供实证依据。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出名为 Mimic 的统一神经网络架构，通过模块化拆解（k-mer嵌入、序列嵌入、输出映射）实现不同基因组学模型组件的原则性比较。",
+   "main_finding": "发现特定序列嵌入组件能显著提升模型性能，且该架构在增强子活性预测任务上显著优于 DeepSTARR 等现有基线模型。",
+   "inspiration": "Mimic 统一架构对变长序列的自适应性，可作为系统评估不同 padding 策略对预训练基因组学模型 sequence-to-function 预测性能影响的理想测试平台。"
+  }
+ },
+ {
+  "id": "pubmed:42934171",
+  "source": "pubmed",
+  "raw_id": "42934171",
+  "title": "VarNexus: an integrative database for interpreting disease-associated regulatory variants through multimodal predictions and functional evidence.",
+  "journal": "Nucleic acids research",
+  "authors": [
+   "Lihai Gong",
+   "Cheng Tan",
+   "Jinhui Zhang",
+   "Rigan Shu",
+   "Shutong Guo",
+   "Tingting Xiao",
+   "Jialin Shi",
+   "Jing Wang",
+   "Ting Ni",
+   "Ruofan Ding"
+  ],
+  "date": "2026-10-27",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42934171/",
+  "doi": "10.1093/nar/gkag1056",
+  "pmid": "42934171",
+  "arxiv_id": "",
+  "corr_author": "Ruofan Ding",
+  "corr_affiliation": "Institutes of Biomedical Sciences, Inner Mongolia University, Hohhot 010070, China.",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "整合AlphaGenome等sequence-to-function模型的预测与实验证据，直接涉及调控变异效应预测和增强子功能解读。",
+   "novelty_for_me": "提供了将序列模型预测与MPRA/xQTL实验证据交叉验证的框架，可借鉴用于评估增强子活性预测的可靠性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "构建整合序列到功能模型预测与实验/群体遗传学证据的多模态变异数据库系统。",
+   "main_finding": "通过交叉链接AlphaGenome多模态预测、xQTL及MPRA实验数据，为疾病相关非编码调控变异的功能解释和优先排序提供了多层证据支持框架。",
+   "inspiration": "在评估预训练基因组学模型在增强子活性预测上的表现时，可利用该数据库的MPRA及单细胞xQTL实验数据作为外部基准，交叉验证虚拟表观遗传特征的预测可靠性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.26.761895",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.26.761895",
+  "title": "BLOOM: Biologically Informed Flow Matching for Transcriptomic Virtual Embryo Modeling",
+  "journal": "bioRxiv",
+  "authors": [
+   "Liang, Z.",
+   "Li, S.",
+   "Li, B.",
+   "Huang, Y.",
+   "Yu, L."
+  ],
+  "date": "2026-10-27",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.26.761895v1",
+  "doi": "10.64898/2026.10.26.761895",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Lequan Yu",
+  "corr_affiliation": "The University of Hong Kong",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "涉及virtual cell/embryo建模和单细胞扰动预测，与你的“virtual cell”和“single-cell perturbation”兴趣相关。",
+   "novelty_for_me": "使用生物学信息启发的条件流匹配来生成发育过程中的细胞表达分布并模拟基因扰动。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合生物学先验与时间群体上下文的条件流匹配生成模型，用于单细胞转录组时间序列的插值与外推。",
+   "main_finding": "该模型在跨三个小鼠单细胞图谱的预测中超越22个基线，能准确恢复未测量时间点的发育表达动态，并支持基因扰动响应预测。",
+   "inspiration": "利用条件流匹配结合调控先验生成虚拟细胞状态的范式，可启发在预测不同细胞类型增强子活性时，将表观遗传调控先验作为条件输入来生成虚拟表观遗传特征。"
+  }
+ }
+]
