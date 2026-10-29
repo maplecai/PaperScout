@@ -1,0 +1,70 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.22.761197",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.22.761197",
+  "title": "Creator 1.0: Phylogeny-Guided Stagewise Pretraining for Plant Genome Foundation Models across 1,000 Species",
+  "journal": "bioRxiv",
+  "authors": [
+   "Yang, L.",
+   "Jiang, S.",
+   "Li, Y.",
+   "Zou, M.",
+   "Xia, Y.",
+   "Wang, L.",
+   "Wu, Y.",
+   "Wang, H.",
+   "Xie, W.",
+   "Xia, Z."
+  ],
+  "date": "2026-10-28",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.22.761197v1",
+  "doi": "10.64898/2026.10.22.761197",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Zhiqiang Xia",
+  "corr_affiliation": "Hainan University",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "植物基因组基础模型，采用系统发育引导的分阶段预训练，与基因组基础模型和DNA语言模型研究直接相关。",
+   "novelty_for_me": "分阶段预训练产生任务自适应检查点的思路，对评估基因组基础模型训练策略有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用系统发育引导的分阶段预训练（PGSP）范式构建植物基因组基础模型，并在不同训练阶段保留检查点。",
+   "main_finding": "不同下游任务及数据量场景（如全量、少样本）下的最优模型表现分散在预训练的不同阶段检查点中，最终阶段模型并非普遍最优。",
+   "inspiration": "在评估预训练基因组学模型对增强子活性预测的表现时，除 padding 影响外，可系统考察不同预训练阶段检查点的表征差异，以寻找特定细胞类型虚拟表观遗传特征的最优适配点。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.11.01.686014",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.11.01.686014",
+  "title": "Oyster: A Neural Network for Modeling Genomic Sequences with Exact Position-Specific k-mer Contributions",
+  "journal": "bioRxiv",
+  "authors": [
+   "Abdulnabi, H.",
+   "Westwood, J. T."
+  ],
+  "date": "2026-10-28",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.11.01.686014v1",
+  "doi": "10.1101/2025.11.01.686014",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Husam Abdulnabi",
+  "corr_affiliation": "University of Toronto Mississauga",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "提出一种可解释的k-mer位置贡献基因组序列建模方法，与sequence-to-function和表示学习有一定关联。",
+   "novelty_for_me": "玻璃盒模型直接从权重提取k-mer位置贡献，为理解基因组模型的可解释性提供新思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出一种忽略k-mer关联、仅学习k-mer组成与位置的玻璃盒神经网络，通过权重直接提取k-mer的精确位置特异性贡献。",
+   "main_finding": "该白盒模型在蛋白质-DNA互作和增强子活性预测中性能略逊于黑盒模型，但预测结果高度一致，且能提取出与文献相符及具有新意的可解释生物学概念。",
+   "inspiration": "可利用该白盒模型精确解析序列位置特异性贡献的特性，量化评估预训练基因组学模型中padding操作引入的位置偏差对增强子活性预测的影响。"
+  }
+ }
+]
