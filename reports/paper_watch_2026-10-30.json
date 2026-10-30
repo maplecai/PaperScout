@@ -1,0 +1,217 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.28.762238",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.28.762238",
+  "title": "Scooby-2: fine-tuning AlphaGenome for single-cell genomic track prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Hingerl, J. C.",
+   "Gagneur, J."
+  ],
+  "date": "2026-10-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.28.762238v1",
+  "doi": "10.64898/2026.10.28.762238",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Johannes C Hingerl",
+  "corr_affiliation": "Technical University of Munich",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "将AlphaGenome扩展到单细胞分辨率预测，直接涉及sequence-to-function和细胞类型特异性预测。",
+   "novelty_for_me": "提供了一种将预训练基因组基础模型通过参数高效微调适配到单细胞层面的解码器方案。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用参数高效微调（PEFT）策略将AlphaGenome骨干网络与细胞特异性解码器结合，实现单细胞分辨率的序列到功能预测。",
+   "main_finding": "该方法在单细胞基因表达差异及eQTL变异效应预测上均显著优于前代Scooby（基于Borzoi），验证了更强预训练骨干网络在单细胞任务中的迁移优势。",
+   "inspiration": "其参数高效微调结合细胞特异性解码器的范式，可借鉴用于在预训练基因组学模型上引入虚拟表观遗传特征，从而预测不同细胞类型的增强子活性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2025.12.22.695963",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2025.12.22.695963",
+  "title": "A multispecies foundation model for genome function prediction, gene annotation and sequence design",
+  "journal": "bioRxiv",
+  "authors": [
+   "Boshar, S.",
+   "Evans, B.",
+   "Tang, Z.",
+   "Adel, Y.",
+   "Bornachot, Y.",
+   "Sidbon, S.",
+   "Lorbeer, F. K.",
+   "Picard, A.",
+   "Rajesh, C.",
+   "Seitz, E.",
+   "Emms, D.",
+   "Mendoza-Revilla, J.",
+   "Hernandez, A.",
+   "Al-Ani, F.",
+   "Karch, T.",
+   "Schiff, Y.",
+   "Lopez, M.",
+   "Laterre, A.",
+   "Beguir, K.",
+   "Koo, P.",
+   "Kuleshov, V.",
+   "Stark, A.",
+   "de Almeida, B. P.",
+   "Pierrot, T."
+  ],
+  "date": "2026-10-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2025.12.22.695963v1",
+  "doi": "10.64898/2025.12.22.695963",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Thomas Pierrot",
+  "corr_affiliation": "InstaDeep",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "提出跨物种基因组基础模型NTv3，用于功能预测和增强子设计，高度契合DNA语言模型和增强子设计兴趣。",
+   "novelty_for_me": "结合离散扩散进行跨物种调控序列设计，并展示了多物种功能监督对track预测的提升。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出Nucleotide Transformer v3 (NTv3)，一种基于长上下文（1Mb）跨物种Transformer的基础模型，结合多物种基因组预训练与多物种功能轨道后训练，并利用离散扩散进行序列设计。",
+   "main_finding": "跨物种多基因组预训练结合多物种功能轨道后训练显著提升了功能轨道预测和基因从头预测性能，且该模型表征可通过离散扩散生成具有特定活性和启动子选择性的增强子序列。",
+   "inspiration": "NTv3支持1Mb长上下文输入，其处理长序列的机制及多物种功能轨道后训练策略，可为评估预训练模型padding策略对游离型增强子活性预测的影响提供对比基线。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.08.05.668750",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.08.05.668750",
+  "title": "AlphaGenome Enhances Personal Gene Expression Prediction but Retains Key Limitations",
+  "journal": "bioRxiv",
+  "authors": [
+   "Kashyap, S.",
+   "Ramakrishnan, A.",
+   "Shen, L."
+  ],
+  "date": "2026-10-29",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.08.05.668750v1",
+  "doi": "10.1101/2025.08.05.668750",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Li Shen",
+  "corr_affiliation": "Icahn School of Medicine at Mount Sinai",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "评估AlphaGenome在个体水平基因表达预测上的性能，直接涉及对预训练基因组基础模型的评估。",
+   "novelty_for_me": "揭示了当前SOTA序列模型在个人层面表达预测上仍不及简单机器学习基线的局限性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "对预训练序列到功能（S2F）模型（AlphaGenome与Enformer）在个体水平基因表达预测任务上进行基准评估，并与传统监督学习模型（弹性网络、随机森林）对比。",
+   "main_finding": "AlphaGenome在捕获个体特异性表达变异上显著优于Enformer，但其预训练性能仍大幅落后于直接基于个体数据训练的传统机器学习模型。",
+   "inspiration": "提示在利用预训练S2F模型预测特定细胞类型游离型增强子活性时，需警惕其在个体水平上的泛化瓶颈，可考虑将其作为特征提取器并结合下游微调，而非直接端到端预测。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.08.20.746112",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.08.20.746112",
+  "title": "MultiFlow: coupled flow matching for predicting single-cell multiomic perturbation responses in unseen cellular contexts",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wang, H.",
+   "Zhang, C.",
+   "Zhang, M.",
+   "Nie, X.",
+   "Liu, Q."
+  ],
+  "date": "2026-10-28",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.08.20.746112v1",
+  "doi": "10.64898/2026.08.20.746112",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Qiao Liu",
+  "corr_affiliation": "Yale University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "使用耦合流匹配预测单细胞多组学扰动响应，直接涉及单细胞扰动和未见细胞类型泛化。",
+   "novelty_for_me": "提出了一种联合RNA和ATAC双模态的生成式扰动预测框架。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出MultiFlow，一种基于耦合流匹配的生成式框架，通过RNA与ATAC生成流的双向信息交换联合建模配对多组学状态及扰动响应。",
+   "main_finding": "联合多组学建模在预测未见细胞类型的转录与染色质可及性扰动响应上优于单模态方法，且有效保留了peak-gene协同效应等跨模态结构。",
+   "inspiration": "其对peak-gene协同效应的跨模态建模思路，可启发在预测不同细胞类型增强子活性时，联合考虑虚拟表观遗传特征与转录组状态的耦合关系。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.28.762643",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.28.762643",
+  "title": "Efficient biological design via genomic in-context learning",
+  "journal": "bioRxiv",
+  "authors": [
+   "Brixi, G.",
+   "Hao, Y. A.",
+   "Nori, D.",
+   "Merchant, A.",
+   "Widatalla, T.",
+   "King, S.",
+   "Shalvarjian, K.",
+   "Park, D.",
+   "Hie, B."
+  ],
+  "date": "2026-10-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.28.762643v1",
+  "doi": "10.64898/2026.10.28.762643",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Brian Hie",
+  "corr_affiliation": "Stanford University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接涉及基因组语言模型Evo 2的上下文学习能力用于生物序列设计，与我的DNA语言模型和基因组基础模型研究高度相关。",
+   "novelty_for_me": "展示了基因组语言模型的上下文学习范式用于生物设计，提供了无需微调的高效设计思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于基因组大语言模型（Evo 2）的上下文学习（ICL）与迭代式提示更新（基因组思维链）。",
+   "main_finding": "仅需少量示例且无需微调，Evo 2即可生成高质量且多样化的蛋白质和噬菌体基因组，表现超越微调模型，且迭代更新提示能进一步提升设计多样性。",
+   "inspiration": "启发我在增强子活性预测中，可尝试将不同细胞类型的表观遗传特征作为上下文示例输入预训练模型进行少样本预测，并借此评估不同padding策略对长上下文示例建模的影响。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.27.762296",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.27.762296",
+  "title": "Ground-truth evaluation of sparse autoencoder features on spatial, single-cell and language-model embeddings",
+  "journal": "bioRxiv",
+  "authors": [
+   "Shahsavand, A.",
+   "Forghani, S.",
+   "Akbarzadeh, S.",
+   "Mahdavi Sabet, F."
+  ],
+  "date": "2026-10-29",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.27.762296v1",
+  "doi": "10.64898/2026.10.27.762296",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Amirhossein Shahsavand",
+  "corr_affiliation": "Hematologic Malignancies Research Center, Research Institute for Oncology, Hematology and Cell Therapy, Tehran University of Medical Sciences, Tehran, Iran",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "评估稀疏自编码器在生物基础模型（如Geneformer）嵌入上的特征提取，间接涉及表征学习。",
+   "novelty_for_me": "提供了评估和提取基础模型可解释特征的新视角与基准测试方法。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "在多模态基础模型嵌入上，对比稀疏自编码器（SAE）共识拟合与Varimax旋转的特征可重复性及概念覆盖度评估。",
+   "main_finding": "单次SAE拟合覆盖概念广但可重复性低，多次拟合的共识特征兼具高可重复性与高纯度，但仍会遗漏弱状态；仅靠可重复性不足以评估特征质量，需结合概念覆盖度和基因程序纯度指标。",
+   "inspiration": "在评估预训练基因组学模型提取的虚拟表观遗传特征时，可采用多次SAE拟合共识策略，并结合特征对已知细胞类型特异增强子概念的覆盖度与纯度，以更严谨地验证特征可靠性。"
+  }
+ }
+]
