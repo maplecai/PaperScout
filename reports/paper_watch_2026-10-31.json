@@ -1,0 +1,102 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.23.761347",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.23.761347",
+  "title": "Digital twins forecast individual immune trajectories",
+  "journal": "bioRxiv",
+  "authors": [
+   "Hu, C.",
+   "Yu, C.",
+   "Chen, C. Y.-C."
+  ],
+  "date": "2026-10-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.23.761347v1",
+  "doi": "10.64898/2026.10.23.761347",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Calvin Yu-Chian Chen",
+  "corr_affiliation": "Peking University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接构建AI虚拟细胞数字孪生模型，从单细胞谱预测个体免疫轨迹，与virtual cell和single-cell perturbation研究兴趣高度吻合。",
+   "novelty_for_me": "将虚拟细胞模型个性化为个体数字孪生并随观测累积更新预测的范式，对virtual cell研究有重要启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于单细胞数据对共享虚拟细胞模型进行个性化微调构建数字孪生，预测个体免疫轨迹。",
+   "main_finding": "个性化数字孪生在预测免疫年龄和细胞变化方向上显著优于现有方法，且随观测积累误差降低，能揭示个体特异性免疫恢复与重塑特征。",
+   "inspiration": "在预训练基因组学模型预测增强子活性时，可借鉴“共享模型+个性化微调”范式，利用特定细胞类型的表观遗传观测数据更新虚拟特征，以提升跨细胞类型的预测精度。"
+  }
+ },
+ {
+  "id": "biorxiv:10.1101/2025.08.06.668731",
+  "source": "biorxiv",
+  "raw_id": "10.1101/2025.08.06.668731",
+  "title": "An open structure-guided RNA foundation model for generalizable prediction",
+  "journal": "bioRxiv",
+  "authors": [
+   "Zhu, H.",
+   "Li, R.",
+   "Chang, A.",
+   "Chen, H.",
+   "Zhang, F.",
+   "Tang, F.",
+   "Ye, T.",
+   "Li, X.",
+   "Gu, Y.",
+   "Xiong, P.",
+   "Zhou, S. K."
+  ],
+  "date": "2026-10-29",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.08.06.668731v1",
+  "doi": "10.1101/2025.08.06.668731",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "S Kevin Zhou",
+  "corr_affiliation": "USTC",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "结构引导的RNA基础模型，使用masked language modeling整合二级结构信息，与genomic foundation model和representation learning for biological sequences高度相关。",
+   "novelty_for_me": "将碱基配对交互融入MLM的pair-matching操作和多源结构集成去偏策略，对DNA/RNA语言模型设计有直接借鉴价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出structRFM，一种基于结构引导的RNA基础模型，通过将碱基配对相互作用整合进掩码语言建模（MLM）进行预训练。",
+   "main_finding": "该模型通过结合序列与结构的多模态表征，在零样本分类、二级/三级结构预测及功能预测等任务上均达到SOTA，证明了结构引导预训练对RNA泛化能力的重要性。",
+   "inspiration": "该论文引入的动态掩码比例和多源结构集成（MUSES）以减少预测偏差的思路，可启发我在预训练基因组学模型中针对不同序列长度或padding策略设计自适应掩码机制，以降低虚拟特征预测中的偏差。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.24.761502",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.24.761502",
+  "title": "Does a map-level insulation constraint improve sequence-based prediction of 3D genome folding? A Stage 1 Registered Report with a reverse-complement-equivariant state-space model (HiFold-Mamba)",
+  "journal": "bioRxiv",
+  "authors": [
+   "Malekpouri, M.",
+   "Lotfi, S."
+  ],
+  "date": "2026-10-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.24.761502v1",
+  "doi": "10.64898/2026.10.24.761502",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Mohammad Malekpouri",
+  "corr_affiliation": "IAU",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "从DNA序列预测3D基因组折叠（sequence-to-contact-map），使用reverse-complement-equivariant Mamba架构，直接属于sequence-to-function范式。",
+   "novelty_for_me": "将insulation约束作为map-level损失引入序列预测模型，以及reverse-complement等变性的Mamba设计，对我的基因组基础模型研究有方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出反向互补等变的双向状态空间模型（HiFold-Mamba）预测长序列到3D基因组折叠图谱，并引入图谱级绝缘与边界损失。",
+   "main_finding": "预注册了三项假设：模型在SCC上超越基线，绝缘/边界损失提升边界和环预测精度，预训练加少样本适应优于从头训练；并指出基准测试需逐基线比较以保证统计功效。",
+   "inspiration": "其预训练结合少样本适应在held-out细胞系上的验证策略，可直接启发我利用预训练模型预测不同细胞类型的增强子活性；同时其处理1Mb长序列的架构设计对评估模型padding的边界效应有参考价值。"
+  }
+ }
+]
