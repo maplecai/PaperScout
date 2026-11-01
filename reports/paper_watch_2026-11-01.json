@@ -1,0 +1,162 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.29.762743",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.29.762743",
+  "title": "A comprehensive map of the sequence basis of transcription initiation in humans",
+  "journal": "bioRxiv",
+  "authors": [
+   "He, A. Y.",
+   "Tian, C.",
+   "Kundaje, A."
+  ],
+  "date": "2026-10-30",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.29.762743v1",
+  "doi": "10.64898/2026.10.29.762743",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Anshul Kundaje",
+  "corr_affiliation": "Stanford University",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "直接从DNA序列预测转录起始位点，覆盖多种人体器官和癌症类型，与sequence-to-function和细胞类型特异性调控预测高度相关。",
+   "novelty_for_me": "构建了跨200+实验的转录起始深度学习图谱，可解码不同细胞上下文中的序列决定因素，对我的增强子活性预测研究有直接方法论参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于200+转录起始实验数据训练的高效可解释深度学习模型，采用sequence-to-function范式预测局部DNA序列的转录起始模式。",
+   "main_finding": "构建了跨人类主要器官和癌症类型的转录起始序列基础图谱，模型能准确预测不同细胞环境下的转录起始模式并解码其序列决定因素。",
+   "inspiration": "可将转录起始信号作为虚拟表观遗传特征用于游离型增强子活性预测，并利用其跨细胞类型的高效建模框架评估预训练模型在不同padding策略下对局部序列特征提取的鲁棒性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.29.762938",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.29.762938",
+  "title": "ChAI-Net learns a regulatory code for chromatin co-accessibility",
+  "journal": "bioRxiv",
+  "authors": [
+   "Lee, J.",
+   "Zhang, K.",
+   "Shurberg, E.",
+   "Ramani, V. S.",
+   "Pollard, K. S."
+  ],
+  "date": "2026-10-31",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.29.762938v1",
+  "doi": "10.64898/2026.10.29.762938",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Katherine S. Pollard",
+  "corr_affiliation": "Gladstone Institutes & UCSF",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "从DNA序列预测单分子染色质共可及性，属于sequence-to-function建模且聚焦cis调控元件的调控语法学习。",
+   "novelty_for_me": "以单分子共可及性而非群体平均可及性为预测目标，揭示了传统模型遗漏的TF协同结合motif组合。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用深度神经网络（ChAI-Net）从DNA序列预测单分子分辨率的染色质共可及性图谱。",
+   "main_finding": "模型提取了增强子等顺式调控元件中驱动共可及性的特定motif组合及排列规则（方向、间距等），这些协同结合特征在仅预测平均可及性时无法被捕获。",
+   "inspiration": "在构建增强子活性预测模型时，可将TF motif的协同排列规则（方向、间距、共现）作为虚拟表观遗传特征或模型可解释性分析的重点，以提升对细胞类型特异性增强子活性的刻画精度。"
+  }
+ },
+ {
+  "id": "pubmed:42963434",
+  "source": "pubmed",
+  "raw_id": "42963434",
+  "title": "Host genomic context determines the direction of an oracle-predicted sequence effect: a composition-preserving CpG intervention in Enformer and Borzoi.",
+  "journal": "Functional & integrative genomics",
+  "authors": [
+   "Selahattin Alperen Uysal"
+  ],
+  "date": "2026-10-31",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42963434/",
+  "doi": "10.1007/s10142-026-02097-3",
+  "pmid": "42963434",
+  "arxiv_id": "",
+  "corr_author": "Selahattin Alperen Uysal",
+  "corr_affiliation": "Department of Medical Biology and Genetics, Ege University School of Medicine, İzmir, Türkiye. dralperenuysal@gmail.com.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接评估Enformer和Borzoi作为sequence-to-function oracle的可靠性，探讨序列效应是否跨宿主位点可迁移。",
+   "novelty_for_me": "系统揭示了序列效应受宿主基因组上下文强烈影响，对我用预训练模型做增强子设计/评估有直接警示意义。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "以 Enformer 和 Borzoi 等 sequence-to-function 模型作为预言机，结合六阶马尔可夫链生成序列，评估跨宿主基因座的 CpG 编辑序列效应。",
+   "main_finding": "预测的序列效应大小和方向高度依赖于宿主基因座上下文，而非仅由插入序列决定；局部评分虽降低宿主主导效应，但效应方向在不同位点不稳健，且与 lentiMPRA 实验活性不相关。",
+   "inspiration": "该研究揭示宿主上下文对模型预测效应的决定性影响，提示在评估游离型增强子活性时，必须严格量化预训练模型输入序列的 padding 或上下文截断策略对预测结果的系统性偏置。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.30.762954",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.30.762954",
+  "title": "SMFnet reveals principles of combinatorial transcription factor assembly",
+  "journal": "bioRxiv",
+  "authors": [
+   "Schwämmle, T.",
+   "Diamant, N.",
+   "Badayeva, Y.",
+   "Kleinendorst, R.",
+   "Kundaje, A.",
+   "Krebs, A. R."
+  ],
+  "date": "2026-10-31",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.30.762954v1",
+  "doi": "10.64898/2026.10.30.762954",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Arnaud R Krebs",
+  "corr_affiliation": "Genome Biology Unit, EMBL Heidelberg, Meyerhofstraße 1, 69117 Heidelberg, Germany",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "用扩散模型从DNA序列预测单分子染色质可及性分布，直接属于sequence-to-function且聚焦cis调控元件TF组装。",
+   "novelty_for_me": "以生成模型预测单分子状态分布而非群体均值，并通过in silico motif screen系统拆解TF组合贡献。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出基于生成式扩散模型的SMFNet，从DNA序列预测单分子染色质可及性图谱的分布状态，并结合PRISM识别特定分子状态关联的序列特征。",
+   "main_finding": "单分子染色质状态可映射至特定转录因子（TF）组合，不同TF及其基序组合（依赖伙伴与间距）在染色质开放宽度及核小体定位精度上表现出截然不同的特征，且该机制在体内遗传扰动实验中得到验证。",
+   "inspiration": "在预测不同细胞类型增强子活性时，可借鉴生成式扩散模型预测表观遗传特征分布状态的范式，以捕捉群体平均掩盖的染色质状态异质性，从而更精细地刻画增强子活性机制。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.28.762457",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.28.762457",
+  "title": "Single-cell foundation models transfer across deep evolutionary distances",
+  "journal": "bioRxiv",
+  "authors": [
+   "Trnovec, L.",
+   "Katoh-Kurasawa, M.",
+   "Arey, R. N.",
+   "Shaulsky, G.",
+   "Zupan, B."
+  ],
+  "date": "2026-10-31",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.28.762457v1",
+  "doi": "10.64898/2026.10.28.762457",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Blaž Zupan",
+  "corr_affiliation": "Faculty of Computer and Information Science, University of Ljubljana, Ljubljana, Slovenia",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "评估单细胞基础模型跨物种的零样本泛化能力，与基因组/表观遗传基础模型的表示学习与评估间接相关。",
+   "novelty_for_me": "揭示了基于蛋白质序列的基因表示在跨物种单细胞基础模型迁移中更具完整性和准确性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "零样本评估单细胞基础模型（Geneformer、scGPT、UCE）在跨物种（跨越数亿年进化距离）发育图谱中的迁移学习能力。",
+   "main_finding": "单细胞基础模型无需重训即可在超过十亿年的进化距离上产生有效的细胞嵌入；基于蛋白质序列的基因表征（UCE）比基于词汇表的模型更完整且通常更准确。",
+   "inspiration": "基于底层序列的表征比离散词汇表更具跨域鲁棒性，启发我在评估预训练基因组学模型处理游离型增强子时，可对比不同序列编码方式对padding和未知序列泛化能力的影响。"
+  }
+ }
+]
