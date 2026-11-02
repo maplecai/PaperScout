@@ -1,0 +1,139 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.27.762107",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.27.762107",
+  "title": "Cross-modal transfer enables zero-shot prediction of drug responses across cell types",
+  "journal": "bioRxiv",
+  "authors": [
+   "Luo, C.",
+   "Hu, M.",
+   "Wu, Y.",
+   "Guo, D.",
+   "Wang, S.",
+   "Lyu, Q. R.",
+   "Liu, X."
+  ],
+  "date": "2026-11-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.27.762107v1",
+  "doi": "10.64898/2026.10.27.762107",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Xiao Liu",
+  "corr_affiliation": "Tsinghua University",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "跨模态和跨细胞类型的零样本扰动预测，与单细胞扰动和虚拟细胞概念高度契合。",
+   "novelty_for_me": "遗传到化学扰动的跨模态转移策略。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "基于跨模态迁移学习（遗传扰动到化学扰动）与跨上下文预测的零样本药物转录反应推断框架。",
+   "main_finding": "利用遗传与化学扰动共享的调控网络，该框架在无目标细胞药物测量数据下显著提升了药物转录反应预测的准确性和方向性一致性，并成功揭示了跨细胞上下文的药理特征与供体间差异。",
+   "inspiration": "跨模态迁移学习范式可启发利用易获取的虚拟表观遗传特征或遗传扰动数据，零样本预测不同细胞类型中难以直接测量的游离型增强子活性。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.30.763081",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.30.763081",
+  "title": "Single-cell perturbation prediction near experimental reproducibility with GENESIS",
+  "journal": "bioRxiv",
+  "authors": [
+   "Conci, R.",
+   "D'Ascenzo, D.",
+   "Cultrera di Montesano, S.",
+   "Raghavan, S.",
+   "Winter, P. S.",
+   "Van Allen, E. M.",
+   "Crawford, L.",
+   "Lotter, W."
+  ],
+  "date": "2026-11-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.30.763081v1",
+  "doi": "10.64898/2026.10.30.763081",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Sebastiano Cultrera di Montesano",
+  "corr_affiliation": "Untoken",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "生成式模型预测单细胞扰动响应分布，直接属于单细胞扰动预测的研究兴趣。",
+   "novelty_for_me": "基于能量分数的轻量生成网络及实验校准的评估框架。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "提出GENESIS，一种基于能量分数训练的轻量级生成式神经网络，直接从实验协变量预测单细胞扰动响应分布。",
+   "main_finding": "该模型在预测单细胞扰动响应时接近实验重现性；且在同等训练预算下，覆盖更多实验条件的广度采样比深度采样能带来更准确的预测。",
+   "inspiration": "在构建虚拟表观遗传特征或采样训练数据时，应优先覆盖更多细胞类型和扰动条件（广度优先），而非对少数类型进行高深度测序，以提升增强子活性预测模型的泛化能力。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.28.762670",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.28.762670",
+  "title": "LIMBER: A Hybrid RNA Foundation Model for Predicting and Understanding RNA Structure and Function",
+  "journal": "bioRxiv",
+  "authors": [
+   "Wang, Z.",
+   "Qiu, Y.",
+   "He, Y.",
+   "Thompson, I.",
+   "Wang, H.",
+   "Porter, A.",
+   "Li, A."
+  ],
+  "date": "2026-11-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.28.762670v1",
+  "doi": "10.64898/2026.10.28.762670",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yunrui Qiu",
+  "corr_affiliation": "University of Notre Dame",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "RNA基础模型，涉及序列到结构/功能预测及表征学习，与基因组基础模型研究高度相关。",
+   "novelty_for_me": "混合Mamba与Transformer架构在RNA基础模型中的应用及系统评估。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "结合双向自注意力与选择性状态空间模型（Mamba）的混合RNA基础模型，并建立任务无关的内部表征评估框架。",
+   "main_finding": "该模型在多项RNA结构与功能任务上表现领先，且模型不同层级展现出分层、任务依赖的生物学信息组织，结构、进化和功能能力呈现不同的缩放行为。",
+   "inspiration": "其任务无关的内部表征评估框架及层级信息组织分析，可借鉴用于探究预训练基因组学模型不同层级对虚拟表观遗传特征及增强子活性表征能力的差异。"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.10.29.762818",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.29.762818",
+  "title": "Gene Embedding Hub: a standardized resource for human gene representations",
+  "journal": "bioRxiv",
+  "authors": [
+   "Tabares, D.",
+   "Bohl, M.",
+   "Boeva, V."
+  ],
+  "date": "2026-11-01",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.29.762818v1",
+  "doi": "10.64898/2026.10.29.762818",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Valentina Boeva",
+  "corr_affiliation": "ETH Zurich",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "提供标准化的基因表征资源，涉及多模态和调控基因组学嵌入，对表征学习有参考价值。",
+   "novelty_for_me": "系统整理和标准化跨模态基因嵌入的思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "整合多模态生物数据构建标准化人类基因嵌入资源库，并基于跨嵌入相似性与可预测性进行系统评估。",
+   "main_finding": "汇集了67个涵盖序列、表达、网络等多模态的基因嵌入集，通过统一标识符与元数据格式解决了标准化缺失问题，促进了跨模态基因表示比较与下游应用。",
+   "inspiration": "该资源库提供的标准化DNA/RNA及调控基因组学嵌入，可作为评估预训练基因组学模型不同padding策略对增强子活性预测任务影响的特征基线或对比基准。"
+  }
+ }
+]
