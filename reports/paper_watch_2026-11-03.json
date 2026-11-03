@@ -1,0 +1,74 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.10.28.762297",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.10.28.762297",
+  "title": "A single-cell multimodal foundation model enables cross modality analysis between transcriptome and chromatin",
+  "journal": "bioRxiv",
+  "authors": [
+   "Bao, X.",
+   "Zhu, J.",
+   "Song, X.",
+   "Zhang, X.",
+   "Zeng, H.",
+   "Vu, H. T. H.",
+   "Zhang, H.",
+   "Zhang, Z.",
+   "Yao, M.",
+   "Liang, M.",
+   "Liu, K.",
+   "Parker, S. C.",
+   "Chen, S.",
+   "Liu, J."
+  ],
+  "date": "2026-11-02",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.28.762297v1",
+  "doi": "10.64898/2026.10.28.762297",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jie Liu",
+  "corr_affiliation": "University of Michigan",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "结合单细胞转录组和染色质可及性基础模型构建共享潜在空间，与表观遗传基础模型和虚拟细胞概念高度相关。",
+   "novelty_for_me": "冻结预训练基础模型并学习跨模态对齐空间的思路，对多模态表观遗传建模有启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "冻结单细胞基础模型（scFoundation与EpiAgent）并提取模态线性摘要，通过对齐学习构建共享的RNA-ATAC潜在空间。",
+   "main_finding": "该模型无需在目标数据集上重训练即可高精度匹配跨模态细胞谱，并能跨模态转移转录因子基序活性以准确预测细胞阶段性变化。",
+   "inspiration": "利用冻结的预训练基因组学模型嵌入结合轻量级线性映射构建跨模态对齐空间，为从单一序列特征预测虚拟表观遗传特征（如增强子活性）提供了低计算开销的迁移范式。"
+  }
+ },
+ {
+  "id": "pubmed:42969856",
+  "source": "pubmed",
+  "raw_id": "42969856",
+  "title": "HiCP2GAN: a plug and play foundation model-based GAN for Hi-C enhancement.",
+  "journal": "Briefings in bioinformatics",
+  "authors": [
+   "Samuel Olowofila",
+   "Oluwatosin Oluwadare"
+  ],
+  "date": "2026-11-02",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42969856/",
+  "doi": "10.1093/bib/bbag610",
+  "pmid": "42969856",
+  "arxiv_id": "",
+  "corr_author": "Oluwatosin Oluwadare",
+  "corr_affiliation": "Department of Computer Science, University of Colorado at Colorado Springs, 1420 Austin Bluffs Pkwy, Colorado Springs, CO 80918, United States.",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "使用预训练Hi-C基础模型作为GAN判别器，与基因组基础模型和表示学习有一定关联。",
+   "novelty_for_me": "将预训练基因组基础模型嵌入生成对抗框架的思路，对基础模型迁移应用有参考价值。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "core_method": "采用预训练视觉Transformer基础模型作为判别器构建即插即用GAN框架，用于低分辨率Hi-C数据增强。",
+   "main_finding": "预训练基础模型作为GAN判别器能提供具生物学意义的梯度监督，优于传统从头训练的GAN，并提升了现有增强模型的重建质量与生物学可重复性。",
+   "inspiration": "在微调预训练基因组学模型预测增强子活性时，可借鉴本文冻结深层Transformer并微调浅层的策略，以在评估padding等输入扰动时更好地保留预训练的通用基因组特征。"
+  }
+ }
+]
