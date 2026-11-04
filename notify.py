@@ -4,11 +4,14 @@ Email 发送日报全文（含 Abstract），日报写入 reports/ 归档。
 """
 from __future__ import annotations
 
+import html
 import logging
 import os
+import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from urllib.parse import quote
 
 log = logging.getLogger("paper-scout")
 
@@ -18,61 +21,56 @@ log = logging.getLogger("paper-scout")
 # ====================================================================
 def build_report_md(papers: list[dict], date_str: str, errors: list[str] | None = None,
                     stats: str = "") -> str:
-    lines = [
-        f"# Paper Scout 日报 {date_str}",
-        "",
-        f"共筛选出 **{len(papers)}** 篇推荐论文。",
-    ]
-    if stats:
-        lines.append(f"📊 {stats}")
-    if errors:
-        lines.append("")
-        lines.append(f"> ⚠️ 抓取异常: {'; '.join(errors)}，今日日报可能不全")
-    lines.append("")
-
+    lines = [f"# Paper Scout 日报 {date_str}", "", f"共推荐 **{len(papers)}** 篇论文。", ""]
     for i, p in enumerate(papers, 1):
-        r = p.get("_rank", {})
-        s = p.get("_summary", {})
-        lines.append(f"## {i}. {p.get('title','')}")
-        lines.append("")
-        if p.get("journal"):
-            lines.append(f"- **期刊**: {p['journal']}")
-        lines.append(f"- **作者**: {_authors(p)}")
-        if p.get("corr_affiliation"):
-            lines.append(f"- **机构**: {p.get('corr_author','') or '（未标注）'} @ {p['corr_affiliation']}")
-        lines.append(f"- **日期**: {p.get('date','')}")
-        lines.append(f"- **ID**: {_id_str(p)}")
-        if r.get("relevance_score") is not None and r.get("relevance_score", 0) > 0:
-            lines.append(f"- **相关分数**: {r['relevance_score']}/10")
-        if r.get("why_relevant"):
-            lines.append(f"- **一句话推荐**: {r['why_relevant']}")
-        if s.get("core_method"):
-            lines.append(f"- **方法**: {s['core_method']}")
-        if s.get("main_finding"):
-            lines.append(f"- **主要发现**: {s['main_finding']}")
-        if s.get("inspiration"):
-            lines.append(f"- **对我的启发**: {s['inspiration']}")
-        lines.append("")
-        if p.get("abstract"):
-            lines.append(f"<details><summary>Abstract</summary>\n\n{p['abstract']}\n\n</details>")
+        r, summary = p.get("_rank", {}), p.get("_summary", {})
+        source = p.get("journal") or p.get("source", "")
+        kind = "预印本" if p.get("source") in ("arxiv", "biorxiv") else "期刊文献"
+        relation = summary.get("relevance_type", "")
+        lines.extend([f"## {i}. {p.get('title', '')}", "",
+                      f"{source} · {kind} · {p.get('date', '')} · 相关性 {r.get('relevance_score', '未评分')}/10", ""])
+        if relation:
+            lines.extend([f"**研究关联：{relation}**", ""])
+        for label, value in (
+            ("为什么值得看", r.get("why_relevant")),
+            ("任务与验证范围", summary.get("task_scope")),
+            ("核心方法", summary.get("core_method")),
+            ("主要发现与证据", summary.get("main_finding")),
+            ("可借鉴点（研究建议）", summary.get("inspiration")),
+            ("迁移边界", summary.get("applicability")),
+            ("阅读时核实", summary.get("reading_question")),
+        ):
+            if value:
+                lines.append(f"- **{label}**：{value}")
+        if not summary.get("core_method"):
+            lines.append("- **中文笔记**：生成未成功，请参考下方原始摘要。")
+        links = []
+        if p.get("url", "").startswith(("https://", "http://")):
+            links.append(f"[原文]({quote(p['url'], safe=':/?=&%#')})")
+        if p.get("doi"):
+            links.append(f"[DOI](https://doi.org/{quote(p['doi'], safe='/')})")
+        lines.extend(["", " · ".join(links), ""])
+        resources = list(dict.fromkeys(
+            url.rstrip(".,;:)") for url in re.findall(r"https?://[^\s<>]+", p.get("abstract", ""))
+        ))
+        if resources:
+            lines.append("摘要提供的链接（未核验可用性）：" + " · ".join(
+                f"[资源 {n}]({quote(url, safe=':/?=&%#')})" for n, url in enumerate(resources, 1)
+            ))
             lines.append("")
-        lines.append("---")
-        lines.append("")
-
+        lines.append(f"作者：{_authors(p)}")
+        if p.get("corr_author"):
+            lines.append(f"来源标注的末位/通讯作者：{p['corr_author']}")
+        if p.get("corr_affiliation"):
+            affiliation = re.sub(r"[\w.+-]+@[\w.-]+", "", p["corr_affiliation"]).strip(" .,")
+            lines.append(f"机构：{affiliation}")
+        lines.extend(["", "### 英文摘要", "", p.get("abstract") or "归档未保存摘要，请打开原文查看。", "", "---", ""])
+    lines.extend(["中文笔记基于标题和摘要生成，未核验全文；研究建议不代表论文已验证的结论。相关性分数不是论文质量评分。", ""])
+    if stats:
+        lines.extend([f"检索统计：{stats}", ""])
+    if errors:
+        lines.append(f"> 抓取异常：{'; '.join(errors)}。本期可能不完整。")
     return "\n".join(lines)
-
-
-def _id_str(p: dict) -> str:
-    parts = []
-    if p.get("doi"):
-        parts.append(f"DOI: {p['doi']}")
-    if p.get("pmid"):
-        parts.append(f"PMID: {p['pmid']}")
-    if p.get("arxiv_id"):
-        parts.append(f"arXiv: {p['arxiv_id']}")
-    if p.get("url"):
-        parts.append(f"URL: {p['url']}")
-    return "  |  ".join(parts) if parts else ""
 
 
 def _authors(p: dict) -> str:
@@ -95,14 +93,14 @@ def write_report(md: str, date_str: str, reports_dir: str = "reports") -> str:
 
 def write_report_json(papers: list[dict], date_str: str, reports_dir: str = "reports") -> str:
     """把入选论文的结构化数据存成 sidecar JSON。
-    用途：--test-notify 可直接复用，无需重跑 LLM。不存 abstract 以控制文件大小。"""
+    用途：--test-notify 可直接复用，无需重跑 LLM。保留 abstract，便于重排版和核对摘要依据。"""
     import json
 
     os.makedirs(reports_dir, exist_ok=True)
     path = os.path.join(reports_dir, f"paper_watch_{date_str}.json")
     slim = []
     for p in papers:
-        slim.append({k: v for k, v in p.items() if k not in ("abstract", "_kw_score")})
+        slim.append({k: v for k, v in p.items() if k != "_kw_score"})
     with open(path, "w", encoding="utf-8") as f:
         json.dump(slim, f, ensure_ascii=False, indent=1)
     return path
@@ -144,6 +142,44 @@ def send_empty_notice(date_str: str, reason: str, no_push: bool = False) -> bool
 # ====================================================================
 # Email (SMTP)
 # ====================================================================
+def render_report_html(markdown: str) -> str:
+    """渲染日报使用的 Markdown 子集；原始 HTML 作为文本转义。"""
+    blocks = []
+    in_list = False
+    for line in markdown.splitlines():
+        if in_list and not line.startswith("- "):
+            blocks.append("</ul>")
+            in_list = False
+        if not line.strip():
+            continue
+        escaped = html.escape(line)
+        escaped = re.sub(r"\[([^]\n]+)\]\((https?://[^\s)]+)\)",
+                         r'<a href="\2" style="color:#2463a5;text-decoration:underline">\1</a>', escaped)
+        escaped = re.sub(r"\*\*([^*\n]+)\*\*", r"<strong>\1</strong>", escaped)
+        if line.startswith("- "):
+            if not in_list:
+                blocks.append('<ul style="padding-left:22px">')
+                in_list = True
+            blocks.append(f'<li style="margin:8px 0">{escaped[2:]}</li>')
+        elif line.startswith("### "):
+            blocks.append(f'<h3 style="font-size:15px;color:#666">{escaped[4:]}</h3>')
+        elif line.startswith("## "):
+            blocks.append(f'<h2 style="font-size:19px;margin-top:28px">{escaped[3:]}</h2>')
+        elif line.startswith("# "):
+            blocks.append(f'<h1 style="font-size:23px">{escaped[2:]}</h1>')
+        elif line == "---":
+            blocks.append('<hr style="border:0;border-top:1px solid #ddd;margin:28px 0">')
+        else:
+            blocks.append(f'<p style="margin:10px 0">{escaped}</p>')
+    if in_list:
+        blocks.append("</ul>")
+    return ('<!doctype html><html><head><meta charset="utf-8"></head>'
+            '<body style="margin:0;background:#fff;color:#222">'
+            '<div style="max-width:760px;margin:auto;padding:24px;font-family:Arial,sans-serif;'
+            'font-size:15px;line-height:1.7;overflow-wrap:anywhere">'
+            + "".join(blocks) + '</div></body></html>')
+
+
 def send_email(report_md: str, date_str: str, n_papers: int) -> bool:
     host = os.environ.get("SMTP_HOST", "")
     port = int(os.environ.get("SMTP_PORT") or 465)  # 空串（secrets 设了但值为空）也回退默认
@@ -159,36 +195,8 @@ def send_email(report_md: str, date_str: str, n_papers: int) -> bool:
     msg["From"] = user
     msg["To"] = to
 
-    # 简单 markdown -> 文本 + 近似 html
-    import html as _html
-    text = report_md
-    # 极简 markdown 转 html（段落 + 标题 + 列表）
-    htmllines = []
-    in_list = False
-    for ln in report_md.splitlines():
-        if ln.startswith("# "):
-            htmllines.append(f"<h1>{_html.escape(ln[2:])}</h1>")
-        elif ln.startswith("## "):
-            htmllines.append(f"<h2>{_html.escape(ln[3:])}</h2>")
-        elif ln.startswith("- "):
-            htmllines.append(f"<li>{_html.escape(ln[2:])}</li>")
-            in_list = True
-        elif ln.strip() == "":
-            if in_list:
-                htmllines.append("</ul>")
-                in_list = False
-            htmllines.append("<br>")
-        else:
-            if in_list:
-                htmllines.append("</ul>")
-                in_list = False
-            htmllines.append(f"<p>{_html.escape(ln)}</p>")
-    if in_list:
-        htmllines.append("</ul>")
-    html_body = f"<html><body>{''.join(htmllines)}</body></html>"
-
-    msg.attach(MIMEText(text, "plain", "utf-8"))
-    msg.attach(MIMEText(html_body, "html", "utf-8"))
+    msg.attach(MIMEText(report_md, "plain", "utf-8"))
+    msg.attach(MIMEText(render_report_html(report_md), "html", "utf-8"))
 
     try:
         if port == 465:

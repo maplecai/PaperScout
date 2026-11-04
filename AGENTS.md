@@ -11,7 +11,7 @@ config.yaml          科研画像 + 数据源/筛选/推送参数（唯一事实
 main.py              主编排器：抓取 → 去重 → 粗筛 → LLM → Top → 总结 → 日报 → 推送 → state
 fetch.py             三源独立抓取 + 跨源 DOI 合并去重。单个源失败不影响其它两个
 rank.py              关键词加权粗筛 + LLM 批量打分 + 动态阈值 Top 选择
-summarize.py         对入选论文逐篇生成中文总结（{core_method, main_finding, inspiration}）
+summarize.py         对入选论文逐篇生成中文总结（任务范围、方法、证据、可借鉴点及迁移边界）
 notify.py            Markdown 日报渲染 + Email (SMTP) 推送
 llm.py               OpenAI 兼容 LLM 客户端。纯 requests，无 SDK。429/5xx 指数退避重试，4xx 直接抛
 state.json           去重 dict（120 天滚动清理）+ 运行历史
@@ -100,7 +100,9 @@ arXiv 无作者单位元数据，bioRxiv 走 `author_corresponding` 字段。
 
 ### notify.py
 
-- `build_report_md` 是唯一的日报渲染函数，同一份内容用于归档和 Email。
+- `build_report_md` 生成逐篇日报，不添加顶部总览。每篇保留英文摘要，统计在末尾。`render_report_html` 将日报使用的 Markdown 子集安全转换为白底单列 HTML，加粗和链接必须真正渲染，原始 HTML 必须转义。
+- JSON 归档保留 abstract，旧归档可能没有；不能把缺失摘要伪装成已核验内容。
+- 中文笔记仅基于标题及完整摘要，明确区分论文证据、研究建议和迁移边界；资源链接只提取摘要中的显式 URL。
 - `send_empty_notice` 始终归档空日报 Markdown/JSON；`no_push=True` 时不发送，否则发 Email。
 - SMTP 端口解析：`int(os.environ.get("SMTP_PORT") or 465)`。必须用 `or` 而不是 get 的默认值，因为 GitHub Secrets 设为空字符串时 `get("SMTP_PORT", "465")` 返回 `""` 而非 `"465"`
 

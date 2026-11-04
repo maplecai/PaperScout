@@ -5,6 +5,32 @@ from unittest.mock import patch
 import notify
 
 
+class ReportLayoutTests(unittest.TestCase):
+    def test_article_first_layout_and_safe_html(self):
+        paper = {"title": "A <B> study", "source": "biorxiv", "journal": "bioRxiv",
+                 "url": "https://example.org/paper?a=1&b=2", "authors": ["A"],
+                 "abstract": "Evidence <script>alert(1)</script> https://github.com/lab/model.",
+                 "_rank": {"relevance_score": 8, "why_relevant": "推荐理由"},
+                 "_summary": {"core_method": "方法", "task_scope": "RNA → ATAC",
+                              "inspiration": "可以尝试", "applicability": "尚未验证序列任务"}}
+        md = notify.build_report_md([paper], "2026-11-04", stats="抓取 10 篇")
+        self.assertLess(md.index("为什么值得看"), md.index("作者："))
+        self.assertLess(md.index("英文摘要"), md.index("检索统计"))
+        self.assertNotIn("<details>", md)
+        rendered = notify.render_report_html(md)
+        self.assertIn('<strong>为什么值得看</strong>', rendered)
+        self.assertIn('href="https://example.org/paper?a=1&amp;b=2"', rendered)
+        self.assertIn('href="https://github.com/lab/model"', rendered)
+        self.assertNotIn('<script>', rendered)
+        self.assertEqual(rendered.count('<ul '), rendered.count('</ul>'))
+
+    def test_report_json_retains_abstract_for_reformatting(self):
+        with TemporaryDirectory() as directory:
+            notify.write_report_json([{"abstract": "original abstract", "_kw_score": 0.4}], "2026-11-04", directory)
+            papers, _, _ = notify.load_report("2026-11-04", directory)
+            self.assertEqual(papers, [{"abstract": "original abstract"}])
+
+
 class EmptyEmailTests(unittest.TestCase):
     def test_load_report_selects_requested_date_instead_of_latest(self):
         with TemporaryDirectory() as directory:

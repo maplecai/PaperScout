@@ -234,6 +234,9 @@ def main() -> int:
 
     # 7. 写日报（同一份 md 给 Email/reports 归档，json 给 --test-notify 复用）
     stats = f"抓取 {src_str} → 粗筛 {len(candidates)} 篇 → LLM 选中 {len(selected)} 篇"
+    if args.end_date:
+        start = datetime.strptime(fetch_end, "%Y-%m-%d") - timedelta(days=days)
+        stats = f"窗口 [{start:%Y-%m-%d} 00:00, {args.end_date} 00:00) UTC；{stats}"
     md = notify.build_report_md(selected, date_str, errors, stats=stats)
     notify.write_report(md, date_str)
     notify.write_report_json(selected, date_str)
