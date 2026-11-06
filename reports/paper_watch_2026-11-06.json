@@ -1,0 +1,120 @@
+[
+ {
+  "id": "arxiv:2611.08086",
+  "source": "arxiv",
+  "raw_id": "2611.08086",
+  "title": "MUSS: A Multi-scale and Sequence-based Model for Single-cell Gene Regulation",
+  "abstract": "Modeling gene regulation in single cells requires jointly representing DNA sequence, chromatin accessibility, and gene expression across regulatory scales. Sequence-based models capture DNA-level regulatory grammar but often lack cell-level resolution, whereas many single-cell omics models represent genes and peaks as fixed-vocabulary tokens without their underlying sequence. Here, we present MUSS, a sequence-based multi-scale model for single-cell gene regulation that preserves both DNA-level and cell-level resolution. MUSS derives peak- and gene-level representations from DNA using a frozen pre-trained sequence encoder and integrates them through peak-peak self-attention and distance-biased peak-gene interactions. Peak masked language modeling followed by training on paired scATAC-seq and scRNA-seq aligns these representations with cell-specific regulatory states. Across gene expression prediction, enhancer-gene linking, motif-guided regulatory prioritization, and zero-shot cell clustering, MUSS achieves strong performance against sequence-based and single-cell omics baselines. It further predicts expression for genes and peaks unseen during task training. These results support sequence-grounded, multi-scale representations for decoding cell-type-specific regulatory programs. Code, datasets, and model checkpoints are available at https://github.com/Lotfollahi-lab/MUSS_neurips26.",
+  "journal": "arXiv",
+  "authors": [
+   "Kangjie Zheng",
+   "Amirhossein Vahidi",
+   "Liying Jin",
+   "Joseph Clarke",
+   "Vijaya Baskar MS",
+   "Connor Rogerson",
+   "Mengji Zhang",
+   "Muzlifah Haniffa",
+   "Anshul Kundaje",
+   "Mo Lotfollahi"
+  ],
+  "date": "2026-11-05",
+  "url": "https://arxiv.org/abs/2611.08086",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2611.08086",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "基于预训练序列编码器的单细胞基因调控多尺度模型，直接涉及sequence-to-function、增强子-基因链接和细胞类型特异性调控表示。",
+   "novelty_for_me": "将冻结的DNA序列编码器与peak-gene自注意力结合，在单细胞分辨率下实现序列基础的多尺度调控建模，对我的增强子跨细胞类型预测项目有直接方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "方法可借鉴",
+   "task_scope": "输入：DNA序列、配对的scATAC-seq与scRNA-seq数据 → 输出：基因表达预测、增强子-基因关联、调控优先级排序及零样本细胞聚类；研究物种/细胞体系：摘要未说明；验证范围：基于单细胞多组学数据，涵盖多种细胞类型（含零样本聚类验证）",
+   "core_method": "基于冻结的预训练序列编码器提取peak与基因特征，结合距离偏置的注意力机制与掩码语言建模，在多组学数据上对齐细胞特异性调控状态。",
+   "main_finding": "MUSS在基因表达预测、增强子-基因关联等任务上优于序列和单细胞组学基线，并能泛化预测训练时未见的基因和peak；摘要未提供具体性能指标数字。",
+   "inspiration": "MUSS冻结预训练序列编码器并提取多尺度表示的范式，可启发我在增强子活性预测中如何利用预训练模型提取虚拟表观遗传特征，并建议关注不同序列长度处理策略对特征提取的影响。",
+   "applicability": "原论文侧重单细胞多组学联合建模与增强子-基因关联，而我的任务聚焦游离型增强子活性预测及预训练模型padding影响评估；MUSS的跨细胞泛化依赖于多组学对齐机制，不能直接等同于纯序列模型在跨细胞类型增强子预测上的泛化能力。",
+   "reading_question": "冻结的预训练序列编码器在处理变长DNA序列输入时具体采用了何种padding或截断策略，这是否会影响下游peak表示的准确性？"
+  }
+ },
+ {
+  "id": "pubmed:42977821",
+  "source": "pubmed",
+  "raw_id": "42977821",
+  "title": "A framework for genome-wide characterization of DNA methylation and variant effect prediction.",
+  "abstract": "DNA methylation plays a critical role in many essential biological processes, including transcriptional regulation, genomic imprinting, chromosomal maintenance, genomic stability and development, and has phenotypic and disease impacts. However, genome-wide characterization of methylation patterns across cell types and tissues remains a major challenge. Here, to address this, we present a framework that enables systematic genome-wide analysis of methylation and sequence-based prediction of context-specific methylation effects of variants. Our data-driven discovery of methylation classes reveals context-dependent roles for methylation across tissues, cell types and regions of the genome. The framework also includes Wreath, a deep learning-based sequence model specifically designed to accurately predict the context-dependent impact of any genetic variant on methylation. These developments leverage a compendium that harmonizes disparate methylation profiles from disparate studies including over 90 tissues and cell types. Using Wreath, we systematically characterized the impact of noncoding pathogenic variants on tissue-specific methylation, generating mechanistic hypotheses for individual regulatory variants. We make the full framework, including the compendium, the methylation classes and the model, available for use by the community.",
+  "journal": "Nature genetics",
+  "authors": [
+   "Weiguang Mao",
+   "Kathleen M Chen",
+   "Christopher Y Park",
+   "Chandra L Theesfeld",
+   "Olga G Troyanskaya"
+  ],
+  "date": "2026-11-03",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42977821/",
+  "doi": "10.1038/s41588-026-02807-4",
+  "pmid": "42977821",
+  "arxiv_id": "",
+  "corr_author": "Olga G Troyanskaya",
+  "corr_affiliation": "Flatiron Institute of the Simons Foundation, New York, NY, USA. ogt@princeton.edu.",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "深度学习序列模型预测遗传变异对DNA甲基化的上下文依赖效应，覆盖90+组织/细胞类型，与表观遗传变异效应预测和跨细胞类型泛化高度相关。",
+   "novelty_for_me": "系统构建跨90+组织的甲基化harmonized数据集和上下文依赖的变异效应预测模型，为我关注的多细胞类型表观遗传预测提供了数据和建模思路。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "方法可借鉴",
+   "task_scope": "输入：DNA序列及遗传变异 → 输出：上下文（组织/细胞类型）特异性的甲基化变异效应预测及甲基化类别分类；研究物种：摘要未说明；细胞体系：涵盖超过90种组织和细胞类型的甲基化谱整合库；验证范围：跨组织/细胞类型，并应用于非编码致病变异的组织特异性甲基化影响分析",
+   "core_method": "Wreath，一种基于深度学习的序列模型，用于预测遗传变异对甲基化的上下文依赖性影响，并配合一个跨90多种组织/细胞类型的甲基化谱协调库进行数据驱动建模。",
+   "main_finding": "构建了包含90多种组织/细胞类型的甲基化谱整合库，发现了甲基化在不同基因组区域和细胞类型间的上下文依赖性分类；利用Wreath模型系统表征了非编码致病变异对组织特异性甲基化的影响，为单个调控变异生成了机制假说。",
+   "inspiration": "其跨90多种组织/细胞类型表观遗传数据的协调与上下文建模思路，可能为我整合多细胞类型虚拟表观遗传特征以预测增强子活性提供数据对齐与模型设计的参考。",
+   "applicability": "原论文预测的是变异对DNA甲基化的影响，而非直接预测游离型增强子活性；其跨细胞类型的泛化建立在甲基化谱整合的基础上，不能直接等同于对增强子活性预测任务的跨细胞类型泛化能力；摘要未涉及预训练基因组学模型的padding策略评估。",
+   "reading_question": "Wreath模型在处理不同长度的DNA序列输入时采用了何种序列截断或padding策略，以及该策略是否会影响变异效应预测的准确性？"
+  }
+ },
+ {
+  "id": "arxiv:2611.05890",
+  "source": "arxiv",
+  "raw_id": "2611.05890",
+  "title": "CellCanon: An Agentic Cellular World Model for Prediction, Explanation, and Observation-Driven Updating",
+  "abstract": "Biological discovery requires using molecular knowledge and new measurements to infer responses beyond the conditions already observed. We introduce CellCanon, the first agentic cellular world model to unify single-cell expression prediction, evidence-grounded explanation, and observation-driven updating. Its predictive core reuses condition-level biological evidence across gene-specific numerical readouts to guide single-cell expression generation. A shared world state links predictions, acquired measurements, and source-linked claims, supporting explanation and revision. On 339 held-out SciPlex3 conditions across three cell lines, CellCanon improves differential-expression AUPRC and Macro-F1 over the best baseline for each metric by 63.3% and 17.3%, respectively, and direction Macro-F1 by 7.2%. Relative to gene-wise reasoning on matched drug-cell cohorts, measured language-model token use falls by 99.77% for Predict and 98.41% for Explain. On the source-grounded benchmark, Explain correctly answers all answerable questions with supporting proofs and identifies all insufficient-evidence cases. In simulated experimental feedback, Update uses one measured source context per drug to exceed the best fine-tuned baselines in differential-expression AUPRC and Macro-F1 without changing model weights. Together, these capabilities support a cumulative account of cellular responses, with predictions and biological judgments that can be revised as evidence accumulates.",
+  "journal": "arXiv",
+  "authors": [
+   "Zhaokang Liang",
+   "Shuyang Zhuang",
+   "Xiaoran Jiao",
+   "Hao Chen"
+  ],
+  "date": "2026-11-04",
+  "url": "https://arxiv.org/abs/2611.05890",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2611.05890",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "构建了单细胞扰动响应预测的智能体细胞世界模型，直接命中你的“single-cell perturbation”和“virtual cell”研究兴趣。",
+   "novelty_for_me": "将智能体框架与单细胞表达预测结合，支持基于证据的更新而无需修改模型权重。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "方法可借鉴",
+   "task_scope": "输入：条件级生物学证据与基因特异性数值读数 → 输出：单细胞表达预测、基于证据的解释与观测驱动的状态更新；研究物种：摘要未说明（基于SciPlex3数据集通常为人源细胞）；验证范围：跨三个细胞系的339个留出药物扰动条件",
+   "core_method": "结合条件级证据复用与共享世界状态的智能体细胞世界模型范式，实现预测、解释与更新的统一。",
+   "main_finding": "在339个留出条件上，差异表达AUPRC和Macro-F1较最佳基线分别提升63.3%和17.3%；在模拟实验反馈中，仅使用单一测量上下文且不改变模型权重，即可在AUPRC和Macro-F1上超越最佳微调基线。",
+   "inspiration": "其“条件级证据跨基因复用”的机制，或许可启发我在跨细胞类型增强子预测中，将虚拟表观遗传特征作为共享状态进行跨序列复用。",
+   "applicability": "原论文聚焦药物扰动下的单细胞表达预测与状态更新，属于条件级生成任务；我的研究为DNA序列到增强子活性的映射及padding评估，输入模态与预测粒度不同，其跨细胞系泛化不能直接等同于跨细胞类型增强子预测的泛化。",
+   "reading_question": "原文中的“条件级生物学证据”具体是如何表征并在模型中跨基因复用的？该机制是否依赖外部知识库，能否适配纯序列输入的预测模型？"
+  }
+ }
+]
