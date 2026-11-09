@@ -1,0 +1,37 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.05.06.723362",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.05.06.723362",
+  "title": "A fine-tuned genomic language model captures nucleotide-level information overlooked by missense variant impact predictors",
+  "abstract": "Established missense variant impact predictors primarily capture protein-level consequences, yet missense-annotated variants can also act through nucleotide sequence context. We developed GLM-Missense by systematically optimizing the fine-tuning of a genomic language model for missense variant impact prediction. GLM-Missense contributed the most complementary information to seven established predictors on held-out ClinVar variants and independent RAD51D saturation genome editing data. The complementary signal partly reflects splicing disruption, including disrupted exonic splicing regulatory elements largely missed by SpliceAI, and possibly codon-level effects on mRNA stability. These findings suggest fine-tuned genomic language models capture nucleotide-level information overlooked by current missense variant impact predictors.",
+  "journal": "bioRxiv",
+  "authors": [
+   "Su, Y.",
+   "Lin, Y.-J."
+  ],
+  "date": "2026-11-06",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.05.06.723362v1",
+  "doi": "10.64898/2026.05.06.723362",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Yaqi Su",
+  "corr_affiliation": "University of California, Berkeley",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "直接涉及基因组语言模型的微调和核苷酸水平信息捕获，与DNA语言模型和序列表示学习研究高度相关。",
+   "novelty_for_me": "展示了基因组语言模型微调如何捕获被蛋白质水平预测器忽略的核苷酸上下文信息，对我的基础模型评估研究有方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "方法可借鉴",
+   "task_scope": "输入：含错义变异的DNA序列 → 输出：变异影响预测；研究物种/细胞体系：摘要未说明（涉及ClinVar和RAD51D数据，推测为人类）；验证范围：在留存ClinVar变异和独立RAD51D饱和基因组编辑数据上验证，未提及跨细胞类型验证。",
+   "core_method": "通过系统优化预训练基因组语言模型的微调策略，构建用于错义变异影响预测的模型（GLM-Missense）。",
+   "main_finding": "GLM-Missense在ClinVar和RAD51D数据上对七个现有预测器提供了最多的互补信息，该互补信号部分反映了剪接破坏（包括SpliceAI遗漏的外显子剪接调控元件）及密码子水平对mRNA稳定性的影响。",
+   "inspiration": "该研究展示了微调预训练基因组语言模型能捕捉被特定任务模型忽略的底层序列上下文信息，这提示我在增强子活性预测中，可探究模型是否同样捕捉了虚拟表观遗传特征之外的核苷酸级上下文依赖。",
+   "applicability": "原论文聚焦编码区错义变异的功能影响预测，而我的研究关注非编码区游离型增强子活性及padding策略。GLM在编码区变异任务上的互补性不能直接外推至跨细胞类型的非编码区增强子活性预测任务，且原论文未涉及padding影响的评估。",
+   "reading_question": "原文在系统优化微调策略时，输入序列的长度设定与padding处理方式是什么？这些序列处理细节是否影响了模型对核苷酸级上下文信息的捕捉？"
+  }
+ }
+]
