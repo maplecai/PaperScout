@@ -276,7 +276,7 @@ def fetch_arxiv(cfg: dict, days: int, end_date: str | None = None) -> list[dict]
     upper = datetime.strptime(end_date, "%Y-%m-%d") + timedelta(days=1) if end_date else None
     try:
         root = ET.fromstring(r.text)
-        ns = {"a": "http://www.w3.org/2005/Atom"}
+        ns = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
         for e in root.findall("a:entry", ns):
             try:
                 raw_id = e.find("a:id", ns).text.strip().rsplit("/", 1)[-1]
@@ -289,6 +289,14 @@ def fetch_arxiv(cfg: dict, days: int, end_date: str | None = None) -> list[dict]
                 if dt < cutoff or (upper and dt >= upper):
                     continue
                 authors = [a.find("a:name", ns).text for a in e.findall("a:author", ns) if a.find("a:name", ns) is not None]
+                # 与 PubMed 一样保留最后一位带机构的作者；不推断通讯身份。
+                corr_author, corr_aff = "", ""
+                for author in e.findall("a:author", ns):
+                    affiliations = [_clean(a.text or "") for a in author.findall("arxiv:affiliation", ns)]
+                    affiliation = "; ".join(a for a in affiliations if a)
+                    if affiliation:
+                        corr_author = _clean(author.findtext("a:name", default="", namespaces=ns))
+                        corr_aff = affiliation
                 # DOI link
                 doi = ""
                 for link in e.findall("a:link", ns):
@@ -301,7 +309,7 @@ def fetch_arxiv(cfg: dict, days: int, end_date: str | None = None) -> list[dict]
                     "authors": authors, "date": published[:10],
                     "url": f"https://arxiv.org/abs/{base_id}",
                     "doi": doi, "pmid": "", "arxiv_id": base_id,
-                    "corr_author": "", "corr_affiliation": "",  # arXiv 无作者单位元数据
+                    "corr_author": corr_author, "corr_affiliation": corr_aff,
                 })
             except Exception as ex:
                 log.warning("arXiv 单篇解析失败: %s", ex)

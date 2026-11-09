@@ -67,7 +67,7 @@ state.json           去重 dict（120 天滚动清理）+ 运行历史
 
 PubMed XML 解析时，对每个 Author 结点都检查是否有 `AffiliationInfo`。用覆盖赋值取最后一位带单位的作者。如果真实通讯作者（最后一位）在 XML 里没挂单位，回退到前一位带单位的（名字与单位保持配对）。
 
-arXiv 无作者单位元数据，bioRxiv 走 `author_corresponding` 字段。
+arXiv 读取作者节点下可选的 `arxiv:affiliation`，保留最后一位带机构信息的作者及全部对应机构，不推断通讯身份；API 缺失机构时在邮件中明确提示。bioRxiv 走 `author_corresponding` 字段。
 
 ### 作者显示规则
 

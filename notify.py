@@ -60,10 +60,13 @@ def build_report_md(papers: list[dict], date_str: str, errors: list[str] | None 
             lines.append("")
         lines.append(f"作者：{_authors(p)}")
         if p.get("corr_author"):
-            lines.append(f"来源标注的末位/通讯作者：{p['corr_author']}")
+            label = "末位带机构信息的作者" if p.get("source") == "arxiv" else "来源标注的末位/通讯作者"
+            lines.append(f"{label}：{p['corr_author']}")
         if p.get("corr_affiliation"):
             affiliation = re.sub(r"[\w.+-]+@[\w.-]+", "", p["corr_affiliation"]).strip(" .,")
             lines.append(f"机构：{affiliation}")
+        else:
+            lines.append("机构：当前 API 未提供机构信息")
         lines.extend(["", "### 英文摘要", "", p.get("abstract") or "归档未保存摘要，请打开原文查看。", "", "---", ""])
     lines.extend(["中文笔记基于标题和摘要生成，未核验全文；研究建议不代表论文已验证的结论。相关性分数不是论文质量评分。", ""])
     if stats:
