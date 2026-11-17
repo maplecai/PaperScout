@@ -1,0 +1,61 @@
+# Paper Scout 日报 2026-11-17
+
+共推荐 **2** 篇论文。
+
+## 1. An apicomplexan-specific foundation model improves prediction of regulatory genomic signals in Plasmodium falciparum
+
+bioRxiv · 预印本 · 2026-11-16 · 相关性 9/10
+
+**研究关联：方法可借鉴**
+
+- **为什么值得看**：直接研究基因组基础模型（GPN）在调控基因组信号预测中的预训练价值，与你的基因组基础模型评估和表观遗传预测研究高度契合。
+- **任务与验证范围**：输入：DNA序列 → 输出：表观基因组特征（TF结合、染色质可及性、组蛋白修饰、染色质状态）；物种/体系：恶性疟原虫及76种顶复门物种；验证范围：留出染色体验证，摘要未说明是否跨细胞类型
+- **核心方法**：基于掩码核苷酸重建自监督预训练的GPN模型，并在特定表观基因组预测任务上进行微调
+- **主要发现与证据**：预训练加微调显著提升了大多数表观基因组特征的预测性能，尤其在训练样本少于3000的小数据集上收益最大；人类预训练模型迁移至该物种效果差，表明系统发育相关性而非单纯的预训练模型规模是性能提升的关键
+- **可借鉴点（研究建议）**：在评估预训练基因组学模型时，可关注不同细胞类型或数据量大小对微调性能的影响，推测预训练优势可能在特定细胞类型（数据较少）中更显著
+- **迁移边界**：原论文针对疟原虫等小基因组且数据稀缺场景的表观特征预测，与基于人类DNA序列的增强子活性预测及padding评估任务存在物种和任务差异；其跨物种迁移效果差的结论不能直接等同于跨细胞类型泛化的表现
+- **阅读时核实**：预训练模型在处理不同长度输入序列时是否使用了特定的padding策略，以及padding对掩码重建和下游微调性能的具体影响？
+
+[原文](https://www.biorxiv.org/content/10.64898/2026.11.12.766050v1) · [DOI](https://doi.org/10.64898/2026.11.12.766050)
+
+作者：Brown, A. S., Yang, J., Llinas, M., Mahony, S.
+来源标注的末位/通讯作者：Shaun Mahony
+机构：Pennsylvania State University
+
+### 英文摘要
+
+Genomic foundation models learn transferable sequence representations through self-supervision, yet their practical value is contested. In data-rich mammalian genomes, task-specific models trained from scratch can match or exceed pretrained models on many regulatory prediction tasks. Whether self-supervised pretraining provides an advantage in small, data-sparse genomes has not been directly tested. We address this in the compact, 23Mbp, A/T-rich genome of the malaria parasite, Plasmodium falciparum. We trained a Genomic Pretrained Network (GPN) via masked-nucleotide reconstruction on 455 genome assemblies spanning 76 apicomplexan species. We then fine-tuned the model to predict a variety of epigenomic features in a held-out chromosome, including transcription factor binding sites, chromatin-accessibility, histone modifications, and 10 chromatin states. Pretraining followed by fine tuning improved prediction of most features, with most of the benefit concentrated on datasets with relatively little labeled data (fewer than 3,000 training examples). In contrast, a human-pretrained model transferred poorly, indicating that phylogenetically relevant pretraining, not foundation-model status alone, drives beneficial performance. Self-supervised pretraining on clade-specific assemblies is thus a practical route to data-efficient regulatory modeling in small genomes where training data is scarce.
+
+---
+
+## 2. Evaluating the ability of spatial transcriptomics foundation models to learn multi-scale spatial variation
+
+bioRxiv · 预印本 · 2026-11-16 · 相关性 7/10
+
+**研究关联：方法可借鉴**
+
+- **为什么值得看**：评估空间转录组学基础模型（SFM）的表征学习能力，与你评估基因组基础模型的研究方向在方法论上高度契合。
+- **任务与验证范围**：输入：空间转录组学基础模型（SFM）的嵌入向量 → 输出：稀疏可解释特征及多尺度空间变异捕获能力评估；研究物种/细胞体系：摘要未说明（提及Aβ斑块微环境）；验证范围：多个SFM模型，对比局部与全局空间变异
+- **核心方法**：基于Matryoshka稀疏自编码器（SAE）的框架（SAFFRON），将基础模型稠密嵌入分解为稀疏可解释特征并评估其与已知空间变异源的相关性。
+- **主要发现与证据**：仅2个SFM在全局空间梯度上优于朴素基线，且梯度集中于少数SAE特征；无SFM在局部模式（Aβ斑块微环境）上优于基线，表明当前SFM未系统学习多尺度空间变异。
+- **可借鉴点（研究建议）**：可借鉴其使用稀疏自编码器解耦预训练模型嵌入的思路，推测可用于评估基因组学模型是否真正捕获了增强子相关的局部或全局序列特征，而非依赖整体性能指标。
+- **迁移边界**：原论文针对空间转录组学模型的空间变异评估，我的研究针对DNA序列到功能的增强子预测及padding影响。SAE解耦方法可能适用于序列模型嵌入分析，但跨模态泛化未经验证，且padding对序列模型的影响机制与空间变异不同。
+- **阅读时核实**：SAFFRON中的Matryoshka SAE在分解嵌入时，不同稀疏度层级是否对应了不同尺度的生物学特征？这种层级结构能否直接迁移用于解析DNA序列模型中不同长度的序列特征？
+
+[原文](https://www.biorxiv.org/content/10.64898/2026.08.01.742217v1) · [DOI](https://doi.org/10.64898/2026.08.01.742217)
+
+摘要提供的链接（未核验可用性）：[资源 1](https://github.com/chitra-lab/SAFFRON%22) · [资源 2](https://github.com/chitra-lab/SAFFRON)
+
+作者：Handa, D., Martin-Linares, C., Stein-O'Brien, G., Ling, J., Chitra, U.
+来源标注的末位/通讯作者：Uthsav Chitra
+机构：Johns Hopkins University
+
+### 英文摘要
+
+Spatial gene expression results from the superposition of multiple sources of variation in gene expression across different spatial scales, including local microenvironment-associated variation and global spatial gradients. Spatial foundation models (SFMs) are large-scale machine learning models trained on cohorts of spatial transcriptomics (ST) data that, in principle, learn the different sources of spatial variation in gene expression. However, the embeddings learned by SFMs are difficult to interpret, and it remains unclear whether they fully capture such spatial variation. Here, we develop SAFFRON, a sparse autoencoder (SAE)-based framework for interpreting and evaluating SFMs. SAFFRON uses a Matryoshka SAE to decompose dense SFM embeddings into sparse, human-interpretable features and evaluates whether these features correlate with known sources of spatial variation. Using SAFFRON, we systematically benchmark the ability of several recent SFMs to identify local and global spatial variation in gene expression. We find that only two SFMs learn global spatial gradients more accurately than naive, non-foundation model baselines; further investigating one such SFM, SAFFRON reveals that these gradients are concentrated in a small subset of sparse, human-interpretable SAE features. On the other hand, <em>no</em> SFM learns local patterns (A{beta} plaque microenvironment-associated patterns) more accurately than such baselines. Our findings suggest that current SFMs do not systematically learn multi-scale spatial variation in gene expression. Code: SAFFRON is available at <a href="https://github.com/chitra-lab/SAFFRON">https://github.com/chitra-lab/SAFFRON.</a>
+
+---
+
+中文笔记基于标题和摘要生成，未核验全文；研究建议不代表论文已验证的结论。相关性分数不是论文质量评分。
+
+检索统计：窗口 [2026-11-14 00:00, 2026-11-17 00:00) UTC；抓取 biorxiv 83/pubmed 38 → 粗筛 35 篇 → LLM 选中 2 篇
