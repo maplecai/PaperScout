@@ -1,0 +1,40 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.07.07.736795",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.07.07.736795",
+  "title": "Weight locking as a safeguard for open-weight biological foundation models",
+  "abstract": "Biological foundation models can accelerate research, but their open weight release raises biosecurity concerns. A common safeguard excludes eukaryotic viral genomes from training, but fine-tuning on public viral data reverses it. We confirm that fine-tuning improves held-out viral language modelling, and that the gain comes from the viral data itself. Weight locking by spectral deformation, proposed to prevent fine-tuning, is untested in biological models. We applied it to two Evo-family models and the protein model ESM3-open, against attackers of increasing knowledge. The lock defends against the naive attacker, whose fine-tuning drives capability below pretrained on all three models. It does not defend against an informed attacker, who freezes or fuses the compensation matrix to restore near-unlocked performance. A compensation-free lock we build from the network's own rescaling symmetries again defeats the naive attacker, but canonical rebalancing removes it without knowledge of the lock. The barrier is one of knowledge, not compute.",
+  "journal": "bioRxiv",
+  "authors": [
+   "Karatzikos, A.",
+   "Vasilopoulou, A.",
+   "Chan, C.",
+   "Mouratidis, I.",
+   "Georgakopoulos-Soares, I."
+  ],
+  "date": "2026-11-19",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.07.07.736795v1",
+  "doi": "10.64898/2026.07.07.736795",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Ilias Georgakopoulos-Soares",
+  "corr_affiliation": "The University of Texas at Austin",
+  "_rank": {
+   "relevance_score": 7,
+   "priority": "P1",
+   "why_relevant": "直接讨论基因组/蛋白质基础模型（Evo家族、ESM3）的权重安全与微调行为，与基因组基础模型研究兴趣高度相关。",
+   "novelty_for_me": "从模型安全与权重锁定角度审视生物基础模型，为我理解基础模型的微调行为和权重空间动态提供了新视角。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "研究兴趣拓展",
+   "task_scope": "输入：预训练生物基础模型权重 → 输出：施加权重锁定后的模型及其抗微调攻击评估；研究体系：病毒基因组与蛋白质序列（摘要未说明具体物种/细胞体系）；验证范围：针对不同知识水平的攻击者（朴素与知情）进行微调攻击测试",
+   "core_method": "基于谱形变与网络重缩放对称性的权重锁定方法，用于防御生物基础模型的恶意微调。",
+   "main_finding": "权重锁定可防御朴素攻击者（使其微调后病毒建模能力低于预训练水平），但无法防御知情攻击者（通过补偿矩阵恢复性能）；无补偿锁也可被标准重平衡破解，表明防御障碍在于知识而非算力。",
+   "inspiration": "无明显直接启发",
+   "applicability": "原论文聚焦生物基础模型的权重安全与微调防御，与基于DNA序列预测增强子活性及评估padding影响的任务在目标上完全不同。其关于微调对模型能力影响的结论不能直接迁移至增强子活性预测的跨细胞类型泛化或序列长度处理任务中。",
+   "reading_question": "谱形变权重锁定在Evo等基因组学模型上的具体实现机制是什么？施加锁定后是否会影响模型对正常非病毒DNA序列的表征能力或常规下游任务的微调效果？"
+  }
+ }
+]
