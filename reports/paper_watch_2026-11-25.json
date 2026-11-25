@@ -1,0 +1,118 @@
+[
+ {
+  "id": "biorxiv:10.64898/2026.11.13.762587",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.11.13.762587",
+  "title": "FiberTron enables regulatory variant effect prediction and testing from multi-omic long reads of a single sample",
+  "abstract": "State-of-the-art sequence-to-function models are trained on large compendia of public data to predict regulatory activity across hundreds of cell types. However, they are not designed to interpret individual genomes, effects in under-sampled cell types, or provide a comprehensive view of how genetic variation influences complex diseases. Here we show that a single sample profiled with Fiber-seq and Nanopore direct RNA-seq contains enough information to train such a model from scratch. FiberTron, a 12M parameter convolutional-transformer model, takes 524 kb of reference sequence and predicts CpG methylation, chromatin accessibility and strand-specific transcript coverage at base-pair resolution (median Pearson's r of 0.85-0.97 on held-out chromosomes). Trained in under a day on a single four-GPU node, our HG002 model performs on par with models such as AlphaGenome on dsQTL and eQTL variant effect prediction tasks, despite being over an order of magnitude smaller. As training uses reference sequence only, each sample's phased multi-omic long reads remain available to test its variant-effect predictions. FiberTron recapitulates OAS1 splicing variation associated with COVID-19 risk, recovers 79% of allele-specific accessibility variants in a melanoma line, identifies oncogenic TERT promoter and TAL1 enhancer mutations, and predicts EWSR1::ATF1 fusion transcript expression and its unique chromatin imprint in a rare clear cell sarcoma patient sample. Lightweight single-sample training brings base-resolution interpretation of non-coding variation within reach of individual laboratories.",
+  "journal": "bioRxiv",
+  "authors": [
+   "Eftychiou, M.",
+   "Lambrechts, L.",
+   "Vande Velde, J.",
+   "Theunis, K.",
+   "Davies, C.",
+   "Pillay, N.",
+   "De Keersmaecker, K.",
+   "Aerts, S.",
+   "Sifrim, A.",
+   "Demeulemeester, J."
+  ],
+  "date": "2026-11-24",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.13.762587v1",
+  "doi": "10.64898/2026.11.13.762587",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Jonas Demeulemeester",
+  "corr_affiliation": "VIB-KU Leuven",
+  "_rank": {
+   "relevance_score": 9,
+   "priority": "P1",
+   "why_relevant": "FiberTron是轻量级sequence-to-function模型，从参考序列预测染色质可及性和转录覆盖度，并与AlphaGenome在变异效应预测上直接对比，高度契合你的研究兴趣。",
+   "novelty_for_me": "单样本多组学长读数据即可从头训练一个与AlphaGenome性能相当的轻量模型，挑战了大规模预训练的必要性。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "方法可借鉴",
+   "task_scope": "输入：524 kb参考序列 → 输出：CpG甲基化、染色质可及性及链特异性转录本覆盖度（碱基分辨率）；物种/体系：人类（HG002、黑色素瘤细胞系、透明细胞肉瘤样本）；验证范围：跨样本验证变异效应预测（如黑色素瘤和肉瘤样本）。",
+   "core_method": "基于单样本多组学长读长数据从零训练的12M参数卷积-Transformer模型，采用长序列输入预测多组学特征。",
+   "main_finding": "仅用单样本数据从零训练的轻量级模型，在留出染色体上预测多组学特征中位Pearson r达0.85-0.97，在dsQTL/eQTL变异预测上媲美AlphaGenome等大模型；并在独立样本中成功识别79%等位基因特异性可及性变异及致癌增强子突变。",
+   "inspiration": "可借鉴其524 kb长序列输入的模型架构设计，推测其长序列处理方式可用于评估预训练基因组学模型中padding策略对边缘序列特征预测的影响。",
+   "applicability": "原论文聚焦单样本多组学特征预测及变异效应测试，而我的研究关注跨细胞类型增强子活性及预训练模型padding影响；其单样本训练范式能否泛化至跨细胞类型虚拟表观遗传特征预测及padding评估尚需验证。",
+   "reading_question": "模型在处理524 kb输入序列时采用了何种padding或截断策略？该策略是否对序列边缘的增强子活性或表观遗传特征预测产生显著的边缘效应？"
+  }
+ },
+ {
+  "id": "arxiv:2611.29395",
+  "source": "arxiv",
+  "raw_id": "2611.29395",
+  "title": "BQDNA: Multi-Head Binary Spherical Quantization for Genomic Sequence Modeling",
+  "abstract": "Decoding biological information from long, repetitive DNA remains challenging. Genomic language models (gLMs) often follow the conventional language-model pretrain-and-adapt paradigm. However, the lack of inherent semantic segmentation and prior rules makes hand-crafted tokenizers like k-mer and BPE suboptimal. We introduce context-aware \\textbf{BQVAE} for scalar quantization of DNA and \\textbf{BQDNA}, an autoregressive gLM supporting multi-head codebooks. Comprehensive experiments reveal that: (1) unique training dynamics of vector quantization in DNA space, including the importance of alignment between training corpus and downstream data. (2) superior performance of BQVAE over hand-crafted tokenizers and vanilla VQVAE. (3) remarkable cross-species generalization capability of BQDNA, which achieves state-of-the-art performance with merely 0.1B multi-species training for BQVAE and 1 epoch training on hg38 for BQDNA, outperforming gLMs pretrained with 10$\\sim$100x more tokens. Our findings underscore the potential of learned vector quantization for genomic sequence representation. Code is available at https://github.com/Sophie10001b/BQDNA",
+  "journal": "arXiv",
+  "authors": [
+   "Xudong Wang",
+   "Siwei Cheng",
+   "Haozhe Hu"
+  ],
+  "date": "2026-11-22",
+  "url": "https://arxiv.org/abs/2611.29395",
+  "doi": "",
+  "pmid": "",
+  "arxiv_id": "2611.29395",
+  "corr_author": "",
+  "corr_affiliation": "",
+  "_rank": {
+   "relevance_score": 8,
+   "priority": "P1",
+   "why_relevant": "提出基于向量量化的DNA分词器BQVAE和自回归基因组语言模型BQDNA，直接关联DNA语言模型与生物序列表示学习。",
+   "novelty_for_me": "用学习型向量量化替代k-mer/BPE分词，并展示跨物种泛化能力，对我的基因组基础模型研究有直接方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "方法可借鉴",
+   "task_scope": "输入：长DNA序列 → 输出：离散化序列表示及下游任务预测；研究物种/细胞体系：多物种（含hg38等），具体细胞类型摘要未说明；验证范围：跨物种泛化，是否跨细胞类型摘要未说明",
+   "core_method": "采用上下文感知的向量量化变分自编码器（BQVAE）进行DNA标量量化，并构建支持多头码本的自回归基因组语言模型（BQDNA）。",
+   "main_finding": "BQVAE优于k-mer、BPE等手工分词器和普通VQVAE；BQDNA仅用0.1B多物种数据训练并在hg38上训练1个epoch，即超越预训练数据量多10~100倍的gLM，具备出色的跨物种泛化能力。",
+   "inspiration": "推测将学习型向量量化tokenizer引入增强子序列建模，可能比传统手工分词更有利于提取调控元件特征，从而提升基于序列的增强子活性预测性能。",
+   "applicability": "原论文聚焦通用DNA序列表示与跨物种泛化，未直接涉及特定细胞类型的增强子活性预测或虚拟表观遗传特征；其tokenizer在跨细胞类型功能预测任务中的效果，以及对预训练模型padding策略的依赖性，均未在文中证明。",
+   "reading_question": "BQVAE的向量量化过程对输入DNA序列的长度和padding方式是否有特定敏感性？在处理不同长度或含padding的增强子序列时，量化码本的分配是否会产生偏差？"
+  }
+ },
+ {
+  "id": "biorxiv:10.64898/2026.11.22.768440",
+  "source": "biorxiv",
+  "raw_id": "10.64898/2026.11.22.768440",
+  "title": "Multi-omics causal deep learning reveals regulatory structure while interventions refine perturbation predictions",
+  "abstract": "Inferring gene regulation from single-cell data is difficult because observational measurements cannot distinguish correlation from causation and access to perturbational data, especially with multiple modalities, remains limited. Here we present the Cross-Modal Causal Variational Autoencoder (CMC-VAE), which learns a network linking genes and proteins (gene-gene, protein-protein and gene-protein) in the latent space and maps each connection back onto measured features. Trained on 809,130 observational CITE-seq profiles, CMC-VAE recovers co-expression, transcription factor regulons and immune signalling programs, and learns a sparse cross-modal map enriched for transcript-protein cognate pairs. On three CRISPR screens used during development, it ranks knockout-responsive genes better than correlation and latent-VAE baselines. Fitted to a screen's unperturbed control cells, without perturbation labels, the model translates measured knockout RNA responses into protein responses better than a correlation map and cognate transcripts. The direction of gene-to-gene regulation, however, is not recovered from observational data. On the CITE-seq screens, fine-tuning only the latent network improves held-out response correlation, mainly by learning a response shared across knockouts. On larger Perturb-seq screens, with about 1,000 training perturbations, fine-tuning the latent network learns gene-specific effects that transfer to held-out genes, more so than a gene-level causal model fine-tuned on the same cells, and in simulation, such interventions also restore edge orientations that observational training leaves unresolved.",
+  "journal": "bioRxiv",
+  "authors": [
+   "Goudarzi, S.",
+   "Nandi, V.",
+   "Liu, N.",
+   "Goodarzi, H."
+  ],
+  "date": "2026-11-24",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.11.22.768440v1",
+  "doi": "10.64898/2026.11.22.768440",
+  "pmid": "",
+  "arxiv_id": "",
+  "corr_author": "Hani Goodarzi",
+  "corr_affiliation": "Arc Institute",
+  "_rank": {
+   "relevance_score": 6,
+   "priority": "P2",
+   "why_relevant": "用因果VAE从单细胞多组学数据推断基因调控结构并改进扰动预测，与单细胞扰动研究兴趣相关。",
+   "novelty_for_me": "跨模态因果潜空间映射结合扰动微调的思路，对理解细胞类型特异性调控响应有方法论启发。",
+   "worth_reading": true
+  },
+  "_summary": {
+   "relevance_type": "方法可借鉴",
+   "task_scope": "输入：单细胞多模态观测数据（CITE-seq）与CRISPR扰动数据 → 输出：基因/蛋白调控网络及扰动响应预测；研究物种/细胞体系：摘要未说明；验证范围：涵盖3个CRISPR筛选及约1000个训练扰动的Perturb-seq，摘要未明确说明是否跨细胞类型。",
+   "core_method": "提出跨模态因果变分自编码器（CMC-VAE），在潜在空间构建基因与蛋白的稀疏因果网络，并利用无扰动标签的对照细胞或干预数据微调潜在网络以优化预测。",
+   "main_finding": "模型在809,130个观测CITE-seq数据上训练后，在3个CRISPR筛选中预测knockout响应基因优于相关性和潜在VAE基线；在约1000个扰动的Perturb-seq上微调潜在网络，能学习到可迁移至held-out基因的特异性效应，并在模拟中恢复观测训练无法解决的因果边方向。",
+   "inspiration": "利用少量干预数据仅微调预训练模型的潜在网络以学习可迁移效应的策略，或许可启发我在预训练基因组学模型中通过微调特定网络层来适应不同细胞类型的增强子活性预测任务。",
+   "applicability": "原论文处理单细胞多组学表达数据与扰动响应预测，而我的任务是基于DNA序列/虚拟表观遗传特征预测增强子活性及评估padding影响。两者数据模态与预测目标存在本质差异，原论文在跨基因上的迁移效果不能等同于跨细胞类型或跨序列任务的泛化能力。",
+   "reading_question": "CMC-VAE在潜在空间构建跨模态因果网络时，如何确保潜在特征与具体测量特征（如RNA和蛋白）之间的映射具有生物学可解释性，而非虚假的统计关联？"
+  }
+ }
+]
